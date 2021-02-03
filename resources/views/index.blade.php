@@ -44,7 +44,7 @@
            <div class="container-fliud">
                <div class="row">
                    <div class="col-12">
-                         logo
+                         <h1>Test</h2>
                    </div>
                    <div class="col-6">
                         
