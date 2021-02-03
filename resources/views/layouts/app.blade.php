@@ -362,66 +362,22 @@
                 <div class="container">
                     <div class="row row-sm">
                         <div class="col-md-6 col-lg-3">
-                            <img src="/images/logo-white.png">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis.</p>
-                            <div class="social-link">
-                                <h3 class="link-title">QUESTIONS?</h3>
-                                <a href="category.html#">1-888-123-456</a>
-                            </div>
+                            
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="widget">
-                                <h3 class="widget-title">Account</h3>
-                                <div class="widget-content row row-sm">
-                                    <ul class="col-xl-6">
-                                        <li><a href="my-account.html">My Account</a></li>
-                                        <li><a href="category.html#">Track Your Order</a></li>
-                                        <li><a href="category.html#">Payment Methods</a></li>
-                                        <li><a href="category.html#">Shipping Guide</a></li>
-                                    </ul>
-                                    <ul class="col-xl-6">
-                                        <li><a href="category.html#">FAQs</a></li>
-                                        <li><a href="category.html#">Product Support</a></li>
-                                        <li><a href="category.html#">Privacy</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="widget">
-                                <h3 class="widget-title">About</h3>
-                                <div class="widget-content row row-sm">
-                                    <ul class="col-xl-6">
-                                        <li><a href="about.html">About Porto</a></li>
-                                        <li><a href="category.html#">Our Guarantees</a></li>
-                                        <li><a href="category.html#">Terms And Conditions</a></li>
-                                        <li><a href="category.html#">Privacy Policy</a></li>
-                                    </ul>
-                                    <ul class="col-xl-6">
-                                        <li><a href="category.html#">Return Policy</a></li>
-                                        <li><a href="category.html#">Intellectual Property Claims</a></li>
-                                        <li><a href="category.html#">Site Map</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="widget">
-                                <h3 class="widget-title">Features</h3>
-                                <div class="widget-content">
-                                    <ul>
-                                        <li><a href="category.html#">Powerful Admin Panel</a></li>
-                                        <li><a href="category.html#">Mobile & Retina Optimized</a></li>
-                                        <li><a href="category.html#">Super Fast Magento Theme</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom container">
-                <p>Porto eCommerce. © 2020. All Rights Reserved</p>
+                  <p class="footer-copyright py-3 pr-4 mb-0">© {{ config('app.name') }}. 2020. All Rights Reserved</p>
             </div>
         </footer><!-- End .footer -->
     </div><!-- End .page-wrapper -->
