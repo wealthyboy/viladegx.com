@@ -1,53 +1,61 @@
-@extends('layouts.app')
- 
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ isset( $page_title) ?  $page_title .' |  '.config('app.name') :  $system_settings->meta_title  }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
+    <meta name="keywords" content="{{ isset($system_settings->meta_tag_keywords) ? $system_settings->meta_tag_keywords : '' }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="canonical" href="{{ Config('app.url') }}">
 
-<div class="top-notice text-white bg--gray">
-    <div class="container-fluid text-center">
-        <div class="row">
-            
-            <div class="col-12">
-                <h5 class="d-inline-block text-uppercase mb-0"><b><i class="fas fa-money-check"></i>
-                    USE TLS10 and get 10% off when you shop over 600k</b>
-                </h5>
-            </div>
+     <!-- Favicone Icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+	<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/png" href="/img/favicon-96x96.png">
+	<link rel="apple-touch-icon" href="/img/favicon-96x96.png">
 
-        </div>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+	<!-- Main CSS File -->
+	<link rel="stylesheet" href="/css/style.min.css?version={{ str_random(6) }}">
+	<link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="/css/skins/skin-default.css?version={{ str_random(6) }}">
+
+    @yield('page-css')
+    <link href="/css/custom.css?version={{ str_random(6) }}" rel="stylesheet" type="text/css" />
+    <meta property="og:site_name" content="avenuemontaigne Co">
+    <meta property="og:url" content="{{ config('app.url') }}">
+    <meta property="og:title" content="avenuemontaigne">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
+    <meta property="og:image:alt" content="">
+    <meta name="twitter:site" content="@avenuemontaigne">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
+    <meta name="twitter:description" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
+    
+
+</head>
+    <body>
+        <main class="">
+
+           <div class="container-fliud">
+               <div class="row">
+                   <div class="col-12">
+                         logo
+                   </div>
+                   <div class="col-6">
+                        
+                   </div>
+                   <div class="col-6">
+
+                   </div>
+               </div>
+           </div>
         
-    </div><!-- End .container -->
-</div>
-
-
-
-@if ($sliders->count())
-<div class="owl-carousel main-banner-slider owl-theme">
-    @foreach($sliders as $slider)
-        <div class="item">
-            <a href="{{ $slider->link }}"><img src="{{ $slider->image }}" /></a>
-        </div>
-    @endforeach
-</div>
-@endif
-
-@if ($banners->count())
-<div class="container-fliud mb-1 mt-1">
-    <div class="row no-gutters">
-        @foreach($banners as $banner)
-        <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-center">
-                <div class="ba">
-                    <a class="portfolio-interior" href="{{ $banner->link }}">
-                        <img src="{{ $banner->image }}" alt="{{ $banner->title }}" />
-                    </a>
-                </div>
-            </div>
-        @endforeach
-    </div>
-</div>
-@endif
- 
-@endsection
-@section('page-scripts')
-@stop
-@section('inline-scripts')
-@stop
-
+        </main>
+    <script src="/js/jquery.min.js"></script>
+    </body>
+</html>
