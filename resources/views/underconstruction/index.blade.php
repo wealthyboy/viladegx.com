@@ -74,7 +74,7 @@ h6,
 
 .bgimg {
   /* Background image */
-  background-image: url('');
+  background-image: url('https://avenuemontaigne.ng/uploads/Jf4whgGakRpqamCMG9wRbdczuMI4IzbJyCUFOch4.jpg');
   /* Full-screen */
   height: 100%;
   /* Center the background image */
