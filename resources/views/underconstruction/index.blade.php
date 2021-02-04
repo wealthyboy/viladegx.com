@@ -112,7 +112,7 @@ h6,
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #e13b3f;
+  color: #333;
 }
 
 /* Style the <hr> element */
@@ -132,7 +132,7 @@ hr {
     <p></p>
   </div>
   <div class="middle">
-    <h1> COMING SOON</h1>
+    <h1>Avenue Montaigne is Coming Soon</h1>
     <p>Our website is almost here !!!</p>
     <p>Sign up below for first dibs on new arrivals ,vip surprises and more</p>
 
