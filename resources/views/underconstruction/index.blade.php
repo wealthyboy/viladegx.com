@@ -69,7 +69,7 @@ h6,
     margin-top: 0;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
-    color: #333;
+    color: #ffffff;
 }
 
 .bgimg {
@@ -128,7 +128,7 @@ h6,
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Style the <hr> element */
