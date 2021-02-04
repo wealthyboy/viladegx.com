@@ -74,7 +74,7 @@ h6,
 
 .bgimg {
   /* Background image */
-  background-image: url('https://hautesignatures.com/uploads/8SpTjZM2wUq2OdkZDfXoxkXgAkU3VD31oKoL2tSP.jpeg');
+  background-image: url('');
   /* Full-screen */
   height: 100%;
   /* Center the background image */
