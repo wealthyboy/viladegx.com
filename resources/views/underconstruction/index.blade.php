@@ -89,7 +89,23 @@ h6,
   font-family: "Courier New", Courier, monospace;
   /* Set the font-size to 25 pixels */
   font-size: 25px;
+
+  position: relative;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: .5s ease;
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+}
+
 
 /* Position text in the top-left corner */
 .topleft {
@@ -128,9 +144,9 @@ hr {
 
 
 <div class="bgimg">
-  <div class="topleft">
-    <p></p>
+  <div class="overlay">
   </div>
+  
   <div class="middle">
     <h1>Avenue Montaigne is Coming Soon</h1>
     <h5>Our website is almost here !!!</p>
