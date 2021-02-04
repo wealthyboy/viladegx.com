@@ -37,7 +37,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #e13b3f;
   font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif
 }
 
 
@@ -69,7 +69,7 @@ h6,
     margin-top: 0;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
-    color: #e13b3f;
+    color: #333;
 }
 
 .bgimg {
@@ -133,7 +133,7 @@ hr {
   </div>
   <div class="middle">
     <h1>Avenue Montaigne is Coming Soon</h1>
-    <p>Our website is almost here !!!</p>
+    <h5>Our website is almost here !!!</p>
     <p>Sign up below for first dibs on new arrivals ,vip surprises and more</p>
 
     <hr>
