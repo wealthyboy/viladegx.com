@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Uploads;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\SystemSetting;
+use App\Models\SystemSetting;
 
 class UploadsController extends Controller
 {
@@ -16,15 +16,7 @@ class UploadsController extends Controller
     {	  
 	  $this->settings =  SystemSetting::first();
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        
-    }
+   
 
     /**
      * Store a newly created resource in storage.
