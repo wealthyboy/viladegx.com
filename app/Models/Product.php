@@ -71,7 +71,7 @@ class Product extends Model
 
 	public function variants()
     {
-		return  $this->hasMany('App\ProductVariation')
+		return  $this->hasMany(ProductVariation::class)
 		           ->where(['default'=>false])->whereNotNull('name')
 		           ->orderBy('created_at','asc');
 	}
@@ -79,7 +79,7 @@ class Product extends Model
 
 	public function product_variations()
     {
-		return  $this->hasMany('App\ProductVariation')
+		return  $this->hasMany(ProductVariation::class)
 		           ->where(['default'=>false])
 		           ->orderBy('created_at','asc');
 	}
@@ -87,19 +87,19 @@ class Product extends Model
 
 	public function variant()
 	{
-		return $this->hasOne('App\ProductVariation')->whereDefault(false);
+		return $this->hasOne(ProductVariation::class)->whereDefault(false);
 	}
 
 
 	public function default_variation()
 	{
-		return $this->hasOne('App\ProductVariation')->whereDefault(true);
+		return $this->hasOne(ProductVariation::class)->whereDefault(true);
 	}
 	
 	
 	public function colors()
     {
-        return $this->belongsToMany('App\Attribute')
+        return $this->belongsToMany(Attribute::class)
 		->groupBy('attribute_id')
 		->whereNotNull(['color_code']);
     }
@@ -113,7 +113,7 @@ class Product extends Model
 
 	public function product_variation_values()
     {
-        return $this->hasMany('App\ProductVariationValue');
+        return $this->hasMany(ProductVariationValue::class);
 	}
 
 	
@@ -138,7 +138,7 @@ class Product extends Model
 
 
 	public function favorites(){
-        return $this->hasOne('App\Favorite');
+        return $this->hasOne(Favorite::class);
 	}
 
 		 
@@ -182,13 +182,13 @@ class Product extends Model
 
     public function categories()
     {
-        return $this->belongsToMany('App\Category')->withPivot('category_id');
+        return $this->belongsToMany(Category::class)->withPivot('category_id');
 	}
 
 
 	public function subjects()
     {
-        return $this->belongsToMany('App\Subject');
+        return $this->belongsToMany(Subject::class);
 	}
 
 
@@ -200,7 +200,7 @@ class Product extends Model
 
 	public function attributes()
     {
-		return  $this->belongsToMany('App\Attribute')
+		return  $this->belongsToMany(Attribute::class)
 					->groupBy('attribute_id')
 					->withPivot('attribute_id')
 					->withPivot('parent_id')
@@ -210,7 +210,7 @@ class Product extends Model
 
 	public function product_variation_attributes()
     {
-        return $this->hasMany('App\ProductVariationAttribute');
+        return $this->hasMany(ProductVariationAttribute::class);
 	}
 	
 
@@ -222,7 +222,7 @@ class Product extends Model
 
 	public function parent_attributes()
     {
-		return $this->belongsToMany('App\Attribute')
+		return $this->belongsToMany(Attribute::class)
 		            ->groupBy('attribute_id')
 					->wherePivot('parent_id',null)
 					->withPivot('id')
@@ -232,7 +232,7 @@ class Product extends Model
 
 	public function meta_fields()
     {
-		return  $this->belongsToMany('App\Attribute','meta_field')
+		return  $this->belongsToMany(Attribute::class,'meta_field')
 					->groupBy('attribute_id')
 					->withPivot([
 						'attribute_id',
@@ -244,7 +244,7 @@ class Product extends Model
 
 	public function images()
     {
-        return $this->morphMany('App\Image', 'imageable')->orderBy('id','asc')->where('image','!=','No Image');
+        return $this->morphMany(Image::class, 'imageable')->orderBy('id','asc')->where('image','!=','No Image');
 	}
 	
 
@@ -255,17 +255,17 @@ class Product extends Model
 		
 	public function brand()
     {
-	   return $this->belongsTo('App\Brand');
+	   return $this->belongsTo(Brand::class);
 	}
 
 
 	public function reviews(){
-		return $this->hasMany('App\Review');
+		return $this->hasMany(Review::class);
 	}
 
 	
 	public function ordered_product(){
-		return $this->hasOne('App\OrderedProduct');
+		return $this->hasOne(OrderedProduct::class);
 	}
 
 
