@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 
-use App\User;
+use App\Models\User;
 use App\Http\Flash;
-use App\State;
+use App\Models\State;
 
 
 use Illuminate\Support\Facades\Validator;
-use App\Permission;
+use App\Models\Permission;
 
 
 class UsersController extends Controller
