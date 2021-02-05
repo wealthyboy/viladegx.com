@@ -229,6 +229,8 @@ class CategoryController extends Controller
     public function destroy(Request $request,$id)
     {
         //
+        \DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         User::canTakeAction(5);
 
         $rules = array (
@@ -246,6 +248,9 @@ class CategoryController extends Controller
         } catch (\Throwable $th) {
             //throw $th;
         }
+
+        \DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         return redirect()->back();
         if ($request->isMethod ( 'get' )) {
             $category =  Category::find( $request->id );
@@ -253,6 +258,8 @@ class CategoryController extends Controller
             $category->delete();
             return redirect()->back();
         }
+
+
         
     }
 }
