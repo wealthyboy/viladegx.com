@@ -3,9 +3,10 @@
 namespace App\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
-use App\SystemSetting;
+use App\Models\SystemSetting;
+use App\Models\CurrencyRate;
 use App\Http\Helper;
-use App\CurrencyRate;
+
 
 
 
