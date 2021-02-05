@@ -131,12 +131,7 @@
                             </a>
                         </li>
                         
-                        <li class="{{ $helper->active_link(['subjects']) }} ">
-                            <a href="{{ route('subjects.index') }}">
-                                <span class="sidebar-mini"> B </span>
-                                <span class="sidebar-normal"> Subjects </span>
-                            </a>
-                        </li>
+                        
                         <li class="{{ $helper->active_link(['vouchers']) }} ">
                             <a href="{{ route('vouchers.index') }}">        
                                 <span class="sidebar-mini"> V </span>
