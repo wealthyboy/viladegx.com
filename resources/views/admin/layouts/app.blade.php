@@ -175,13 +175,6 @@
                     </p>
                 </a>
             </li>
-            <li class="{{ $helper->active_link(['posts']) }} ">
-                <a href="{{ route('posts.index') }}">
-                <i class="fa fa-info-circle" aria-hidden="true"></i>  
-                    <p> Blog</p>
-                </a>
-            </li>
-          
             <li class="{{ $helper->active_link(['media']) }} ">
                 <a href="{{ route('media.index') }}">
                 <i class="fa fa-info-circle" aria-hidden="true"></i>  
