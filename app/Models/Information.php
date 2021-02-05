@@ -32,7 +32,7 @@ class Information extends Model
     
     public function attributes()
     {
-        return $this->belongsToMany('App\Attribute','attribute_information')
+        return $this->belongsToMany('App\Models\Attribute','attribute_information')
                     ->withPivot('id');
     }
 
@@ -50,7 +50,7 @@ class Information extends Model
 
     public function children()
     {
-        return $this->hasMany('App\Information','parent_id','id')->orderBy('sort_order','asc');
+        return $this->hasMany('App\Models\Information','parent_id','id')->orderBy('sort_order','asc');
     }
 
     public function getLinkAttribute()
