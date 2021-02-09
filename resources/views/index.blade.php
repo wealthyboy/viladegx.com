@@ -37,6 +37,24 @@
     <body>
         <main class="">
 
+           <div class="container-fliud">
+               <div class="row">
+                   <div class="col-12">
+                       <div class=""></div>
+                   </div>
+                   <div class="col-6">
+                       <div class="">
+                           image 1
+                       </div> 
+                   </div>
+                   <div class="col-6">
+                       <div class="">
+                            image 2
+                       </div> 
+                   </div>
+               </div>
+           </div>
+
         
         
         </main>
