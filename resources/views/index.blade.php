@@ -35,23 +35,27 @@
 
 </head>
     <body>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class=""></div>
-                </div>
-                <div class="col-6">
-                    <div class="">
-                        image 1
-                    </div> 
-                </div>
-                <div class="col-6">
-                    <div class="">
-                        image 2
-                    </div> 
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="">
+                            <img src="" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="">
+                            image 1
+                        </div> 
+                    </div>
+                    <div class="col-6">
+                        <div class="">
+                            image 2
+                        </div> 
+                    </div>
                 </div>
             </div>
+        
         </div>
         <script src="/js/jquery.min.js"></script>
     </body>
