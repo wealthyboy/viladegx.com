@@ -136,10 +136,9 @@
                 slideBy: 'page',
                 autoplay: true,
                 nav: false,    
-                speed: 400,
+                speed: 800,
                 autoplayButtonOutput: false,
                 mouseDrag: true,
-                lazyload: true,
                 //controlsContainer: "#customize-controls",
             });
 
@@ -149,10 +148,9 @@
                 slideBy: 'page',
                 nav: false,    
                 autoplay: true,
-                speed: 400,
+                speed: 700,
                 autoplayButtonOutput: false,
                 mouseDrag: true,
-                lazyload: true,
                 //controlsContainer: "#customize-controls",
             });
 
