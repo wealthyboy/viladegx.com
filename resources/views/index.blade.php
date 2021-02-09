@@ -19,7 +19,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 	<!-- Main CSS File -->
-	<link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
 
     @yield('page-css')
     <meta property="og:site_name" content="avenuemontaigne Co">
@@ -38,34 +37,9 @@
     <body>
         <main class="">
 
-           <div class="container-fliud">
-               <div class="row">
-                   <div class="col-12">
-                       <div class="logo"></div>
-                   </div>
-                   <div class="col-6">
-                       <div class="banner">
-                           image 1
-                       </div> 
-                   </div>
-                   <div class="col-6">
-                       <div class="banner">
-                            image 2
-                       </div> 
-                   </div>
-               </div>
-           </div>
-
-           <div class="container-fliud">
-               <div class="row">
-                   <div class="col-12">
-                         
-                   </div>
-               </div>
-           </div>
         
         
         </main>
-    <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
     </body>
 </html>
