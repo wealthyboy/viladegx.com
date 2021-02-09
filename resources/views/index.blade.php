@@ -45,10 +45,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="">
-                            <img src="" />
+                            <img src="https://avenuemontaigne.ng/uploads/tn/7CeOwKKZQ0qrIEiUpcMeV7i4EG2K2RBpovPWKgW6.png" />
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 col-md-6">
                         <div class="">
                             <img src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
                         </div> 
