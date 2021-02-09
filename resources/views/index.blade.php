@@ -99,7 +99,7 @@
                     </div>
 
 
-                    <div class="col-12 text-center ">
+                    <div class="col-12 text-center mt-5">
                         <p>© Copyright 2021 Avenue Montaigne International. All rights reserved. </p>
                     </div>
 
