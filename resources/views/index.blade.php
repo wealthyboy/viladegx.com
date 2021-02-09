@@ -35,9 +35,8 @@
 
 </head>
     <body>
-        <main class="">
 
-           <div class="container-fliud">
+           <div class="container">
                <div class="row">
                    <div class="col-12">
                        <div class=""></div>
@@ -57,7 +56,7 @@
 
         
         
-        </main>
+        
         <script src="/js/jquery.min.js"></script>
     </body>
 </html>
