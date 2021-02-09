@@ -78,7 +78,7 @@
                             <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/m/7CeOwKKZQ0qrIEiUpcMeV7i4EG2K2RBpovPWKgW6.png" />
                         </div>
                     </div>
-                    <div class="col-6 col-md-6">
+                    <div class="col-6  animate__animated animate__fadeInRight">
                         <div class="banner fashion-slider">
                             <div>
                                 <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/1GtkyaWILrf2zsJMW9I3SoYEFqlYJrhzveZm18eg.jpg" />
