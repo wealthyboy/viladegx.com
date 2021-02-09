@@ -119,7 +119,7 @@
 
 
                     <div class="col-12 text-center ">
-                      
+                        <p>© Copyright 2021 Avenue Montaigne International. All rights reserved. </p>
                     </div>
 
                 </div>
