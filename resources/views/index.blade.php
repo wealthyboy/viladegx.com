@@ -44,27 +44,8 @@
         }
 
 
-        .controls {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            position: absolute;
-            left: 0;    
-            background: #333;
-            width: 100%;    
-            top: 50%;
-            transform: translatey(-50%);
-            display: flex;
-            align-items: center;    
-            justify-content: space-between;
-            
-           
-        }
-
-        li:hover {
-                cursor: pointer;        
-            }
-
+        .banner{height: 357px; overflow: hidden;}
+        
     </style>
     
 
