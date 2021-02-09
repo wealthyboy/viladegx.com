@@ -46,7 +46,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <div class="logo">
+                        <div class="logo text-center">
                             <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/m/7CeOwKKZQ0qrIEiUpcMeV7i4EG2K2RBpovPWKgW6.png" />
                         </div>
                     </div>
