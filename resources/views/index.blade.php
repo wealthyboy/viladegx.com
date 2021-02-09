@@ -47,12 +47,12 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="logo">
-                            <img src="https://avenuemontaigne.ng/uploads/m/7CeOwKKZQ0qrIEiUpcMeV7i4EG2K2RBpovPWKgW6.png" />
+                            <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/m/7CeOwKKZQ0qrIEiUpcMeV7i4EG2K2RBpovPWKgW6.png" />
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div class="banner">
-                            <img src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
+                            <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
                         </div> 
                     </div>
                     <div class="col-6">
@@ -80,7 +80,6 @@
                 container: '.services-slider',
                 items: 1,
                 slideBy: 'page',
-
                 autoplay: true
             });
         </script>
