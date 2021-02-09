@@ -82,9 +82,23 @@
                         <div class="banner fashion-slider">
                             <div>
                                 <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/1GtkyaWILrf2zsJMW9I3SoYEFqlYJrhzveZm18eg.jpg" />
+                                <div class="image-content">
+                                    <div class="text">
+                                        Fashion
+                                    </div>
+                                    <div class="cta">Shop Now</div>
+
+                                </div>
                             </div> 
                             <div>
                                 <img class="img-fluid"  src="https://avenuemontaigne.ng/uploads/hI7I3bONTGD0L6p6yViEKrOsAxkuWnaPKcfiRPxs.webp" />
+                                <div class="image-content">
+                                    <div class="text">
+                                        Art
+                                    </div>
+                                    <div class="cta">Shop Now</div>
+
+                                </div>
                             </div> 
                         </div>
                            
@@ -105,7 +119,7 @@
 
 
                     <div class="col-12 text-center ">
-
+                      
                     </div>
 
                 </div>
