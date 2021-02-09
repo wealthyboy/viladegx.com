@@ -38,8 +38,8 @@ class UploadsController extends Controller
         if($request->hasFile('file')){
             //when the user clicks change remove the previuos image
             request()->validate([
-               'file' => 'required|image|mimes:jpeg,png,jpg,gif',
-               'folder' => 'required'
+                'file' => 'required|image|mimes:jpeg,png,webp,jpg,gif,webp',
+                'folder' => 'required'
             ]);
 
             if (!in_array($request->folder,$this->folders)){
