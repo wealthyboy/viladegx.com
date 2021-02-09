@@ -19,12 +19,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 	<!-- Main CSS File -->
-	<link rel="stylesheet" href="/css/style.min.css?version={{ str_random(6) }}">
 	<link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
-	<link rel="stylesheet" href="/css/skins/skin-default.css?version={{ str_random(6) }}">
 
     @yield('page-css')
-    <link href="/css/custom.css?version={{ str_random(6) }}" rel="stylesheet" type="text/css" />
     <meta property="og:site_name" content="avenuemontaigne Co">
     <meta property="og:url" content="{{ config('app.url') }}">
     <meta property="og:title" content="avenuemontaigne">
@@ -44,16 +41,29 @@
            <div class="container-fliud">
                <div class="row">
                    <div class="col-12">
-                         <h1>Test</h2>
+                       <div class="logo"></div>
                    </div>
                    <div class="col-6">
-                        
+                       <div class="banner">
+                           image 1
+                       </div> 
                    </div>
                    <div class="col-6">
-
+                       <div class="banner">
+                            image 2
+                       </div> 
                    </div>
                </div>
            </div>
+
+           <div class="container-fliud">
+               <div class="row">
+                   <div class="col-12">
+                         
+                   </div>
+               </div>
+           </div>
+        
         
         </main>
     <script src="/js/jquery.min.js"></script>
