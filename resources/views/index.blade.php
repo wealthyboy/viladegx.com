@@ -78,7 +78,7 @@
         <script type="module">
             var slider = tns({
                 container: '.services-slider',
-                items: 3,
+                items: 1,
                 slideBy: 'page',
 
                 autoplay: true
