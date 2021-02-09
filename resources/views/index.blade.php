@@ -31,6 +31,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
     <meta name="twitter:description" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+    <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.helper.ie8.js"></script><![endif]-->
     <style>
         html, body{
             background: #6f4e37;
@@ -44,18 +46,26 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <div class="">
+                        <div class="logo">
                             <img src="https://avenuemontaigne.ng/uploads/m/7CeOwKKZQ0qrIEiUpcMeV7i4EG2K2RBpovPWKgW6.png" />
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
-                        <div class="">
+                        <div class="banner">
                             <img src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
                         </div> 
                     </div>
                     <div class="col-6">
-                        <div class="">
-                            <img src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
+                        <div class="banner services-slider">
+                           <div>
+                              <img src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
+                           </div> 
+                           <div>
+                              <img src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
+                           </div> 
+                           <div> 
+                              <img src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
+                           </div>
                         </div> 
                     </div>
                 </div>
@@ -63,5 +73,19 @@
         
         </div>
         <script src="/js/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+        <script type="module">
+            var slider = tns({
+                container: '.services-slider',
+                items: 3,
+                slideBy: 'page',
+
+                autoplay: true
+            });
+        </script>
+
+
+
     </body>
 </html>
