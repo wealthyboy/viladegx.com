@@ -57,11 +57,13 @@
                     </div>
                     <div class="col-6 col-md-6">
                         <div class="banner fashion-slider">
-                            <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/1GtkyaWILrf2zsJMW9I3SoYEFqlYJrhzveZm18eg.jpg" />
-                        </div> 
-                        <div>
-                            <img class="img-fluid"  src="https://avenuemontaigne.ng/uploads/hI7I3bONTGD0L6p6yViEKrOsAxkuWnaPKcfiRPxs.webp" />
-                        </div> 
+                            <div>
+                                <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/1GtkyaWILrf2zsJMW9I3SoYEFqlYJrhzveZm18eg.jpg" />
+                            </div> 
+                            <div>
+                                <img class="img-fluid"  src="https://avenuemontaigne.ng/uploads/hI7I3bONTGD0L6p6yViEKrOsAxkuWnaPKcfiRPxs.webp" />
+                            </div> 
+                        </div>
                            
                     </div>
                     <div class="col-6  animate__animated animate__fadeInLeft">
