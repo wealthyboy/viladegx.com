@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="">
-                            <img src="https://avenuemontaigne.ng/uploads/tn/7CeOwKKZQ0qrIEiUpcMeV7i4EG2K2RBpovPWKgW6.png" />
+                            <img src="https://avenuemontaigne.ng/uploads/m/7CeOwKKZQ0qrIEiUpcMeV7i4EG2K2RBpovPWKgW6.png" />
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
