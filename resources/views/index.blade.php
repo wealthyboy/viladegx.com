@@ -50,12 +50,12 @@
                     </div>
                     <div class="col-6">
                         <div class="">
-                            image 1
+                            <img src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
                         </div> 
                     </div>
                     <div class="col-6">
                         <div class="">
-                            image 2
+                            <img src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
                         </div> 
                     </div>
                 </div>
