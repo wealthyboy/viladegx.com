@@ -48,7 +48,7 @@
 </head>
     <body>
         <div class="content">
-            <div class="container-fluid animate__animated animate__bounce animate__delay-2s">
+            <div class="container-fluid -2s">
                 <div class="row">
                     <div class="col-12">
                         <div class="logo text-center">
@@ -60,7 +60,7 @@
                             <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
                         </div> 
                     </div>
-                    <div class="col-6">
+                    <div class="col-6  animate__animated animate__fadeInLeft">
                         <div class="banner services-slider">
                            <div>
                               <img class="img-fluid" src="https://avenuemontaigne.ng/uploads/7gk3dB6sc1T1joovkGcWZ5NzmUAOfOK4GjLLBBeF.jpg" />
