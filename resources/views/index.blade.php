@@ -134,14 +134,26 @@
                 container: '.services-slider',
                 items: 1,
                 slideBy: 'page',
-                autoplay: true
+                autoplay: true,
+                nav: false,    
+                speed: 400,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                lazyload: true,
+                //controlsContainer: "#customize-controls",
             });
 
             var slider = tns({
                 container: '.fashion-slider',
                 items: 1,
                 slideBy: 'page',
-                autoplay: true
+                nav: false,    
+                autoplay: true,
+                speed: 400,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                lazyload: true,
+                //controlsContainer: "#customize-controls",
             });
 
         </script>
