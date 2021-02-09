@@ -31,6 +31,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
     <meta name="twitter:description" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
+    <style>
+        html, body{
+            background: #6f4e37;
+        }
+    </style>
     
 
 </head>
