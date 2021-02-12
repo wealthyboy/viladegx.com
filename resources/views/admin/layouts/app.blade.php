@@ -24,7 +24,7 @@
 	<meta name="viewport" content="width=device-width" />
 
 	<!--  Material Dashboard CSS    -->
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('backend/css/admin.css') }}" rel="stylesheet"/>
     @yield('pagespecificstyles')
 	<!--     Fonts and icons     -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -382,7 +382,7 @@
 <script src="{{ asset('backend/js/jquery.min.js?version='.mt_rand(1000000, 9999999) ) }}" type="text/javascript"></script>
 <script src="{{ asset('backend/js/perfect-scrollbar.jquery.min.js') }}"></script>
 <script src="{{ asset('backend/js/jquery.datatables.js') }}"></script>
-<script src="{{ asset('js/dashboard.js?version='.mt_rand(1000000, 9999999) )  }}" type="text/javascript"></script>
+<script src="{{ asset('backend/js/dashboard.js?version='.mt_rand(1000000, 9999999) )  }}" type="text/javascript"></script>
 @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')

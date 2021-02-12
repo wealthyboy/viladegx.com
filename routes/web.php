@@ -119,10 +119,12 @@ Route::post('delete/image','Admin\Image\ImagesController@undo');
 
 
 
+Route::get('/', 'HomeController@index');
 
-Route::group(['middleware' => 'currencyByIp'], function(){
+Route::group(['middleware' => 'currencyByIp','prefix' => '/{page}'], function(){
+    Route::get('/', 'HomeController@home');
 
-    Route::get('/', 'HomeController@index');
+
     Route::get('/home', 'HomeController@index');
     Route::post('password/reset/link',           'Auth\ForgotPasswordController@sendResetLinkEmail');
     Route::post('reset/password',                'Auth\ForgotPasswordController@reset');

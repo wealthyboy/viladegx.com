@@ -44,5 +44,25 @@ class HomeController extends Controller
         }
     }
 
+
+
+
+    public function home(Request $request,$type)
+    {
+
+        $site_status =Live::first();
+
+        $products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
+        $banners = Banner::where('type','banner')->orderBy('sort_order','asc')->get();
+
+        $sliders = Banner::where('type','slider')->orderBy('sort_order','asc')->get();
+        $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
+    
+        return view($type.'.index',compact('products','posts','banners','sliders')); 
+    }
+
+
+
+
     
 }
