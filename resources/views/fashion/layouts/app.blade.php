@@ -1,21 +1,29 @@
 @include('fashion._partials.header_styles')
 <body class="">
 	<div id="app" class="page-wrapper">
-		
-
+     	
+        
 		<header class="header fixed-top">
+		    
 			<div class="header-middle">
 				<div class="container">
 					<div class="header-left w-lg-max ml-auto ml-lg-0">
-						<div class="header-icon header-search header-search-inline header-search-category">
-							<a href="#" class="search-toggle" role="button"><i class="icon-search-3"></i></a>
-							<form action="/search" method="get">
-								<div class="header-search-wrapper">
-									<input type="search" class="form-control" name="q" id="q" placeholder="Search..." required>
-									<button class="btn icon-search-3 p-0" type="submit"></button>
-								</div>
-							</form>
+					    <div class="header-dropdown">
+							<a href="#" class="pl-0"><img src="assets/images/flags/en.png" alt="England flag">ENG</a>
+							<div class="header-menu">
+								<ul>
+									<li><a href="#"><img src="assets/images/flags/en.png" alt="England flag">ENG</a></li>
+									<li><a href="#"><img src="assets/images/flags/fr.png" alt="France flag">FRA</a></li>
+								</ul>
+							</div><!-- End .header-menu -->
 						</div>
+						<ul class="menu ml-5">
+						    @foreach( $global_categories   as  $category)
+								<li class="">
+								    <a style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }}</a>
+								</li>
+                            @endforeach
+						</ul>
 					</div>
 
 					<div class="header-center order-first order-lg-0 ml-0 ml-lg-auto">
@@ -33,11 +41,12 @@
 
 			<div class="header-bottom sticky-header d-none d-lg-block">
 				<div class="container">
-					<nav class="main-nav d-flex w-lg-max   justify-content-center">
+					<nav class="main-nav d-flex w-lg-max ">
 						<ul class="menu">
 							
                             @foreach( $global_categories   as  $category)
 
+						    	
                                 <li>
                                    <a style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }}</a>
                                    @if ($category->isCategoryHaveMultipleChildren())

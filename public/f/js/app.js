@@ -52620,7 +52620,10 @@ var render = function() {
     !_vm.$root.loggedIn
       ? _c(
           "a",
-          { staticClass: "header-icon pl-1", attrs: { href: "/login" } },
+          {
+            staticClass: "header-icon pl-1",
+            attrs: { href: "/fashion/login" }
+          },
           [_c("i", { staticClass: "icon-user-2" })]
         )
       : _vm._e(),
@@ -52644,7 +52647,7 @@ var render = function() {
                     staticStyle: { display: "none" },
                     attrs: {
                       id: "logout-form",
-                      action: "/logout",
+                      action: "/fashion/logout",
                       method: "POST"
                     }
                   },
@@ -52748,7 +52751,7 @@ var staticRenderFns = [
       "a",
       {
         attrs: {
-          href: "/logout",
+          href: "/fashion/logout",
           onclick:
             "event.preventDefault();\n                                                    document.getElementById('logout-form').submit();"
         }

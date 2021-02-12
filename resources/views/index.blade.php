@@ -62,7 +62,7 @@
                     <div class="col-6  animate__animated animate__fadeInRight">
                         <div class="banner fashion-slider">
                             <div>
-                                <a href="#"><img class="img-fluid" src="https://avenuemontaigne.ng/uploads/1GtkyaWILrf2zsJMW9I3SoYEFqlYJrhzveZm18eg.jpg" /></a>
+                                <a href="/fashion"><img class="img-fluid" src="https://avenuemontaigne.ng/uploads/1GtkyaWILrf2zsJMW9I3SoYEFqlYJrhzveZm18eg.jpg" /></a>
                                 <div class="image-content">
                                     <div class="text">
                                         Fashion
@@ -72,7 +72,7 @@
                                 </div>
                             </div> 
                             <div>
-                                <a href="#"><img class="img-fluid"  src="https://avenuemontaigne.ng/uploads/hI7I3bONTGD0L6p6yViEKrOsAxkuWnaPKcfiRPxs.webp" /></a>
+                                <a href="/fashion"><img class="img-fluid"  src="https://avenuemontaigne.ng/uploads/hI7I3bONTGD0L6p6yViEKrOsAxkuWnaPKcfiRPxs.webp" /></a>
                                 <div class="image-content">
                                     <div class="text">
                                         Art

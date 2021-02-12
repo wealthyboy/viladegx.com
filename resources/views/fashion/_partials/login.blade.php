@@ -1,15 +1,5 @@
-<form method="POST" class="login_form pl-4 pr-4" action="/fashion/login">
+<form method="POST" class="login_form pl-4 pr-4 mt-3" action="/fashion/login">
         @csrf
-        
-        <div class="text-center"> 
-            <h2>Login</h2>
-            <p class="">Welcome Back!</p>
-            <!-- <a href="/login/facebook" class="btn btn-facebook btn-round">
-                <i class="fab fa-facebook-f"></i> Sign in with Facebook 
-            </a> -->
-        </div>
-        
-
         <!--<p class="large">Great to have you back!</p>-->
         <p class="form-group">
             <label for="username">Email address</label>
@@ -47,8 +37,12 @@
         
 
         <div class="mt-4 pt-4 text-center border-top">
-            <p class="form-group col-12">
-                Dont have an account yet?  <a class="color--primary bold" href="/register">Create One</a></p>
-            </p>
+            <div class="social-login-wrapper">
+                <div class="btn-group">
+                    <a class="btn btn-social-login btn-md btn-gplus mb-1"><i class="fab fa-google pt-1"></i><span>Google</span></a>
+                    <a class="btn btn-social-login btn-md btn-facebook mb-1"><i class="icon-facebook"></i><span>Facebook</span></a>
+                </div>
+            </div>
+            
         </div>
     </form>

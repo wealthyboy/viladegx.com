@@ -4,22 +4,17 @@
 	<div id="app" class="page-wrapper">
 		
 
-		<header class="header">
-			
-
-			<div class="header-middle">
+		<main class="main bg--gray">
+		   <div class="header-middle d-flex ">
 				<div class="container">
-					<div class="header-center order-first order-lg-0 ml-0">
+					<div class="header-center justify-content-center order-first order-lg-0 ml-0 mt-3">
 						<a href="/" class="logo">
 							<img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
 						</a>
 					</div><!-- End .header-center -->
 				</div><!-- End .container -->
 			</div><!-- End .header-middle -->
-
 			
-		</header><!-- End .header -->
-        <main class="main">
           @yield('content')
         </main> 
         <footer>

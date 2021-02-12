@@ -4,7 +4,7 @@
         <div class="header-contact d-none d-lg-flex align-items-center ml-auto pr-xl-4 mr-4">
         </div><!-- End .header-contact -->
         
-        <a  v-if="!$root.loggedIn" href="/login" class="header-icon pl-1"><i class="icon-user-2"></i></a>
+        <a  v-if="!$root.loggedIn" href="/fashion/login" class="header-icon pl-1"><i class="icon-user-2"></i></a>
 
         <div v-if="$root.loggedIn" class="header-dropdown ml-4">
             <a href="/account" class="header-icon  pl-1"><i class="icon-user-2"></i></a>
@@ -14,14 +14,14 @@
                     <li><a href="/account"> Account</a></li>
                     <li><a href="/orders"> Orders</a></li>
                     <li>
-                        <a class="" href="/logout"
+                        <a class="" href="/fashion/logout"
                                                 onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             <i class="fas fa-sign-out-alt left"></i>
                                             
                                             Logout
                                         </a>
-                                        <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                                        <form id="logout-form" action="/fashion/logout" method="POST" style="display: none;">
                                             <input type="hidden" name="_token" :value="$root.token">
                                         </form>
                     </li>
