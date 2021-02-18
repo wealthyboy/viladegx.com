@@ -148,6 +148,41 @@
                 </div>
             </li>
 
+            <li class="{{ $helper->active_link(['reservations','category','discounts','attributes','vouchers']) }} ">
+                <a data-toggle="collapse" href="#reservations">
+                   <i class="fa fa-product-hunt" aria-hidden="true"></i>   
+                    <p> Reservations 
+                       <b class="caret"></b>
+                    </p>
+                </a>
+
+                <div class="collapse 
+                   {{ $helper->active_link(['subjects','reservations','frames','category','fine_art','discounts','attributes','vouchers','sizes']) ? 'in' : ''}}" id="reservations">
+                    <ul class="nav">
+                        <li class="{{ $helper->active_link(['category']) }}">
+                             <a  href="{{ route('category.index') }}">
+                                <span class="sidebar-mini"> C </span>
+                                <span class="sidebar-normal"> Services </span>
+                            </a>
+                        </li>
+                       
+                        <li class="{{ $helper->active_link(['attributes']) }} ">
+                            <a  href="{{ route('attributes.index') }}">
+                                <span class="sidebar-mini"> A</span>
+                                <span class="sidebar-normal"> Attributes </span>
+                            </a>
+                        </li>
+                        <li class="{{ $helper->active_link(['products']) }} ">
+                           <a href="{{ route('admin.products.index') }}">
+                                <span class="sidebar-mini"> P </span>
+                                <span class="sidebar-normal"> Reservation </span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+
 
             <li>
                 <a data-toggle="collapse" href="dashboard.html#shop">
