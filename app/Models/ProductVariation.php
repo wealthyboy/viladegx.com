@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\SystemSetting;
+use App\Models\SystemSetting;
 use App\Traits\FormatPrice;
 use App\Traits\ImageFiles;
 use App\Http\Helper;
-use App\CategoryProductVariation;
+use App\Models\CategoryProductVariation;
 use App\Filters\ProductsFilter\ProductFilters;
 use Illuminate\Database\Eloquent\Builder;
 
