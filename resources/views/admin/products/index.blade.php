@@ -5,11 +5,11 @@
 <div class="row">
         <div class="col-md-12">
         <div class="text-right">
-            <a href="{{ route('products.index') }}" rel="tooltip" title="Refresh" class="btn btn-primary btn-simple btn-xs">
+            <a href="{{ route('admin.products.index') }}" rel="tooltip" title="Refresh" class="btn btn-primary btn-simple btn-xs">
                 <i class="material-icons">refresh</i>
                 Refresh
             </a>
-            <a href="{{ route('products.create') }}" rel="tooltip" title="Add New" class="btn btn-primary btn-simple btn-xs">
+            <a href="{{ route('admin.products.create') }}" rel="tooltip" title="Add New" class="btn btn-primary btn-simple btn-xs">
                     <i class="material-icons">add</i>
                     Add Product
             </a>
@@ -105,7 +105,7 @@
                                         </span> 
                                     </td>
                                     <td class="td-actions ">                     
-                                        <a href="{{ route('products.edit',['product'=>$product->id] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
+                                        <a href="{{ route('admin.products.edit',['product'=>$product->id] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
                                             <i class="material-icons">edit</i>
                                             Edit
                                         </a>
