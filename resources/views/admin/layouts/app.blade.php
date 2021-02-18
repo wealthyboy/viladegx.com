@@ -174,7 +174,7 @@
                         </li>
                         <li class="{{ $helper->active_link(['reservations']) }} ">
                            <a href="{{ route('admin.reservations.index') }}">
-                                <span class="sidebar-mini"> P </span>
+                                <span class="sidebar-mini"> R </span>
                                 <span class="sidebar-normal"> Reservation </span>
                             </a>
                         </li>

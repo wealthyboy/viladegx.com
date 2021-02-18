@@ -11,7 +11,7 @@
             </a>
             <a href="{{ route('admin.reservations.create') }}" rel="tooltip" title="Add New" class="btn btn-primary btn-simple btn-xs">
                     <i class="material-icons">add</i>
-                    Add Product
+                    Add Reservations
             </a>
             <a href="javascript:void(0)" onclick="confirm('Are you sure?') ? $('#form-reservations').submit() : false;" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
                 <i class="material-icons">close</i>
@@ -52,7 +52,7 @@
         
                 <div class="card-content">
                 
-                    <h4 class="card-title">reservations</h4>
+                    <h4 class="card-title">Reservations</h4>
                     <div class="toolbar">
                         <!-- Here you can write extra buttons/actions for the toolbar              -->
                     </div>
@@ -81,12 +81,12 @@
                             </thead>
                             
                             <tbody>
-                            @foreach($reservations as $product) 
+                            @foreach($reservations as $reservations) 
                                 <tr>
                                     <td>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="{{ $product->id }}" name="selected[]" >
+                                                <input type="checkbox" value="{{ $reservations->id }}" name="selected[]" >
                                             </label>
                                         </div>
                                     </td>
@@ -94,11 +94,11 @@
                                     <!-- cart-sidebar-btn active -->
                                     <td>
                                         <div class="img-container">
-                                            <img class="" src="{{  $product->image_to_show_m   }}" alt="...">
+                                            <img class="" src="{{  $reservations->image_to_show_m   }}" alt="...">
                                         </div>
                                     </td>
-                                    <td><a target="_blank" href="/product/{{ isset($product->categories[0]) ?  $product->categories[0]->slug : '' }}/{{ $product->slug }}">{{ $product->product_name }}</a></td>
-                                    <td>{{ $product->allow == 1 ? 'Live' : 'Offline' }}</td>
+                                    <td><a target="_blank" >{{ $reservations->product_name }}</a></td>
+                                    <td>{{ $reservations->allow == 1 ? 'Live' : 'Offline' }}</td>
                                     <td>
                                         <span class="amount">
                                            {{ $system_settings->default_currency->symbol }}{{ $product->display_price() }}
