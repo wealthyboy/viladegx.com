@@ -135,8 +135,9 @@ Route::group(['middleware' => 'currencyByIp','prefix' => '/{page}'], function(){
     Route::get('login/{service}/callback',        'Auth\SocialLoginController@callback');
     Route::get('account',                         'Account\AccountController@index')->name('account');
     Route::post('account',                        'Account\AccountController@update');
-    Route::resource('products',                   'UserProducts\UserProductsController',['names' => 'products']);
-
+    Route::get('products/{category}',             'Products\ProductsController@index');
+    Route::get('product/{category}/{product}',    'Products\ProductsController@show');
+   
     Route::get('address',                         'Account\AddressController@index')->name('address');
     Route::get('profile',                         'Profile\ProfileController@index')->name('profile');
     Route::get('payment',                         'Payment\PaymentController@index')->name('Payment');
