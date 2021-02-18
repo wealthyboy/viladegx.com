@@ -32,7 +32,7 @@
     <div class="col-lg-3 col-md-6 col-sm-6">
       <div class="card card-stats">
          <div class="card-content">
-            <p class="category">Number of Today's Sales</p>
+            <p class="category"> Today's Sales</p>
             <h3 class="card-title">{{ 0 }}</h3>
          </div>
          <div class="card-footer text-right">

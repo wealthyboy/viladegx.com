@@ -130,6 +130,12 @@
                                 <span class="sidebar-normal"> Products </span>
                             </a>
                         </li>
+                        <li class="{{ $helper->active_link(['products']) }} ">
+                           <a href="{{ route('admin.products.index') }}">
+                                <span class="sidebar-mini"> P </span>
+                                <span class="sidebar-normal"> Reservation </span>
+                            </a>
+                        </li>
                         
                         
                         <li class="{{ $helper->active_link(['vouchers']) }} ">

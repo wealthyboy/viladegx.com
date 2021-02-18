@@ -61,6 +61,8 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
     Route::resource('sizes','Admin\Sizes\SizesController',['names' => 'sizes']);
 
     Route::resource('products','Admin\Product\ProductController',['names' => 'admin.products']);
+    Route::resource('reservations','Admin\Reservation\ReservationController',['names' => 'admin.reservations']);
+
     Route::delete('products/destroy/multiple','Admin\Product\ProductController@destroy');
 
     Route::get('search-products','Admin\Product\ProductController@search')->name('search_products');
