@@ -172,13 +172,19 @@
                                 <span class="sidebar-normal"> Attributes </span>
                             </a>
                         </li>
-                        <li class="{{ $helper->active_link(['products']) }} ">
-                           <a href="{{ route('admin.products.index') }}">
+                        <li class="{{ $helper->active_link(['reservations']) }} ">
+                           <a href="{{ route('admin.reservations.index') }}">
                                 <span class="sidebar-mini"> P </span>
                                 <span class="sidebar-normal"> Reservation </span>
                             </a>
                         </li>
-                        
+    
+                        <li class="{{ $helper->active_link(['vouchers']) }} ">
+                            <a href="{{ route('vouchers.index') }}">        
+                                <span class="sidebar-mini"> V </span>
+                                <span class="sidebar-normal"> Vouchers </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>
