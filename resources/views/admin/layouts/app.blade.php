@@ -150,7 +150,7 @@
 
             <li class="{{ $helper->active_link(['reservations','category','discounts','attributes','vouchers']) }} ">
                 <a data-toggle="collapse" href="#reservations">
-                <i class="fas fa-ticket-alt"></i>                    
+                <i class="fa fa-ticket" aria-hidden="true"></i>
                    <p> Reservations 
                        <b class="caret"></b>
                     </p>
