@@ -15,7 +15,7 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->name('name');
+            $table->string('name');
             $table->unsignedBigInteger('reservation_id');
             $table->decimal('price',8,6);
             $table->decimal('sale_price',8,6)->nullable();
