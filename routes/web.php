@@ -113,6 +113,10 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
     Route::post('promo-text/create/{id}',     'Admin\PromoText\PromoTextController@store');
     Route::get('promo-text/delete/{id}',     'Admin\PromoText\PromoTextController@destroy')->name('delete_promo_text');
     Route::resource('brands', 'Admin\Brand\BrandsController',['names' =>'brands']);
+    Route::resource('services', 'Admin\Services\ServicesController',['names' =>'services']);
+    Route::resource('requirements', 'Admin\Requirements\RequirementsController',['names' =>'requirements']);
+    Route::resource('facilities', 'Admin\Facilities\FacilitiesController',['names' =>'facilities']);
+
 });
 
 

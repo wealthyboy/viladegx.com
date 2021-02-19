@@ -13,7 +13,7 @@ class CreateReservationFacilitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservation_facilities', function (Blueprint $table) {
+        Schema::create('facilities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateReservationFacilitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservation_facilities');
+        Schema::dropIfExists('facilities');
     }
 }

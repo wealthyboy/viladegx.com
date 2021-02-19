@@ -8,7 +8,7 @@
       <!--      Wizard container        -->
       <div class="wizard-container">
          <div class="card wizard-card" data-color="rose" id="wizardProfile">
-            <form enctype="multipart/form-data" id="product-form" action="{{ route('products.store') }}" method="post">
+            <form enctype="multipart/form-data" id="product-form" action="{{ route('admin.reservations.store') }}" method="post">
                @csrf
                <!--  You can switch " data-color="purple"   with one of the next bright colors: "green", "orange", "red", "blue"       -->
                <div class="wizard-header">
@@ -18,18 +18,18 @@
                </div>
                <div class="wizard-navigation">
                   <ul>
-                     <li><a href="wizard.html#ProductData" data-toggle="tab">Product Data</a></li>
+                     <li><a href="wizard.html#ProductData" data-toggle="tab">Reservation Data</a></li>
                      <li><a href="wizard.html#RelatedProducts" data-toggle="tab">Related Products</a></li>
-                     <li><a href="wizard.html#ProductVariations" data-toggle="tab">Product Variation</a></li>
+                     <li><a href="wizard.html#ProductVariations" data-toggle="tab">Rooms</a></li>
                   </ul>
                </div>
                <div class="tab-content">
                   <div class="tab-pane" id="ProductData">
-                     @include('admin.products.product_data')
+                     @include('admin.reservations.product_data')
                   </div>
 
                   <div class="tab-pane" id="RelatedProducts">
-                     @include('admin.products.product_related')
+                     @include('admin.reservations.product_related')
                   </div>
                   <div class="tab-pane" id="ProductVariations">
                      <h4 class="info-text">Product Variation</h4>
@@ -119,20 +119,17 @@
                      <div class="clearfix"></div>
                      
                      <div class="row p-attr  variable-product hide">
-                        @if($product_attributes->count())
             
                         <div class="col-sm-9">
-                           @foreach($product_attributes as $product_attribute)
                               <div class="col-md-3 col-sm-6 col-xs-6">
                                  <div class="form-group label-floating">
-                                    <label class="control-label">{{ $product_attribute->name }}</label>
-                                    <select name="" class="form-control product-attributes"  title="Choose {{ $product_attribute->name }}" data-style="select-with-transition"  data-size="7">
+                                    <label class="control-label">Rooms</label>
+                                    <select name="" class="form-control product-attributes"  title="Choose " data-style="select-with-transition"  data-size="7">
                                           <option  value="" selected>Select</option>
-                                          <option   value="{{ $product_attribute->id }}">&nbsp;&nbsp;&nbsp;{{ $product_attribute->name }} </option>
+                                          <option   value="">&nbsp;&nbsp;&nbsp; </option>
                                     </select>
                                  </div>
                               </div>
-                           @endforeach
                         </div>
                         <label class="col-md-3  col-xs-12 col-xs-12">
                            <button type="button"  id="product-attribute-add" class="btn btn-round btn-primary">
@@ -142,11 +139,6 @@
                               </span>
                            </button>
                         </label>
-                        @else
-                           <div class="col-sm-7">
-                              No attributes set. Go Products > attributes and set your attributes.
-                           </div>
-                        @endif
                      </div>
 
                   </div>

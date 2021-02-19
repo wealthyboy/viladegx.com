@@ -138,12 +138,6 @@
                         </li>
                         
                         
-                        <li class="{{ $helper->active_link(['vouchers']) }} ">
-                            <a href="{{ route('vouchers.index') }}">        
-                                <span class="sidebar-mini"> V </span>
-                                <span class="sidebar-normal"> Vouchers </span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </li>
@@ -162,16 +156,23 @@
                         <li class="{{ $helper->active_link(['category']) }}">
                              <a  href="{{ route('category.index') }}">
                                 <span class="sidebar-mini"> C </span>
-                                <span class="sidebar-normal"> Services </span>
+                                <span class="sidebar-normal">Extra Services </span>
                             </a>
                         </li>
                        
                         <li class="{{ $helper->active_link(['attributes']) }} ">
                             <a  href="{{ route('attributes.index') }}">
-                                <span class="sidebar-mini"> A</span>
-                                <span class="sidebar-normal"> Attributes </span>
+                                <span class="sidebar-mini"> F</span>
+                                <span class="sidebar-normal"> Facilities </span>
                             </a>
                         </li>
+                        <li class="{{ $helper->active_link(['attributes']) }} ">
+                            <a  href="{{ route('attributes.index') }}">
+                                <span class="sidebar-mini"> F</span>
+                                <span class="sidebar-normal"> Requirements </span>
+                            </a>
+                        </li>
+                        
                         <li class="{{ $helper->active_link(['reservations']) }} ">
                            <a href="{{ route('admin.reservations.index') }}">
                                 <span class="sidebar-mini"> R </span>
@@ -179,15 +180,17 @@
                             </a>
                         </li>
     
-                        <li class="{{ $helper->active_link(['vouchers']) }} ">
-                            <a href="{{ route('vouchers.index') }}">        
-                                <span class="sidebar-mini"> V </span>
-                                <span class="sidebar-normal"> Vouchers </span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </li>
+
+            <li  >
+                <a href="{{ route('vouchers.index') }}">        
+                    <i class="fa fa-dashboard"></i>
+                    <p> Vouchers </p>
+                </a>
+            </li>
+
 
 
             <li>

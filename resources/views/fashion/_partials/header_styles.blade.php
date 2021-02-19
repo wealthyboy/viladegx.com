@@ -12,10 +12,10 @@
     <link rel="canonical" href="{{ Config('app.url') }}">
 
      <!-- Favicone Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="/f/img/favicon.ico">
-	<link rel="icon" href="/f/img/favicon.ico" type="image/x-icon">
-	<link rel="icon" type="image/png" href="/f/img/favicon-96x96.png">
-	<link rel="apple-touch-icon" href="/f/img/favicon-96x96.png">
+	<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+	<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/png" href="/img/favicon-96x96.png">
+	<link rel="apple-touch-icon" href="/img/favicon-96x96.png">
     <!-- CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 	<!-- Main CSS File -->
