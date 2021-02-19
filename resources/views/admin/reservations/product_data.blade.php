@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-8">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="form-group label-floating is-empty">
                     <label class="control-label">Apartment Name</label>
                     <input  required="true" name="name" data-msg="" value="{{ old('name') }}" class="form-control" type="text">

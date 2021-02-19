@@ -142,7 +142,7 @@
                 </div>
             </li>
 
-            <li class="{{ $helper->active_link(['reservations','category','discounts','attributes','vouchers']) }} ">
+            <li class="{{ $helper->active_link(['reservations','requirements','discounts','attributes','vouchers']) }} ">
                 <a data-toggle="collapse" href="#reservations">
                 <i class="fa fa-ticket" aria-hidden="true"></i>
                    <p> Reservations 
@@ -151,23 +151,23 @@
                 </a>
 
                 <div class="collapse 
-                   {{ $helper->active_link(['subjects','reservations','frames','category','fine_art','discounts','attributes','vouchers','sizes']) ? 'in' : ''}}" id="reservations">
+                   {{ $helper->active_link(['services','reservations','facilities','requirements']) ? 'in' : ''}}" id="reservations">
                     <ul class="nav">
-                        <li class="{{ $helper->active_link(['category']) }}">
-                             <a  href="{{ route('category.index') }}">
+                        <li class="{{ $helper->active_link(['services']) }}">
+                             <a  href="{{ route('services.index') }}">
                                 <span class="sidebar-mini"> C </span>
                                 <span class="sidebar-normal">Extra Services </span>
                             </a>
                         </li>
                        
-                        <li class="{{ $helper->active_link(['attributes']) }} ">
-                            <a  href="{{ route('attributes.index') }}">
+                        <li class="{{ $helper->active_link(['facilities']) }} ">
+                            <a  href="{{ route('facilities.index') }}">
                                 <span class="sidebar-mini"> F</span>
                                 <span class="sidebar-normal"> Facilities </span>
                             </a>
                         </li>
-                        <li class="{{ $helper->active_link(['attributes']) }} ">
-                            <a  href="{{ route('attributes.index') }}">
+                        <li class="{{ $helper->active_link(['requirements']) }} ">
+                            <a  href="{{ route('requirements.index') }}">
                                 <span class="sidebar-mini"> F</span>
                                 <span class="sidebar-normal"> Requirements </span>
                             </a>

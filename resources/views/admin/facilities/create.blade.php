@@ -6,20 +6,20 @@
         <div class="col-md-10">
             @include('admin.errors.errors')
             <div class="card">
-                <form id="" action="{{ route('brands.store') }}" method="post">
+                <form id="" action="{{ route('facilities.store') }}" method="post">
                     @csrf
                     <div class="card-content">
-                        <h4 class="card-title">Brand</h4>
+                        <h4 class="card-title">Add Facility</h4>
                         <div class="form-group label-floating">
                             <label class="control-label">
-                              Brand<small>*</small>
+                              Name<small>*</small>
                             </label>
                             <input class="form-control"
-                                   name="brand_name"
+                                   name="name"
                                    type="text"
                                    required="true"
                              />
-                        </div>   
+                        </div>  
                         <div class="form-footer text-right">
                             <button type="submit" class="btn btn-rose btn-round  btn-fill">Submit</button>
                         </div>
