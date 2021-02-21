@@ -23,58 +23,26 @@
                 <input name="room_avaiable_from[{{ $counter }}]"  required="true" value="{{ old('price') }}" class="form-control  datepicker" type="text">
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="form-group label-floating is-empty">
                 <label class="control-label">Price</label>
                 <input name="room_price[{{ $counter }}]"  required="true" value="{{ old('price') }}" class="form-control   variation" type="number">
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="form-group label-floating is-empty">
                 <label class="control-label">Sale Price</label>
                 <input name="room_sale_price[{{ $counter }}]"   value=""  class="form-control variation_sale_price variation" type="number">
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="form-group label-floating">
                 <label class="control-label">End Date</label>
                 <input class="form-control  datepicker pull-right" name="room_sale_price_expires[{{ $counter }}]" id="datepicker" type="text">
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="form-group label-floating">
-                <label class="control-label">City</label>
-                <select class="form-control" data-style="select-with-transition" multiple title="Choose City" data-size="7">
-                    <option  value="" selected="">--Choose Type--</option>
-                    <option  value="reservation">Reservation</option>
-                    <option  value="art" >fashion</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="col-md-4">
-            <div class="form-group label-floating">
-                <label class="control-label">City</label>
-                <select class="form-control" data-style="select-with-transition" multiple title="Choose City" data-size="7">
-                    <option  value="" selected="">--Choose Type--</option>
-                    <option  value="reservation">Reservation</option>
-                    <option  value="art" >fashion</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="col-md-4">
-            <div class="form-group label-floating">
-                <label class="control-label">City</label>
-                <select class="form-control" data-style="select-with-transition" multiple title="Choose City" data-size="7">
-                    <option  value="" selected="">--Choose Type--</option>
-                    <option  value="reservation">Reservation</option>
-                    <option  value="art" >fashion</option>
-                </select>
-            </div>
-
-        </div>
+        
        
 
         

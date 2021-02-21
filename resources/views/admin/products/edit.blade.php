@@ -8,7 +8,7 @@
       <!--      Wizard container        -->
       <div class="wizard-container">
          <div class="card wizard-card" data-color="rose" id="wizardProfile">
-         <form enctype="multipart/form-data" action="{{ route('products.update',['product'=>$product->id])  }}" method="post">
+         <form enctype="multipart/form-data" action="{{ route('admin.products.update',['product'=>$product->id])  }}" method="post">
                @method('PATCH')
                @csrf
                <!--  You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
