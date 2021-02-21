@@ -16,7 +16,7 @@ use App\Models\Facility;
 use App\Models\Requirement;
 use App\Models\Location;
 use App\Models\Room;
-use App\Models\attribute;
+use App\Models\Attribute;
 
 
 
