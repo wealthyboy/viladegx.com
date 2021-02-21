@@ -140,6 +140,14 @@
                             </a>
                         </li>
 
+                        <li class="{{ $helper->active_link(['facilities']) }} ">
+                           <a href="{{ route('facilities.index') }}">
+                                <span class="sidebar-mini"> P </span>
+                                <span class="sidebar-normal"> Facilities </span>
+                            </a>
+                        </li>
+                        
+
                         <li class="{{ $helper->active_link(['vouchers']) }} ">
                             <a href="{{ route('vouchers.index') }}">        
                             <span class="sidebar-mini"> RV</span>
