@@ -10,7 +10,7 @@
         <div class="clearfix"></div>
 
         <div class="col-md-8">
-
+                
             <div class="col-md-7">
                 <div class="form-group label-floating is-ty">
                     <label class="control-label">Room Name</label>
@@ -46,9 +46,19 @@
             <div class="clearfix"></div>
 
 
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <select name="type" required="true" class="form-control">
+                        <option  value="" selected="">--Choose Type--</option>
+                        <option  value="reservation">Reservation</option>
+                        <option  value="art" >fashion</option>
+                    </select>
+                </div>
+            </div>
             
             <div class="clearfix"></div>
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <div class="row">
                     <div  class="  text-center"></div>
                     <div   class="col-md-12 col-sm-6 col-xs-6">
@@ -65,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-9">
                 <div id="j-drop"  class="j-drop">
                 <input accept="image/*"   onchange="getFile(this,'room_images[{{ $counter }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
                     <div   class=" upload-text  {{ $counter }}"> 
@@ -77,51 +87,32 @@
                     <div id="j-details"  class="j-details"></div>
                 </div>
             </div>
-
         </div>
         <div class="col-md-4">
-             
-            <div class="col-md-">
-            <div class="card">
-              <div class="card-header">
-                <h4 class="card-title">Collapsible Accordion</h4>
-              </div>
-              <div class="card-content">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                  <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <h4 class="panel-title">
-                          Collapsible Group Item #1
-                          <i class="material-icons">keyboard_arrow_down</i>
-                        </h4>
-                      </a>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                      <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                      </div>
-                    </div>
-                  </div>
-                  
-                  
-                </div>
-              </div>
-            </div>
-          </div>
+            <div class="material-datatables">
+                @foreach($product_attributes as $product_attribute)
+                <div class="well well-sm" style="height: 250px; background-color: #fff; color: black; overflow: auto;">
 
+                    <div class="parent" value="{{ $product_attribute->id }}">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="{{ $product_attribute->id }}" name="selected[]" >
+                                {{ $product_attribute->name }}  <a href="{{ route('attributes.edit',['attribute'=>$product_attribute->id]) }}"><i class="fa fa-pencil"></i> Edit</a> 
+                            </label>
+                        </div>   
+                        @include('includes.children',['obj'=>$product_attribute,'space'=>'&nbsp;&nbsp;','model' => 'attributes','url' => 'attribute'])
+                    </div>
+                </div>
+
+                @endforeach  
+            </div>
         </div>
 
-        
-    
-    
     </div> 
     
 </div>
 
 @section('inline-scripts')
-
-
 
 @stop
 
