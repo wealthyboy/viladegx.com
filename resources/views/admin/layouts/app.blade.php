@@ -30,6 +30,8 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CMaterial+Icons" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 
 
 </head>
@@ -389,10 +391,13 @@
   </div>
 </div>
 <!--   Core JS Files   -->
+
 <script src="{{ asset('backend/js/jquery.min.js?version='.mt_rand(1000000, 9999999) ) }}" type="text/javascript"></script>
 <script src="{{ asset('backend/js/perfect-scrollbar.jquery.min.js') }}"></script>
 <script src="{{ asset('backend/js/jquery.datatables.js') }}"></script>
 <script src="{{ asset('backend/js/dashboard.js?version='.mt_rand(1000000, 9999999) )  }}" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')

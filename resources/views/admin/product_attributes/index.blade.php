@@ -167,6 +167,7 @@ $(document).ready(function() {
     });
     $('.colorpicker').colorpicker()
 
+
 });
 @stop
 

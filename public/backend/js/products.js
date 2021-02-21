@@ -97,9 +97,11 @@ $(document).ready(function(){
     $.ajax({
       type: "GET",
       url: "/admin/reservations/room",
-    }).done(function(response){
+    }).done(function (response) {
+      
       $(".new-room").last().after(response)
       s.initFormExtendedDatetimepickers()
+      $(document).find(".collapse").collapse() 
     })
   })
  
