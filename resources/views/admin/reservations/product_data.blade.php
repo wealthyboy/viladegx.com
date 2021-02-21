@@ -78,15 +78,15 @@
             <div class="clearfix"></div>
         </div>
         <div class="col-md-4">
-            <label>Extra Services</label>
+            <label>Facilities</label>
             <div class="well well-sm" style="height: 250px; background-color: #fff; color: black; overflow: auto;">
-                @foreach($services as $service)
-                    <div class="parent" value="{{ $service->id }}">
+                @foreach($facilities as $facility)
+                    <div class="parent" value="{{ $facility->id }}">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="{{ $service->id }}" name="service_id[]" >
-                                {{ $service->name }}  
-                                <a href="{{ route('services.edit',['service'=>$service->id]) }}">
+                                <input type="checkbox" value="{{ $service->id }}" name="facility_id[]" >
+                                {{ $facility->name }}  
+                                <a href="#">
                                 <i class="fa fa-pencil"></i> Edit</a> 
                             </label>
                         </div>   
