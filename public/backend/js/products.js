@@ -101,8 +101,12 @@ $(document).ready(function(){
       
       $(".new-room").last().after(response)
       s.initFormExtendedDatetimepickers()
-      $(document).find(".collapse").collapse() 
     })
+  })
+
+
+  $('[data-toggle="collapse"]').on('click', function (e) {
+    console.log(true)
   })
  
 
