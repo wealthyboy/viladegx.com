@@ -16,6 +16,8 @@ use App\Models\Facility;
 use App\Models\Requirement;
 use App\Models\Location;
 use App\Models\Room;
+use App\Models\attribute;
+
 
 
 use Illuminate\Support\Str;
@@ -60,6 +62,8 @@ class ReservationController extends Controller
         $facilities = Facility::orderBy('name','asc')->get();
         $requirements = Requirement::orderBy('name','asc')->get();
         $locations = Location::parents()->get();
+        $locations = Location::parents()->get();
+
         return view('admin.reservations.create',compact('services','locations','facilities','requirements'));
     }
     /**
@@ -157,7 +161,8 @@ class ReservationController extends Controller
 
     public function newRoom(Request $request){
         $counter = rand(1,500);
-        return view('admin.reservations.variation',compact('counter'));
+        $product_attributes =  Attribute::parents()->where('type','reservation')->orderBy('sort_order','asc')->get();
+        return view('admin.reservations.variation',compact('counter','product_attributes'));
     }
     
 
