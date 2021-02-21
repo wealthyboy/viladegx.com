@@ -45,20 +45,9 @@
             </div>
             <div class="clearfix"></div>
 
-
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label class="control-label"></label>
-                    <select name="type" required="true" class="form-control">
-                        <option  value="" selected="">--Choose Type--</option>
-                        <option  value="reservation">Reservation</option>
-                        <option  value="art" >fashion</option>
-                    </select>
-                </div>
-            </div>
             
             <div class="clearfix"></div>
-            <div class="col-sm-3">
+            <div class="col-sm-5">
                 <div class="row">
                     <div  class="  text-center"></div>
                     <div   class="col-md-12 col-sm-6 col-xs-6">
@@ -75,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-7">
                 <div id="j-drop"  class="j-drop">
                 <input accept="image/*"   onchange="getFile(this,'room_images[{{ $counter }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
                     <div   class=" upload-text  {{ $counter }}"> 
