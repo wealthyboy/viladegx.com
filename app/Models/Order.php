@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-	use SoftDeletes;
+	//use SoftDeletes;
 	
 	public $appends = ['ship_price'];
 
