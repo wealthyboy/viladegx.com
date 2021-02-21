@@ -84,7 +84,7 @@
                     <div class="parent" value="{{ $facility->id }}">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="{{ $service->id }}" name="facility_id[]" >
+                                <input type="checkbox" value="{{ $facility->id }}" name="facility_id[]" >
                                 {{ $facility->name }}  
                                 <a href="#">
                                 <i class="fa fa-pencil"></i> Edit</a> 
