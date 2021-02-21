@@ -83,7 +83,7 @@
                 <div class="well well-sm" style="height: 250px; background-color: #fff; color: black; overflow: auto;">
 
                     <div class="parent" value="{{ $product_attribute->id }}">
-                        <div class="checkbox">
+                        <div class="">
                             <label>
                                 <input type="checkbox" value="{{ $product_attribute->id }}" name="selected[]" >
                                 {{ $product_attribute->name }}  <a href="{{ route('attributes.edit',['attribute'=>$product_attribute->id]) }}"><i class="fa fa-pencil"></i> Edit</a> 
