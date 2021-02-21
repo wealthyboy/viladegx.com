@@ -6,17 +6,14 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Models\SystemSetting;
 use App\Http\Helper;
 
+use App\Http\Image;
+
 
 
 trait ImageFiles 
 {
 
     protected $setting;
-
-
-    public function __construct(){
-        $this->setting = SystemSetting::first();
-    }
 
 
     public function getImageToShowAttribute()
@@ -30,6 +27,8 @@ trait ImageFiles
         return $this->image_m;
     }
 
+
+   
 
     public function getImageToShowTnAttribute()
     {   

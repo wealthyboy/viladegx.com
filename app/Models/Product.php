@@ -53,8 +53,6 @@ class Product extends Model
 		'image_to_show_m',
 		'image_to_show_tn',
 		'colours',
-		
-
 	];
 
 	protected $cascadeDeletes = ['meta_fields','attributes','variants','categories'];
@@ -242,10 +240,7 @@ class Product extends Model
 	}
 
 
-	public function images()
-    {
-        return $this->morphMany(Image::class, 'imageable')->orderBy('id','asc')->where('image','!=','No Image');
-	}
+	
 	
 
 	public function newProducts(){

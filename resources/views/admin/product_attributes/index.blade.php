@@ -72,10 +72,8 @@
                             <label class="control-label"></label>
                             <select name="type" required="true" class="form-control">
                                 <option  value="" selected="">--Choose Type--</option>
-                                <option  value="art">Art</option>
-                                <option  value="photo_to_art" >Photo to art</option>
-                                <option  value="none" >None</option>
-
+                                <option  value="reservation">Reservation</option>
+                                <option  value="art" >fashion</option>
                             </select>
                         </div>
 
@@ -84,7 +82,7 @@
                             <div id="m_image"  class="uploadloaded_image text-center mb-3">
                                 <div class="upload-text"> 
                                         <a class="activate-file" href="#">
-                                        <img src="{{ asset('store/img/upload_icon.png') }}">
+                                        <img src="{{ asset('backend/img/upload_icon.png') }}">
                                         <b>Add Image </b> 
                                         </a>
                                 </div>

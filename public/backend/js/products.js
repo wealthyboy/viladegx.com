@@ -67,7 +67,12 @@ $(document).on('click','.remove-image',function(e){
 
 $(document).ready(function(){
 
+
   localStorage.setItem('allow_variation',true)
+
+  /***
+   * Add more variations
+   */
   $("#product-attribute-add").on('click',function(e){
       var values = [];
       $(".product-attributes").each(function(){
@@ -83,6 +88,21 @@ $(document).ready(function(){
         $(".p-attr").last().after(response)
       })
   })
+
+  
+  /**
+   * Add more rooms
+   */
+  $("#add-room").on('click',function(e){
+    $.ajax({
+      type: "GET",
+      url: "/admin/reservations/room",
+    }).done(function(response){
+      $(".new-room").last().after(response)
+      s.initFormExtendedDatetimepickers()
+    })
+  })
+ 
 
 
   $(document).on('click','.open-close-panel',function(e){
@@ -158,8 +178,20 @@ $(document).ready(function(){
     }
   })
 
+  /**
+   * Initialize form wizard
+   */
   
   s.initMaterialWizard();
+
+  /***
+   * Initialize datetime picker
+   */
+
+  s.initFormExtendedDatetimepickers()
+
+
+  console.log(s.initMaterialWizard())
 
   setTimeout(function(){
     $('.card.wizard-card').addClass('active');

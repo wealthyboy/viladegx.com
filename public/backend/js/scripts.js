@@ -17,6 +17,7 @@ $().ready(function(){
 });
 
 var row = 0;
+
 s = {
     checkFullPageBackgroundImage: function(){
         $page = $('.full-page');
@@ -82,8 +83,6 @@ s = {
                     required: true,
                 },
            },
-
-            
     	});
 
         // Wizard Initialization
@@ -329,5 +328,7 @@ var Img = {
     },
 	
 }
+
+
 
 

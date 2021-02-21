@@ -24,15 +24,27 @@ class Helper{
         return $price->price;
     }
 
-    public  static function getFormatedDate($date)
-    {
-        if($date) {
-            $exp_date = explode('-', $date);
-            $expiry_date = Carbon::createFromDate($exp_date[0], $exp_date[1], $exp_date[2]);//
-        }else{
-            $expiry_date = null;
+    public  static function getFormatedDate($date,$changeFormat = true)
+    {   
+        //createFromDate  $year ,$month , $day
+
+        if ($changeFormat){
+            if($date) {
+                $exp_date = explode('/', $date);
+                $formarted_date = Carbon::createFromDate($exp_date[2], $exp_date[1], $exp_date[0]);//
+            }else{
+                $formarted_date = null;
+            }
+        } else {
+            if($date) {
+                $exp_date = explode('-', $date);
+                $formarted_date = Carbon::createFromDate($exp_date[0], $exp_date[1], $exp_date[2]);//
+            }else{
+                $formarted_date = null;
+            }
         }
-        return $expiry_date;
+        
+        return $formarted_date;
     }
 
 

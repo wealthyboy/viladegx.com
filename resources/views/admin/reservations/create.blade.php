@@ -19,7 +19,6 @@
                <div class="wizard-navigation">
                   <ul>
                      <li><a href="wizard.html#ProductData" data-toggle="tab">Reservation Data</a></li>
-                     <li><a href="wizard.html#RelatedProducts" data-toggle="tab">Related Products</a></li>
                      <li><a href="wizard.html#ProductVariations" data-toggle="tab">Rooms</a></li>
                   </ul>
                </div>
@@ -28,116 +27,23 @@
                      @include('admin.reservations.product_data')
                   </div>
 
-                  <div class="tab-pane" id="RelatedProducts">
-                     @include('admin.reservations.product_related')
-                  </div>
                   <div class="tab-pane" id="ProductVariations">
-                     <h4 class="info-text">Product Variation</h4>
-                     <div class="col-md-12">
-                        <h4>Product Type </h4>
-                        <div class="form-group">
-                           <label class="control-label">Product Type</label>
-                           <select name="type" id="product-type" class="form-control"  required="true" title="Please select product type"  title="" data-size="7">
-                              <option  value="" selected>Choose One</option>
-                              <option  value="simple">Simple</option>
-                              <option  value="variable">Variable</option>
-                           </select>
-                        </div>
-                     </div>
-                     <div class="simple-product hide">
-                        @include('admin.products.product_images') 
-                        <div class="row">
-                           <div class="col-md-3">
-                              <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Price</label>
-                                 <input name="price"  required="true" type="text" value="{{ old('price') }}" class="form-control">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Quantity</label>
-                                 <input name="quantity"  type="number" required="true"  value="{{ old('quantity') }}"  class="form-control">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                           
-                           <div class="col-md-3">
-                              <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Sale Price</label>
-                                 <input name="sale_price"   value=""  class="form-control" type="text">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Extra Percent Off</label>
-                                 <input name="extra_percent_off"   value=""  class="form-control" type="number">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group label-floating">
-                                 <label class="control-label">End Date</label>
-                                 <input class="form-control  pull-right" name="sale_price_expires" id="datepicker" type="date">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="col-md-3">
-                              <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Weight</label>
-                                 <input name="weight"   type="text" value="{{ old('weight') }}" class="form-control">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Length</label>
-                                 <input name="length"   type="text" value="{{ old('length') }}" class="form-control" >
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Width</label>
-                                 <input name="width"      value="{{ old('width') }}"  class="form-control" type="text">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Height</label>
-                                 <input name="height"      value="{{ old('height') }}"  class="form-control" type="text">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-               
+                     <h4 class="info-text">Rooms</h4>
+                     
                      <div class="clearfix"></div>
                      
-                     <div class="row p-attr  variable-product hide">
+                     <div class="row new-room">
             
-                        <div class="col-sm-9">
-                              <div class="col-md-3 col-sm-6 col-xs-6">
-                                 <div class="form-group label-floating">
-                                    <label class="control-label">Rooms</label>
-                                    <select name="" class="form-control product-attributes"  title="Choose " data-style="select-with-transition"  data-size="7">
-                                          <option  value="" selected>Select</option>
-                                          <option   value="">&nbsp;&nbsp;&nbsp; </option>
-                                    </select>
-                                 </div>
-                              </div>
-                        </div>
-                        <label class="col-md-3  col-xs-12 col-xs-12">
-                           <button type="button"  id="product-attribute-add" class="btn btn-round btn-primary">
-                              Add Variation
-                              <span class="btn-label btn-label-right">
-                                 <i class="fa fa-plus"></i>
-                              </span>
-                           </button>
+                        
+                        <label class="col-md-12  col-xs-12 col-xs-12">
+                           <div class="pull-right">
+                              <button type="button"  id="add-room" class="btn btn-round  btn-primary">
+                                 Add Room
+                                 <span class="btn-label btn-label-right">
+                                    <i class="fa fa-plus"></i>
+                                 </span>
+                              </button>
+                           </div>
                         </label>
                      </div>
 
@@ -162,7 +68,10 @@
 @section('page-scripts')
    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
    <script src="{{ asset('backend/js/products.js') }}"></script>
+   <script src="{{ asset('backend/js/uploader.js') }}"></script>
 @stop
+
+
 @section('inline-scripts')
 $(document).ready(function() {
    CKEDITOR.replace('description',{

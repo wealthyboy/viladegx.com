@@ -29,6 +29,8 @@ mix.scripts([
   'public/backend/js/jquery.validate.min.js',
   'public/backend/js/material-dashboard-v=1.3.0.js',
   'public/backend/js/jquery.bootstrap-wizard.js',
+  'public/backend/js/moment.min.js',
+  'public/backend/js/bootstrap-datetimepicker.js',
   'public/backend/js/scripts.js',
 ],
   'public/backend/js/dashboard.js'

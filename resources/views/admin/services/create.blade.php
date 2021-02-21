@@ -27,7 +27,7 @@
                         <input class="form-control"
                                 name="price"
                                 type="text"
-                                required="true"
+                                
                             />
                     </div> 
                     <div class="form-footer text-right">

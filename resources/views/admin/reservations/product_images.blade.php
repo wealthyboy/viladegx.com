@@ -1,3 +1,4 @@
+
 <div class="row">
     <div  class="col-md-12  text-center">
         <p class="description text">Click on anywhere below to upload image </p>

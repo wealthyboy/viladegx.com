@@ -109,7 +109,7 @@
                 </a>
 
                 <div class="collapse 
-                   {{ $helper->active_link(['subjects','products','frames','category','fine_art','discounts','attributes','vouchers','sizes']) ? 'in' : ''}}" id="products">
+                   {{ $helper->active_link(['subjects','products','reservations','category','fine_art','discounts','attributes','vouchers','sizes']) ? 'in' : ''}}" id="products">
                     <ul class="nav">
                         <li class="{{ $helper->active_link(['category']) }}">
                              <a  href="{{ route('category.index') }}">
@@ -117,7 +117,6 @@
                                 <span class="sidebar-normal"> Categories </span>
                             </a>
                         </li>
-                       
                         <li class="{{ $helper->active_link(['attributes']) }} ">
                             <a  href="{{ route('attributes.index') }}">
                                 <span class="sidebar-mini"> A</span>
@@ -130,67 +129,28 @@
                                 <span class="sidebar-normal"> Products </span>
                             </a>
                         </li>
-                        <li class="{{ $helper->active_link(['products']) }} ">
-                           <a href="{{ route('admin.products.index') }}">
-                                <span class="sidebar-mini"> P </span>
-                                <span class="sidebar-normal"> Reservation </span>
-                            </a>
-                        </li>
                         
-                        
-                    </ul>
-                </div>
-            </li>
 
-            <li class="{{ $helper->active_link(['reservations','requirements','discounts','attributes','vouchers']) }} ">
-                <a data-toggle="collapse" href="#reservations">
-                <i class="fa fa-ticket" aria-hidden="true"></i>
-                   <p> Reservations 
-                       <b class="caret"></b>
-                    </p>
-                </a>
-
-                <div class="collapse 
-                   {{ $helper->active_link(['services','reservations','facilities','requirements']) ? 'in' : ''}}" id="reservations">
-                    <ul class="nav">
-                        <li class="{{ $helper->active_link(['services']) }}">
-                             <a  href="{{ route('services.index') }}">
-                                <span class="sidebar-mini"> C </span>
-                                <span class="sidebar-normal">Extra Services </span>
-                            </a>
-                        </li>
-                       
-                        <li class="{{ $helper->active_link(['facilities']) }} ">
-                            <a  href="{{ route('facilities.index') }}">
-                                <span class="sidebar-mini"> F</span>
-                                <span class="sidebar-normal"> Facilities </span>
-                            </a>
-                        </li>
-                        <li class="{{ $helper->active_link(['requirements']) }} ">
-                            <a  href="{{ route('requirements.index') }}">
-                                <span class="sidebar-mini"> F</span>
-                                <span class="sidebar-normal"> Requirements </span>
-                            </a>
-                        </li>
-                        
                         <li class="{{ $helper->active_link(['reservations']) }} ">
                            <a href="{{ route('admin.reservations.index') }}">
                                 <span class="sidebar-mini"> R </span>
                                 <span class="sidebar-normal"> Reservation </span>
                             </a>
                         </li>
-    
+
+                        <li class="{{ $helper->active_link(['vouchers']) }} ">
+                            <a href="{{ route('vouchers.index') }}">        
+                            <span class="sidebar-mini"> RV</span>
+                                <p> Vouchers </p>
+                            </a>
+                        </li>
+ 
                     </ul>
                 </div>
             </li>
 
-            <li  >
-                <a href="{{ route('vouchers.index') }}">        
-                    <i class="fa fa-dashboard"></i>
-                    <p> Vouchers </p>
-                </a>
-            </li>
 
+           
 
 
             <li>

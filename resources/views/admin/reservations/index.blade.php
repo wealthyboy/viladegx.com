@@ -75,18 +75,18 @@
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Status</th>
-                                    <th>Price</th>
+                                    <th>Rooms</th>
                                     <th class="disabled-sorting text-right">Actions</th>
                                 </tr>
                             </thead>
                             
                             <tbody>
-                            @foreach($reservations as $reservations) 
+                            @foreach($reservations as $reservation) 
                                 <tr>
                                     <td>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="{{ $reservations->id }}" name="selected[]" >
+                                                <input type="checkbox" value="{{ $reservation->id }}" name="selected[]" >
                                             </label>
                                         </div>
                                     </td>
@@ -94,18 +94,17 @@
                                     <!-- cart-sidebar-btn active -->
                                     <td>
                                         <div class="img-container">
-                                            <img class="" src="{{  $reservations->image_to_show_m   }}" alt="...">
+                                            <img class="" src="{{  $reservation->image_to_show_m   }}" alt="...">
                                         </div>
                                     </td>
-                                    <td><a target="_blank" >{{ $reservations->product_name }}</a></td>
-                                    <td>{{ $reservations->allow == 1 ? 'Live' : 'Offline' }}</td>
+                                    <td><a target="_blank">{{ $reservation->name }} {{ optional($reservation->city)->name }} {{ optional($reservation->state)->name }}</a></td>
+                                    <td>{{ $reservation->allow == 1 ? 'Live' : 'Offline' }}</td>
                                     <td>
                                         <span class="amount">
-                                           {{ $system_settings->default_currency->symbol }}{{ $product->display_price() }}
                                         </span> 
                                     </td>
                                     <td class="td-actions ">                     
-                                        <a href="{{ route('admin.reservations.edit',['product'=>$product->id] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
+                                        <a href="{{ route('admin.reservations.edit',['reservation'=>$reservation->id] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
                                             <i class="material-icons">edit</i>
                                             Edit
                                         </a>

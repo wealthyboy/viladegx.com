@@ -1,17 +1,43 @@
-    <h4 class="info-text">Enter Products Details</h4>
+    <h4 class="info-text">Enter Apartment Details</h4>
+    <div class="simple-product ">
+        @include('admin.products.product_images') 
+     </div>
+               
     <div class="row">
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group label-floating is-empty">
                     <label class="control-label">Apartment Name</label>
-                    <input  required="true" name="name" data-msg="" value="{{ old('name') }}" class="form-control" type="text">
-                    <span class="material-input"></span>
+                    <input  required="true" name="apartment_name" data-msg="" value="{{ old('apartment_name') }}" class="form-control" type="text">
                     </div>
                 </div>
-                
             </div>
-            
+
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-group label-floating is-empty">
+                    <label class="control-label">Address</label>
+                    <input  required="true" name="address" data-msg="" value="{{ old('address') }}" class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group label-floating is-empty">
+                           <label class="control-label"></label>
+                        <select name="city_id" required="true" class="form-control">
+                            <option  value="" selected="">--Choose City--</option>
+                            @foreach($locations as $location)
+                                <option class="" disabled value="{{ $location->id }}" >{{ $location->name }} </option>
+                                @include('includes.children_options',['obj'=>$location,'space'=>'&nbsp;&nbsp;'])
+                            @endforeach
+                                
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
@@ -52,7 +78,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="col-md-4">
-            <label> </label>
+            <label>Extra Services</label>
             <div class="well well-sm" style="height: 250px; background-color: #fff; color: black; overflow: auto;">
                 @foreach($services as $service)
                     <div class="parent" value="{{ $service->id }}">
@@ -60,11 +86,10 @@
                             <label>
                                 <input type="checkbox" value="{{ $service->id }}" name="service_id[]" >
                                 {{ $service->name }}  
-                                <a href="{{ route('category.edit',['service'=>$service->id]) }}">
+                                <a href="{{ route('services.edit',['service'=>$service->id]) }}">
                                 <i class="fa fa-pencil"></i> Edit</a> 
                             </label>
                         </div>   
-                        @include('includes.product_categories',['obj'=>$service,'space'=>'&nbsp;&nbsp;','model' => 'service','url' => 'service'])
                     </div>
                 @endforeach
             </div>
