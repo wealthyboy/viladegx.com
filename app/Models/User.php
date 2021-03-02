@@ -39,47 +39,47 @@ class User extends Authenticatable
 	 * @var array
 	 */
 	public function addresses(){
-		return $this->hasMany('App\Models\Address');	
+		return $this->hasMany(Address::class);	
 	}
 
 
 	
 	public function products(){
-		return $this->hasMany('App\Models\Product');	
+		return $this->hasMany(Product::class);	
 	}
 
 
 	public function sales(){
-		return $this->hasMany('App\Models\Sale','merchant_id');	
+		return $this->hasMany(Sale::class,'merchant_id');	
 	}
 
 
 	public function active_address(){
-		return $this->hasOne('App\Models\Address')->where('is_active',1);	
+		return $this->hasOne(Address::class)->where('is_active',1);	
 	}
 
 
 	public function orders(){
-		return $this->hasMany('App\Models\Order');	
+		return $this->hasMany(Order::class);	
 	}
 
 	public function carts(){
-		return $this->hasMany('App\Models\Cart');	
+		return $this->hasMany(Cart::class);	
 	}
 
 	public function favorites(){
 		
-		return $this->hasMany('App\Models\Favorite');	
+		return $this->hasMany(Favorite::class);	
 	}
 
 
 	public function social(){
-		return $this->hasMany('App\Models\UserSocial');	
+		return $this->hasMany(UserSocial::class);	
 	}
 
 
 	public function activities(){
-		return $this->hasMany('App\Models\Activity');	
+		return $this->hasMany(Activity::class);	
 	}
 
 	public function hasSocialLinked($service)
@@ -94,7 +94,7 @@ class User extends Authenticatable
 
 
 	public function users_permission(){
-		return $this->hasOne("App\Models\UserPermission");
+		return $this->hasOne(UserPermission::class);
 	}
 		
 
@@ -135,7 +135,7 @@ class User extends Authenticatable
 	}
 
 	public function activity(){
-		return $this->hasMany('App\Activity');
+		return $this->hasMany(Activity::class);
 	}
 			
 	public function hasVerified() {

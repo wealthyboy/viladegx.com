@@ -48,7 +48,7 @@
 
 						    	
                                 <li>
-                                   <a style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }}</a>
+                                   <a style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
                                    @if ($category->isCategoryHaveMultipleChildren())
 
                                     <div class="megamenu megamenu-fixed-width">
@@ -57,11 +57,11 @@
 											    <div class="row">
 													@foreach (  $category->children as $children)
 													<div class="col-lg-3">
-														<a href="/products/{{ $children->slug }}" class="category-heading"><b>{{ $children->name !== 'No Heading' ? $children->name : '' }} </b></a>
+														<a href="/fashion/products/{{ $children->slug }}" class="category-heading"><b>{{ $children->name !== 'No Heading' ? $children->name : '' }} </b></a>
 														@if ($children->children->count())
 															<ul class="submenu">
 																@foreach (  $children->children as $children)
-																	<li><a href="/products/{{ $children->slug }}">{{ ucfirst($children->name) }}</a></li>
+																	<li><a href="/fashion/products/{{ $children->slug }}">{{ ucfirst($children->name) }}</a></li>
 																@endforeach
 															</ul>
 														@endif
@@ -82,7 +82,7 @@
                                     @elseif ( !$category->isCategoryHaveMultipleChildren() && $category->children->count() )
                                         <ul  >
                                             @foreach (  $category->children as $children)
-                                               <li class="nav-children color--primary  {{ strtolower($category->name) == 'christmas shop' ? 'pl-5' : '' }}"><a href="/products/{{ $children->slug }}">{{ $children->name }}</a></li>
+                                               <li class="nav-children color--primary  {{ strtolower($category->name) == 'christmas shop' ? 'pl-5' : '' }}"><a href="/fashion/products/{{ $children->slug }}">{{ $children->name }}</a></li>
                                             @endforeach 
                                         </ul>
                                     @endif

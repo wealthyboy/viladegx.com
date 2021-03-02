@@ -42,4 +42,8 @@ class Reservation extends Model
         return $this->hasMany(Room::class);
     }
 
+    public function facilities(){
+        return $this->belongsToMany(Facility::class,'facility_reservation');
+    }
+
 }

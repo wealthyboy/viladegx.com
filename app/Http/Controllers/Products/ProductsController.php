@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Products;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\SystemSetting;
-use App\Category;
-use App\Product;
-use App\ProductVariation;
-use App\Attribute;
-use App\ProductVariationValue;
-use App\RelatedProduct;
-use App\Review;
+use App\Models\SystemSetting;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\ProductVariation;
+use App\Models\Attribute;
+use App\Models\ProductVariationValue;
+use App\Models\RelatedProduct;
+use App\Models\Review;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filters\ProductsFilter\AttributesFilter;
 

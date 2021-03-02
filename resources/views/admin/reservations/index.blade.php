@@ -57,7 +57,7 @@
                         <!-- Here you can write extra buttons/actions for the toolbar              -->
                     </div>
                     <div class="material-datatables">
-                    <form action="/admin/reservations/destroy/multiple" method="post" enctype="multipart/form-data" id="form-reservations">
+                    <form action="{{ route('admin.reservations.destroy',['reservation'=>1]) }}" method="post" enctype="multipart/form-data" id="form-reservations">
                         @method('DELETE')
                         @csrf
                 
@@ -123,6 +123,7 @@
 @endsection
 @section('inline-scripts')
 $(document).ready(function() {
+    
 });
 @stop
 

@@ -15,23 +15,23 @@ class Category extends Model
 
     public function children()
     {
-        return $this->hasMany('App\Models\Category','parent_id','id')->orderBy('sort_order','asc');
+        return $this->hasMany(Category::class,'parent_id','id')->orderBy('sort_order','asc');
     }
 
     public function images()
     {
-        return $this->morphOne('App\Models\Image', 'imageable');
+        return $this->morphOne(Image::class, 'imageable');
     }
 
     public function products()
     {
-        return $this->belongsToMany('App\Models\Product')->where('allow',1);
+        return $this->belongsToMany(Product::class)->where('allow',1);
     }
 
 
     public function subjects()
     {
-        return $this->belongsToMany('App\Models\Subject');
+        return $this->belongsToMany(Subject::class);
     }
 
 
@@ -49,13 +49,13 @@ class Category extends Model
 
     public function product_variations()
     {
-        return $this->belongsToMany('App\Models\ProductVariation');
+        return $this->belongsToMany(ProductVariation::class);
     }
 
 
     public function product_variants()
     {
-        return $this->belongsToMany('App\Models\ProductVariation')->whereNotNull('name');
+        return $this->belongsToMany(ProductVariation::class)->whereNotNull('name');
     }
 
 
@@ -78,20 +78,20 @@ class Category extends Model
 
     public function attributes()
     {
-        return $this->belongsToMany('App\Models\Attribute')
+        return $this->belongsToMany(Attribute::class)
                     ->withPivot('id');
     }
 
 
     public function attribute_parents()
     {
-        return $this->hasMany('App\Models\AttributeCategory')->whereNull('parent_id');
+        return $this->hasMany(AttributeCategory::class)->whereNull('parent_id');
     }
 
 
     public function parent_attributes()
     {
-        return $this->belongsToMany('App\Attribute')
+        return $this->belongsToMany(Attribute::class)
                     ->wherePivot('parent_id',null)
                     ->withPivot('id');
     }

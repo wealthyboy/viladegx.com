@@ -1,12 +1,12 @@
 @if ($product_attributes->count())
-<div style="margin-bottom: 10px;" class="row p-attr variation-panel">
+<div class="row p-attr variation-panel">
     <div class="col-md-9 col-xs-9 col-sm-9">
         <div class="row">
         <input name="has_more_variation"     value="1"   class="" type="hidden">
         <input name="new_variation"     value="1"   class="" type="hidden">
             @foreach($product_attributes as $product_attribute)
                 <div class="col-md-3 col-xs-6 col-sm-6">
-                    <div class="form-group label-floating">
+                    <div class="form-group">
                     <label class="control-label">{{ $product_attribute->name }}</label>
                     <select  required="true"  name="product_attributes[{{ $counter }}][{{ $product_attribute->id }}]" class="form-control  variation_product_attribute">
                         <option value=""  selected="selected">Choose One</option>
@@ -19,7 +19,7 @@
             @endforeach
         </div>
     </div>
-    <div class="col-md-3 col-xs-12 text-right col-sm-12">
+    <div class="col-md-3 col-xs-12 text-right col-sm-12 mt-lg-5 mt-sm-1 mb-sm-2">
         <a href="#"   title="remove panel" class="remove-panel"><i class="fa fa-trash-o"></i> Remove</a>  |
         <a href="#"   title="open/close panel" class="open-close-panel"><i class="fa fa-plus"></i> Expand</a> 
     </div>
@@ -29,14 +29,14 @@
         <div class="col-md-3">
             <div class="form-group label-floating is-empty">
                 <label class="control-label">Price</label>
-                <input name="variation_price[{{ $counter }}]"  required="true" value="{{ old('price') }}" class="form-control  variation" type="text">
+                <input name="variation_price[{{ $counter }}]"  required="true" value="{{ old('price') }}" class="form-control  variation" type="number">
                 <span class="material-input"></span>
             </div>
         </div>
         <div class="col-md-3">
             <div class="form-group label-floating is-empty">
                 <label class="control-label">Sale Price</label>
-                <input name="variation_sale_price[{{ $counter }}]"   value=""  class="form-control variation_sale_price variation" type="text">
+                <input name="variation_sale_price[{{ $counter }}]"   value=""  class="form-control variation_sale_price variation" type="number">
                 <span class="material-input"></span>
             </div>
         </div>
@@ -92,10 +92,10 @@
         </div>
 
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-3 mb-3">
             <div class="row">
                 <div  class="  text-center"></div>
-                <div   class="col-md-12 col-sm-6 col-xs-6">
+                <div   class="col-md-12 col-sm-12 col-xs-12">
                     <div id="j-drop" class=" j-drop">
                     <input accept="image/*"  required="true" onchange="getFile(this,'variation_image[{{ $counter }}]')" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
                     <div   class=" upload-text  {{ $counter }}"> 

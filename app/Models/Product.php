@@ -61,10 +61,6 @@ class Product extends Model
 
 	protected $setting;
 
-	public function __construct()
-	{
-		$this->setting = SystemSetting::first();
-	}
 	
 
 	public function variants()
@@ -154,20 +150,6 @@ class Product extends Model
 	}
 	
 
-	public function scopeFineArt(Builder $builder)
-	{
-        return $builder->where('product_type','fine_art');
-	}
-
-
-	public function scopePhotoToArt(Builder $builder)
-	{
-		return $builder->where('product_type','photo_to_art');
-	}
-
-
-
-
 	public function category(){
 		return $this->hasOne(CategoryProduct::class)->where('category_id',optional($this->pivot)->category_id);
 	}
@@ -181,12 +163,6 @@ class Product extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class)->withPivot('category_id');
-	}
-
-
-	public function subjects()
-    {
-        return $this->belongsToMany(Subject::class);
 	}
 
 
@@ -214,7 +190,7 @@ class Product extends Model
 
 	public function product_variation_attribute()
 	{
-		return $this->hasOne('App\ProductVariationAttribute');
+		return $this->hasOne(ProductVariationAttribute::class);
 	}
 
 
@@ -239,9 +215,6 @@ class Product extends Model
 					->withPivot('id');
 	}
 
-
-	
-	
 
 	public function newProducts(){
 	   return $this->created_at->diffInDays(Carbon::now(), 7);

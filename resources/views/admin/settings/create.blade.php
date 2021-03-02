@@ -137,12 +137,20 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group label-floating ">
-                                    <label class="control-label">Alert Email </label>
+                                    <label class="control-label">Alert Email Fashion</label>
                                     <input type="text" name="alert_email" value="{{  null !== $setting ? $setting->alert_email :  old('alert_email') }}" id="input-catalog-limit" class="form-control" />
                                 </div>
                             </div>
-
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group label-floating ">
+                                    <label class="control-label">Alert Email Reservation</label>
+                                    <input type="text" name="alert_email" value="{{  null !== $setting ? $setting->alert_email :  old('alert_email') }}" id="input-catalog-limit" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="row">
                             <div class="col-md-4">
@@ -163,12 +171,7 @@
                                     <input type="text" name="instagram_link" value="{{  null !== $setting ? $setting->instagram_link :  old('instagram_link') }}" id="input-catalog-limit" class="form-control" />
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group label-floating">
-                                    <label class="control-label">Linkedin link</label>
-                                    <input type="text" name="linkedin_link" value="{{ null !== $setting ? $setting->linkedin_link :  old('linkedin_link') }}" id="input-catalog-limit" class="form-control" />
-                                </div>
-                            </div>
+                            
                             <div class="col-md-4">
                                 <div class="form-group label-floating ">
                                     <label class="control-label">Youtube Link</label>

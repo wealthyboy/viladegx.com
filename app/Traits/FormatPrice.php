@@ -63,6 +63,9 @@ trait FormatPrice
       return $this->calPercentageOff($this->price,$this->sale_price);
     }
 
+    
+
+
     public function calPercentageOff($price,$sale_price){
       if (!empty($price) && !empty($sale_price)){
         $discount = (($price - $sale_price) * 100) / $price ;

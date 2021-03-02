@@ -146,6 +146,16 @@
                                 <span class="sidebar-normal"> Facilities </span>
                             </a>
                         </li>
+
+                        <li class="{{ $helper->active_link(['requirements']) }} ">
+                           <a href="{{ route('requirements.index') }}">
+                                <span class="sidebar-mini"> R</span>
+                                <span class="sidebar-normal"> Rules </span>
+                            </a>
+                        </li>
+
+                       
+                        
                         
 
                         <li class="{{ $helper->active_link(['vouchers']) }} ">
@@ -176,9 +186,17 @@
                         <li>
                             <a href="{{ route('admin.orders.index') }}">
                                 <span class="sidebar-mini"> C </span>
-                                <span class="sidebar-normal"> Orders </span>
+                                <span class="sidebar-normal"> Orders  Fashion</span>
                             </a>
                         </li>
+
+                        <li>
+                            <a href="{{ route('admin.orders.index') }}">
+                                <span class="sidebar-mini"> C </span>
+                                <span class="sidebar-normal"> Orders  Reservation</span>
+                            </a>
+                        </li>
+                        
                         <li>
                             <a href="/admin/reviews">
                                 <span class="sidebar-mini"> D</span>

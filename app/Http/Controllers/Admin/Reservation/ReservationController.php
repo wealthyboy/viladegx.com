@@ -94,6 +94,8 @@ class ReservationController extends Controller
         $reservation->slug      = str_slug($request->apartment_name);
         $reservation->save();
 
+        $reservation->facilities()->sync($request->facility_id);
+
         /**
          * Reservation Images
          */
@@ -116,6 +118,8 @@ class ReservationController extends Controller
         /**
          * Rooms
          */
+
+        $data = [];
         foreach ($request->room_name  as $key => $room) {
             $room = new Room;  
             $room_images = !empty($request->room_images[$key]) ? $request->room_images[$key] : [];
@@ -125,7 +129,7 @@ class ReservationController extends Controller
             $room->slug = str_slug($request->room_name[$key]);
             $room->image = $request->room_image[$key];
             $room->available_from = Helper::getFormatedDate($request->room_avaiable_from[$key],true);
-            $room->sale_price_expires = Helper::getFormatedDate($request->room_sale_price_expires[$key],true);
+            //$room->sale_price_expires = Helper::getFormatedDate($request->room_sale_price_expires[$key],true);
             $room->reservation_id = $reservation->id;
             $room->save();
             if ( count( $room_images )  > 0) {
@@ -136,6 +140,11 @@ class ReservationController extends Controller
                 }
             }
             
+            foreach ($request->attribute_ids as $attributeId) {
+                $data[1] = ['parent_id'=>null]; 
+                $data[$attributeId] = ['parent_id'=>1];  
+            }
+            $room->attributes()->sync($data); 
         }
         /**
          * Rooms with have includes
@@ -195,7 +204,7 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         User::canTakeAction(5);
         $rules = array (

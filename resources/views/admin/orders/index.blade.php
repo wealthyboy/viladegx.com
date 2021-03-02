@@ -11,12 +11,9 @@
                   <h4 class="card-title">Orders</h4>
                </div>
                <div class="text-right">
-               
                </div>
             </div>
-            <div class="toolbar">
-               <!-- Here you can write extra buttons/actions for the toolbar  -->
-            </div>
+            
             <div class="material-datatables">
             <form action="" method="post" enctype="multipart/form-data" id="form-orders">
                 
@@ -84,40 +81,8 @@
 @section('pagespecificscripts')
 @stop
 @section('inline-scripts')
-function myprint() {
-    window.print();
-}
+
 $(document).ready(function() {
-
-
-$(".add_to_cart").on('click',function(e){
-    var self = $(this);
-    e.preventDefault();
-    $qty = self.data('quantity');
-    $product_id = self.data('productid');
-    $quantity = self.parent().parent().find('input#quantity').val();
-    $discount = self.parent().parent().find('input#discount').val();
-
-    if( $quantity  == ''){
-       alert("Please enter a quantity");
-       return false;
-    }
-    
-    if($quantity >  $qty){
-       alert("Cannot add that amount of quantity");
-       return false;
-    }
-
-    $("#cart_product_id").val($product_id);
-    $("#cart_discount").val($discount);
-    $("#cart_quantity").val($quantity);
-    $("#add_to_to_cart").attr('action','/add-to-cart/'+$product_id);
-    $("#add_to_to_cart").submit();   
-});
-
-
-
-
 $('#datatables').DataTable({
     "pagingType": "full_numbers",
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],

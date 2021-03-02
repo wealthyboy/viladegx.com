@@ -1,7 +1,7 @@
-<div style="margin-bottom: 10px;" class="row p-attr variation-panel">
+<div  class="row p-attr mb-2 variation-panel">
     <div class="col-md-9 col-xs-9 col-sm-9">
     </div>
-    <div class="col-md-3 col-xs-12 text-right col-sm-12">
+    <div class="col-md-3 col-xs-12 text-right border col-sm-12 pt-2 pb-4">
         <a href="#"   title="remove panel" class="remove-panel"><i class="fa fa-trash-o"></i> Remove</a>  |
         <a href="#"   title="open/close panel" class="open-close-panel"><i class="fa fa-plus"></i> Expand</a> 
     </div>
@@ -9,7 +9,7 @@
     <div id="variation-panel" data-id="{{ $counter }}"   class="hide v-panel">
         <div class="clearfix"></div>
 
-        <div class="col-md-8">
+        <div class="col-md-12">
                 
             <div class="col-md-7">
                 <div class="form-group label-floating is-ty">
@@ -47,7 +47,7 @@
 
             
             <div class="clearfix"></div>
-            <div class="col-sm-5">
+            <div class="col-sm-4">
                 <div class="row">
                     <div  class="  text-center"></div>
                     <div   class="col-md-12 col-sm-6 col-xs-6">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-8">
                 <div id="j-drop"  class="j-drop">
                 <input accept="image/*"   onchange="getFile(this,'room_images[{{ $counter }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
                     <div   class=" upload-text  {{ $counter }}"> 
@@ -77,22 +77,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="material-datatables">
+        <div class="col-md-12">
+            <div class="material-datatables ">
                 @foreach($product_attributes as $product_attribute)
-                <div class="well well-sm" style="height: 250px; background-color: #fff; color: black; overflow: auto;">
-
+                <h4>{{ $product_attribute->name }}</h4>
+                <div class="well well-sm" style="height: 50px; background-color: #fff; color: black; overflow: auto;">
                     <div class="parent" value="{{ $product_attribute->id }}">
-                        <div class="">
-                            <label>
-                                <input type="checkbox" value="{{ $product_attribute->id }}" name="selected[]" >
-                                {{ $product_attribute->name }}  <a href="{{ route('attributes.edit',['attribute'=>$product_attribute->id]) }}"><i class="fa fa-pencil"></i> Edit</a> 
-                            </label>
-                        </div>   
-                        @include('includes.children',['obj'=>$product_attribute,'space'=>'&nbsp;&nbsp;','model' => 'attributes','url' => 'attribute'])
+                        @include('includes.attributes',['obj'=>$product_attribute,'space'=>'&nbsp;&nbsp;','model' => 'attributes','url' => 'attribute'])
                     </div>
                 </div>
-
                 @endforeach  
             </div>
         </div>

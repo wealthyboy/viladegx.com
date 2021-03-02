@@ -24,15 +24,13 @@ trait ImageFiles
 
     public function getImageToShowMAttribute()
     {   
-        return $this->image_m;
+        return $this->m_path();
     }
 
 
-   
-
     public function getImageToShowTnAttribute()
     {   
-        return $this->image_tn;
+        return $this->tn_path();
     }
 
 
@@ -43,14 +41,22 @@ trait ImageFiles
 
 
     public function tn_path(){
-        $image = basename($this->image);
+        $image = $this->checkIfProductIsVariable(optional($this->variant)->image,$this->image);
         return  asset('images/'. $this->folder .'/tn/'.$image);
     }
 
 
     public function m_path(){
-        $image = basename($this->image);
+        $image = $this->checkIfProductIsVariable(optional($this->variant)->image,$this->image);
         return  asset('images/'.$this->folder.'/m/'.$image);
+    }
+
+
+    public function checkIfProductIsVariable($var_image,$image){
+        if ( $this->product_type == 'variable' ) {
+            return basename($var_image);
+        }
+        return basename($image);
     }
 
 

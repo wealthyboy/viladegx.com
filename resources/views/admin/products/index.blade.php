@@ -104,7 +104,7 @@
                                            {{ $system_settings->default_currency->symbol }}{{ $product->display_price() }}
                                         </span> 
                                     </td>
-                                    <td class="td-actions ">                     
+                                    <td class="td-actions text-center">                     
                                         <a href="{{ route('admin.products.edit',['product'=>$product->id] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
                                             <i class="material-icons">edit</i>
                                             Edit
@@ -124,7 +124,20 @@
 @endsection
 @section('inline-scripts')
 $(document).ready(function() {
+
+    $('#datatables').DataTable({
+        "pagingType": "full_numbers",
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        responsive: true,
+        language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Search records",
+        }
+    });
+
+    
 });
+
 @stop
 
 

@@ -12,7 +12,6 @@ use App\Models\Product;
 use App\Models\Activity;
 use App\Models\Category;
 use App\Models\Attribute;
-use App\Models\Http\Helper;
 use App\Models\ProductSize;
 use App\Models\SystemSetting;
 use App\Models\RelatedProduct;
@@ -26,6 +25,7 @@ use App\Models\ProductVariationValue;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
+use App\Http\Helper;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
@@ -54,6 +54,7 @@ class ProductController extends Controller
     {   
         $products = Product::with('categories')
                             ->orderBy('created_at','desc')->paginate(30);
+
         
         return view('admin.products.index',compact('products'));
     }
@@ -118,6 +119,8 @@ class ProductController extends Controller
 
         $image  = $request->image;
         $cA = [];
+
+        
 
         $sale_price = $request->has('sale_price') ? $request->sale_price : null;
         $product->product_name = $request->product_name;

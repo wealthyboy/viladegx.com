@@ -87,7 +87,8 @@
                                 <input type="checkbox" value="{{ $facility->id }}" name="facility_id[]" >
                                 {{ $facility->name }}  
                                 <a href="#">
-                                <i class="fa fa-pencil"></i> Edit</a> 
+                                    <i class="fa fa-pencil"></i> Edit
+                                </a> 
                             </label>
                         </div>   
                     </div>
