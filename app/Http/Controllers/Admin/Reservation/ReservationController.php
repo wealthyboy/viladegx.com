@@ -80,7 +80,6 @@ class ReservationController extends Controller
             'address'=> "required",
             "city_id" => "required",
             "description" => "required"
-            
         ]);
 
         $reservation =  new Reservation();

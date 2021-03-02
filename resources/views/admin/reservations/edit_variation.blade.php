@@ -82,11 +82,11 @@
             <div class="col-sm-9">
                 <div id="j-drop"  class="j-drop">
                 <input accept="image/*"   onchange="getFile(this,'room_images[{{ $room->id }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
-                    <div   class=" upload-text  {{ $room->id }}"> 
-                    <a  class="" href="#">
-                        <img class="" src="/backend/img/upload_icon.png">
-                        <b>Click on anywhere to upload image</b> 
-                    </a>
+                   <div   class=" upload-text {{ $room->images->count() ||  $room->image ? 'hide' : ''}}"> 
+                        <a  class="" href="#">
+                            <img class="" src="/backend/img/upload_icon.png">
+                            <b>Click on anywhere to upload image</b> 
+                        </a>
                     </div>
                     <div id="j-details"  class="j-details">
                         @if($room->images->count())

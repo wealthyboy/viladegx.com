@@ -27,7 +27,7 @@
                <div class="tab-content">
                   <div class="tab-pane" id="ProductData">
                      @include('admin.reservations.product_data')
-                  </div>
+                  
 
                   <div class="tab-pane" id="ProductVariations">
                      <h4 class="info-text">Apartment Type</h4>

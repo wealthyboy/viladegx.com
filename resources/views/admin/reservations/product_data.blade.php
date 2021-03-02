@@ -30,7 +30,7 @@
                                         @if( isset($reservation->city_id) && $reservation->city_id == $childs->id)
                                            <option  value="{{ $childs->id }}" selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $childs->name }} </option>
                                         @else
-                                           <option  value="{{ $childs->id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $childs->name }} </option>
+                                         <option  value="{{ $childs->id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $childs->name }} </option>
                                         @endif
                                     @endforeach
                                 @endforeach  
@@ -39,7 +39,6 @@
                     </div>
 
                 </div>
-
             </div>
 
             <div class="row">
@@ -153,4 +152,5 @@
             
         </div>
     </div>
+</div>
     

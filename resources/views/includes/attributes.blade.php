@@ -6,10 +6,10 @@
                     type="checkbox" 
                     value="{{ $obj->id }}"   
                     name="attribute_ids[]" 
+                    {{ isset($room) && isset($helper)  && $helper->check($room->attributes , $obj->id) ? 'checked' : '' }} 
                 >
                 {{ $obj->name }}
             </label>
         </div>  
-    @include('includes.children',['obj'=>$obj])
     </div>
 @endforeach
