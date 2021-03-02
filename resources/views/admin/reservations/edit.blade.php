@@ -8,7 +8,7 @@
       <!--      Wizard container        -->
       <div class="wizard-container">
          <div class="card wizard-card" data-color="rose" id="wizardProfile">
-            <form enctype="multipart/form-data" id="product-form" action="{{ route('admin.reserevation.update',['reserevation'=>$reserevation->id])  }}" method="post">
+            <form enctype="multipart/form-data" id="product-form" action="{{ route('admin.reservation.update',['reservation'=>$reservation->id])  }}" method="post">
                @method('PATCH')
                @csrf
                @csrf
