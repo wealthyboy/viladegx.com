@@ -49,13 +49,8 @@
 
         <div class="col-md-12">
             <div class="card">
-        
                 <div class="card-content">
-                
                     <h4 class="card-title">Products</h4>
-                    <div class="toolbar">
-                        <!-- Here you can write extra buttons/actions for the toolbar              -->
-                    </div>
                     <div class="material-datatables">
                     <form action="/admin/products/destroy/multiple" method="post" enctype="multipart/form-data" id="form-products">
                         @method('DELETE')

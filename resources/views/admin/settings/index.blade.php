@@ -48,8 +48,26 @@
                                         </label>
                                     </div>
                                 </td>
-                                <td>{{ Config('app.name') }}</td>
-                                <td>{{ Config('app.url') }}</td>
+                                <td>Fashion</td>
+                                <td></td>
+                                
+                                <td class="text-right">
+                                    <a href="{{ route('settings.edit',['setting'=>$setting->id]) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="" name="selected[]" >
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>Conceige Services </td>
+                                <td>---</td>
                                 
                                 <td class="text-right">
                                     <a href="{{ route('settings.edit',['setting'=>$setting->id]) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">

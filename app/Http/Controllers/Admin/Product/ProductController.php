@@ -93,7 +93,10 @@ class ProductController extends Controller
         $brands = Brand::all();
         $categories = Category::parents()->get();
         $product_attributes = Attribute::parents()->where('type','both')->orderBy('sort_order','asc')->get();
-        $meta_attributes = Attribute::parents()->where('type','!=','both')->orderBy('sort_order','asc')->get();
+        $meta_attributes = Attribute::parents()
+                                  ->where('type','!=','both')
+                                  ->where('type','!=','reservation')
+                                  ->orderBy('sort_order','asc')->get();
         return view('admin.products.create',compact('product_attributes','meta_attributes','brands','categories'));
     }
 
@@ -116,12 +119,8 @@ class ProductController extends Controller
             ],
         ]);
 
-
         $image  = $request->image;
         $cA = [];
-
-        
-
         $sale_price = $request->has('sale_price') ? $request->sale_price : null;
         $product->product_name = $request->product_name;
         $product->price        = $request->price;
@@ -304,17 +303,12 @@ class ProductController extends Controller
                     $this->syncProductVariationValues($filtered_attributes,$product_variation,$product);
                 }
 
-                
-                //dd($data);
                 $product->meta_fields()->syncWithoutDetaching($data);
                 $product->attributes()->syncWithoutDetaching($data);
             }
         }
 
-        
-
-        
-
+    
         foreach( $cA as $key => $values){
             foreach( $values as $k => $value){
                 AttributeCategoryChildren::updateOrCreate(

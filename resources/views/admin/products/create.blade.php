@@ -47,20 +47,21 @@
                      <div class="simple-product hide">
                         @include('admin.products.product_images') 
                         <div class="row">
-                           <div class="col-md-3">
+                           <div class="col-md-1">
                               <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Price</label>
-                                 <input name="price"  required="true" type="text" value="{{ old('price') }}" class="form-control">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group label-floating is-empty">
-                                 <label class="control-label">Quantity</label>
+                                 <label class="control-label">Qty</label>
                                  <input name="quantity"  type="number" required="true"  value="{{ old('quantity') }}"  class="form-control">
                                  <span class="material-input"></span>
                               </div>
                            </div>
+                           <div class="col-md-3">
+                              <div class="form-group label-floating is-empty">
+                                 <label class="control-label">Price</label>
+                                 <input name="price"  required="true" type="number" value="{{ old('price') }}" class="form-control">
+                                 <span class="material-input"></span>
+                              </div>
+                           </div>
+                           
                            
                            <div class="col-md-3">
                               <div class="form-group label-floating is-empty">
@@ -69,7 +70,7 @@
                                  <span class="material-input"></span>
                               </div>
                            </div>
-                           <div class="col-md-3">
+                           <div class="col-md-2">
                               <div class="form-group label-floating is-empty">
                                  <label class="control-label">Extra Percent Off</label>
                                  <input name="extra_percent_off"   value=""  class="form-control" type="number">

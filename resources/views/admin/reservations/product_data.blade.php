@@ -1,8 +1,4 @@
-    <h4 class="info-text">Enter Apartment Details</h4>
-    <div class="simple-product ">
-        @include('admin.products.product_images') 
-     </div>
-               
+    <h4 class="info-text ">Enter Apartment Details</h4>        
     <div class="row">
         <div class="col-md-8">
             <div class="row">
@@ -23,15 +19,15 @@
                 </div>
                 <div class="col-md-5">
                     <div class="form-group label-floating is-empty">
-                           <label class="control-label"></label>
+                        <label class="control-label"></label>
                         <select name="city_id" required="true" class="form-control">
                             <option  value="" selected="">--Choose City--</option>
                             @foreach($locations as $location)
                                 <option class="" disabled value="{{ $location->id }}" >{{ $location->name }} </option>
                                 @include('includes.children_options',['obj'=>$location,'space'=>'&nbsp;&nbsp;'])
-                            @endforeach
-                                
+                            @endforeach  
                         </select>
+                        <div class="text-info">Please select on only city not state</div>
                     </div>
 
                 </div>
@@ -78,6 +74,23 @@
             <div class="clearfix"></div>
         </div>
         <div class="col-md-4">
+            <div class="">
+                <div class="row mb-3">
+                    <div  class="text-center"></div>
+                    <div   class="col-md-12">
+                        <div id="j-drop" class=" j-drop">
+                        <input accept="image/*"  required="true" onchange="getFile(this,'image','Product',false)" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
+                        <div   class="upload-text"> 
+                            <a   class="" href="#">
+                                <img class="" src="/backend/img/dslr-camera.png">
+                                <b>Click to upload image</b> 
+                            </a>
+                        </div>
+                        <div id="j-details"  class="j-details"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
             <label>Facilities</label>
             <div class="well well-sm" style="height: 250px; background-color: #fff; color: black; overflow: auto;">
                 @foreach($facilities as $facility)
@@ -94,10 +107,6 @@
                     </div>
                 @endforeach
             </div>
-
-           
-           
-           
             
         </div>
     </div>

@@ -26,6 +26,13 @@
 
     <div id="variation-panel" data-id="{{ $counter }}"   class="hide v-panel">
         <div class="clearfix"></div>
+        <div class="col-md-1">
+            <div class="form-group label-floating is-empty">
+                <label class="control-label">Qty</label>
+                <input name="variation_quantity[{{ $counter }}]"  required="true"  type="number"  value="{{ old('sale_price') }}"  class="form-control variation variation_quantity" type="number">
+                <span class="material-input"></span>
+            </div>
+        </div>
         <div class="col-md-3">
             <div class="form-group label-floating is-empty">
                 <label class="control-label">Price</label>
@@ -47,20 +54,14 @@
                 <span class="material-input"></span>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group label-floating is-empty">
                 <label class="control-label">Extra Percent Off</label>
                 <input name="extra_percent_off[{{ $counter }}]"   value=""  class="form-control" type="number">
                 <span class="material-input"></span>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="form-group label-floating is-empty">
-                <label class="control-label">Quantity</label>
-                <input name="variation_quantity[{{ $counter }}]"  required="true"  type="number"  value="{{ old('sale_price') }}"  class="form-control variation variation_quantity" type="text">
-                <span class="material-input"></span>
-            </div>
-        </div>  
+          
         <div class="clearfix"></div>
         <div class="col-md-3">
             <div class="form-group label-floating is-empty">
@@ -91,8 +92,8 @@
             </div>
         </div>
 
-    <div class="row">
-        <div class="col-sm-3 mb-3">
+    <div class="row p-3">
+        <div class="col-sm-3 mb-3 ">
             <div class="row">
                 <div  class="  text-center"></div>
                 <div   class="col-md-12 col-sm-12 col-xs-12">
