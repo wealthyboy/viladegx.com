@@ -3,7 +3,7 @@
 
 
 @if ($reservation->rooms->count())
-    @foreach($reservation->rooms as $variant)
+    @foreach($reservation->rooms as $room)
 <div  class="row p-attr mb-2 variation-panel">
     
     <div class="col-md-9 col-xs-9 col-sm-9">
@@ -13,14 +13,14 @@
         <a href="#"   title="open/close panel" class="open-close-panel"><i class="fa fa-plus"></i> Expand</a> 
     </div>
 
-    <div id="variation-panel" data-id="{{ $variant->id }}"   class="hide v-panel">
+    <div id="variation-panel" data-id="{{ $room->id }}"   class="hide v-panel">
         <div class="clearfix"></div>
         <div class="col-md-12">
                 
             <div class="col-md-7">
                 <div class="form-group label-floating is-ty">
                     <label class="control-label">Accommodation Type Name</label>
-                    <input name="room_name[{{ $variant->id }}]"  required="true" value="{{ $variant->name }}" class="form-control  variation" type="text">
+                    <input name="room_name[{{ $room->id }}]"  required="true" value="{{ $room->name }}" class="form-control  variation" type="text">
                     <span class="material-input"></span>
                 </div>
             </div>
@@ -28,25 +28,25 @@
             <div class="col-md-5">
                 <div class="form-group label-floating">
                     <label class="control-label">From Date Available</label>
-                    <input name="room_avaiable_from[{{ $variant->id }}]"  required="true" value="03/0/2021" class="form-control  datepicker" type="text">
+                    <input name="room_avaiable_from[{{ $room->id }}]"  required="true" value="03/0/2021" class="form-control  datepicker" type="text">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group label-floating ">
-                    <label class="control-label">Price</label>
-                    <input name="room_price[{{ $variant->id }}]"  required="true" value="{{ $variant->price }}" class="form-control   variation" type="number">
+                    <label class="control-label">Price  {{ $helper::getReversedFormatedDate($room->available_from) }}</label>
+                    <input name="room_price[{{ $room->id }}]"  required="true" value="{{ $room->price }}" class="form-control   variation" type="number">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group label-floating ">
                     <label class="control-label">Sale Price</label>
-                    <input name="room_sale_price[{{ $variant->id }}]"   value="{{ $variant->name }}"  class="form-control variation_sale_price variation" type="number">
+                    <input name="room_sale_price[{{ $room->id }}]"   value="{{ $room->name }}"  class="form-control variation_sale_price variation" type="number">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">End Date</label>
-                    <input class="form-control  datepicker pull-right" value="" name="room_sale_price_expires[{{ $variant->id }}]" id="datepicker" type="text">
+                    <input class="form-control  datepicker pull-right" value="" name="room_sale_price_expires[{{ $room->id }}]" id="datepicker" type="text">
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -57,7 +57,7 @@
                 <div class="row">
                     <div   class="col-md-12 col-sm-6 col-xs-6">
                         <div id="j-drop" class=" j-drop">
-                        <input accept="image/*"  required="true" onchange="getFile(this,'room_image[{{ $variant->id }}]')" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
+                        <input accept="image/*"  required="true" onchange="getFile(this,'room_image[{{ $room->id }}]')" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
                         <div   class="upload-text hide"> 
                             <a   class="" href="#">
                                 <img class="" src="/backend/img/upload_icon.png">
@@ -65,13 +65,13 @@
                             </a>
                         </div>
                         <div id="j-details"  class="j-details">
-                            <div id="{{ $variant->id }}" class="j-complete">
+                            <div id="{{ $room->id }}" class="j-complete">
                                 <div class="j-preview">
-                                    <img class="img-thumnail" src="{{ $variant->image }}">
+                                    <img class="img-thumnail" src="{{ $room->image }}">
                                     <div id="remove_image" class="remove_image remove-image">
-                                        <a class="remove-image"  data-randid="{{ $variant->id }}" data-model="Room"   data-id="{{ $variant->id }}" data-url="{{ $variant->image }}" href="#">Remove</a>
+                                        <a class="remove-image"  data-randid="{{ $room->id }}" data-model="Room"   data-id="{{ $room->id }}" data-url="{{ $room->image }}" href="#">Remove</a>
                                     </div>
-                                    <input type="hidden" class="file_upload_input stored_image_url" value="{{ $variant->image }}" name="edit_variation_image[{{ $variant->id }}]">
+                                    <input type="hidden" class="file_upload_input stored_image_url" value="{{ $room->image }}" name="edit_variation_image[{{ $room->id }}]">
                                 </div>
                             </div>
                         </div>
@@ -81,14 +81,28 @@
             </div>
             <div class="col-sm-9">
                 <div id="j-drop"  class="j-drop">
-                <input accept="image/*"   onchange="getFile(this,'room_images[{{ $variant->id }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
-                    <div   class=" upload-text  {{ $variant->id }}"> 
+                <input accept="image/*"   onchange="getFile(this,'room_images[{{ $room->id }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
+                    <div   class=" upload-text  {{ $room->id }}"> 
                     <a  class="" href="#">
                         <img class="" src="/backend/img/upload_icon.png">
                         <b>Click on anywhere to upload image</b> 
                     </a>
                     </div>
-                    <div id="j-details"  class="j-details"></div>
+                    <div id="j-details"  class="j-details">
+                        @if($room->images->count())
+                            @foreach($room->images as $image)
+                            <div id="{{ $image->id }}" class="j-complete">
+                                <div class="j-preview">
+                                    <img class="img-thumnail" src="{{ $image->image }}">
+                                    <div id="remove_image" class="remove_image remove-image">
+                                        <a class="remove-image"  data-id="{{ $image->id }}" data-randid="{{ $image->id }}" data-model="Image" data-type="complete"  data-url="{{ $image->image }}" href="#">Remove</a>
+                                        <input type="hidden" class="file_upload_input stored_image_url" value="{{ $room->image }}" name="edit_variation_images[{{ $room->id }}][]">
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

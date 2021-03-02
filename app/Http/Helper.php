@@ -24,6 +24,17 @@ class Helper{
         return $price->price;
     }
 
+    public  static function getReversedFormatedDate($date){
+        /**
+         * This function returns a format for month day year
+         */
+        $exp_date = explode(' ', $date);
+        $exp_date = explode('-', $exp_date[0]);
+        $data     =   $exp_date[1].'/'.$exp_date[2].'/'.$exp_date[0];
+        return $date;
+    }
+
+
     public  static function getFormatedDate($date,$changeFormat = true)
     {   
         //createFromDate  $year ,$month , $day
