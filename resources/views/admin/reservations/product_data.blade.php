@@ -89,7 +89,6 @@
 
                         @else
 
-
                         <div id="j-drop" class=" j-drop">
                             <input accept="image/*"   onchange="getFile(this,'image','Product',false)" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
                             <div   class="{{ optional($reservation)->images ? 'hide' : '' }} upload-text"> 
