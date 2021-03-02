@@ -83,8 +83,6 @@ class ReservationController extends Controller
             
         ]);
 
-        //dd($request->all());
-
         $reservation =  new Reservation();
         $reservation->name      = $request->apartment_name;
         $reservation->address   = $request->address;
@@ -93,9 +91,7 @@ class ReservationController extends Controller
         $reservation->image     = $request->image;
         $reservation->slug      = str_slug($request->apartment_name);
         $reservation->save();
-
         $reservation->facilities()->sync($request->facility_id);
-
         /**
          * Reservation Images
          */

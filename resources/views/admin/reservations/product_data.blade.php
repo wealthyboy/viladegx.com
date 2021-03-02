@@ -82,7 +82,7 @@
                         <input accept="image/*"  required="true" onchange="getFile(this,'image','Product',false)" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
                         <div   class="upload-text"> 
                             <a   class="" href="#">
-                                <img class="" src="/backend/img/dslr-camera.png">
+                                <img class="" src="/backend/img/upload_icon.png">
                                 <b>Click to upload image</b> 
                             </a>
                         </div>
