@@ -75,8 +75,8 @@
         <div class="col-md-4">
             <div class="">
                 <div class="row mb-3">
-                    <div  class="text-center"></div>
-                    <div   class="col-md-12">
+                    <div  class="col-md-12">
+                        @if (!isset($reservation))
                         <div id="j-drop" class=" j-drop">
                         <input accept="image/*"  required="true" onchange="getFile(this,'image','Product',false)" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
                         <div   class="upload-text"> 
@@ -86,7 +86,34 @@
                             </a>
                         </div>
                         <div id="j-details"  class="j-details"></div>
-                    </div>
+
+                        @else
+
+
+                        <div id="j-drop" class=" j-drop">
+                            <input accept="image/*"   onchange="getFile(this,'image','Product',false)" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
+                            <div   class="{{ optional($reservation)->images ? 'hide' : '' }} upload-text"> 
+                                <a   class="" href="#">
+                                <img class="" src="/backend/img/upload_icon.png">
+                                <b>Click to upload image</b> 
+                                </a>
+                            </div>
+                            <div id="j-details"  class="j-details">
+                                <div id="{{ $reservation->id }}" class="j-complete">
+                                    <div class="j-preview">
+                                        <img class="img-thumnail" src="{{ $reservation->image }}">
+                                        <div id="remove_image" class="remove_image remove-image">
+                                            <a class="remove-image" data-mode="edit" data-randid="{{ $reservation->id }}"  data-id="{{ $reservation->id }}" data-url="{{ $reservation->image }}" href="#">Remove</a> 
+                                        </div>
+                                        <input type="hidden" class="file_upload_input stored_image_url" value="{{ $reservation->image }}" name="image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @endif
+
+
                     </div>
                 </div>
             </div>

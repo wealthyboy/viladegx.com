@@ -79,6 +79,7 @@ class ReservationController extends Controller
             "apartment_name"  => "required",
             'address'=> "required",
             "city_id" => "required",
+            "description" => "required"
             
         ]);
 
@@ -88,6 +89,7 @@ class ReservationController extends Controller
         $reservation->city_id   = $request->city_id;
         $reservation->state_id  = Location::find($request->city_id)->parent_id;
         $reservation->image     = $request->image;
+        $reservation->description     = $request->description;
         $reservation->slug      = str_slug($request->apartment_name);
         $reservation->save();
         $reservation->facilities()->sync($request->facility_id);
