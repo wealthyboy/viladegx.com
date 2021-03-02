@@ -27,7 +27,11 @@
                                 @foreach($location->children as $children)
                                   <option   disabled value="{{ '' }}">&nbsp;&nbsp;&nbsp;{{ $children->name }} </option>
                                    @foreach($children->children as $childs)
-                                    <option  value="{{ $childs->id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $childs->name }} </option>
+                                        @if( isset($reservation->city_id) && $reservation->city_id == $childs->id)
+                                           <option  value="{{ $childs->id }}" selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $childs->name }} </option>
+                                        @else
+                                           <option  value="{{ $childs->id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $childs->name }} </option>
+                                        @endif
                                     @endforeach
                                 @endforeach  
                             @endforeach  
@@ -149,4 +153,4 @@
             
         </div>
     </div>
-</div>
+    
