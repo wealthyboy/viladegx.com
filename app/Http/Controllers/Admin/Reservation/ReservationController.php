@@ -62,7 +62,7 @@ class ReservationController extends Controller
         $facilities = Facility::orderBy('name','asc')->get();
         $requirements = Requirement::orderBy('name','asc')->get();
         $locations = Location::parents()->get();
-
+        
         return view('admin.reservations.create',compact('services','locations','facilities','requirements'));
     }
     /**
@@ -185,7 +185,11 @@ class ReservationController extends Controller
         $facilities = Facility::orderBy('name','asc')->get();
         $requirements = Requirement::orderBy('name','asc')->get();
         $locations = Location::parents()->get();
-        return view('admin.reservations.edit',compact('locations','requirements','facilities','reservation'));
+        $helper = new Helper();
+        $counter = rand(1,500);
+        $product_attributes =  Attribute::parents()->where('type','reservation')->orderBy('sort_order','asc')->get();
+       
+        return view('admin.reservations.edit',compact('locations','product_attributes','requirements','facilities','reservation','helper'));
     }
 
     /**

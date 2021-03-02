@@ -44,7 +44,7 @@
                            </div>
                         </label>
                      </div>
-
+                     @include('admin.reservations.edit_variation')
                   </div>
                <div class="wizard-footer">
                   <div class="pull-right">

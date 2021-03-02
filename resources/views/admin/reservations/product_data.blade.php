@@ -18,16 +18,20 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="form-group label-floating is-empty">
+                    <div class="form-group">
                         <label class="control-label"></label>
                         <select name="city_id" required="true" class="form-control">
                             <option  value="" selected="">--Choose City--</option>
                             @foreach($locations as $location)
-                                <option class="" disabled value="{{ $location->id }}" >{{ $location->name }} </option>
-                                @include('includes.children_options',['obj'=>$location,'space'=>'&nbsp;&nbsp;'])
+                                <option class="" disabled value="" >{{ $location->name }} </option>
+                                @foreach($location->children as $children)
+                                  <option   disabled value="{{ '' }}">&nbsp;&nbsp;&nbsp;{{ $children->name }} </option>
+                                   @foreach($children->children as $childs)
+                                    <option  value="{{ $childs->id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $childs->name }} </option>
+                                    @endforeach
+                                @endforeach  
                             @endforeach  
                         </select>
-                        <div class="text-info">Please select on only city not state</div>
                     </div>
 
                 </div>
@@ -122,11 +126,22 @@
                     <div class="parent" value="{{ $facility->id }}">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="{{ $facility->id }}" name="facility_id[]" >
+                                @if (isset($reservation))
+                                    <input 
+                                        type="checkbox" 
+                                        value="{{ $facility->id }}" 
+                                        name="facility_id[]"
+
+                                        {{ $helper->check($reservation->facilities , $facility->id) ? 'checked' : '' }} 
+                                    >
+                                @else
+                                    <input 
+                                        type="checkbox" 
+                                        value="{{ $facility->id }}" 
+                                        name="facility_id[]"
+                                    >
+                                @endif
                                 {{ $facility->name }}  
-                                <a href="#">
-                                    <i class="fa fa-pencil"></i> Edit
-                                </a> 
                             </label>
                         </div>   
                     </div>

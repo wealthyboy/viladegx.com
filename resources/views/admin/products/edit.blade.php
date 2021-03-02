@@ -397,7 +397,7 @@
 @section('inline-scripts')
 $(document).ready(function() {
    CKEDITOR.replace('description',{
-        height: '400px'
+      height: '400px'
    })
 });
 @stop
