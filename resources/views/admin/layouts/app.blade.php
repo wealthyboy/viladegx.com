@@ -43,7 +43,7 @@
 
 	<div  class="wrapper">
 
-	    <div class="sidebar" data-active-color="orange" data-background-color="black" data-image="/backend/img/sidebar-3.jpg">
+	    <div class="sidebar" data-active-color="rose" data-background-color="black" data-image="/backend/img/sidebar-3.jpg">
     <!--
         Tip 1: You can change the color of active element of the sidebar using: data-active-color="purple | blue | green | orange | red | rose"
         Tip 2: you can also add an image using data-image tag
