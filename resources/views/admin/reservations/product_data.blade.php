@@ -131,7 +131,6 @@
                                         type="checkbox" 
                                         value="{{ $facility->id }}" 
                                         name="facility_id[]"
-
                                         {{ $helper->check($reservation->facilities , $facility->id) ? 'checked' : '' }} 
                                     >
                                 @else
@@ -150,3 +149,4 @@
             
         </div>
     </div>
+</div>
