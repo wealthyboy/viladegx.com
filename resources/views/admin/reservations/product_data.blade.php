@@ -12,9 +12,9 @@
 
             <div class="row">
                 <div class="col-md-7">
-                    <div class="form-group label-floating is-empty">
+                    <div class="form-group {{ isset($reservation) ? ''  : 'label-floating is-empty' }}">
                     <label class="control-label">Address</label>
-                    <input  required="true" name="address" data-msg="" value="{{ old('address') }}" class="form-control" type="text">
+                    <input  required="true" name="address" data-msg="" value="{{ {{ isset($reservation) ? $reservation->address :  old('address') }}" class="form-control" type="text">
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -41,7 +41,7 @@
                     <div class="form-group ">
                         <label class="control-label"> Enter description here</label>
                         <textarea name="description" 
-                        id="description" class="form-control" rows="50">{{ old('description') }}</textarea>
+                        id="description" class="form-control" rows="50">{{ isset($reservation) ? $reservation->description : old('description') }}</textarea>
                     </div>
                     </div>
                 </div>
@@ -53,19 +53,18 @@
                     </legend>
                     <div class="togglebutton">
                     <label>
-                    <input name="allow"  value="1" type="checkbox" checked>
+                    <input {{ $product->allow == 1 ? 'checked' : ''}}  name="allow"  value="1" type="checkbox" checked>
                     Enable/Disable
                     </label>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <legend>  
-                    Featured 
+                    Featured Product
                     </legend>
                     <div class="togglebutton">
                     <label>
-                        <input name="featured"  value="1" type="checkbox" >
+                        <input {{ $product->featured == 1 ? 'checked' : '' }} name="featured_product"  value="1" type="checkbox" >
                         Yes/No
                     </label>
                     </div>
