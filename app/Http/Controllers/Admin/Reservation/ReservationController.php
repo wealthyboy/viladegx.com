@@ -62,7 +62,6 @@ class ReservationController extends Controller
         $facilities = Facility::orderBy('name','asc')->get();
         $requirements = Requirement::orderBy('name','asc')->get();
         $locations = Location::parents()->get();
-        $locations = Location::parents()->get();
 
         return view('admin.reservations.create',compact('services','locations','facilities','requirements'));
     }
@@ -178,8 +177,13 @@ class ReservationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $reservation = Reservation::find($id);
+        $services = Service::orderBy('name','asc')->get();
+        $facilities = Facility::orderBy('name','asc')->get();
+        $requirements = Requirement::orderBy('name','asc')->get();
+        $locations = Location::parents()->get();
+        return view('admin.reservations.edit',compact('locations','requirements','facilities','reservation'));
     }
 
     /**
@@ -191,7 +195,7 @@ class ReservationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

@@ -28,13 +28,9 @@
                   </div>
 
                   <div class="tab-pane" id="ProductVariations">
-                     <h4 class="info-text">Rooms</h4>
-                     
+                     <h4 class="info-text">Apartment Type</h4>
                      <div class="clearfix"></div>
-                     
                      <div class="row new-room">
-            
-                        
                         <label class="col-md-12  col-xs-12 col-xs-12">
                            <div class="pull-right">
                               <button type="button"  id="add-room" class="btn btn-round  btn-primary">

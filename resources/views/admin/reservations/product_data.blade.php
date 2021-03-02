@@ -5,7 +5,7 @@
                 <div class="col-md-12">
                     <div class="form-group label-floating is-empty">
                     <label class="control-label">Apartment Name</label>
-                    <input  required="true" name="apartment_name" data-msg="" value="{{ old('apartment_name') }}" class="form-control" type="text">
+                    <input  required="true" name="apartment_name" data-msg="" value="{{ isset($reservation) ? $reservation->apartment_name :  old('apartment_name') }}" class="form-control" type="text">
                     </div>
                 </div>
             </div>
