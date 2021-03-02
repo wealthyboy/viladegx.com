@@ -14,7 +14,7 @@
                 <div class="col-md-7">
                     <div class="form-group {{ isset($reservation) ? ''  : 'label-floating is-empty' }}">
                     <label class="control-label">Address</label>
-                    <input  required="true" name="address" data-msg="" value="{{ {{ isset($reservation) ? $reservation->address :  old('address') }}" class="form-control" type="text">
+                    <input  required="true" name="address" data-msg="" value="{{ isset($reservation) ? $reservation->address :  old('address') }}" class="form-control" type="text">
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -53,7 +53,7 @@
                     </legend>
                     <div class="togglebutton">
                     <label>
-                    <input {{ $product->allow == 1 ? 'checked' : ''}}  name="allow"  value="1" type="checkbox" checked>
+                    <input {{ isset($reservation) && $reservation->allow == 1 ? 'checked' : ''}}  name="allow"  value="1" type="checkbox" checked>
                     Enable/Disable
                     </label>
                     </div>
@@ -64,7 +64,7 @@
                     </legend>
                     <div class="togglebutton">
                     <label>
-                        <input {{ $product->featured == 1 ? 'checked' : '' }} name="featured_product"  value="1" type="checkbox" >
+                        <input {{ isset($reservation) && $reservation->allow == 1 ? 'checked' : '' }} name="featured_product"  value="1" type="checkbox" >
                         Yes/No
                     </label>
                     </div>
