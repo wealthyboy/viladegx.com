@@ -13,7 +13,7 @@
                     <i class="material-icons">add</i>
                     Add Settings
             </a>
-            <a href="javascript:void(0)" onclick="confirm('Are you sure?') ? $('#form-reservations').submit() : false;" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+            <a href="javascript:void(0)" onclick="confirm('Are you sure?') ? $('#form-setting').submit() : false;" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
                 <i class="material-icons">close</i>
                 Remove
             </a>
@@ -27,7 +27,7 @@
 
                 
                 <div class="material-datatables">
-                <form action="" method="post" enctype="multipart/form-data" id="form-category">
+                <form action="{{ route('settings.destroy',['setting'=>1]) }}" method="post" enctype="multipart/form-data" id="form-setting">
             
                     <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                         <thead>
