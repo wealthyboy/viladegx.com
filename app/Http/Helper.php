@@ -28,9 +28,9 @@ class Helper{
         /**
          * This function returns a format for month day year
          */
-        $exp_date = explode(' ', $date);
-        $exp_date = explode('-', $exp_date[0]);
-        $data     =   $exp_date[1].'/'.$exp_date[2].'/'.$exp_date[0];
+        $date =  explode(' ',$date);
+        $date =  explode('-',$date[0]);
+        $date =  $date[1] .'/'. $date[2] .'/'. $date[0];
         return $date;
     }
 
@@ -42,7 +42,10 @@ class Helper{
         if ($changeFormat){
             if($date) {
                 $exp_date = explode('/', $date);
-                $formarted_date = Carbon::createFromDate($exp_date[2], $exp_date[1], $exp_date[0]);//
+                $month  = $exp_date[0];//Month
+                $day    = $exp_date[1];//Day
+                $year   = $exp_date[2];//YEar
+                $formarted_date =Carbon::createFromDate($year, $month, $day);
             }else{
                 $formarted_date = null;
             }

@@ -28,12 +28,12 @@
             <div class="col-md-5">
                 <div class="form-group label-floating">
                     <label class="control-label">From Date Available</label>
-                    <input name="edit_room_avaiable_from[{{ $room->id }}]"  required="true" value="03/0/2021" class="form-control  datepicker" type="text">
+                    <input name="edit_room_avaiable_from[{{ $room->id }}]"  required="true" value="{{ $helper::getReversedFormatedDate($room->available_from) }}" class="form-control  datepicker" type="text">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group label-floating ">
-                    <label class="control-label">Price  {{ $helper::getReversedFormatedDate($room->available_from) }}</label>
+                    <label class="control-label">Price  </label>
                     <input name="edit_room_price[{{ $room->id }}]"  required="true" value="{{ $room->price }}" class="form-control   variation" type="number">
                 </div>
             </div>
@@ -46,7 +46,7 @@
             <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">End Date</label>
-                    <input class="form-control  datepicker pull-right" value="" name="edit_room_sale_price_expires[{{ $room->id }}]" id="datepicker" type="text">
+                    <input class="form-control  datepicker pull-right" value="{{ $helper::getReversedFormatedDate($room->sale_price_expires) }}" name="edit_room_sale_price_expires[{{ $room->id }}]" id="datepicker" type="text">
                 </div>
             </div>
             <div class="clearfix"></div>

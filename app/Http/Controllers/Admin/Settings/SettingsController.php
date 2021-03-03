@@ -104,7 +104,7 @@ class SettingsController extends Controller
 		$logo = '';	
 		if ( $request->file('image') )  { 
 			$file_logo = $request->file('image');
-			$logo      =  !empty($file_logo->getClientOriginalName()) ?  time().$file_logo->getClientOriginalName() :  '' ;
+			$logo      =  !empty( $file_logo->getClientOriginalName() ) ?  time().$file_logo->getClientOriginalName() :  '' ;
 			$file_logo->move('images/logo',$logo);
 		}
 		$settings->store_logo = $logo;
@@ -134,7 +134,6 @@ class SettingsController extends Controller
 		$settings->products_items_size_w        =$request->products_items_size_w;
 		$settings->shipping_is_free  = $request->shipping_is_free ? 1 : 0;
 		$settings->type                         =$request->type;
-
 		$settings->save();
 		return \Redirect::to('/admin/settings');
 

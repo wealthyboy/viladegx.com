@@ -17,6 +17,8 @@ use App\Models\Requirement;
 use App\Models\Location;
 use App\Models\Room;
 use App\Models\Attribute;
+use Carbon\Carbon;
+
 
 
 
@@ -81,6 +83,7 @@ class ReservationController extends Controller
             "city_id" => "required",
             "description" => "required"
         ]);
+        //Month Day Year
 
         $reservation =  new Reservation();
         $reservation->name      = $request->apartment_name;
@@ -92,9 +95,10 @@ class ReservationController extends Controller
         $reservation->slug      = str_slug($request->apartment_name);
         $reservation->save();
         $reservation->facilities()->sync($request->facility_id);
+
         /**
          * Reservation Images
-         */
+        */
 
         if (!empty($request->images) ) {
             $images =  $request->images;
@@ -104,16 +108,10 @@ class ReservationController extends Controller
                 $reservation->images()->save($images);
             }
         } 
-    
-       
-        /***
-         * General Facilities
-        */
 
-        
         /**
          * Rooms
-         */
+        */
 
         $data = [];
         foreach ($request->room_name  as $key => $room) {
@@ -126,7 +124,7 @@ class ReservationController extends Controller
             $room->image = $request->room_image[$key];
             $room->sale_price = $request->room_sale_price[$key];
             $room->available_from = Helper::getFormatedDate($request->room_avaiable_from[$key],true);
-            //$room->sale_price_expires = Helper::getFormatedDate($request->room_sale_price_expires[$key],true);
+            $room->sale_price_expires = Helper::getFormatedDate($request->room_sale_price_expires[$key],true);
             $room->reservation_id = $reservation->id;
             $room->save();
             if ( count( $room_images )  > 0) {
@@ -188,6 +186,7 @@ class ReservationController extends Controller
         $helper = new Helper();
         $counter = rand(1,500);
         $product_attributes =  Attribute::parents()->where('type','reservation')->orderBy('sort_order','asc')->get();
+        
        
         return view('admin.reservations.edit',compact('locations','product_attributes','requirements','facilities','reservation','helper'));
     }

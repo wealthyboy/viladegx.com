@@ -47,8 +47,13 @@
                     <label>Description</label>
                     <div class="form-group ">
                         <label class="control-label"> Enter description here</label>
-                        <textarea name="description" 
-                        id="description" class="form-control" rows="50">{{ isset($reservation) ? $reservation->description : old('description') }}</textarea>
+                        <textarea 
+                            name="description" 
+                            id="description" 
+                            class="form-control" 
+                            rows="50">
+                            {{ isset($reservation) ? $reservation->description : old('description') }}
+                        </textarea>
                     </div>
                     </div>
                 </div>
