@@ -16,7 +16,7 @@
                 <div class="fileinput-preview fileinput-exists thumbnail"></div>
                 <div>
                     <span class="btn btn-rose btn-round btn-file">
-                        <span class="fileinput-new">Select image</span>
+                        <span class="fileinput-new">Add Logo</span>
                         <span class="fileinput-exists">Change</span>
                         <input type="file" accept="image/*" name="image" />
                     </span>
