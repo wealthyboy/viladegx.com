@@ -59,6 +59,8 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
     Route::resource('products','Admin\Product\ProductController',['names' => 'admin.products']);
     Route::get('reservations/room','Admin\Reservation\ReservationController@newRoom');
     Route::resource('reservations','Admin\Reservation\ReservationController',['names' => 'admin.reservations']);
+    Route::delete('room/{id}/delete','Admin\Rooms\RoomsController@destroy');
+
 
 
     Route::delete('products/destroy/multiple','Admin\Product\ProductController@destroy');

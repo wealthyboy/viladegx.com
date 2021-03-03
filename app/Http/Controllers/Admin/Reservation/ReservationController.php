@@ -122,7 +122,6 @@ class ReservationController extends Controller
             $room->sale_price = $request->room_sale_price[$key];
             $room->slug = str_slug($request->room_name[$key]);
             $room->image = $request->room_image[$key];
-            $room->sale_price = $request->room_sale_price[$key];
             $room->available_from = Helper::getFormatedDate($request->room_avaiable_from[$key],true);
             $room->sale_price_expires = Helper::getFormatedDate($request->room_sale_price_expires[$key],true);
             $room->reservation_id = $reservation->id;
@@ -134,12 +133,15 @@ class ReservationController extends Controller
                     $room->images()->save($imgs);
                 }
             }
-            
-            foreach ($request->attribute_ids as $attributeId) {
-                $data[1] = ['parent_id'=>null]; 
-                $data[$attributeId] = ['parent_id'=>1];  
+
+            if (!empty($request->attribute_ids)){
+                foreach ($request->attribute_ids as $attributeId) {
+                    $data[1] = ['parent_id'=>null]; 
+                    $data[$attributeId] = ['parent_id'=>1];  
+                }
+                $room->attributes()->sync($data);
             }
-            $room->attributes()->sync($data); 
+             
         }
         /**
          * Rooms with have includes
@@ -217,42 +219,103 @@ class ReservationController extends Controller
         $reservation->slug      = str_slug($request->apartment_name);
         $reservation->save();
         $reservation->facilities()->sync($request->facility_id);
+
         /**
          * Reservation Images
          */
 
-        if(!empty($request->edit_product_attributes)){
+        $data = [];
 
-            foreach($request->edit_product_attributes as $variant_id => $attribute_id ){ 
-                $stored_variation_images  = !empty($request->edit_variation_images[$variant_id]) ? $request->edit_variation_images[$variant_id] : [];
-                //$image = $request->edit_variation_image[$variant_id] ?? 
-                $product_variation       =  Room::updateOrCreate(
-                    ['id' => $variant_id],
+
+        if(!empty($request->edit_room_name)){
+            foreach($request->edit_room_name as $room_id => $room ){ 
+                $room_images = !empty($request->edit_room_images[$room_id]) ? $request->edit_room_images[$room_id] : [];
+                $apartment       =  Room::updateOrCreate(
+                    ['id' => $room_id],
                     [
-                        'price' => $request->edit_variation_price[$variant_id] ?  $request->edit_variation_price[$variant_id] :  $request->price,
-                        'sale_price' => $request->edit_variation_sale_price[$variant_id] ? $request->edit_variation_sale_price[$variant_id]  : $sale_price,
-                        'width' => $request->edit_variation_width[$variant_id]  ? $request->edit_variation_width[$variant_id] : $request->width,
-                        'length' => $request->edit_variation_length[$variant_id],
-                        'image' => $request->edit_variation_image[$variant_id], 
-                        'sale_price_expires' => !empty($request->edit_variation_sale_price_expires[$variant_id]) ?   Helper::getFormatedDate($request->edit_variation_sale_price_expires[$variant_id]) : Helper::getFormatedDate($request->sale_price_expires),
-                        'weight' => $request->edit_variation_weight[$variant_id],
-                        'quantity'  => $request->edit_variation_quantity[$variant_id] ? $request->edit_variation_quantity[$variant_id] : $request->quantity,
-                        'product_id' => $product->id,
-                        'extra_percent_off'  => $request->extra_percent_off[$variant_id]
+                        'name' => $request->edit_room_name[$room_id],
+                        'price' => $request->edit_room_price[$room_id],
+                        'sale_price' => $request->edit_room_sale_price[$room_id],
+                        'image' => $request->edit_room_image[$room_id], 
+                        'sale_price_expires' =>  Helper::getFormatedDate($request->edit_room_sale_price_expires[$room_id]),
+                        'slug' => str_slug($request->edit_room_name[$room_id]),
+                        'available_from'  => Helper::getFormatedDate($request->edit_room_avaiable_from[$room_id],true),
+                        'reservation_id' => $reservation->id,
                     ]
                 );
+                /**
+                 * Sync Images
+                */
+                
+                if( !empty($request->new_room_images) ){
+                    foreach ( $request->new_room_images as $room_id => $images) {
+                        $variation = Room::find($room_id);
+                        $images = array_filter( $images);
+                        foreach ( $images as $image) {
+                            if ($image == ''){
+                               continue;
+                            }
+                            $images = new Image(['image' => $image]);
+                            $variation->images()->save($images);
+                        }
+                    }
+                }
+
+                if (!empty($request->attribute_ids)){
+                    foreach ($request->attribute_ids as $attributeId) {
+                        $data[1] = ['parent_id'=>null]; 
+                        $data[$attributeId] = ['parent_id'=>1];  
+                    }
+                    $apartment->attributes()->sync($data);
+                }
+        
             }
+ 
         }
 
-        if (!empty($request->images) ) {
-            $images =  $request->images;
-            $images = array_filter($images);
-            foreach ( $images as $variation_image) {
-                $images = new Image(['image' => $variation_image]);
-                $reservation->images()->save($images);
-            }
-        } 
+        /**
+         * New apartments
+         */
+
+        
+        $data = [];
+        if ($request->has('new_room')){
+            foreach ($request->room_name  as $key => $room) {
+                $room = new Room;  
+                $room_images = !empty($request->room_images[$key]) ? $request->room_images[$key] : [];
+                $room->name = $request->room_name[$key];
+                $room->price = $request->room_price[$key];
+                $room->sale_price = $request->room_sale_price[$key];
+                $room->slug = str_slug($request->room_name[$key]);
+                $room->image = $request->room_image[$key];
+                $room->available_from = Helper::getFormatedDate($request->room_avaiable_from[$key],true);
+                $room->sale_price_expires = Helper::getFormatedDate($request->room_sale_price_expires[$key],true);
+                $room->reservation_id = $reservation->id;
+                $room->save();
+                if ( count( $room_images )  > 0) {
+                    $images = array_filter($room_images);
+                    foreach ( $images  as $image) {
+                        $imgs= new Image(['image' => $image]);
+                        $room->images()->save($imgs);
+                    }
+                }
     
+                if (!empty($request->attribute_ids)){
+                    foreach ($request->attribute_ids as $attributeId) {
+                        $data[1] = ['parent_id'=>null]; 
+                        $data[$attributeId] = ['parent_id'=>1];  
+                    }
+                    $room->attributes()->sync($data);
+                }
+            }
+        }
+        
+
+
+         
+        
+        (new Activity)->Log("Edit a  reservation ");
+        return \Redirect::to('/admin/reservations');
     }
 
     /**
@@ -277,6 +340,7 @@ class ReservationController extends Controller
 
         foreach ( $request->selected as $selected ){
             $delete = Reservation::find($selected);
+            optional($delete->rooms)->images->delete();
             $delete->rooms()->delete();
             $delete->delete();
         }

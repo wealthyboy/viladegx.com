@@ -9,8 +9,8 @@
     <div class="col-md-9 col-xs-9 col-sm-9">
     </div>
     <div class="col-md-3 col-xs-12 text-right border col-sm-12 pt-2 pb-4">
-        <a href="#"   title="remove panel" class="remove-panel"><i class="fa fa-trash-o"></i> Remove</a>  |
-        <a href="#"   title="open/close panel" class="open-close-panel"><i class="fa fa-plus"></i> Expand</a> 
+        <a href="/admin/room/{{ $room->id }}/delete"   title="remove panel" class="delete-panel"><i class="fa fa-trash-o"></i> Remove</a>  |
+        <a href="#" title="open/close panel" class="open-close-panel"><i class="fa fa-plus"></i> Expand</a> 
     </div>
 
     <div id="variation-panel" data-id="{{ $room->id }}"   class="hide v-panel">
@@ -59,7 +59,7 @@
                 <div class="row">
                     <div   class="col-md-12 col-sm-6 col-xs-6">
                         <div id="j-drop" class=" j-drop">
-                        <input accept="image/*"   onchange="getFile(this,'room_image[{{ $room->id }}]')" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
+                        <input accept="image/*"   onchange="getFile(this,'edit_room_image[{{ $room->id }}]')" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
                         <div   class="upload-text hide"> 
                             <a   class="" href="#">
                                 <img class="" src="/backend/img/upload_icon.png">
@@ -73,7 +73,7 @@
                                     <div id="remove_image" class="remove_image remove-image">
                                         <a class="remove-image"  data-randid="{{ $room->id }}" data-model="Room"   data-id="{{ $room->id }}" data-url="{{ $room->image }}" href="#">Remove</a>
                                     </div>
-                                    <input type="hidden" class="file_upload_input stored_image_url" value="{{ $room->image }}" name="edit_variation_image[{{ $room->id }}]">
+                                    <input type="hidden" class="file_upload_input stored_image_url" value="{{ $room->image }}" name="edit_room_image[{{ $room->id }}]">
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
             </div>
             <div class="col-sm-9">
                 <div id="j-drop"  class="j-drop">
-                <input accept="image/*"   onchange="getFile(this,'room_images[{{ $room->id }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
+                <input accept="image/*"   onchange="getFile(this,'new_room_images[{{ $room->id }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
                    <div   class=" upload-text {{ $room->images->count() ||  $room->image ? 'hide' : ''}}"> 
                         <a  class="" href="#">
                             <img class="" src="/backend/img/upload_icon.png">
@@ -98,7 +98,7 @@
                                     <img class="img-thumnail" src="{{ $image->image }}">
                                     <div id="remove_image" class="remove_image remove-image">
                                         <a class="remove-image"  data-id="{{ $image->id }}" data-randid="{{ $image->id }}" data-model="Image" data-type="complete"  data-url="{{ $image->image }}" href="#">Remove</a>
-                                        <input type="hidden" class="file_upload_input stored_image_url" value="{{ $room->image }}" name="edit_variation_images[{{ $room->id }}][]">
+                                        <input type="hidden" class="file_upload_input stored_image_url" value="{{ $room->image }}" name="edit_room_images[{{ $room->id }}][]">
                                     </div>
                                 </div>
                             </div>

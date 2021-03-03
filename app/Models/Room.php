@@ -13,6 +13,18 @@ class Room extends Model
     protected $dates = ['available_from'];
 
 
+    protected $fillable = [
+        'name',
+        'price',
+        'sale_price',
+        'image', 
+        'sale_price_expires',
+        'slug',
+        'available_from',
+        'reservation_id',
+    ];
+
+
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable')->orderBy('id','asc')->where('image','!=','No Image');

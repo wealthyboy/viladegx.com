@@ -132,11 +132,16 @@ $(document).ready(function(){
 
   $(document).on('click','.delete-panel',function(e){
     e.preventDefault()
-    $(this).parent().parent('.variation-panel').remove();
+    $(this).text("Taking it out....");
     $.ajax({
       type: "delete",
       url: $(this).attr('href'),
-    }).done(function(response){});
+    }).done(function(response){
+      console.log(response)
+      $(this).parent().parent('.variation-panel').remove()
+    }).catch(function(){
+       $(this).text("Something went wrong.");
+    });
   })
 
   $(".search_products").on('input',function(e){
