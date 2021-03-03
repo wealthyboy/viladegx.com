@@ -272,7 +272,7 @@
                     </p>
                 </a>
 
-                <div class="collapse {{ $helper->active_link(['brands','shippings','location','system']) ? 'in' : ''}}"  id="Local">
+                <div class="collapse {{ $helper->active_link(['brands','shippings','location','settings']) ? 'in' : ''}}"  id="Local">
                     <ul class="nav">
                         <li class="{{ $helper->active_link(['brands']) }} ">
                             <a href="{{ route('brands.index') }}">
@@ -314,7 +314,8 @@
                                 <span class="sidebar-normal"> Payment Gateway </span>
                             </a>
                         </li> -->
-                        <li>
+                        <li class="{{ $helper->active_link(['settings']) }} ">
+
                             <a href="{{ route('settings.index') }}">
                                 <span class="sidebar-mini"> S </span>
                                 <span class="sidebar-normal"> System </span>
