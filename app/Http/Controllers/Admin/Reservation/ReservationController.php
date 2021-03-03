@@ -340,7 +340,7 @@ class ReservationController extends Controller
 
         foreach ( $request->selected as $selected ){
             $delete = Reservation::find($selected);
-            optional($delete->rooms)->images->delete();
+            optional($delete->rooms())->images->delete();
             $delete->rooms()->delete();
             $delete->delete();
         }
