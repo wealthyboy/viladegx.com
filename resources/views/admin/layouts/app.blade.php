@@ -131,9 +131,6 @@
                                 <span class="sidebar-normal"> Categories </span>
                             </a>
                         </li>
-
-
-
                         <li class="{{ $helper->active_link(['facilities']) }} ">
                            <a href="{{ route('facilities.index') }}">
                                 <span class="sidebar-mini"> P </span>
@@ -246,7 +243,7 @@
                 </div>
             </li>
 
-            <li class="{{ $helper->active_link(['users','customers']) }} ">
+            <li class="{{ $helper->active_link(['users','customers'])  ? 'in' : '' }} ">
                 <a data-toggle="collapse" href="dashboard.html#users">
                 <i class="fa fa-user fw"></i> <p> Users 
                        <b class="caret"></b>
