@@ -113,32 +113,26 @@
                 <div class="collapse 
                    {{ $helper->active_link(['subjects','products','reservations','category','fine_art','discounts','attributes','vouchers','sizes']) ? 'in' : ''}}" id="products">
                     <ul class="nav">
-                        <li class="{{ $helper->active_link(['category']) }}">
-                             <a  href="{{ route('category.index') }}">
-                                <span class="sidebar-mini"> C </span>
-                                <span class="sidebar-normal"> Categories </span>
-                            </a>
-                        </li>
                         <li class="{{ $helper->active_link(['attributes']) }} ">
                             <a  href="{{ route('attributes.index') }}">
                                 <span class="sidebar-mini"> A</span>
                                 <span class="sidebar-normal"> Attributes </span>
                             </a>
                         </li>
-                        <li class="{{ $helper->active_link(['products']) }} ">
-                           <a href="{{ route('admin.products.index') }}">
-                                <span class="sidebar-mini"> P </span>
-                                <span class="sidebar-normal"> Products </span>
+                        <li class="{{ $helper->active_link(['brands']) }} ">
+                            <a href="{{ route('brands.index') }}">
+                                <span class="sidebar-mini"> B </span>
+                                <span class="sidebar-normal"> Brands </span>
                             </a>
                         </li>
-                        
+                        <li class="{{ $helper->active_link(['category']) }}">
+                             <a  href="{{ route('category.index') }}">
+                                <span class="sidebar-mini"> C </span>
+                                <span class="sidebar-normal"> Categories </span>
+                            </a>
+                        </li>
 
-                        <li class="{{ $helper->active_link(['reservations']) }} ">
-                           <a href="{{ route('admin.reservations.index') }}">
-                                <span class="sidebar-mini"> R </span>
-                                <span class="sidebar-normal"> Reservation </span>
-                            </a>
-                        </li>
+
 
                         <li class="{{ $helper->active_link(['facilities']) }} ">
                            <a href="{{ route('facilities.index') }}">
@@ -147,6 +141,20 @@
                             </a>
                         </li>
 
+                        <li class="{{ $helper->active_link(['reservations']) }} ">
+                           <a href="{{ route('admin.reservations.index') }}">
+                                <span class="sidebar-mini"> R </span>
+                                <span class="sidebar-normal"> Reservation </span>
+                            </a>
+                        </li>
+                        
+                        <li class="{{ $helper->active_link(['products']) }} ">
+                           <a href="{{ route('admin.products.index') }}">
+                                <span class="sidebar-mini"> P </span>
+                                <span class="sidebar-normal"> Products </span>
+                            </a>
+                        </li>
+                    
                         <li class="{{ $helper->active_link(['requirements']) }} ">
                            <a href="{{ route('requirements.index') }}">
                                 <span class="sidebar-mini"> R</span>
@@ -154,10 +162,7 @@
                             </a>
                         </li>
 
-                       
-                        
-                        
-
+                    
                         <li class="{{ $helper->active_link(['vouchers']) }} ">
                             <a href="{{ route('vouchers.index') }}">        
                             <span class="sidebar-mini"> RV</span>
@@ -274,13 +279,7 @@
 
                 <div class="collapse {{ $helper->active_link(['brands','shippings','location','settings']) ? 'in' : ''}}"  id="Local">
                     <ul class="nav">
-                        <li class="{{ $helper->active_link(['brands']) }} ">
-                            <a href="{{ route('brands.index') }}">
-                                <span class="sidebar-mini"> B </span>
-                                <span class="sidebar-normal"> Brands </span>
-                            </a>
-                        </li>
-
+                        
                         <li>
                             <a href="{{ route('shipping.index') }}">
                                 <span class="sidebar-mini"> SP </span>
@@ -288,13 +287,13 @@
                             </a>
                         </li>
                        
-                        <li>
+                        <li class="{{ $helper->active_link(['location']) }} ">
                             <a href="{{ route('location.index') }}">
                                 <span class="sidebar-mini"> CS </span>
                                 <span class="sidebar-normal"> Country/States </span>
                             </a>
                         </li>
-                        <li>
+                        <li class="{{ $helper->active_link(['Permissions']) }} ">
                             <a href="{{ route('permissions.index') }}">
                                 <span class="sidebar-mini"> PM </span>
                                 <span class="sidebar-normal"> Permission </span>
@@ -302,7 +301,7 @@
                         </li>
 
                        
-                        <li>
+                        <li class="{{ $helper->active_link(['rates']) }} ">
                             <a href="{{ route('rates.index') }}">
                                 <span class="sidebar-mini"> CR </span>
                                 <span class="sidebar-normal"> Currency Rates </span>
