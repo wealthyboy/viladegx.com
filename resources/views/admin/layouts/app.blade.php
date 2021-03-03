@@ -111,7 +111,7 @@
                 </a>
 
                 <div class="collapse 
-                   {{ $helper->active_link(['subjects','products','reservations','category','fine_art','discounts','attributes','vouchers','sizes']) ? 'in' : ''}}" id="products">
+                   {{ $helper->active_link(['products','reservations','category','fine_art','discounts','attributes','vouchers','sizes']) ? 'in' : ''}}" id="products">
                     <ul class="nav">
                         <li class="{{ $helper->active_link(['attributes']) }} ">
                             <a  href="{{ route('attributes.index') }}">
@@ -175,7 +175,7 @@
            
 
 
-            <li>
+            <li class="{{ $helper->active_link(['orders']) }}">
                 <a data-toggle="collapse" href="dashboard.html#shop">
                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>   
                     <p> Shop 
@@ -183,9 +183,9 @@
                     </p>
                 </a>
 
-                <div class="collapse {{ $helper->active_link(['products','categories','discounts','attributes','vouchers']) ? 'in' : ''}}" id="shop">
+                <div class="collapse {{ $helper->active_link(['orders']) ? 'in' : ''}}" id="shop">
                     <ul class="nav">
-                        <li>
+                        <li  class="{{ $helper->active_link(['orders']) }} ">
                             <a href="{{ route('admin.orders.index') }}">
                                 <span class="sidebar-mini"> C </span>
                                 <span class="sidebar-normal"> Orders  Fashion</span>
@@ -243,13 +243,13 @@
                 </div>
             </li>
 
-            <li class="{{ $helper->active_link(['users','customers'])  ? 'in' : '' }} ">
+            <li class=" {{ $helper->active_link(['users','customers']) }}">
                 <a data-toggle="collapse" href="dashboard.html#users">
                 <i class="fa fa-user fw"></i> <p> Users 
                        <b class="caret"></b>
                     </p>
                 </a>
-                <div class="collapse" id="users">
+                <div class="collapse  {{ $helper->active_link(['users','customers'])  ? 'in' : '' }}" id="users">
                     <ul class="nav">
                         <li class="{{ $helper->active_link(['users']) }} ">
                             <a href="{{ route('admin.users.index') }}">
@@ -266,7 +266,7 @@
                     </ul>
                 </div>
             </li>
-            <li class="{{ $helper->active_link(['brands','shippings','location','system']) }} ">
+            <li class="{{ $helper->active_link(['brands','shipping','location','system']) }} ">
                 <a data-toggle="collapse" href="dashboard.html#Local">
                     <i class="material-icons">image</i>
                     <p> Local 
@@ -274,10 +274,10 @@
                     </p>
                 </a>
 
-                <div class="collapse {{ $helper->active_link(['brands','shippings','location','settings']) ? 'in' : ''}}"  id="Local">
+                <div class="collapse {{ $helper->active_link(['permissions','shipping','location','settings','rates']) ? 'in' : ''}}"  id="Local">
                     <ul class="nav">
                         
-                        <li>
+                        <li class="{{ $helper->active_link(['shipping']) }} ">
                             <a href="{{ route('shipping.index') }}">
                                 <span class="sidebar-mini"> SP </span>
                                 <span class="sidebar-normal"> Shipping </span>
@@ -290,7 +290,7 @@
                                 <span class="sidebar-normal"> Country/States </span>
                             </a>
                         </li>
-                        <li class="{{ $helper->active_link(['Permissions']) }} ">
+                        <li class="{{ $helper->active_link(['permissions']) }} ">
                             <a href="{{ route('permissions.index') }}">
                                 <span class="sidebar-mini"> PM </span>
                                 <span class="sidebar-normal"> Permission </span>

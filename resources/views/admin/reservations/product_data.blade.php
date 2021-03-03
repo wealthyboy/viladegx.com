@@ -19,7 +19,6 @@
                 </div>
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="control-label"></label>
                         <select name="city_id" required="true" class="form-control">
                             <option  value="" selected="">--Choose City--</option>
                             @foreach($locations as $location)

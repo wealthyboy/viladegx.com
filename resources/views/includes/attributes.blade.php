@@ -1,5 +1,5 @@
 @foreach($obj->children->sortBy('name') as $obj)
-    <div class="children" value="{{ $obj->id }}">
+    <div class="" value="{{ $obj->id }}">
        <div class="">
             <label>
                 <input 

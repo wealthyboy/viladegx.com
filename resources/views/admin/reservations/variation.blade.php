@@ -80,14 +80,14 @@
             </div>
         </div>
         <div class="col-md-12 mt-3 pr-5 pl-5">
-            <div class="material-datatables ">
+            <div class="">
                 @foreach($product_attributes as $product_attribute)
                 <h4>{{ $product_attribute->name }}</h4>
-                <div class="well well-sm" style="height: 50px; background-color: #fff; color: black; overflow: auto;">
-                    <div class="parent" value="{{ $product_attribute->id }}">
+                    <div  class="" value="{{ $product_attribute->id }}">
                         @include('includes.attributes',['obj'=>$product_attribute,'space'=>'&nbsp;&nbsp;','model' => 'attributes','url' => 'attribute'])
                     </div>
-                </div>
+                    <hr/>
+
                 @endforeach  
             </div>
         </div>

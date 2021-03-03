@@ -109,15 +109,10 @@
                                         <div class="form-group label-floating">
                                             <select name="permission_id" class="wide  form-control input-md custom_input">
                                             <option value="">Select Permission</option>
-
-                                            @foreach($permissions as $permission )
-                                                 @if(null !== $user->users_permission && $permission->id == $user->users_permission->permission->id)
+                                                @foreach($permissions as $permission )
                                                   <option value="{{ $permission->id }}" selected>{{ $permission->name }}</option>
-                                                @else
-                                                   <option value="{{ $permission->id }}">{{ $permission->name }}</option>
-
-                                                @endif 
-                                               @endforeach
+                                                 
+                                                @endforeach
                                             </select>
                               
                                         </div>
