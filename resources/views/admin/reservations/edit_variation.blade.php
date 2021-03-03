@@ -20,7 +20,7 @@
             <div class="col-md-7">
                 <div class="form-group label-floating is-ty">
                     <label class="control-label">Accommodation Type Name</label>
-                    <input name="room_name[{{ $room->id }}]"  required="true" value="{{ $room->name }}" class="form-control  variation" type="text">
+                    <input name="edit_room_name[{{ $room->id }}]"  required="true" value="{{ $room->name }}" class="form-control  variation" type="text">
                     <span class="material-input"></span>
                 </div>
             </div>
@@ -28,25 +28,25 @@
             <div class="col-md-5">
                 <div class="form-group label-floating">
                     <label class="control-label">From Date Available</label>
-                    <input name="room_avaiable_from[{{ $room->id }}]"  required="true" value="03/0/2021" class="form-control  datepicker" type="text">
+                    <input name="edit_room_avaiable_from[{{ $room->id }}]"  required="true" value="03/0/2021" class="form-control  datepicker" type="text">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group label-floating ">
                     <label class="control-label">Price  {{ $helper::getReversedFormatedDate($room->available_from) }}</label>
-                    <input name="room_price[{{ $room->id }}]"  required="true" value="{{ $room->price }}" class="form-control   variation" type="number">
+                    <input name="edit_room_price[{{ $room->id }}]"  required="true" value="{{ $room->price }}" class="form-control   variation" type="number">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group label-floating ">
                     <label class="control-label">Sale Price</label>
-                    <input name="room_sale_price[{{ $room->id }}]"   value="{{ $room->name }}"  class="form-control variation_sale_price variation" type="number">
+                    <input name="edit_room_sale_price[{{ $room->id }}]"   value="{{ $room->sale_price }}"  class="form-control variation_sale_price variation" type="number">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group label-floating">
                     <label class="control-label">End Date</label>
-                    <input class="form-control  datepicker pull-right" value="" name="room_sale_price_expires[{{ $room->id }}]" id="datepicker" type="text">
+                    <input class="form-control  datepicker pull-right" value="" name="edit_room_sale_price_expires[{{ $room->id }}]" id="datepicker" type="text">
                 </div>
             </div>
             <div class="clearfix"></div>

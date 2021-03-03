@@ -25,14 +25,16 @@ class SettingsController extends Controller
     }
 
 	public function index(){
-		$setting = SystemSetting::first();
-		//$ship_company = ShipCompany::all();
-		if ( $setting) { 
-		  	 return view('admin.settings.index',compact('setting'));
-		}
-		User::canTakeAction(5);
-	    return view('admin.settings.create',compact('setting','currencies'));
+		$settings = SystemSetting::all();
+		return view('admin.settings.index',compact('settings'));
     }
+
+
+	public function create()
+	{
+		$currencies = Currency::all();
+		return view('admin.settings.create',compact('currencies'));
+	}
 
 	
 	
@@ -41,8 +43,10 @@ class SettingsController extends Controller
 		$setting = SystemSetting::find($id); 
 		$currencies = Currency::all();
 		$payments = Payment::all();
-		return view('admin.settings.create', compact('setting','payments','currencies'));	
+	
+		return view('admin.settings.edit', compact('setting','payments','currencies'));	
     }
+
 	
 	
 	public function update(Request $request,$id){
@@ -68,6 +72,8 @@ class SettingsController extends Controller
 		$settings->alert_email                  =$request->alert_email;
 		$settings->order_status                 ='';
 		$settings->invoice_prefix               =$request->invoice_prefix;
+		$settings->type                         =$request->type;
+
 		$settings->s_h_w_l                      = $request->s_h_w_l;
 		$settings->s_h_o_l                      = $request->s_h_o_l;
 		$settings->allow_multi_currency         = $request->allow_multi_currency ? true : false;
@@ -86,8 +92,6 @@ class SettingsController extends Controller
 
 		//$settings->max_file_size                =$request->max_file_size;
 		$settings->save();
-		$flash = app('App\Http\Flash');
-		$flash->success("Success","Inserted");
 		return \Redirect::to('/admin/settings');
     }
 	
@@ -129,11 +133,9 @@ class SettingsController extends Controller
 		$settings->products_items_size_h        =$request->products_items_size_h;
 		$settings->products_items_size_w        =$request->products_items_size_w;
 		$settings->shipping_is_free  = $request->shipping_is_free ? 1 : 0;
+		$settings->type                         =$request->type;
 
-		//$settings->max_file_size                =$request->max_file_size;
 		$settings->save();
-		//$flash = app('App\Http\Flash');
-		//$flash->success("Success","Inserted");
 		return \Redirect::to('/admin/settings');
 
 	}

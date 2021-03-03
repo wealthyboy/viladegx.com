@@ -124,6 +124,7 @@ class ReservationController extends Controller
             $room->sale_price = $request->room_sale_price[$key];
             $room->slug = str_slug($request->room_name[$key]);
             $room->image = $request->room_image[$key];
+            $room->sale_price = $request->room_sale_price[$key];
             $room->available_from = Helper::getFormatedDate($request->room_avaiable_from[$key],true);
             //$room->sale_price_expires = Helper::getFormatedDate($request->room_sale_price_expires[$key],true);
             $room->reservation_id = $reservation->id;
@@ -200,7 +201,59 @@ class ReservationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $this->validate($request,[
+            "apartment_name"  => "required",
+            'address'=> "required",
+            "city_id" => "required",
+            "description" => "required"
+        ]);
+
+        $reservation =  Reservation::find($id);
+        $reservation->name      = $request->apartment_name;
+        $reservation->address   = $request->address;
+        $reservation->city_id   = $request->city_id;
+        $reservation->state_id  = Location::find($request->city_id)->parent_id;
+        $reservation->image     = $request->image;
+        $reservation->description     = $request->description;
+        $reservation->slug      = str_slug($request->apartment_name);
+        $reservation->save();
+        $reservation->facilities()->sync($request->facility_id);
+        /**
+         * Reservation Images
+         */
+
+        if(!empty($request->edit_product_attributes)){
+
+            foreach($request->edit_product_attributes as $variant_id => $attribute_id ){ 
+                $stored_variation_images  = !empty($request->edit_variation_images[$variant_id]) ? $request->edit_variation_images[$variant_id] : [];
+                //$image = $request->edit_variation_image[$variant_id] ?? 
+                $product_variation       =  Room::updateOrCreate(
+                    ['id' => $variant_id],
+                    [
+                        'price' => $request->edit_variation_price[$variant_id] ?  $request->edit_variation_price[$variant_id] :  $request->price,
+                        'sale_price' => $request->edit_variation_sale_price[$variant_id] ? $request->edit_variation_sale_price[$variant_id]  : $sale_price,
+                        'width' => $request->edit_variation_width[$variant_id]  ? $request->edit_variation_width[$variant_id] : $request->width,
+                        'length' => $request->edit_variation_length[$variant_id],
+                        'image' => $request->edit_variation_image[$variant_id], 
+                        'sale_price_expires' => !empty($request->edit_variation_sale_price_expires[$variant_id]) ?   Helper::getFormatedDate($request->edit_variation_sale_price_expires[$variant_id]) : Helper::getFormatedDate($request->sale_price_expires),
+                        'weight' => $request->edit_variation_weight[$variant_id],
+                        'quantity'  => $request->edit_variation_quantity[$variant_id] ? $request->edit_variation_quantity[$variant_id] : $request->quantity,
+                        'product_id' => $product->id,
+                        'extra_percent_off'  => $request->extra_percent_off[$variant_id]
+                    ]
+                );
+            }
+        }
+
+        if (!empty($request->images) ) {
+            $images =  $request->images;
+            $images = array_filter($images);
+            foreach ( $images as $variation_image) {
+                $images = new Image(['image' => $variation_image]);
+                $reservation->images()->save($images);
+            }
+        } 
+    
     }
 
     /**

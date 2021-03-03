@@ -33,7 +33,6 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
     Route::get('customers',  'Admin\Users\UsersController@customers')->name('customers');
     Route::resource('reviews',  'Admin\Reviews\ReviewsController',['names' => 'reviews']);
     Route::resource('posts',  'Admin\Blog\BlogController',['names' => 'posts']);
-    Route::resource('fine_art',  'Admin\FineArt\FineArtController',['names' => 'admin.finearts']);
 
 
     Route::get('post/{post_id}/comments',  'Admin\Comments\CommentsController@comments');
@@ -56,9 +55,6 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
     Route::resource('payments','Admin\Payments\PaymentController',['name'=>'payments']);
     Route::resource('rates','Admin\CurrencyRates\CurrencyRatesController',['name'=>'rates']);
     Route::resource('vouchers','Admin\Vouchers\VouchersController',['names'=>'vouchers']);
-    Route::resource('frames','Admin\Frames\FramesController',['names' => 'frames']);
-    Route::resource('subjects','Admin\Subjects\SubjectsController',['names' => 'subjects']);
-    Route::resource('sizes','Admin\Sizes\SizesController',['names' => 'sizes']);
 
     Route::resource('products','Admin\Product\ProductController',['names' => 'admin.products']);
     Route::get('reservations/room','Admin\Reservation\ReservationController@newRoom');
