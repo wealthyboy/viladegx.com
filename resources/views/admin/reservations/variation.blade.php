@@ -9,6 +9,9 @@
     <div id="variation-panel" data-id="{{ $counter }}"   class="hide v-panel">
         <div class="clearfix"></div>
         <div class="col-md-12">
+        <input name="has_more_room"     value="1"   class="" type="hidden">
+        <input name="new_room"     value="1"   class="" type="hidden">
+        
                 
             <div class="col-md-7">
                 <div class="form-group label-floating is-ty">

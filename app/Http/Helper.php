@@ -28,37 +28,35 @@ class Helper{
         /**
          * This function returns a format for month day year
          */
-        $date =  explode(' ',$date);
-        $date =  explode('-',$date[0]);
-        $date =  $date[1] .'/'. $date[2] .'/'. $date[0];
-        return $date;
+        if ($date) {
+            $date =  explode(' ',$date);
+            $date =  explode('-',$date[0]);
+            $date =  $date[1] .'/'. $date[2] .'/'. $date[0];
+            return $date;
+        }
+        return null;
     }
 
 
     public  static function getFormatedDate($date,$changeFormat = true)
     {   
         //createFromDate  $year ,$month , $day
-
-        if ($changeFormat){
-            if($date) {
+        if ($date) {
+            if ($changeFormat){
                 $exp_date = explode('/', $date);
                 $month  = $exp_date[0];//Month
                 $day    = $exp_date[1];//Day
                 $year   = $exp_date[2];//YEar
                 $formarted_date =Carbon::createFromDate($year, $month, $day);
-            }else{
-                $formarted_date = null;
-            }
-        } else {
-            if($date) {
+            } else {
                 $exp_date = explode('-', $date);
                 $formarted_date = Carbon::createFromDate($exp_date[0], $exp_date[1], $exp_date[2]);//
-            }else{
-                $formarted_date = null;
             }
+            return $formarted_date;
         }
+
         
-        return $formarted_date;
+        return null;
     }
 
 

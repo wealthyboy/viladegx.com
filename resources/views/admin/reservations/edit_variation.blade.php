@@ -16,6 +16,8 @@
     <div id="variation-panel" data-id="{{ $room->id }}"   class="hide v-panel">
         <div class="clearfix"></div>
         <div class="col-md-12">
+        <input name="edit_room"  value="1"   class="" type="hidden">
+
                 
             <div class="col-md-7">
                 <div class="form-group label-floating is-ty">
