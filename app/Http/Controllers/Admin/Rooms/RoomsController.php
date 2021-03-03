@@ -9,9 +9,6 @@ use App\Models\Room;
 class RoomsController extends Controller
 {
     
-    
-
-
 
     /**
      * Remove the specified resource from storage.

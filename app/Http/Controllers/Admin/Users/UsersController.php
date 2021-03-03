@@ -60,7 +60,40 @@ class UsersController extends Controller
     }
 	
 
-	 protected function update($id, Request $request)
+	
+
+	protected function store(Request $request)
+    {      
+		 
+		$this->validate($request, [
+			'first_name' => 'required|max:255',
+			'email'        => 'required|email|max:255',
+		]);
+
+		$user  = new User;
+		$user->name =$request->first_name;
+		$user->last_name =$request->last_name;
+		$user->email=$request->email;
+		$user->password = $request->has('password') ? bcrypt($request->password) : $user->password ;
+		$user->save();
+
+		$user->users_permission()->update([
+			'permission_id'=>$request->permission_id
+		]);
+
+		$user->addresses()->create([
+			'first_name'=>$request->first_name,
+			'last_name'=>$request->last_name,
+			'address'=>$request->address,
+			'city'=>$request->city,
+			'state_id'=>1,
+		]);
+		
+		return redirect('/admin/users');	  
+    }
+
+	 
+	protected function update($id, Request $request)
     {      
 		 
 		$this->validate($request, [
