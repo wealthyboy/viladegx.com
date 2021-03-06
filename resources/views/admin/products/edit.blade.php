@@ -116,21 +116,21 @@
                            <h4>Meta Fields  </h4>
                            
                            @foreach($meta_attributes as $meta_attribute)
-                              <div class="form-group label-floating">
-                                 <label class="control-label is-empty">{{ $meta_attribute->name }}</label>
+                              <div class="form-group">
+                                 <label class="control-label ">{{ $meta_attribute->name }}</label>
                                  <select name="meta_fields[{{ $meta_attribute->id }}]" class="form-control"  title="Choose {{ $meta_attribute->name }}" data-style="select-with-transition" title="{{ $meta_attribute->name }}" data-size="7">
                                  <option value="" selected="selected"> Choose One</option>
                                     @foreach($meta_attribute->children as $meta_attribute) 
                                        @foreach($product->meta_fields as $meta_field) 
                                           @if($meta_field->name ==  $meta_attribute->name )
                                              <?php  $metas[] = $meta_attribute->id  ?>
-                                             <option   value="{{ $meta_attribute->id }}" selected>{{ $meta_attribute->name }} </option>
+                                             <option value="{{ $meta_attribute->id }}" selected>{{ $meta_attribute->name }} </option>
                                           @endif
                                        @endforeach
                                        @if (in_array($meta_attribute->id,$metas))
                                          @continue;
                                        @endif 
-                                       <option   value="{{ $meta_attribute->id }}">{{ $meta_attribute->name }} </option>
+                                       <option  value="{{ $meta_attribute->id }}">{{ $meta_attribute->name }}</option>
                                     @endforeach
                                  </select>
                               </div>
@@ -220,7 +220,7 @@
                                     <div   class="col-md-12 col-sm-6 col-xs-6">
                                        <div id="j-drop" class=" j-drop">
                                           <input accept="image/*"   onchange="getFile(this,'image','Product',false)" class="upload_input"   data-msg="Upload  your image" type="file"  name="img"  />
-                                          <div   class="{{ optional($product)->images ? 'hide' : '' }} upload-text"> 
+                                          <div   class="{{ optional($product)->image ? 'hide' : '' }} upload-text"> 
                                              <a   class="" href="#">
                                                 <img class="" src="/backend/img/upload_icon.png">
                                                 <b>Click to upload image</b> 
@@ -275,7 +275,7 @@
                               </div>
                            </div>
                            <div class="row">
-                              <div class="col-md-3">
+                              <div class="col-md-2">
                                  <div class="form-group is-empty">
                                     <label class="control-label">Quantity</label>
                                     <input name="quantity"  type="number" required="true"  value="{{ isset($product) ? optional($product)->quantity : old('quantity') }}"  class="form-control">
@@ -285,31 +285,22 @@
                               <div class="col-md-3">
                                  <div class="form-group  is-empty">
                                     <label class="control-label">Price</label>
-                                    <input name="price"  required="true" type="text" value="{{ isset($product) ? $product->price : old('price') }}" class="form-control">
-                                    <span class="material-input"></span>
+                                    <input name="price"  required="true" type="number" value="{{ isset($product) ? $product->price : old('price') }}" class="form-control">
                                  </div>
                               </div>
                               <div class="col-md-3">
                                  <div class="form-group  is-empty">
                                     <label class="control-label">Sale Price</label>
-                                    <input name="sale_price"   value="{{ $product->sale_price }}"  class="form-control" type="text">
-                                    <span class="material-input"></span>
+                                    <input name="sale_price"   value="{{ $product->sale_price }}"  class="form-control" type="number">
                                  </div>
                               </div>
-                              <div class="col-md-3">
+                              <div class="col-md-4">
                                  <div class="form-group">
                                     <label class="control-label">End Date</label>
                                     <input class="form-control  pull-right" name="sale_price_expires" value="{{   $product->sale_price_expires ? date('Y') .'-'.  optional($product->sale_price_expires)->format('m-d') : '' }}" id="datepicker" type="date">
-                                    <span class="material-input"></span>
                                  </div>
                               </div>
-                              <div class="col-md-3">
-                              <div class="form-group label-floating">
-                                 <label class="control-label">End Date</label>
-                                 <input class="form-control  pull-right"  name="extra_percent_off" value="{{ $product->extra_percent_off }}"   id="datepicker" type="number">
-                                 <span class="material-input"></span>
-                              </div>
-                           </div>
+                              
                            </div>
                            <div class="row">
                               <div class="col-md-3">
@@ -393,6 +384,8 @@
 @section('page-scripts')
 <script src="{{ asset('ckeditor/ckeditor.js?version='.mt_rand(1000000, 9999999)) }}"></script>
 <script src="{{ asset('backend/js/products.js?version='.mt_rand(1000000, 9999999)) }}"></script>
+<script src="{{ asset('backend/js/uploader.js') }}"></script>
+
 @stop
 @section('inline-scripts')
 $(document).ready(function() {

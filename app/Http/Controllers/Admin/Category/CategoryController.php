@@ -112,6 +112,10 @@ class CategoryController extends Controller
         if ( null !== $cat ){
             if ($cat->parent_id){
                 $parent = Category::find($cat->parent_id);
+                if ($parent->parent_id){
+                    $parent = Category::find($parent->parent_id);
+                    return  str_slug($parent->name.' '.$cat->name.' '.$name);
+                }
                 return  str_slug($parent->name.' '.$cat->name.' '.$name);
             }
             return $slug = null !== $cat ? str_slug($cat->name.' '.$name) : str_slug($name);

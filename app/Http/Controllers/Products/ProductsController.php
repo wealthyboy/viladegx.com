@@ -37,7 +37,7 @@ class ProductsController extends Controller
 
     public function  index(Request $request,Category $category,Builder $builder)  {
         $page_title = implode(" ",explode('-',$category->slug));
-        $category_attributes = $category->attribute_parents()->has('children')->get();
+        $category_attributes = $category->parent_attributes()->has('attribute_children')->get();
         $products = Product::whereHas('categories',function(Builder  $builder) use ($category){
             $builder->where('categories.name',$category->name);
         })->filter($request,$this->getFilters($category_attributes))->latest()->paginate($this->settings->products_items_per_page);
@@ -50,8 +50,9 @@ class ProductsController extends Controller
         }
 
 
+
         $breadcrumb = $category->name; 
-        return  view('products.index',compact(
+        return  view('fashion.products.index',compact(
             'category',
             'page_title',
             'category_attributes',
@@ -60,10 +61,12 @@ class ProductsController extends Controller
         ));     
     }
 
+
+
     public function getFilters($category_attributes){
         $filters = [];
         foreach ($category_attributes as $category_attribute){
-           $filters[$category_attribute->attribute->slug] = AttributesFilter::class;
+           $filters[$category_attribute->slug] = AttributesFilter::class;
         }
         return $filters;
     }
@@ -84,12 +87,11 @@ class ProductsController extends Controller
             }
         }
 
-        $photo_to_art_attributes = $product->subjects->load('sizes','sizes.frames');
         $attributes =  collect($data);
         $attributes = $attributes->count() && $product->product_type == 'variable' ? $attributes : '{}';
         $related_products = RelatedProduct::where(['product_id' => $product->id])->get();
         $product->load(["variants","variants.images","default_variation","default_variation.images"]);
-    	return view('products.show',compact('category','photo_to_art_attributes','related_products','attributes','product','page_title'));
+    	return view('fashion.products.show',compact('category','related_products','attributes','product','page_title'));
     }
 
     

@@ -12,7 +12,7 @@
                                     ->first() 
                         ?>
                         <div class="col-md-3 col-xs-6 col-sm-6">
-                            <div class="form-group label-floating">
+                            <div class="form-group ">
                                 <label style="
                                         top: -28px;
                                         left: 0;
@@ -25,7 +25,7 @@
                                         @if (  optional($variantion_value)->name !== null)
                                         <option 
                                             value="">
-                                            Choose one
+                                            Choose {{ $product_attribute->name }}
                                         </option>
                                         @endif
 
@@ -52,6 +52,13 @@
 
             <div id="variation-panel" class="hide v-panel">
                 <div class="clearfix"></div>
+                    <div class="col-md-1">
+                        <div class="form-group label-floating ">
+                            <label class="control-label">Quantity</label>
+                            <input name="edit_variation_quantity[{{ $variant->id }}]"  required="true"  type="number"  value="{{ $variant->quantity }}"   class="form-control variation variation_quantity" type="number">
+                            <span class="material-input"></span>
+                        </div>
+                    </div> 
                     <div class="col-md-3">
                         <div class="form-group label-floating">
                             <label class="control-label">Price</label>
@@ -81,13 +88,7 @@
                             <span class="material-input"></span>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group label-floating ">
-                            <label class="control-label">Quantity</label>
-                            <input name="edit_variation_quantity[{{ $variant->id }}]"  required="true"  type="number"  value="{{ $variant->quantity }}"   class="form-control variation variation_quantity" type="text">
-                            <span class="material-input"></span>
-                        </div>
-                    </div>  
+                     
                     
                     <div class="clearfix"></div>
                     <div class="col-md-3">

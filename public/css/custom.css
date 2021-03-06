@@ -36,6 +36,25 @@
   src: url(../fonts/ProximaNovaAltCondensedThin.otf);
 }
 
+
+
+@font-face {
+  font-family:"Farfetch Basis";
+  src:url(https://cdn-static.farfetch-contents.com/cdn-content/fonts/FarfetchBasis-Regular.woff2) format("woff2"),
+  url(https://cdn-static.farfetch-contents.com/cdn-content/fonts/FarfetchBasis-Regular.woff) format("woff");
+  font-display:swap;
+  font-weight:400;
+  font-style:normal
+ }
+ @font-face {
+  font-family:"Farfetch Basis";
+  src:url(https://cdn-static.farfetch-contents.com/cdn-content/fonts/FarfetchBasis-Bold.woff2) format("woff2"),
+  url(https://cdn-static.farfetch-contents.com/cdn-content/fonts/FarfetchBasis-Bold.woff) format("woff");
+  font-display:swap;
+  font-weight:700;
+  font-style:normal
+ }
+
 body {
   font-size: 14px;
   line-height: 1.7;
@@ -43,7 +62,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #000000;
   font-weight: 400;
-  font-family: 'Polaris-Book', sans-serif;
+  font-family: 'Farfetch Basis', sans-serif;
 }
 
 

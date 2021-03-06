@@ -3,9 +3,6 @@
 
 @foreach($products as $product)
 
-@if( !optional($product->product)->allow )
- @continue
-@endif
 <div  class="col-6   {{ isset($category_attributes) && $category_attributes->count() ? 'col-md-4' : 'col-md-3' }}">
     <div class="product-default inner-quickview inner-icon">
         <figure>
@@ -18,9 +15,9 @@
         
         <div class="product-details">
             <div class="">
-                @if(optional($product->product)->colours->count())
+                @if(optional($product)->colours->count())
                     <div  class="justify-content-start d-flex mb-1">
-                        @foreach($product->product->colours as $color)
+                        @foreach($product->colours as $color)
                         
                             @if( $color->image)
                                 <div style="border:{{ optional($product->active_color)->color_code == $color->color_code ? '1.5px' : '1px' }} solid #CCC; height: 12px; width: 12px; border-radius: 50%; background-size: cover;  background-image: url({{ $color->image }})" class="mr-1"></div>

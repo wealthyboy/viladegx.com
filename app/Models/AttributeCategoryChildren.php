@@ -8,7 +8,7 @@ class AttributeCategoryChildren extends Model
 {
     
 
-    protected $fillable =  ['attribute_category_id' ,'attribute_id'];
+    protected $fillable =  ['attribute_category_id' ,'attribute_id','category_id'];
 
 
     public function attribute()

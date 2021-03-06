@@ -18,7 +18,7 @@
 
 
 @font-face {
-  font-family: Polaris-Book;
+  font-family: "Farfetch Basis";
   src: url(../fonts/ProximaNovaAltRegular.otf);
   font-weight: bold;
 }
@@ -36,6 +36,18 @@
   src: url(../fonts/ProximaNovaAltCondensedThin.otf);
 }
 
+
+
+@font-face {
+  font-family:"Farfetch Basis";
+  src:url(https://cdn-static.farfetch-contents.com/cdn-content/fonts/FarfetchBasis-Regular.woff2) format("woff2"),
+  url(https://cdn-static.farfetch-contents.com/cdn-content/fonts/FarfetchBasis-Regular.woff) format("woff");
+  font-display:swap;
+  font-weight:400;
+  font-style:normal
+ }
+ 
+
 body {
   font-size: 14px;
   line-height: 1.7;
@@ -43,7 +55,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #000000;
   font-weight: 400;
-  font-family: 'Polaris-Book', sans-serif;
+  font-family: 'Farfetch Basis', sans-serif;
 }
 
 
@@ -135,7 +147,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus {
 }
 
 .l-f1 {
-  font-family: Polaris-Book,sans-serif !important;
+  font-family: "Farfetch Basis",sans-serif !important;
   font-weight: 700  !important
 }
 
@@ -171,7 +183,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus {
 
 
 .main-nav > ul > li > a {
-  font-family: Polaris-Book,sans-serif;
+  font-family: "Farfetch Basis",sans-serif;
   letter-spacing: normal;
   font-weight: 700;
   font-style: normal;
@@ -198,7 +210,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus {
 
 
 .menu .megamenu .submenu a {
-  font-family: Polaris-Book,sans-serif;
+  font-family: "Farfetch Basis",sans-serif;
   color: black;
   font-weight: 700 !important;
 }
@@ -248,7 +260,7 @@ input:-webkit-autofill, input:-webkit-autofill:focus {
   padding: 2rem;
   background-color: #fff;
   color: #777;
-  font-family: Polaris-Book,sans-serif;
+  font-family: "Farfetch Basis",sans-serif;
 }
 
 select.form-control:not([size]):not([multiple]) {
@@ -265,7 +277,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .btn {
   padding: 1rem 4.2rem;
-  font-family: Polaris-Book,sans-serif;
+  font-family: "Farfetch Basis",sans-serif;
   line-height: 1.429;
 }
 
@@ -576,7 +588,7 @@ background: white;
 
 
 .product-single-details .product-title {
-  font-family: Polaris-Book,sans-serif;
+  font-family: "Farfetch Basis",sans-serif;
   font-size: 1.3rem;
 }
 
@@ -872,7 +884,7 @@ span .social-icon {
   padding: 1.2rem 2.475rem;
   border-radius: 5rem;
   font-size: inherit;
-  font-family: Polaris-Book,sans-serif;
+  font-family: "Farfetch Basis",sans-serif;
   right: 100px;
   position: absolute;
   background-color: #222;
@@ -893,7 +905,7 @@ span .social-icon {
 
 footer a , footer p{
   color: #ffffff;
-  font-family: Polaris-Book,sans-serif;
+  font-family: "Farfetch Basis",sans-serif;
   font-weight: 300 !important;
 }
 

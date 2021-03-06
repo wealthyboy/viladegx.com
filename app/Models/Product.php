@@ -138,7 +138,7 @@ class Product extends Model
 		 
 	public function link()
 	{
-		$link  = '/item/';
+		$link  = '/fashion/item/';
 		$link .=  optional(optional($this->categories)->first())->slug .'/';
 		$link .= $this->slug;
 		return $link;

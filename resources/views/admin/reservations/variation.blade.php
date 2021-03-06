@@ -87,7 +87,6 @@
                         @include('includes.attributes',['obj'=>$product_attribute,'space'=>'&nbsp;&nbsp;','model' => 'attributes','url' => 'attribute'])
                     </div>
                     <hr/>
-
                 @endforeach  
             </div>
         </div>

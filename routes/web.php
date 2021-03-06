@@ -127,7 +127,7 @@ Route::post('delete/image','Admin\Image\ImagesController@undo');
 
 Route::get('/', 'HomeController@index');
 
-Route::group(['middleware' => 'currencyByIp','prefix' => '/{page}'], function(){
+Route::group(['middleware' => 'currencyByIp','prefix' => '/fashion'], function(){
     Route::get('/', 'HomeController@home');
 
 
@@ -215,6 +215,8 @@ Route::group(['prefix' => '/api','middleware' => 'currencyByIp'], function () {
     Route::delete('wishlist/delete/{id}',   'Api\Favorites\FavoritesController@destroy');
     Route::get('blog/{blog}',   'Api\Blog\BlogController@show');
 });
+
+
 
 Route::post('webhook/payment',     'WebHook\WebHookController@payment');
 Route::post('webhook/github',      'WebHook\WebHookController@gitHub');

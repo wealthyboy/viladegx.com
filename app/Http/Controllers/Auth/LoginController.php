@@ -47,12 +47,12 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showLoginForm(Request $request,$page)
+    public function showLoginForm(Request $request)
     {    
         if (  $request->is('admin/*') ) { 
 	       return view('admin.auth.login');
 	    }
-        return view($page.'.auth.login');
+        return view('fashion.auth.login');
     }
 
 	

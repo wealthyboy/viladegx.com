@@ -47,7 +47,7 @@ class HomeController extends Controller
 
 
 
-    public function home(Request $request,$type)
+    public function home()
     {
 
         $site_status =Live::first();
@@ -58,7 +58,7 @@ class HomeController extends Controller
         $sliders = Banner::where('type','slider')->orderBy('sort_order','asc')->get();
         $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
     
-        return view($type.'.index',compact('products','posts','banners','sliders')); 
+        return view('fashion.index',compact('products','posts','banners','sliders')); 
     }
 
 

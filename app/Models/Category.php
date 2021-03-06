@@ -83,6 +83,14 @@ class Category extends Model
     }
 
 
+    // public function attribute_childrens()
+    // {
+    //     return $this->belongsToMany(AttributeCategoryChildren::class,'attribute_category_childrens')
+    //                 ->withPivot('id');
+    //     return $this->belongsToMany(AttributeCategoryChildren::class, 'attribute_category_childrens', 'user_id', 'role_id');
+    // }
+
+
     public function attribute_parents()
     {
         return $this->hasMany(AttributeCategory::class)->whereNull('parent_id');

@@ -87,7 +87,7 @@
                 <div class="form-group ">
                     <label class="control-label">{{ $meta_attribute->name }}</label>
                     <select name="meta_fields[{{ $meta_attribute->id }}]" class="form-control"  title="Choose {{ $meta_attribute->name }}" data-style="select-with-transition" title="{{ $meta_attribute->name }}" data-size="7">
-                        <option   value="">Choose One</option>
+                        <option   value="" selected>Choose One</option>
                         @foreach($meta_attribute->children as $meta_attribute)
                             <option   value="{{ $meta_attribute->id }}">&nbsp;&nbsp;&nbsp;{{ $meta_attribute->name }} </option>
                         @endforeach

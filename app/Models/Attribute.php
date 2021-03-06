@@ -61,6 +61,13 @@ class Attribute extends Model
         return $this->belongsToMany(Category::class)->withPivot('category_id');
     }
 
+
+    public function attribute_children()
+    {
+        return $this->hasMany(MetaField::class,'parent_id');
+    }
+
+
     public function information()
     {
         return $this->belongsToMany(Information::class)->withPivot('information_id');

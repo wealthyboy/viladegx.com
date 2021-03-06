@@ -119,6 +119,8 @@ class ProductController extends Controller
             ],
         ]);
 
+       // dd($request->all());
+
         $image  = $request->image;
         $cA = [];
         $sale_price = $request->has('sale_price') ? $request->sale_price : null;
@@ -171,20 +173,25 @@ class ProductController extends Controller
          * Sync categories with attributes
         */
 
-        if( !empty($request->meta_fields) ){
+        $meta_fields = array_filter($request->meta_fields);
 
-            foreach($request->meta_fields as $parent_id  => $value){
+        if( !empty($meta_fields) ){
+
+            //dd($meta_fields);
+
+            foreach($meta_fields as $parent_id  => $value){
                 foreach ($categories as $category) {
+                    /***
+                     * Sync each category with parent attribute
+                    */
                     $category->attributes()->syncWithoutDetaching($parent_id);
-                    foreach($category->parent_attributes as $attribute){
-                        if($parent_id === $attribute->id){ 
-                            $cA[$attribute->pivot->id][] = $value;
-                        } 
-                    }
+
+                    $cA[$parent_id] = ['parent_id'=>null]; 
+                    $cA[$value] = ['parent_id'=>$parent_id]; 
                 }
 
             }
-            $product->meta_fields()->sync(array_filter(array_values($request->meta_fields))); 
+            $product->meta_fields()->sync($cA); 
         }
 
         /**
@@ -211,8 +218,6 @@ class ProductController extends Controller
         $product_variation->weight = $request->weight;
         $product_variation->quantity  = $request->quantity;
         $product_variation->extra_percent_off  = $request->type == 'simple' ? $request->extra_percent_off : null;
-
-        
         $product_variation->sku = str_random(6);
         $product_variation->product_id = $product->id;
         $product_variation->default = 1;
@@ -235,7 +240,6 @@ class ProductController extends Controller
             if( $request->filled('has_more_variation') ){
                 $data   = [];
                 $names  = [];
-                $cA     = [];
 
 
                 foreach ($request->product_attributes  as $key => $attributes) {
@@ -267,7 +271,7 @@ class ProductController extends Controller
                             $category->attributes()->syncWithoutDetaching($parent_id);
                             foreach($category->parent_attributes as $attribute){
                                 if($parent_id === $attribute->id){ 
-                                   $cA[$attribute->pivot->id][] = $attribute_id;
+                                   $cA[$attribute->pivot->id] = $attribute_id;
                                 } 
                             }
                         }
@@ -308,15 +312,24 @@ class ProductController extends Controller
             }
         }
 
+        //dd($cA);
+
+        // foreach( $cA as $key => $values){
+        //     foreach( $values as $k => $value){
+        //         AttributeCategoryChildren::updateOrCreate(
+        //             ['attribute_category_id' => $key, 'attribute_id' => $value],
+        //             ['attribute_category_id' => $key, 'attribute_id' => $value]
+        //         );
+        //     }
+        // }
     
-        foreach( $cA as $key => $values){
-            foreach( $values as $k => $value){
-                AttributeCategoryChildren::updateOrCreate(
-                    ['attribute_category_id' => $key, 'attribute_id' => $value],
-                    ['attribute_category_id' => $key, 'attribute_id' => $value]
-                );
-            }
-        }
+        // foreach( $cA as $attribute_category_id => $attribute_id){
+        //     $acc = new AttributeCategoryChildren;
+        //     $acc->attribute_category_id = $attribute_category_id;
+        //     $acc->attribute_id = $attribute_id;
+        //     $acc->save();
+        // }
+
         
         (new Activity)->Log("Created a new product {$request->product_name}");
         return \Redirect::to('/admin/products');
@@ -446,7 +459,10 @@ class ProductController extends Controller
         $product = Product::find($id);
         $variants = $product->variants;
         $product_attributes = Attribute::parents()->where('type','both')->orderBy('sort_order','asc')->get();
-        $meta_attributes = Attribute::parents()->where('type','!=','both')->orderBy('sort_order','asc')->get();
+        $meta_attributes = Attribute::parents()
+                                  ->where('type','!=','both')
+                                  ->where('type','!=','reservation')
+                                  ->orderBy('sort_order','asc')->get();
         
         return view('admin.products.edit',compact('metas','variants','product','meta_attributes','product_attributes','brands','categories'));
     }
@@ -461,7 +477,6 @@ class ProductController extends Controller
     public function update(Request $request,$id) 
     { 
 
-        //dd($request->add_to_product_attributes);
         $this->validate($request,[
             "category_id"  => "required|array",
             'product_name'=>[
@@ -478,8 +493,6 @@ class ProductController extends Controller
         $names  = []; 
         $cA = [];
         $product_attributes = [];
-       
-        
         $sale_price = $request->has('sale_price') ? $request->sale_price : null;
         $product->product_name = $request->product_name;
         $product->price = $request->price;
@@ -487,19 +500,19 @@ class ProductController extends Controller
         $product->sale_price_expires = Helper::getFormatedDate($request->sale_price_expires);
         $product->slug        =  str_slug($request->product_name);
         $product->weight      = $request->weight;
-        $product->height      = $request->height;
-        $product->image       = $request->image;
-        $product->width       = $request->width;
-        $product->description = $request->description;
-        $product->allow       = $request->allow ? $request->allow : 0;
-        $product->brand_id    = $request->brand_id;
-        $product->total       = 2;
+        $product->height       = $request->height;
+        $product->image        = $request->image;
+        $product->width        = $request->width;
+        $product->description  = $request->description;
+        $product->allow        = $request->allow ? $request->allow : 0;
+        $product->brand_id     = $request->brand_id;
+        $product->total        = 2;
         $product->product_type = $request->type;
-        $product->featured    =  $request->featured_product ? 1 : 0;
-        $product->pending     = 0;
-        $product->quantity    = $request->quantity;
-        $product->sku         = str_random(6);
-        $product->attributes  = $this->attributes($request);
+        $product->featured     =  $request->featured_product ? 1 : 0;
+        $product->pending      = 0;
+        $product->quantity     = $request->quantity;
+        $product->sku          = str_random(6);
+        $product->attributes   = $this->attributes($request);
         $product->save();
         $categories = Category::find($request->category_id);
 
@@ -512,21 +525,27 @@ class ProductController extends Controller
           *  Sync categories with attributes
         */
 
-        if( !empty($request->meta_fields) ){
-            foreach($request->meta_fields as $parent_id  => $value){
-                $categories = Category::find($request->category_id);
+        $meta_fields = array_filter($request->meta_fields);
+
+        if( !empty($meta_fields) ){
+
+            //dd($meta_fields);
+
+            foreach($meta_fields as $parent_id  => $value){
                 foreach ($categories as $category) {
+                    /***
+                     * Sync each category with parent attribute
+                    */
                     $category->attributes()->syncWithoutDetaching($parent_id);
-                    foreach($category->parent_attributes as $attribute){
-                        if($parent_id === $attribute->id){ 
-                            $cA[$attribute->pivot->id][] = $value;
-                        } 
-                    }
+
+                    $cA[$parent_id] = ['parent_id'=>null]; 
+                    $cA[$value] = ['parent_id'=>$parent_id]; 
                 }
 
             }
-            $product->meta_fields()->sync(array_filter(array_values($request->meta_fields)));  
+            $product->meta_fields()->sync($cA); 
         }
+
 
 
         $product_variation =  new ProductVariation();
@@ -635,14 +654,9 @@ class ProductController extends Controller
                                  * 
                                  * Sync the the attributes and categories
                                 */
-                                $categories = Category::find($request->category_id);
                                 foreach ($categories as $category) {
                                     $category->attributes()->syncWithoutDetaching($parent_id);
-                                    foreach($category->parent_attributes as $attribute){
-                                        if($parent_id === $attribute->id){ 
-                                          $cA[$attribute->pivot->id][] = $attribute_id;
-                                        } 
-                                    }
+            
                                 }
                                 
             
@@ -688,14 +702,9 @@ class ProductController extends Controller
                                  * 
                                  * Sync the the attributes and categories
                                  */
-                                $categories = Category::find($request->category_id);
                                 foreach ($categories as $category) {
                                     $category->attributes()->syncWithoutDetaching($parent_id);
-                                    foreach($category->parent_attributes as $attribute){
-                                        if($parent_id === $attribute->id){ 
-                                          $cA[$attribute->pivot->id][] = $id;
-                                        } 
-                                    }
+                                    
                                 }
                                 
                                 $attribute = Attribute::find($id);
@@ -715,94 +724,81 @@ class ProductController extends Controller
                         }
                     }
 
-                }
-
-                //dd($var);
-            }
-
-            /**
-             * 
-             * Add new variation
-             */
-            if($request->filled('new_variation')){
-                $data = [];
-                foreach ($request->product_attributes  as $key => $attributes) {
-                $product_variation = new  ProductVariation();
-                
-                $variation_images = !empty($request->variation_images[$key]) ? $request->variation_images[$key] : [];
-                
-                $product_variation->price = null !== $request->variation_price[$key] ?$request->variation_price[$key] : $request->price;
-                $product_variation->sale_price =  null !== $request->variation_sale_price[$key] ?$request->variation_sale_price[$key] : $sale_price;
-                $product_variation->image = $request->variation_image[$key];
-                $product_variation->width = $request->variation_width[$key];
-                $product_variation->sale_price_expires = Helper::getFormatedDate($request->variation_sale_price_expires[$key]);
-                $product_variation->extra_percent_off  = $request->extra_percent_off[$key];
-
-                $product_variation->length = $request->variation_length[$key];
-                $product_variation->weight = $request->variation_weight[$key];
-                $product_variation->quantity  = null !== $request->variation_quantity[$key] ?$request->variation_quantity[$key] : $request->quantity;
-                $product_variation->product_id = $product->id;
-                $product_variation->save();
-                if (!empty($variation_images) ) {
-                    foreach ( $variation_images as $variation_image) {
-                        $images = new Image(['image' => $variation_image]);
-                        $product_variation->images()->save($images);
                     }
+
+                    //dd($var);
                 }
 
-                /***
-                 * Sync with atrributes with categories
+                /**
+                 * 
+                 * Add new variation
                  */
-                
-                            
-                foreach( $attributes as $parent_id => $id ){
-                    if ( $id == null ){
-                        continue;
-                    }
-                    $product_attributes[$parent_id] = ['parent_id'=>null]; 
-                    $product_attributes[$id] = ['parent_id'=>$parent_id]; 
+                if($request->filled('new_variation')){
+                    $data = [];
+                    foreach ($request->product_attributes  as $key => $attributes) {
+                    $product_variation = new  ProductVariation();
+                    $variation_images = !empty($request->variation_images[$key]) ? $request->variation_images[$key] : [];
+                    $product_variation->price = null !== $request->variation_price[$key] ?$request->variation_price[$key] : $request->price;
+                    $product_variation->sale_price =  null !== $request->variation_sale_price[$key] ?$request->variation_sale_price[$key] : $sale_price;
+                    $product_variation->image = $request->variation_image[$key];
+                    $product_variation->width = $request->variation_width[$key];
+                    $product_variation->sale_price_expires = Helper::getFormatedDate($request->variation_sale_price_expires[$key]);
+                    $product_variation->extra_percent_off  = $request->extra_percent_off[$key];
 
-                    $attribute = Attribute::find($id);
-                    $product_variation->product_variation_values()->create([
-                        'attribute_parent_id' => $parent_id,
-                        'attribute_id' => $id,
-                        'name' => $attribute->name,
-                        'product_id' => $product->id
-                    ]);
-
-                     /**
-                     * 
-                     * Sync the the attributes and categories
-                     */
-                    foreach ($categories as $category) {
-                        $category->attributes()->syncWithoutDetaching($parent_id);
-                        foreach($category->parent_attributes as $attribute){
-                            if($parent_id === $attribute->id){ 
-                               $cA[$attribute->pivot->id][] = $id;
-                            } 
+                    $product_variation->length = $request->variation_length[$key];
+                    $product_variation->weight = $request->variation_weight[$key];
+                    $product_variation->quantity  = null !== $request->variation_quantity[$key] ?$request->variation_quantity[$key] : $request->quantity;
+                    $product_variation->product_id = $product->id;
+                    $product_variation->save();
+                    if (!empty($variation_images) ) {
+                        foreach ( $variation_images as $variation_image) {
+                            $images = new Image(['image' => $variation_image]);
+                            $product_variation->images()->save($images);
                         }
                     }
 
-                } 
+                    /***
+                     * Sync with atrributes with categories
+                     */
+                    
+                                
+                    foreach( $attributes as $parent_id => $id ){
+                        if ( $id == null ){
+                            continue;
+                        }
+                        $product_attributes[$parent_id] = ['parent_id'=>null]; 
+                        $product_attributes[$id] = ['parent_id'=>$parent_id]; 
 
+                        $attribute = Attribute::find($id);
+                        $product_variation->product_variation_values()->create([
+                            'attribute_parent_id' => $parent_id,
+                            'attribute_id' => $id,
+                            'name' => $attribute->name,
+                            'product_id' => $product->id
+                        ]);
+
+                        /**
+                         * 
+                         * Sync the the attributes and categories
+                         */
+                        foreach ($categories as $category) {
+                            $category->attributes()->syncWithoutDetaching($parent_id);
+                        }
+
+                    } 
+
+                }
             }
-        }
-    }   
+        }   
         foreach ($categories as $category) {
             BrandCategory::updateOrCreate(
                 ['category_id' => $category->id, 'brand_id' => $request->brand_id],
                 ['category_id' => $category->id, 'brand_id' => $request->brand_id]
-            );  
+            ); 
         }
-        foreach( $cA as $key => $values){
-            foreach( $values as $k => $value){
-                AttributeCategoryChildren::updateOrCreate(
-                    ['attribute_category_id' => $key, 'attribute_id' => $value],
-                    ['attribute_category_id' => $key, 'attribute_id' => $value]
-                );
-            }
-        }
+        
 
+        
         $product->attributes()->sync($product_attributes);       
          //Delete any pending image
         Image::where('image','No Image')->delete();

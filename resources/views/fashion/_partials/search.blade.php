@@ -62,21 +62,18 @@
 @foreach($category_attributes as $category)
     <div  class="widget">
         <h3 class="widget-title">
-            <a class="collapsed bold"   data-toggle="collapse" href="#widget-body-4{{ $category->id }}" role="button" aria-expanded="true" aria-controls="widget-body-4{{ $category->id}}">{{ optional($category->attribute)->name }}</a>
+            <a class="collapsed bold"   data-toggle="collapse" href="#widget-body-4{{ $category->id }}" role="button" aria-expanded="true" aria-controls="widget-body-4{{ $category->id}}">{{ optional($category)->name }}</a>
         </h3>
         <div class="collapse"  id="widget-body-4{{ $category->id }}">
             <div class="widget-body">
-                <ul class="cat-list  {{ $category->children->count() > 6  ?  'widget-scroll' : '' }}">
-                   @foreach($category->children as $category_attribute)
-                       @if (optional($category_attribute->attribute)->name  == ''  )
-                       @continue
-                       @endif
+                <ul class="cat-list  {{ $category->attribute_children->count() > 6  ?  'widget-scroll' : '' }}">
+                   @foreach($category->attribute_children()->groupBy('attribute_id')->get() as $category_attribute)
                         <li class="">
                             <div class="checkbox">
-                                <label  id="box{{ optional($category->attribute)->slug }}" class="checkbox-label">
-                                <input for="box{{ optional($category->attribute)->slug }}" name="{{ optional($category->attribute)->slug }}[]" value="{{ optional($category_attribute->attribute)->slug }}" class="filter-product" type="checkbox">
+                                <label  id="box{{ $category->slug }}" class="checkbox-label">
+                                <input for="box{{ $category->slug }}" name="{{ $category->slug }}[]" value="{{ optional($category_attribute->attribute)->slug }}" class="filter-product" type="checkbox">
                                     <span class="checkbox-custom rectangular"></span>
-                                     <span class="checkbox-label-text color--primary">{{ optional($category_attribute->attribute)->name }}   </span> 
+                                     <span class="checkbox-label-text color--primary">{{ $category_attribute->attribute->name }}   </span> 
                                 </label>
                             </div>
                         </li>

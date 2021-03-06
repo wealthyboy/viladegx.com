@@ -25,6 +25,12 @@ class AttributeCategory extends Model
    {
       return $this->hasMany(AttributeCategoryChildren::class,'attribute_category_id');
    }
+
+   public function attribute_children()
+   {
+      return $this->hasMany(MetaField::class,'parent_id');
+   }
+
     
    public function getNameAttribute()
    {   

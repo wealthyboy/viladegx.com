@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('fashion.layouts.app')
  
 @section('content')
-@include('_partials.top_banner')
+@include('fashion._partials.top_banner')
 
 
 <section class="breadcrumb no-banner  justify-content-center">
@@ -29,16 +29,15 @@
 
 <div class="container-fluid mb-3">
     <div  class="row">
-        
-        
-       @if ( isset($category) &&  isset($category_attributes) && !empty($category_attributes) )
+    
+        @if ( isset($category) &&  isset($category_attributes) && !empty($category_attributes) )
             <div class="col-lg-9 main-content">
                 <div class="product-overlay d-none">
                     <div class="loading">
                         <div class="loader"></div>
                     </div>
                 </div>
-       @else
+        @else
             <div class="col-lg-12 main-content">
         @endif
         @if ($products->count())
@@ -73,12 +72,11 @@
             </nav>
         @endif
             <div id="load-products" class="row">
-            
  
             @if ( isset($category) &&  isset($category_attributes) && !empty($category_attributes) )
-                @include('_partials.products',['no_attr'=>true])
+                @include('fashion._partials.products',['no_attr'=>true])
             @else
-                @include('_partials.products',['no_attr' => false])
+                @include('fashion._partials.products',['no_attr' => false])
             @endif
             </div>
 
@@ -101,7 +99,7 @@
                 <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
                     <div class="pin-wrapper" style="">
                         <div class="sidebar-wrapper" style="">
-                            @include('_partials.search',['category_attributes'=>$category_attributes])
+                            @include('fashion._partials.search',['category_attributes'=>$category_attributes])
                         </div>
                     </div>
                 </aside><!-- End .col-lg-3 -->
