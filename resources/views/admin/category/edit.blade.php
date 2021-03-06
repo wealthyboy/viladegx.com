@@ -55,13 +55,7 @@
                                 id="description" class="form-control"  rows="7">{{ $cat->description }}</textarea>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label"></label>
-                            <select name="type"  class="form-control">
-                                <option  value="">--Choose Type--</option>
-                                <option  value="none"  {{ $cat->type == 'none' ? 'selected' : ''}}>None</option>
-                            </select>
-                        </div>
+                        
 
 
                         <div class="form-group ">

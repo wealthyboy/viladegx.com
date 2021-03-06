@@ -94,7 +94,7 @@ class CategoryController extends Controller
         $category->image = $request->image;
         $category->slug=$slug;
         $category->sort_order=$request->sort_order;
-        $category->type=$request->type;
+        //$category->type=$request->type;
         $category->description=$request->description;
         $category->parent_id  = $request->parent_id;
         $category->save();
@@ -195,7 +195,7 @@ class CategoryController extends Controller
         $category->description=$request->description;
         $category->image_custom_link = $request->image_custom_link;
         $category->image = $request->image;
-        $category->type=$request->type;
+        //$category->type=$request->type;
         $category->slug=$slug;
         $category->save();
 

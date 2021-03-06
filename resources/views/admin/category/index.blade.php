@@ -51,14 +51,14 @@
                                 id="description" class="form-control"  rows="7"></textarea>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label class="control-label"></label>
                             <select name="type"  class="form-control">
                                 <option  value="" selected="">--Choose Type--</option>
                                 <option  value="fashion">fashion</option>
                                 <option  value="none">None</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="form-group ">
                             <label class="control-label"></label>
                             <select name="parent_id" class="form-control">
