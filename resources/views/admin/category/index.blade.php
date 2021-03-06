@@ -53,10 +53,9 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label"></label>
-                            <select name="type" required="true" class="form-control">
+                            <select name="type"  class="form-control">
                                 <option  value="" selected="">--Choose Type--</option>
-                                <option  value="art">Art</option>
-                                <option  value="photo_to_art">Photo to art</option>
+                                <option  value="fashion">fashion</option>
                                 <option  value="none">None</option>
                             </select>
                         </div>

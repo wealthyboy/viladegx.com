@@ -57,10 +57,8 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label"></label>
-                            <select name="type" required="true" class="form-control">
+                            <select name="type"  class="form-control">
                                 <option  value="">--Choose Type--</option>
-                                <option  value="art" {{ $cat->type == 'art' ? 'selected' : ''}}>Art</option>
-                                <option  value="photo_to_art"  {{ $cat->type == 'photo_to_art' ? 'selected' : ''}}>Photo to art</option>
                                 <option  value="none"  {{ $cat->type == 'none' ? 'selected' : ''}}>None</option>
                             </select>
                         </div>
