@@ -67,10 +67,11 @@
 
                     <div class="form-group">
                         <label class="control-label"></label>
-                        <select name="type" required="true" class="form-control">
+                        <select name="type"  class="form-control">
                             <option  value="" selected="">--Choose Type--</option>
-                            <option  value="both" >Both</option>
-                            <option  value="category" >Category</option>
+                            <option  value="reservation">Reservation</option>
+                                <option  value="fashion" >fashion</option>
+                                <option  value="both" >Both</option>
                         </select>
                     </div>
                     <h4 class="info-text">Upload Image Here</h4>
