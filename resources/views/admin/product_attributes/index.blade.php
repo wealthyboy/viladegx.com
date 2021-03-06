@@ -73,7 +73,7 @@
                             <select name="type" required="true" class="form-control">
                                 <option  value="" selected="">--Choose Type--</option>
                                 <option  value="reservation">Reservation</option>
-                                <option  value="art" >fashion</option>
+                                <option  value="fashion" >fashion</option>
                             </select>
                         </div>
 
