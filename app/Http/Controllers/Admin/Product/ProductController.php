@@ -172,11 +172,8 @@ class ProductController extends Controller
         /**
          * Sync categories with attributes
         */
-
-        $meta_fields = array_filter($request->meta_fields);
-
-        if( !empty($meta_fields) ){
-
+        if( !empty($request->meta_fields) ){
+            $meta_fields = array_filter($request->meta_fields);
             //dd($meta_fields);
 
             foreach($meta_fields as $parent_id  => $value){
@@ -525,9 +522,10 @@ class ProductController extends Controller
           *  Sync categories with attributes
         */
 
-        $meta_fields = array_filter($request->meta_fields);
 
-        if( !empty($meta_fields) ){
+        if( !empty($request->meta_fields) ){
+            $meta_fields = array_filter($request->meta_fields);
+
 
             //dd($meta_fields);
 
