@@ -18,13 +18,16 @@ class Helper{
         $link = isset( $link[2] ) ? strtolower($link[2]) : '';
         return in_array($link, $url) ? 'active' : '';
     }
+    
 
     function getShippingPrice($id){
         $price =  Shipping::findOfail($id);
         return $price->price;
     }
 
-    public  static function getReversedFormatedDate($date){
+
+    public  static function getReversedFormatedDate($date)
+    {
         /**
          * This function returns a format for month day year
          */
@@ -41,7 +44,7 @@ class Helper{
     public  static function getFormatedDate($date,$changeFormat = true)
     {   
         //createFromDate  $year ,$month , $day
-        if ($date) {
+        if ($date !== null || $date !== 1) {
             if ($changeFormat){
                 $exp_date = explode('/', $date);
                 $month  = $exp_date[0];//Month

@@ -4,9 +4,8 @@ namespace App\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\SystemSetting;
-use App\Models\CurrencyRate;
 use App\Http\Helper;
-
+use App\Models\CurrencyRate;
 
 
 
@@ -31,8 +30,8 @@ trait FormatPrice
           ? $this->ConvertCurrencyRate($this->variant->sale_price)
           : null;
       } else {
-          return null !== optional($this->default_variation)->sale_price  &&  optional(optional($this->default_variation)->sale_price_expires)->isFuture()  
-          ? $this->ConvertCurrencyRate(optional($this->default_variation)->sale_price)
+          return null !== $this->sale_price  &&  optional($this->sale_price_expires)->isFuture()  
+          ? $this->ConvertCurrencyRate($this->sale_price)
           : null;
       }
       return null;
@@ -42,9 +41,9 @@ trait FormatPrice
       
       if ($this->formatted_discount_price() !== null) {
         if (  $this->product_type == 'variable') {
-          echo "<i style='text-decoration: line-through;'>" . optional($this->variant)->price. "</i>" .'  '. optional($this->variant)->sale_price; 
+          echo "<i style='text-decoration: line-through;'>" . $this->variant->price. "</i>" .'  '. $this->variant->sale_price; 
         } else {
-          echo  "<i style='text-decoration: line-through;'>" . $this->default_variation->price. "</i>" .'  '. $this->default_variation->sale_price; 
+          echo  "<i style='text-decoration: line-through;'>" . $this->price. "</i>" .'  '. $this->sale_price; 
         }
       } else {
         if (  $this->product_type == 'variable') {
@@ -54,20 +53,26 @@ trait FormatPrice
       }
     }
 
-
     public function getDefaultPercentageOffAttribute(){      
-      return $this->calPercentageOff($this->price,$this->sale_price);
+      if ($this->formatted_discount_price() !== null) {
+          if (null !== $this->variants  && !empty($this->variant)  &&  null !== $this->variant->sale_price ){
+            return $this->calPercentageOff($this->variant->price,$this->variant->sale_price);
+          } else {
+            return $this->calPercentageOff($this->price,$this->sale_price);
+          }
+      }
+	    return null;
     }
 
     public function percentageOff(){
-      return $this->calPercentageOff($this->price,$this->sale_price);
+      if ($this->formatted_discount_price() !== null){
+        return $this->calPercentageOff($this->price,$this->sale_price);
+      }
+      return null;
     }
 
-    
-
-
     public function calPercentageOff($price,$sale_price){
-      if (!empty($price) && !empty($sale_price)){
+      if ($price && $sale_price){
         $discount = (($price - $sale_price) * 100) / $price ;
         return round($discount); 
       }
@@ -89,10 +94,11 @@ trait FormatPrice
     }
   
     public function getDefaultDiscountedPriceAttribute(){
-      return optional($this->sale_price_expires)->isFuture()  ?  $this->sale_price : null;
+      return $this->formatted_discount_price();
     }
 
     public function getCurrencyAttribute(){
+        
       $rate = Helper::rate();
       if ($rate){
          return $rate->symbol;
@@ -101,7 +107,10 @@ trait FormatPrice
     }
 
     public function getConvertedPriceAttribute(){
-     return  $this->ConvertCurrencyRate($this->price);   
+  
+      return  $this->product_type == 'variable'  
+      ? $this->ConvertCurrencyRate(optional($this->variant)->price)
+      : $this->ConvertCurrencyRate($this->price);   
     }
     
     public function ConvertCurrencyRate($price){

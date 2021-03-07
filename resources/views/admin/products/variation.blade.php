@@ -19,7 +19,7 @@
             @endforeach
         </div>
     </div>
-    <div class="col-md-3 col-xs-12 text-right col-sm-12 mt-lg-5 mt-sm-1 mb-sm-2">
+    <div class="col-md-3 col-xs-12 text-right col-sm-12 pt-5">
         <a href="#"   title="remove panel" class="remove-panel"><i class="fa fa-trash-o"></i> Remove</a>  |
         <a href="#"   title="open/close panel" class="open-close-panel"><i class="fa fa-plus"></i> Expand</a> 
     </div>
@@ -50,7 +50,7 @@
         <div class="col-md-3">
             <div class="form-group label-floating">
                 <label class="control-label">End Date</label>
-                <input class="form-control  pull-right" name="variation_sale_price_expires[{{ $counter }}]" id="datepicker" type="date">
+                <input class="form-control  pull-right datepicker" name="variation_sale_price_expires[{{ $counter }}]"  type="text">
                 <span class="material-input"></span>
             </div>
         </div>

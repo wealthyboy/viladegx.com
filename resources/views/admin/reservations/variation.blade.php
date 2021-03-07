@@ -24,7 +24,7 @@
             <div class="col-md-5">
                 <div class="form-group label-floating">
                     <label class="control-label">From Date Available</label>
-                    <input name="room_avaiable_from[{{ $counter }}]"  required="true" value="{{ old('price') }}" class="form-control  datepicker" type="text">
+                    <input name="room_avaiable_from[{{ $counter }}]"  required="true" value="" class="form-control  datepicker" type="text">
                 </div>
             </div>
             <div class="col-md-4">

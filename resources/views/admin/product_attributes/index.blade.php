@@ -74,6 +74,7 @@
                                 <option  value="" selected="">--Choose Type--</option>
                                 <option  value="reservation">Reservation</option>
                                 <option  value="fashion" >fashion</option>
+                                <option  value="both" >Both</option>
                             </select>
                         </div>
 

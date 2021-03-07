@@ -62,40 +62,33 @@
                     <div class="col-md-3">
                         <div class="form-group label-floating">
                             <label class="control-label">Price</label>
-                            <input name="edit_variation_price[{{ $variant->id }}]"  required="true" value="{{ $variant->price }}" class="form-control  variation" type="text">
-                            <span class="material-input"></span>
-                        
+                            <input name="edit_variation_price[{{ $variant->id }}]"  required="true" value="{{ $variant->price }}" class="form-control  variation" type="number">                        
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group label-floating ">
                             <label class="control-label">Sale Price</label>
-                            <input name="edit_variation_sale_price[{{ $variant->id }}]"   value="{{ $variant->sale_price }}"   class="form-control variation_sale_price variation" type="text">
-                            <span class="material-input"></span>
+                            <input name="edit_variation_sale_price[{{ $variant->id }}]"   value="{{ $variant->sale_price }}"   class="form-control variation_sale_price variation" type="number">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group label-floating">
                             <label class="control-label">End Date</label>
-                            <input class="form-control  pull-right" name="edit_variation_sale_price_expires[{{ $variant->id }}]"  value="{{ $variant->sale_price_expires ? date('Y') .'-'. optional($variant->sale_price_expires)->format('m-d') : '' }}"  type="date">
-                            <span class="material-input"></span>
+                            <input class="form-control  pull-right datepicker" name="edit_variation_sale_price_expires[{{ $variant->id }}]"  value="{{ $helper::getReversedFormatedDate($variant->sale_price_expires) }}"  type="text">
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label">Extra Percent Off</label>
                             <input name="extra_percent_off[{{ $variant->id }}]"   value="{{ $variant->extra_percent_off }}"  class="form-control" type="number">
-                            <span class="material-input"></span>
                         </div>
                     </div>
                      
-                    
                     <div class="clearfix"></div>
                     <div class="col-md-3">
                         <div class="form-group label-floating ">
                             <label class="control-label">Weight</label>
                             <input name="edit_variation_weight[{{ $variant->id }}]"  type="text"  value="{{ $variant->weight }}"  class="form-control">
-                            <span class="material-input"></span>
                         </div>
                     </div>
 
@@ -103,7 +96,6 @@
                         <div class="form-group label-floating ">
                             <label class="control-label">Length</label>
                             <input name="edit_variation_length[{{ $variant->id }}]" type="text" value="{{ $variant->length }}" class="form-control" >
-                            <span class="material-input"></span>
                         </div>
                     </div>
 
@@ -111,14 +103,12 @@
                         <div class="form-group label-floating ">
                             <label class="control-label">Width</label>
                             <input name="edit_variation_width[{{ $variant->id }}]"  value="{{ $variant->width }}"  class="form-control" type="text">
-                            <span class="material-input"></span>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group label-floating">
                             <label class="control-label">Height</label>
                             <input name="edit_variation_height[{{ $variant->id }}]"   value="{{ $variant->height }}"   class="form-control" type="text">
-                            <span class="material-input"></span>
                         </div>
                     </div>
 

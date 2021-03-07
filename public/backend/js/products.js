@@ -84,8 +84,8 @@ $(document).ready(function(){
         url: "/admin/load-attributes",
         data: payLoad,
       }).done(function(response){
-      //  s.initFormExtendedDatetimepickers()
         $(".p-attr").last().after(response)
+        s.initFormExtendedDatetimepickers()
       })
   })
 
@@ -98,7 +98,6 @@ $(document).ready(function(){
       type: "GET",
       url: "/admin/reservations/room",
     }).done(function (response) {
-      
       $(".new-room").last().after(response)
       s.initFormExtendedDatetimepickers()
     })

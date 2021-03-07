@@ -80,7 +80,7 @@
                            <div class="col-md-3">
                               <div class="form-group label-floating">
                                  <label class="control-label">End Date</label>
-                                 <input class="form-control  pull-right" name="sale_price_expires" id="datepicker" type="date">
+                                 <input class="form-control  pull-right datepicker" name="sale_price_expires"  type="text">
                                  <span class="material-input"></span>
                               </div>
                            </div>

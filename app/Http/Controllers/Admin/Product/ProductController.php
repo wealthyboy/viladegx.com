@@ -119,7 +119,6 @@ class ProductController extends Controller
             ],
         ]);
 
-       // dd($request->all());
 
         $image  = $request->image;
         $cA = [];
@@ -132,10 +131,8 @@ class ProductController extends Controller
         $product->height       = $request->height;
         $product->image        = $request->image;
         $product->width        = $request->width;
-        ///$product->extra_percent_off  = $request->extra_percent_off;
-
         $product->description  = $request->description;
-        $product->sale_price_expires = Helper::getFormatedDate($request->sale_price_expires);
+        $product->sale_price_expires = $request->sale_price_expires ? Helper::getFormatedDate($request->sale_price_expires.true) : null;
         $product->allow       = $request->allow ? $request->allow : 0;
         $product->brand_id    = $request->brand_id;
         $product->total = 2;
@@ -210,7 +207,7 @@ class ProductController extends Controller
         $product_variation->sale_price = $request->sale_price;
         $product_variation->image = $request->image;
         $product_variation->width = $request->width;
-        $product_variation->sale_price_expires = Helper::getFormatedDate($request->sale_price_expires);
+        $product_variation->sale_price_expires =  $request->sale_price_expires ? Helper::getFormatedDate($request->sale_price_expires.true) : null;
         $product_variation->length = $request->length;
         $product_variation->weight = $request->weight;
         $product_variation->quantity  = $request->quantity;
@@ -266,15 +263,8 @@ class ProductController extends Controller
 
                         foreach ($categories as $category) {
                             $category->attributes()->syncWithoutDetaching($parent_id);
-                            foreach($category->parent_attributes as $attribute){
-                                if($parent_id === $attribute->id){ 
-                                   $cA[$attribute->pivot->id] = $attribute_id;
-                                } 
-                            }
                         }
                     }
-                    //$category->attributes()->syncWithoutDetaching($cA);
-
                 
                     $product_variation = new  ProductVariation();
                     // $images  = $request->images;
@@ -285,7 +275,7 @@ class ProductController extends Controller
                     $product_variation->sale_price =  null !== $request->variation_sale_price[$key] ?$request->variation_sale_price[$key] : $request->sale_price;
                     $product_variation->image = $request->variation_image[$key];
                     $product_variation->width = $request->variation_width[$key];
-                    $product_variation->sale_price_expires = Helper::getFormatedDate($request->variation_sale_price_expires[$key]);
+                    $product_variation->sale_price_expires = Helper::getFormatedDate($request->variation_sale_price_expires[$key],true);
                     $product_variation->length = $request->variation_length[$key];
                     $product_variation->weight = $request->variation_weight[$key];
                     $product_variation->extra_percent_off  = $request->extra_percent_off[$key];
@@ -309,23 +299,7 @@ class ProductController extends Controller
             }
         }
 
-        //dd($cA);
-
-        // foreach( $cA as $key => $values){
-        //     foreach( $values as $k => $value){
-        //         AttributeCategoryChildren::updateOrCreate(
-        //             ['attribute_category_id' => $key, 'attribute_id' => $value],
-        //             ['attribute_category_id' => $key, 'attribute_id' => $value]
-        //         );
-        //     }
-        // }
-    
-        // foreach( $cA as $attribute_category_id => $attribute_id){
-        //     $acc = new AttributeCategoryChildren;
-        //     $acc->attribute_category_id = $attribute_category_id;
-        //     $acc->attribute_id = $attribute_id;
-        //     $acc->save();
-        // }
+        
 
         
         (new Activity)->Log("Created a new product {$request->product_name}");
@@ -461,7 +435,9 @@ class ProductController extends Controller
                                   ->where('type','!=','reservation')
                                   ->orderBy('sort_order','asc')->get();
         
-        return view('admin.products.edit',compact('metas','variants','product','meta_attributes','product_attributes','brands','categories'));
+        $helper = new Helper();
+
+        return view('admin.products.edit',compact('metas','variants','product','meta_attributes','helper','product_attributes','brands','categories'));
     }
 
     /**
@@ -494,7 +470,7 @@ class ProductController extends Controller
         $product->product_name = $request->product_name;
         $product->price = $request->price;
         $product->sale_price = $sale_price;
-        $product->sale_price_expires = Helper::getFormatedDate($request->sale_price_expires);
+        $product->sale_price_expires = Helper::getFormatedDate($request->sale_price_expires,true);
         $product->slug        =  str_slug($request->product_name);
         $product->weight      = $request->weight;
         $product->height       = $request->height;
@@ -526,7 +502,6 @@ class ProductController extends Controller
         if( !empty($request->meta_fields) ){
             $meta_fields = array_filter($request->meta_fields);
 
-
             //dd($meta_fields);
 
             foreach($meta_fields as $parent_id  => $value){
@@ -535,7 +510,6 @@ class ProductController extends Controller
                      * Sync each category with parent attribute
                     */
                     $category->attributes()->syncWithoutDetaching($parent_id);
-
                     $cA[$parent_id] = ['parent_id'=>null]; 
                     $cA[$value] = ['parent_id'=>$parent_id]; 
                 }
@@ -560,7 +534,7 @@ class ProductController extends Controller
         $product_variation->sale_price = $request->sale_price;
         $product_variation->image      = $request->image;
         $product_variation->width      = $request->width;
-        $product_variation->sale_price_expires   = Helper::getFormatedDate($request->sale_price_expires);
+        $product_variation->sale_price_expires   = Helper::getFormatedDate($request->sale_price_expires.true);
         $product_variation->length     = $request->length;
         $product_variation->weight     = $request->weight;
         $product_variation->quantity   = $request->quantity;
@@ -632,7 +606,7 @@ class ProductController extends Controller
                                 'width' => $request->edit_variation_width[$variant_id]  ? $request->edit_variation_width[$variant_id] : $request->width,
                                 'length' => $request->edit_variation_length[$variant_id],
                                 'image' => $request->edit_variation_image[$variant_id], 
-                                'sale_price_expires' => !empty($request->edit_variation_sale_price_expires[$variant_id]) ?   Helper::getFormatedDate($request->edit_variation_sale_price_expires[$variant_id]) : Helper::getFormatedDate($request->sale_price_expires),
+                                'sale_price_expires' => !empty($request->edit_variation_sale_price_expires[$variant_id]) ?   Helper::getFormatedDate($request->edit_variation_sale_price_expires[$variant_id],true) : Helper::getFormatedDate($request->sale_price_expires.true),
                                 'weight' => $request->edit_variation_weight[$variant_id],
                                 'quantity'  => $request->edit_variation_quantity[$variant_id] ? $request->edit_variation_quantity[$variant_id] : $request->quantity,
                                 'product_id' => $product->id,
@@ -654,7 +628,6 @@ class ProductController extends Controller
                                 */
                                 foreach ($categories as $category) {
                                     $category->attributes()->syncWithoutDetaching($parent_id);
-            
                                 }
                                 
             
@@ -740,7 +713,7 @@ class ProductController extends Controller
                     $product_variation->sale_price =  null !== $request->variation_sale_price[$key] ?$request->variation_sale_price[$key] : $sale_price;
                     $product_variation->image = $request->variation_image[$key];
                     $product_variation->width = $request->variation_width[$key];
-                    $product_variation->sale_price_expires = Helper::getFormatedDate($request->variation_sale_price_expires[$key]);
+                    $product_variation->sale_price_expires = Helper::getFormatedDate($request->variation_sale_price_expires[$key],true);
                     $product_variation->extra_percent_off  = $request->extra_percent_off[$key];
 
                     $product_variation->length = $request->variation_length[$key];

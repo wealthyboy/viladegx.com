@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Models\SystemSetting;
 use App\Http\Helper;
 
-use App\Http\Image;
-
 
 
 trait ImageFiles 
@@ -16,47 +14,52 @@ trait ImageFiles
     protected $setting;
 
 
+
+
     public function getImageToShowAttribute()
     {   
-        return $this->image;
+        $image =  optional($this->variant)->image ??  optional(optional($this->variant)->img)->image;
+        return $this->product_type  == 'variable'
+                            ? $image
+                            : $this->image;
     }
 
 
     public function getImageToShowMAttribute()
     {   
-        return $this->m_path();
+        $image =  optional($this->variant)->image_m ??  optional(optional($this->variant)->img)->image_m;
+        return $this->product_type  == 'variable'
+                            ? $image  
+                            : $this->image_m;
     }
 
 
     public function getImageToShowTnAttribute()
     {   
-        return $this->tn_path();
+        $image =  optional($this->variant)->image_tn ??  optional(optional($this->variant)->img)->image_tn;
+        return $this->product_type  == 'variable'
+        ? $image 
+        : $this->image_tn;
     }
 
 
     public function getAddImagesAttribute()
     {
-        return $this->images; 
+        return $this->product_type  == 'variable'
+        ? optional($this->variant)->images 
+        : optional($this->default_variation)->images;
     }
 
 
     public function tn_path(){
-        $image = $this->checkIfProductIsVariable(optional($this->variant)->image,$this->image);
+        $image = basename($this->image);
         return  asset('images/'. $this->folder .'/tn/'.$image);
     }
 
 
     public function m_path(){
-        $image = $this->checkIfProductIsVariable(optional($this->variant)->image,$this->image);
+        $image = basename($this->image);
         return  asset('images/'.$this->folder.'/m/'.$image);
-    }
-
-
-    public function checkIfProductIsVariable($var_image,$image){
-        if ( $this->product_type == 'variable' ) {
-            return basename($var_image);
-        }
-        return basename($image);
     }
 
 
