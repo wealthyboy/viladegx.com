@@ -4194,6 +4194,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5831,7 +5834,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               t = e.parent().offset().left,
               o = e.outerWidth(),
               i = u(window).width() - 45 - t - o;
-          i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px"), console.log(t, 0, i);
+          i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px");
         });
       }
 
@@ -6578,7 +6581,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }), u(window).on("scroll", function () {
     p.scrollBtnAppear();
   });
-}(jQuery), $(".megamenu-fixed-width").css("width", $(document).width()); // console.log( $(document).width())
+}(jQuery), $(".megamenu-fixed-width").css("width", $(document).width());
+$('li.SHOES').on('click', function () {
+  console.log(true);
+});
 
 /***/ }),
 
@@ -52732,26 +52738,65 @@ var render = function() {
     !_vm.$root.loggedIn
       ? _c(
           "a",
-          {
-            staticClass: "header-icon pl-1",
-            attrs: { href: "/fashion/login" }
-          },
-          [_c("i", { staticClass: "icon-user-2" })]
+          { staticClass: "header-icon  pl-1", attrs: { href: "/login" } },
+          [
+            _c(
+              "svg",
+              {
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  viewBox: "0 0 24 24"
+                }
+              },
+              [
+                _c("path", {
+                  attrs: {
+                    "fill-rule": "evenodd",
+                    d:
+                      "M14.85 14.282a6 6 0 10-5.699 0C5.962 14.867 3 16.23 3 17v4h18v-4c0-.77-2.962-2.132-6.15-2.718zM16 9a4 4 0 11-8 0 4 4 0 018 0zm3 8.748V19H5v-1.252c.377-.218.947-.48 1.673-.74C8.269 16.438 10.287 16 12 16s3.73.438 5.327 1.009c.726.259 1.296.521 1.673.74z"
+                  }
+                })
+              ]
+            )
+          ]
         )
       : _vm._e(),
     _vm._v(" "),
     _vm.$root.loggedIn
       ? _c("div", { staticClass: "header-dropdown ml-4" }, [
-          _vm._m(0),
+          _c(
+            "a",
+            { staticClass: "header-icon  pl-1", attrs: { href: "/account" } },
+            [
+              _c(
+                "svg",
+                {
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 24 24"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      d:
+                        "M14.85 14.282a6 6 0 10-5.699 0C5.962 14.867 3 16.23 3 17v4h18v-4c0-.77-2.962-2.132-6.15-2.718zM16 9a4 4 0 11-8 0 4 4 0 018 0zm3 8.748V19H5v-1.252c.377-.218.947-.48 1.673-.74C8.269 16.438 10.287 16 12 16s3.73.438 5.327 1.009c.726.259 1.296.521 1.673.74z"
+                    }
+                  })
+                ]
+              )
+            ]
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "header-menu" }, [
+          _c("div", { staticClass: "header-menu " }, [
             _c("ul", [
+              _vm._m(0),
+              _vm._v(" "),
               _vm._m(1),
               _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
               _c("li", [
-                _vm._m(3),
+                _vm._m(2),
                 _vm._v(" "),
                 _c(
                   "form",
@@ -52759,7 +52804,7 @@ var render = function() {
                     staticStyle: { display: "none" },
                     attrs: {
                       id: "logout-form",
-                      action: "/fashion/logout",
+                      action: "/logout",
                       method: "POST"
                     }
                   },
@@ -52776,13 +52821,33 @@ var render = function() {
         ])
       : _vm._e(),
     _vm._v(" "),
-    _vm._m(4),
+    _c(
+      "a",
+      { staticClass: "header-icon  pl-1 pr-2", attrs: { href: "/wishlist" } },
+      [
+        _c(
+          "svg",
+          {
+            attrs: { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" }
+          },
+          [
+            _c("path", {
+              attrs: {
+                "fill-rule": "evenodd",
+                d:
+                  "M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"
+              }
+            })
+          ]
+        )
+      ]
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "dropdown cart-dropdown" }, [
       _c(
         "a",
         {
-          staticClass: "dropdown-toggle dropdown-arrow d-none d-lg-block",
+          staticClass: "dropdown-toggle dropdown-arrow ",
           attrs: {
             href: "#",
             role: "button",
@@ -52793,30 +52858,24 @@ var render = function() {
           }
         },
         [
-          _c("i", { staticClass: "icon-shopping-cart" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "cart-count badge-circle" }, [
-            _vm._v(_vm._s(_vm.cartItemCount))
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass:
-            "dropdown-toggle dropdown-arrow  d-none d-block  d-xl-none  d-lg-none",
-          attrs: {
-            href: "#",
-            role: "button",
-            "data-toggle": "dropdown",
-            "aria-haspopup": "true",
-            "aria-expanded": "false",
-            "data-display": "static"
-          }
-        },
-        [
-          _c("i", { staticClass: "icon-shopping-cart" }),
+          _c(
+            "svg",
+            {
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  "fill-rule": "evenodd",
+                  d:
+                    "M7 8V7a5 5 0 1110 0v1h5v14H2V12a4 4 0 014-4h1zm2-1a3 3 0 116 0v1H9V7zm-2 3v3h2v-3h6v3h2v-3h3v10H4v-8a2 2 0 012-2h1z"
+                }
+              })
+            ]
+          ),
           _vm._v(" "),
           _c("span", { staticClass: "cart-count badge-circle" }, [
             _vm._v(_vm._s(_vm.cartItemCount))
@@ -52833,18 +52892,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "header-icon  pl-1", attrs: { href: "/account" } },
-      [_c("i", { staticClass: "icon-user-2" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { attrs: { href: "/account" } }, [_vm._v(" Account")])
+      _c("a", { staticClass: "color--primary", attrs: { href: "/account" } }, [
+        _c("i", { staticClass: "fas fa-user left mr-2" }),
+        _vm._v("Account")
+      ])
     ])
   },
   function() {
@@ -52852,7 +52904,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { attrs: { href: "/orders" } }, [_vm._v(" Orders")])
+      _c("a", { staticClass: "color--primary", attrs: { href: "/orders" } }, [
+        _c("i", { staticClass: "fas fa-sign-out-alt left mr-1" }),
+        _vm._v(" Orders")
+      ])
     ])
   },
   function() {
@@ -52862,28 +52917,19 @@ var staticRenderFns = [
     return _c(
       "a",
       {
+        staticClass: "color--primary",
         attrs: {
-          href: "/fashion/logout",
+          href: "/logout",
           onclick:
             "event.preventDefault();\n                                                    document.getElementById('logout-form').submit();"
         }
       },
       [
-        _c("i", { staticClass: "fas fa-sign-out-alt left" }),
+        _c("i", { staticClass: "fas fa-sign-out-alt left mr-1" }),
         _vm._v(
           "\n                                        \n                                        Logout\n                                    "
         )
       ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "header-icon  pl-1 pr-2", attrs: { href: "/wishlist" } },
-      [_c("i", { staticClass: "icon-wishlist-2" })]
     )
   }
 ]

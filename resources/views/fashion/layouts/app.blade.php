@@ -6,26 +6,27 @@
 		<header class="header fixed-top">
 		    
 			<div class="header-middle">
-				<div class="container">
-					<div class="header-left w-lg-max ml-auto ml-lg-0">
+				<div class="container mt-1">
+					<div class="header-left w-lg-max ml-auto ml-lg-0 mt-1">
 					    <div class="header-dropdown">
-							<a href="#" class="pl-0"><img src="assets/images/flags/en.png" alt="England flag">ENG</a>
+							<a href="#" class="pl-0"><img width="30" height="30" src="/images/utilities/en.png" alt="England flag"></a>
 							<div class="header-menu">
 								<ul>
-									<li><a href="#"><img src="assets/images/flags/en.png" alt="England flag">ENG</a></li>
-									<li><a href="#"><img src="assets/images/flags/fr.png" alt="France flag">FRA</a></li>
+									<li><a href="#"><img src="/images/utilities/en.png" alt="England flag">ENG</a></li>
+									<li><a href="#"><img src="/images/utilities/us.png" alt="France flag">FRA</a></li>
+									<li><a href="#"><img src="/images/utilities/ng.svg" alt="France flag">NG</a></li>
+
 								</ul>
 							</div><!-- End .header-menu -->
 						</div>
 						<ul class="menu ml-5">
 						    @foreach( $global_categories   as  $category)
-								<li class="">
-								    <a style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }}</a>
+								<li class="p-d-down    {{ $category->name }}">
+								    <a style="color: {{  $category->text_color }} !important" href="#">{{ $category->name }}</a>
 								</li>
                             @endforeach
 						</ul>
 					</div>
-
 					<div class="header-center order-first order-lg-0 ml-0 ml-lg-auto">
 						<button class="mobile-menu-toggler" type="button">
 							<i class="icon-menu"></i>
@@ -45,7 +46,7 @@
 						<ul class="menu">
 							
                             @foreach( $global_categories[0]->children   as  $category)
-                                <li>
+                                <li  class="d-down {{ $category->parent->name }}">
                                    <a style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
 
                                     <div class="megamenu megamenu-fixed-width">
@@ -92,7 +93,7 @@
                             @foreach( $global_categories->slice(1)   as  $category)
 							   @foreach( $category->children   as  $category)
 
-                                <li class="d-none  {{ $category->parent->name  }}">
+                                <li class="d-down d-none  {{ $category->parent->name  }}">
                                    <a style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
 
                                     <div class="megamenu megamenu-fixed-width">
@@ -139,7 +140,11 @@
 					</nav>
 				</div><!-- End .container -->
 			</div><!-- End .header-bottom -->
+
+			
 		</header><!-- End .header -->
+
+		
         <main class="main main-page">
           @yield('content')
         </main> 
