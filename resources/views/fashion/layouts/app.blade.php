@@ -52,14 +52,22 @@
                                         <div class="row">
 										    <div class="col-lg-9">
 											    <div class="row">
-													@foreach (  $category->children as $children)
-													<div class="col-lg-3">
-														<a href="/fashion/products/{{ $children->slug }}" class="category-heading"><b>{{ $children->name !== 'No Heading' ? $children->name : '' }} </b></a>
-														@if ($children->children->count())
+												    @foreach (  $category->children as $childs)
+													<div class="col-lg-2">
+														<a href="{{ $childs->link() }}" class="category-heading">{{ str_contains($childs->name,'No') ? '' :  $childs->name}} </a>
+														@if ($childs->children->count())
 															<ul class="submenu">
-																@foreach (  $children->children as $children)
-																	<li><a href="/fashion/products/{{ $children->slug }}">{{ ucfirst($children->name) }}</a></li>
-																@endforeach
+															    @if ($childs->children->count() > 12)
+																	@foreach (  $childs->children->take(12) as $children)
+																		<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
+																	@endforeach
+																	<li ><a  class="bold text-danger" href="/view/{{ $childs->slug }}">View All</a></li>
+																@else
+																    @foreach (  $childs->children as $children)
+																	   <li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
+															      	@endforeach
+																@endif
+																
 															</ul>
 														@endif
 													</div><!-- End .col-lg-4 -->
