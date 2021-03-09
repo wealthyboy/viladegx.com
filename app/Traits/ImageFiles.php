@@ -13,9 +13,7 @@ trait ImageFiles
 
     protected $setting;
 
-
-
-
+    
     public function getImageToShowAttribute()
     {   
         $image =  optional($this->variant)->image ??  optional(optional($this->variant)->img)->image;

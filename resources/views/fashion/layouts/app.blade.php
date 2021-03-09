@@ -44,12 +44,9 @@
 					<nav class="main-nav d-flex w-lg-max ">
 						<ul class="menu">
 							
-                            @foreach( $global_categories   as  $category)
-
-						    	
+                            @foreach( $global_categories[0]->children   as  $category)
                                 <li>
                                    <a style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
-                                   @if ($category->isCategoryHaveMultipleChildren())
 
                                     <div class="megamenu megamenu-fixed-width">
                                         <div class="row">
@@ -79,13 +76,43 @@
 
                                         </div><!-- End .row -->
                                     </div><!-- End .megamenu -->
-                                    @elseif ( !$category->isCategoryHaveMultipleChildren() && $category->children->count() )
-                                        <ul  >
-                                            @foreach (  $category->children as $children)
-                                               <li class="nav-children color--primary  {{ strtolower($category->name) == 'christmas shop' ? 'pl-5' : '' }}"><a href="/fashion/products/{{ $children->slug }}">{{ $children->name }}</a></li>
-                                            @endforeach 
-                                        </ul>
-                                    @endif
+                                </li>
+                            @endforeach
+
+
+
+                            @foreach( $global_categories->slice(1)   as  $category)
+                                <li class="d-none  {{ $category->name  }}">
+                                   <a style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
+
+                                    <div class="megamenu megamenu-fixed-width">
+                                        <div class="row">
+										    <div class="col-lg-9">
+											    <div class="row">
+													@foreach (  $category->children as $children)
+													<div class="col-lg-3">
+														<a href="/fashion/products/{{ $children->slug }}" class="category-heading"><b>{{ $children->name !== 'No Heading' ? $children->name : '' }} </b></a>
+														@if ($children->children->count())
+															<ul class="submenu">
+																@foreach (  $children->children as $children)
+																	<li><a href="/fashion/products/{{ $children->slug }}">{{ ucfirst($children->name) }}</a></li>
+																@endforeach
+															</ul>
+														@endif
+													</div><!-- End .col-lg-4 -->
+													@endforeach
+		                                        </div>
+											</div>
+											
+											<div class="col-lg-3">
+												<div class="col-lg-12 p-0">
+												   <a href="{{ $category->image_custom_link }}"><img src="{{ $category->image }}" alt="{{ $category->image }}" class="product-promo" ></a>
+												</div><!-- End .col-lg-4 -->
+											</div>
+										   
+
+                                        </div><!-- End .row -->
+                                    </div><!-- End .megamenu -->
                                 </li>
                             @endforeach
 						</ul>
