@@ -81,7 +81,9 @@
 
 
 
-                            @foreach( $global_categories->slice(1)->children   as  $category)
+                            @foreach( $global_categories->slice(1)   as  $category)
+							   @foreach( $category->children   as  $category)
+
                                 <li class="d-none  {{ $category->parent->name  }}">
                                    <a style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
 
@@ -122,6 +124,8 @@
                                         </div><!-- End .row -->
                                     </div><!-- End .megamenu -->
                                 </li>
+								@endforeach
+
                             @endforeach
 						</ul>
 					</nav>
