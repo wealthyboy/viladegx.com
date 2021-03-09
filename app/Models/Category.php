@@ -28,25 +28,6 @@ class Category extends Model
         return $this->belongsToMany(Product::class)->where('allow',1);
     }
 
-
-    public function subjects()
-    {
-        return $this->belongsToMany(Subject::class);
-    }
-
-
-    public function discount()
-    {
-        return $this->hasOne('App\Models\Discount');
-    }
-
-
-    public function link()
-    {
-        return $this->type == 'photo_to_art' ? '/photo-to-art/'.$this->slug : "/products";
-    }
-
-
     public function product_variations()
     {
         return $this->belongsToMany(ProductVariation::class);
@@ -56,6 +37,12 @@ class Category extends Model
     public function product_variants()
     {
         return $this->belongsToMany(ProductVariation::class)->whereNotNull('name');
+    }
+
+
+    public function parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id');
     }
 
 
