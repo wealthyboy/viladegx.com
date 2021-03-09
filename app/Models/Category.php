@@ -28,6 +28,13 @@ class Category extends Model
         return $this->belongsToMany(Product::class)->where('allow',1);
     }
 
+
+    public function link()
+    {
+        return "/products";
+    }
+
+
     public function product_variations()
     {
         return $this->belongsToMany(ProductVariation::class);
@@ -40,6 +47,7 @@ class Category extends Model
     }
 
 
+    
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_id');
