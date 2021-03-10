@@ -180,7 +180,6 @@ input {
 
 .dropdown-arrow .badge-circle {top: 20px;}
 
-
 .main-nav > ul > li > a {
   font-family: 'Am Basis',sans-serif !important;
   letter-spacing: normal;
@@ -549,6 +548,10 @@ background: white;
 
 .checkbox-label input:checked ~ .checkbox-custom.circular::before {
   border-radius: 50%;
+}
+
+.horizontal-filter{
+  background-color: #fff;
 }
 
 .sidebar-shop .widget-title {
