@@ -6,9 +6,9 @@
 		<header class="header fixed-top">
 		    
 			<div class="header-middle">
-				<div class="container mt-1">
+				<div class="container">
 					<div class="header-left w-lg-max ml-auto ml-lg-0 ">
-					    <div class="header-dropdown">
+					    <div class="header-dropdown mt-1">
 							<a href="#" class="pl-0"><img src="/f/img/ng.png" alt="Ng">₦</a>
 							<div class="header-menu">
 								<ul>
