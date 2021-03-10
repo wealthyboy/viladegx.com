@@ -6,8 +6,8 @@
 		<header class="header fixed-top">
 		    
 			<div class="header-middle">
-				<div class="container mt-1">
-					<div class="header-left w-lg-max ml-auto ml-lg-0 mt-1">
+				<div class="container">
+					<div class="header-left w-lg-max ml-auto ml-lg-0 ">
 					    <div class="header-dropdown">
 							<a href="#" class="pl-0"><img width="30" height="30" src="/f/img/en.png" alt="England flag"></a>
 							<div class="header-menu">
