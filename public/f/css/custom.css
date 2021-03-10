@@ -172,10 +172,9 @@ input {
   content: "";
 }
 
-
-
 .badge-circle{
   background: #fff !important;
+  color: #222;
 }
 
 .dropdown-arrow .badge-circle {top: 20px;}
