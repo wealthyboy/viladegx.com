@@ -64,12 +64,16 @@
 
 
                 <div class="toolbox-right">
-                    <div class="toolbox-item layout-modes">
-                        <a href="#" class="layout-btn btn-grid active" title="Grid">
-                            <i class="icon-mode-grid"></i>
-                        </a>
-                        
-                    </div><!-- End .layout-modes -->
+                <div class="select-custom">
+                            <select  name="sort_by" id="sort_by" class="form-control">
+                                <option value="" selected="selected">Sort By</option>
+                                <option value="created_at,asc">Oldest</option>
+                                <option value="created_at,desc">Newest</option>
+                                <option value="price,asc">Lowest Price</option>
+                                <option value="price,desc">Highest Price</option>
+                            </select>
+                        </div><!-- End .select-custom -->
+
                 </div><!-- End .toolbox-right -->
             </nav>
         @endif
