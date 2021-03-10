@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="top-notice text-white bg--gray mt-3">
+<div class="top-notice text-white bg--gray mt-5">
     <div class="container-fluid text-center">
         <div class="row">
             
@@ -18,9 +18,9 @@
 </div>
 
 <div class="container-fliud ">
-    <div  class="row align-items-start mt-2 mb-2">
+    <div  class="row align-items-start ">
         @foreach( $banners as $banner )
-            <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : 'pr-1 pl-1' }}  {{ $banner->title }} p-0 text-center">
+            <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : 'pr-1 pl-1' }}  mb-1 {{ $banner->title }} p-0 text-center">
                 <div class="banner-box">
                     <a class="portfolio-thumb" href="{{ $banner->link }}">
                         <img src="{{ $banner->image }}" alt="" />
