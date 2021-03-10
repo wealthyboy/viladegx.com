@@ -9,12 +9,12 @@
 				<div class="container mt-1">
 					<div class="header-left w-lg-max ml-auto ml-lg-0 mt-1">
 					    <div class="header-dropdown">
-							<a href="#" class="pl-0"><img width="30" height="30" src="/images/utilities/en.png" alt="England flag"></a>
+							<a href="#" class="pl-0"><img width="30" height="30" src="/f/img/en.png" alt="England flag"></a>
 							<div class="header-menu">
 								<ul>
-									<li><a href="#"><img src="/images/utilities/en.png" alt="England flag">ENG</a></li>
-									<li><a href="#"><img src="/images/utilities/us.png" alt="France flag">FRA</a></li>
-									<li><a href="#"><img src="/images/utilities/ng.svg" alt="France flag">NG</a></li>
+									<li><a href="#"><img src="/f/img/en.png" alt="England flag">ENG</a></li>
+									<li><a href="#"><img src="/f/img/us.png" alt="France flag">FRA</a></li>
+									<li><a href="#"><img src="/f/img/ng.svg" alt="France flag">NG</a></li>
 
 								</ul>
 							</div><!-- End .header-menu -->
