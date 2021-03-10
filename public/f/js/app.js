@@ -52738,7 +52738,10 @@ var render = function() {
     !_vm.$root.loggedIn
       ? _c(
           "a",
-          { staticClass: "header-icon  pl-1", attrs: { href: "/login" } },
+          {
+            staticClass: "header-icon  pl-1",
+            attrs: { href: "/fashion/login" }
+          },
           [
             _c(
               "svg",
@@ -52766,7 +52769,10 @@ var render = function() {
       ? _c("div", { staticClass: "header-dropdown ml-4" }, [
           _c(
             "a",
-            { staticClass: "header-icon  pl-1", attrs: { href: "/account" } },
+            {
+              staticClass: "header-icon  pl-1",
+              attrs: { href: "/fashion/account" }
+            },
             [
               _c(
                 "svg",
@@ -52804,7 +52810,7 @@ var render = function() {
                     staticStyle: { display: "none" },
                     attrs: {
                       id: "logout-form",
-                      action: "/logout",
+                      action: "/fashion/logout",
                       method: "POST"
                     }
                   },
@@ -52823,7 +52829,10 @@ var render = function() {
     _vm._v(" "),
     _c(
       "a",
-      { staticClass: "header-icon  pl-1 pr-2", attrs: { href: "/wishlist" } },
+      {
+        staticClass: "header-icon  pl-1 pr-2",
+        attrs: { href: "/fashion/wishlist" }
+      },
       [
         _c(
           "svg",
@@ -52878,7 +52887,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", { staticClass: "cart-count badge-circle" }, [
-            _vm._v(_vm._s(_vm.cartItemCount))
+            _vm._v(_vm._s(_vm.cartItemCount) + "1")
           ])
         ]
       ),
@@ -52893,10 +52902,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { staticClass: "color--primary", attrs: { href: "/account" } }, [
-        _c("i", { staticClass: "fas fa-user left mr-2" }),
-        _vm._v("Account")
-      ])
+      _c(
+        "a",
+        { staticClass: "color--primary", attrs: { href: "/fashion/account" } },
+        [_c("i", { staticClass: "fas fa-user left mr-2" }), _vm._v("Account")]
+      )
     ])
   },
   function() {
@@ -52904,10 +52914,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { staticClass: "color--primary", attrs: { href: "/orders" } }, [
-        _c("i", { staticClass: "fas fa-sign-out-alt left mr-1" }),
-        _vm._v(" Orders")
-      ])
+      _c(
+        "a",
+        { staticClass: "color--primary", attrs: { href: "/fashion/orders" } },
+        [
+          _c("i", { staticClass: "fas fa-sign-out-alt left mr-1" }),
+          _vm._v(" Orders")
+        ]
+      )
     ])
   },
   function() {
@@ -52919,7 +52933,7 @@ var staticRenderFns = [
       {
         staticClass: "color--primary",
         attrs: {
-          href: "/logout",
+          href: "/fashion/logout",
           onclick:
             "event.preventDefault();\n                                                    document.getElementById('logout-form').submit();"
         }
