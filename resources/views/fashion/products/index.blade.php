@@ -46,33 +46,21 @@
             <nav class="toolbox horizontal-filter filter-sorts">
                 <div class="toolbox-left">
                     <div class="toolbox-item toolbox-sort pr-1">
-
                         <label class="ml-3"></label>
-                        <div class="select-custom">
-                            <select  name="sort_by" id="sort_by" class="form-control">
-                                <option value="" selected="selected">Sort By</option>
-                                <option value="created_at,asc">Oldest</option>
-                                <option value="created_at,desc">Newest</option>
-                                <option value="price,asc">Lowest Price</option>
-                                <option value="price,desc">Highest Price</option>
-                            </select>
-                        </div><!-- End .select-custom -->
-
-
                     </div><!-- End .toolbox-item -->
                 </div><!-- End .toolbox-left -->
 
 
                 <div class="toolbox-right">
-                <div class="select-custom">
-                            <select  name="sort_by" id="sort_by" class="form-control">
-                                <option value="" selected="selected">Sort By</option>
-                                <option value="created_at,asc">Oldest</option>
-                                <option value="created_at,desc">Newest</option>
-                                <option value="price,asc">Lowest Price</option>
-                                <option value="price,desc">Highest Price</option>
-                            </select>
-                        </div><!-- End .select-custom -->
+                   <div class="select-custom">
+                        <select  name="sort_by" id="sort_by" class="form-control">
+                            <option value="" selected="selected">Sort By</option>
+                            <option value="created_at,asc">Oldest</option>
+                            <option value="created_at,desc">Newest</option>
+                            <option value="price,asc">Lowest Price</option>
+                            <option value="price,desc">Highest Price</option>
+                        </select>
+                    </div><!-- End .select-custom -->
 
                 </div><!-- End .toolbox-right -->
             </nav>
