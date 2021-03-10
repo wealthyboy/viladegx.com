@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container-fliud">
+<div class="container-fliud mt-5">
     <div  class="row align-items-start">
         @foreach( $banners as $banner )
             <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }}  {{ $banner->title }} p-0 text-center">
