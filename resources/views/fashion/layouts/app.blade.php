@@ -6,26 +6,28 @@
 		<header class="header fixed-top">
 		    
 			<div class="header-middle">
-				<div class="container">
+				<div class="container mt-1">
 					<div class="header-left w-lg-max ml-auto ml-lg-0 ">
 					    <div class="header-dropdown">
-							<a href="#" class="pl-0"><img width="30" height="30" src="/f/img/en.png" alt="England flag"></a>
+							<a href="#" class="pl-0"><img src="/f/img/ng.png" alt="Ng">₦</a>
 							<div class="header-menu">
 								<ul>
-									<li><a href="#"><img src="/f/img/en.png" alt="England flag">ENG</a></li>
-									<li><a href="#"><img src="/f/img/us.png" alt="France flag">FRA</a></li>
-									<li><a href="#"><img src="/f/img/ng.svg" alt="France flag">NG</a></li>
+									<li><a href="#"><img src="/f/img/en.png" alt="England flag">£</a></li>
+									<li><a href="#"><img src="/f/img/us.png" alt="France flag">€</a></li>
+									<li><a href="#"><img src="/f/img/ng.png" alt="Ng">₦</a></li>
 
 								</ul>
 							</div><!-- End .header-menu -->
 						</div>
-						<ul class="menu ml-5">
-						    @foreach( $global_categories   as  $category)
-								<li class="p-d-down    {{ $category->name }}">
-								    <a style="color: {{  $category->text_color }} !important" href="#">{{ $category->name }}</a>
-								</li>
-                            @endforeach
-						</ul>
+						<nav class="main-nav d-flex w-lg-max ">
+							<ul class="menu mt-1 ml-5">
+								@foreach( $global_categories   as  $category)
+									<li class="p-d-down    {{ $category->name }}">
+										<a style="color: {{  $category->text_color }} !important" href="#">{{ $category->name }}</a>
+									</li>
+								@endforeach
+							</ul>
+                        </nav>
 					</div>
 					<div class="header-center order-first order-lg-0 ml-0 ml-lg-auto">
 						<button class="mobile-menu-toggler" type="button">
@@ -138,8 +140,22 @@
                             @endforeach
 						</ul>
 					</nav>
+					<div class="search-bar float-right mt-2">
+						<div class="input-group mb-2">
+							<input type="text" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<button class="btn search-btn" type="button">
+								    <svg data-icon-id="magnifierSmall" data-icon-set="farfetch-2020" id="iconLoaded-magnifierSmall"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11 5a6 6 0 103.476 10.89l3.01 3.01 1.413-1.415-3.008-3.008A6 6 0 0011 5zm-4 6a4 4 0 118 0 4 4 0 01-8 0z"></path></svg></svg>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div><!-- End .container -->
+				
 			</div><!-- End .header-bottom -->
+
+			
+
 
 			
 		</header><!-- End .header -->
@@ -289,6 +305,17 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

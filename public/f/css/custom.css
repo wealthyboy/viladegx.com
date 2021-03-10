@@ -97,7 +97,7 @@ h5.text-uppercase.mt-n3 { margin-top: -11px;}
 
 strong, b {
   font-weight: 500;
-  font-family: 'GalaxiePolarisCondensed-Bold', sans-serif;
+  font-family: 'Ams Extended D', sans-serif;
   color: #000000;
 }
 
@@ -112,11 +112,11 @@ strong, b {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  font-family: 'GalaxiePolarisCondensed-Bold', sans-serif;
+  font-family: 'Ams Extended D', sans-serif;
 }
 
 label:not(.checkbox-label){
-  font-family: 'GalaxiePolarisCondensed-Bold', sans-serif;
+  font-family: 'Ams Extended D', sans-serif;
 }
 
 
@@ -125,7 +125,7 @@ input {
 }
 
 .bold{
-  font-family: 'luxurySaleFont5', sans-serif;
+  font-family: 'Ams Extended D', sans-serif;
   color: #222;
 }
 
@@ -134,7 +134,9 @@ input {
   font-weight: 700  !important
 }
 
-
+/***
+  Header
+*/
 .header-middle{
   padding: 0px;
   margin-top: -7px;
@@ -182,13 +184,11 @@ input {
   border-top: 0px  !important;
 }
 
-
 .main-nav .menu .megamenu.megamenu-fixed-width  a.category-heading {
   font-family: 'Am Basis',sans-serif !important;
   color: #222;
   font-weight: 700 !important;
 }
-
 
 .menu .megamenu .submenu a {
   font-family: 'Am Basis',sans-serif !important;
@@ -196,53 +196,101 @@ input {
   font-weight: 400 !important;
 }
 
-
 .main-nav .menu .megamenu {
   top: 100%;
   left: -15px;
   border-top: none;
 }
 
-
 .menu .megamenu {
   box-shadow: none;
 }
-
 
 .menu li > a {
   color: #000;
   text-transform: capitalize;
 }
 
-
 .main.main-page{margin-top:110px;}
 
-.sticky-header{margin-top: -20px;}
+.search-bar {
+  width: 300px;
+  border-radius: .4rem;
+}
+
+.search-bar .input-group input:focus{
+  border-right: none  !important;
+}
+
+.header-bottom .input-group-append button svg{
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+
+.header-dropdown img{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.header-bottom .input-group-append .search-btn {
+  padding: 0px !important;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: .4rem;
+}
+
+.sticky-header{margin-top: -25px;}
 
 .dropdown-cart-products {
   height: 200px;
   overflow: auto;
 }
 
+
+
 .reduce-gutters{
   padding-left: 5px !important;
   padding-right: 5px !important;
 }
 
+/*
+   Forms
+*/
 
 .form-control {
-  height: 5rem;
+  height: 4.5rem;
   padding: 2rem;
   background-color: #fff;
   color: #777;
   font-family: 'Am Basis',sans-serif !important;
+  border-radius: .4rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  box-shadow: none;
+  border: 1px solid #ddd  !important;
 }
 
 .ba img {
   width: 100%;
 }
-
-
 
 select.form-control:not([size]):not([multiple]) {
   height: 5.3rem;
@@ -252,13 +300,13 @@ select.form-control:not([size]):not([multiple]) {
 
 
 .form-group-custom-control .custom-control-label {
-  font-family: 'GalaxiePolarisCondensed-Bold', sans-serif;
+  font-family: 'Ams Extended D', sans-serif;
 }
 
 
 .btn {
   padding: 1rem 4.2rem;
-  font-family: Polaris-Book,sans-serif;
+  font-family: 'Am basis',sans-serif;
   line-height: 1.429;
 }
 
@@ -606,7 +654,7 @@ background: white;
 
 
 .product-single-details .product-title {
-  font-family: Polaris-Book,sans-serif;
+  font-family: 'Am Basis',sans-serif;
   font-size: 1.3rem;
 }
 
@@ -624,7 +672,7 @@ background: white;
 
 .product-item-prices .product--price--amount:first-child span:nth-of-type(2){
   font-weight: 900;
-  font-family: 'Polaris-Bold', sans-serif;
+  font-family: 'Am basis', sans-serif;
   font-size:1.9rem;
 }
 
@@ -886,7 +934,7 @@ background: white;
   padding: 1.2rem 2.475rem;
   border-radius: 5rem;
   font-size: inherit;
-  font-family: Polaris-Book,sans-serif;
+  font-family: "Am basis",sans-serif;
   right: 10px;
   position: absolute;
   background-color: #222;
