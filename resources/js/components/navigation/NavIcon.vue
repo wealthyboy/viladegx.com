@@ -39,7 +39,7 @@
         <div class="dropdown cart-dropdown">
             <a href="#" class="dropdown-toggle dropdown-arrow " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7 8V7a5 5 0 1110 0v1h5v14H2V12a4 4 0 014-4h1zm2-1a3 3 0 116 0v1H9V7zm-2 3v3h2v-3h6v3h2v-3h3v10H4v-8a2 2 0 012-2h1z"></path></svg>
-                <span class="cart-count badge-circle">{{ cartItemCount }}1</span>
+                <span class="cart-count badge-circle">1</span>
             </a>
 
             
