@@ -7,8 +7,8 @@
         <div class="row">
             
             <div class="col-12">
-                <h5 class="d-inline-block text-uppercase mb-0"><b><i class="fas fa-money-check"></i>
-                    Incoming | Shop the latest arrivals here</b>
+                <h5 class="d-inline-block text-uppercase mb-0">
+                    Incoming | <a href="#">Shop the latest arrivals here</a>
                 </h5>
             </div>
 
@@ -17,7 +17,7 @@
     </div><!-- End .container -->
 </div>
 
-<div class="container-fliud ">
+<div class="container-fliud mt-3">
     <div  class="row align-items-start ">
         @foreach( $banners as $banner )
             <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : 'pr-1 pl-1' }}  mb-1 {{ $banner->title }} p-0 text-center">
