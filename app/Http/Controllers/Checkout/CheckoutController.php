@@ -5,20 +5,20 @@ namespace App\Http\Controllers\Checkout;
    
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Product;
-use App\ProductVariation;
-use App\User;
-use App\Voucher;
-use App\Order;
-use App\OrderedProduct;
-use App\Cart;
-use App\SystemSetting;
+use App\Models\Product;
+use App\Models\ProductVariation;
+use App\Models\User;
+use App\Models\Voucher;
+use App\Models\Order;
+use App\Models\OrderedProduct;
+use App\Models\Cart;
+use App\Models\SystemSetting;
 use App\Http\Controllers\Controller;
 use App\Mail\OrderReceipt;
-use App\Location;
+use App\Models\Location;
 use App\Http\Helper;
-use App\Shipping;
-use App\Address;
+use App\Models\Shipping;
+use App\Models\Address;
 
 
 
@@ -55,7 +55,7 @@ class CheckoutController extends Controller
             return redirect()->to('/cart');
 		}
 		$csrf = json_encode(['csrf' => csrf_token()]);
-		return view('checkout.index',['csrf' => $csrf]);
+		return view('fashion.checkout.index',['csrf' => $csrf]);
 	}
 
 	

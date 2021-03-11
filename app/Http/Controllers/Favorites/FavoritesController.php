@@ -29,7 +29,7 @@ class FavoritesController  extends Controller
 		{
 			$user = $request->user();
 			$page_title = " Your wishlist";
-			return view('favorites.index',compact('page_title'));
+			return view('fashion.favorites.index',compact('page_title'));
 		}
 
 	
