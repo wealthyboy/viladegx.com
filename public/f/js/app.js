@@ -5060,7 +5060,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -54464,7 +54463,7 @@ var render = function() {
           _c("div", { staticClass: "product-single-tabs" }, [
             _vm._m(2),
             _vm._v(" "),
-            _c("div", { staticClass: "tab-content bg--gray" }, [
+            _c("div", { staticClass: "tab-content " }, [
               _c(
                 "div",
                 {

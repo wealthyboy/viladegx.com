@@ -203,13 +203,12 @@
                             </li>
 
                         </ul>
-                        <div class="tab-content bg--gray">
+                        <div class="tab-content ">
                             <div class="tab-pane fade show active pl-2" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
                                 <div v-html="product.description" class="product-desc-content  pl-2 pb-2 color--primary"></div><!-- End .product-desc-content -->
                             </div><!-- End .tab-pane -->
 
-                            
-
+            
                             <div class="tab-pane fade fade" id="Warranty-Return" role="tabpanel" aria-labelledby="Warranty-Return">
                                 <div class="product-desc-content pl-4 pb-2 color--primary">
                                     <h4>WARRANTY</h4> 
