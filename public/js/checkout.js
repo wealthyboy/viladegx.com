@@ -3055,10 +3055,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+
 
 
 var CheckoutIndex = __webpack_require__(/*! ./components/checkout/CheckoutIndex.vue */ "./resources/js/components/checkout/CheckoutIndex.vue").default;
@@ -3071,10 +3072,10 @@ var ShipAddress = __webpack_require__(/*! ./components/checkout/ShipAddress.vue 
 
 var token = document.head.querySelector('meta[name="csrf-token"]');
 Window.token = token.content;
-Vue.filter('priceFormat', function (value) {
+vue__WEBPACK_IMPORTED_MODULE_1__.default.filter('priceFormat', function (value) {
   return new Intl.NumberFormat().format(value);
 });
-var app = new Vue({
+var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
   store: _store__WEBPACK_IMPORTED_MODULE_0__.default,
   data: Window.user,

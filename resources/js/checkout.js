@@ -1,7 +1,8 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue'
+
 import store from './store'
 
 const CheckoutIndex = require('./components/checkout/CheckoutIndex.vue').default
