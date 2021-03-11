@@ -54370,7 +54370,7 @@ var render = function() {
                             "button",
                             {
                               staticClass:
-                                "l-f1  pt-4 pb-4  btn btn--primary  btn-lg btn-block",
+                                "l-f1  pt-4 pb-4  btn btn--primary  add-to-cart btn-lg btn-block",
                               class: _vm.canAddToCart,
                               attrs: {
                                 type: "button",
@@ -54404,12 +54404,12 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-5" }, [
+                        _c("div", { staticClass: "ml-3 col-5 pr-2" }, [
                           _c(
                             "button",
                             {
                               staticClass:
-                                "l-f1  pt-4 pb-4  btn btn-outline  btn-lg btn-block",
+                                "l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block",
                               class: _vm.canAddToCart,
                               attrs: {
                                 type: "button",

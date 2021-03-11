@@ -329,6 +329,19 @@ select.form-control:not([size]):not([multiple]) {
   box-shadow: none;
 }
 
+button.add-to-cart pt-4.pb-4.btn.btn-outline.btn-lg.btn-block svg{
+  display: flex;
+}
+
+
+button.add-to-wishlist svg{
+  width: 2.4rem;
+  height: 2.4rem;
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+}
+
 
 
 
