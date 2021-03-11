@@ -5281,6 +5281,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.canNotAddToCart = true;
         this.cText = "Sold Out";
         this.quantity = 0;
+        console.log(error);
       }
     },
     owlCarousels: function owlCarousels() {},
