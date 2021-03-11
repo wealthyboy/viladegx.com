@@ -72,7 +72,7 @@
                         @endif
 
                         <div class="color--primary">
-                            <a href="{{ $product->link }}">{{ $feautered_product->product_name }}</a>
+                            <a href="{{ $feautered_product->link }}">{{ $feautered_product->product_name }}</a>
                         </div>
                     </div>
                     <div class="price-box mx-auto mt-1">
