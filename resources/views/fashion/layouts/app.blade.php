@@ -191,7 +191,7 @@
 							<div class="col-lg-6 col-md-6">
 							   <div class="row ">
 									@foreach($footer_info as $info)
-										<div class="col-sm-4 col-6 col-lg-4">
+										<div class="col-sm-6 col-6 col-lg-6">
 											<div class="widget">
 												<h2 class="widget-title">{{ title_case($info->title) }}</h2>
 												@if($info->children->count())
