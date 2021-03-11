@@ -12,6 +12,8 @@ use Validator;
 use App\Models\State;
 use App\Models\Location;
 use App\Models\User;
+use App\Models\Shipping;
+
 
 
 use App\Http\Controllers\Controller;

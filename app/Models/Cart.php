@@ -58,8 +58,7 @@ class Cart extends Model
 				$cart->delete();
 			}
 
-			
-
+		
 			if (null !== $cart->product_variation && $cart->product_variation->quantity  == 0 ){
 				$cart->update([
 				   'quantity' => 0,
