@@ -46,7 +46,7 @@
                     <a href="{{ $feautered_product->link }}">
                         <img src="{{ $feautered_product->image_to_show_m }}">
                     </a>
-                    @if $feautered_product->default_percentage_off)
+                    @if( $feautered_product->default_percentage_off )
                     <div class="label-group">
                         <span class="product-label label-sale">-{{ $feautered_product->default_percentage_off }}%</span>
                     </div>
