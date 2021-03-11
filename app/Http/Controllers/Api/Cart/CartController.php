@@ -31,12 +31,12 @@ class CartController  extends Controller {
 
 
 		$this->validate($request,[
-		   'product_id' => 'required|exists:products,id',
+		   'product_variation_id' => 'required|exists:product_variations,id',
 		   'quantity' => 'required|min:1',
 		]);
 
-		$product = Product::find($request->product_id);
-		if ($product->quantity < 1) {
+		$product_variation = ProductVariation::find($request->product_variation_id);
+		if ($product_variation->quantity < 1) {
 			return response()->json([
                 'message' => [
 					'errors' => "Product out of stock"
@@ -49,13 +49,13 @@ class CartController  extends Controller {
 		{   
 			$cart->user_id    = $request->user()->id;
 		}
-		$price = $product->discounted_price ?? $product->price;
+		$price = $product_variation->discounted_price ?? $product_variation->price;
 		if (\Cookie::get('cart') !== null) {
 			$remember_token  = \Cookie::get('cart');
 			$result = $cart->updateOrCreate(
-				['product_id' => $request->product_id,'remember_token' => $remember_token],
+				['product_variation_id' => $request->product_variation_id,'remember_token' => $remember_token],
 				[
-					'product_id' => $request->product_id,
+					'product_variation_id' => $request->product_variation_id,
 					'quantity'   => $request->quantity,
 					'price'      => $price,
 					'total'      => $price * $request->quantity
@@ -68,7 +68,7 @@ class CartController  extends Controller {
 			$value = bcrypt('^%&#*$((j1a2c3o4b5@+-40');
 			session()->put('cart',$value);
 			$cookie = cookie('cart',session()->get('cart'), 60*60*7);
-			$cart->product_id = $request->product_id;
+			$cart->product_variation_id = $request->product_variation_id;
 			$cart->quantity   = $request->quantity;
 			$cart->price      = $price;
 			$cart->total      = $price * $request->quantity;
@@ -80,13 +80,15 @@ class CartController  extends Controller {
 			
 			return response()->json([
 				'data' => [
-					0 => [ 
-						'id' => $cart->id,
-						'product_id' => $cart->product_id,
-						'image'        => optional($cart->product)->image_to_show,
-						'title'        => optional($cart->product)->title,
+					
+					0 => [ 'cart_id' => $cart->id,
+						'product_variation_id' => $cart->product_variation_id,
+						'image'        => optional($cart->product_variation)->image_to_show,
 						'quantity'     => $cart->quantity,
 						'price'        => $cart->converted_price,
+						'product_name' => optional($cart->product_variation)->product->product_name,
+						'variations'   => optional($cart->product_variation)->product_variation_values->pluck('name')->toArray(),
+						'brand'        =>  optional(optional($cart->product_variation)->product)->brand_name,
 					]
 				],
 				'meta' => [
@@ -100,8 +102,7 @@ class CartController  extends Controller {
     }
 
 
-	public function loadCart(Request $request)
-	{
+	public function loadCart(Request $request){
 
 		$carts = Cart::all_items_in_cart();
 		$sub_total =  Cart::sum_items_in_cart();

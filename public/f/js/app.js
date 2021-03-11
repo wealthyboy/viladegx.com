@@ -5156,7 +5156,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.discounted_price = this.product.default_discounted_price;
     this.is_wishlist = this.product.is_wishlist;
     this.variant_images = this.product.variants;
-    console.log(this.product);
   },
   methods: _objectSpread(_objectSpread({
     getStarRating: function getStarRating(e, rating) {

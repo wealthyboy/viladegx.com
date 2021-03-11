@@ -335,9 +335,7 @@ export default {
         this.price =  this.product.converted_price
         this.discounted_price =  this.product.default_discounted_price
         this.is_wishlist =  this.product.is_wishlist
-        this.variant_images = this.product.variants
-        console.log(this.product)
-    
+        this.variant_images = this.product.variants    
     },
     methods: {
         getStarRating(e,rating){
