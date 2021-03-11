@@ -5343,6 +5343,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.cText = "Adding....";
       this.loading = true;
+      console.log(this.product_variation_id);
       this.addProductToCart({
         product_variation_id: this.product_variation_id,
         quantity: 1

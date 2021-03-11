@@ -513,6 +513,7 @@ export default {
         addToCart: function(){
             this.cText = "Adding...."
             this.loading = true;
+            console.log(this.product_variation_id)
             this.addProductToCart({
                 product_variation_id:this.product_variation_id,
                 quantity: 1
