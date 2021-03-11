@@ -31,12 +31,14 @@
     </div>
 </div>
 
+@if ( $products->count() )
+
+
 <div class="container-fluid">
     
-    @if ( $products->count() )
 
     <div class="products-section pt-0">
-        <h2 class="section-title bold">Related Products</h2>
+        <h2 class="section-title bold text-center">Most Sorted</h2>
 
         <div class="products-slider owl-carousel owl-theme dots-top">
             @foreach( $products as $feautered_product)
@@ -53,16 +55,32 @@
                     @endif
                     
                 </figure>
-                <div class="product-details">
-                    <h3 class="product-title">
-                        <a href="{{ $feautered_product->link }}">{{ $feautered_product->product_name }}</a>
-                    </h3>
-                    <div class="price-box">
-                        @if ( $feautered_product->default_discounted_price ) 
-                            <span class="old-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price)  }}</span>
+                <div class="product-details text-center">
+                    <div class="mx-auto">
+                        
+                        @if($feautered_product->colours->count()  && $feautered_product->colours->count() > 1)
+                            <div  class="justify-content-center d-flex mb-1">
+                                @foreach($product->colours as $color)
+                                <div   style="border:1px solid #222; height: 15px; width: 15px; border-radius: 50%; background-color: {{ $color->color_code }};" class="mr-1"></div>
+                                @endforeach
+                            </div>
+                        @endif
+                        @if($feautered_product->brand_name)
+                            <div  class="product-brand bold">
+                                {{ $product->brand_name }} 
+                            </div>
+                        @endif
+
+                        <div class="color--primary">
+                            <a href="{{ $product->link }}">{{ $feautered_product->product_name }}</a>
+                        </div>
+                    </div>
+                    <div class="price-box mx-auto mt-1">
+                        @if( $feautered_product->default_discounted_price)
+                            <span class="old-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price)   }}</span>
                             <span class="product-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->default_discounted_price)  }}</span>
                         @else
-                           <span class="product-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price)  }}</span>
+                            <span class="product-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price) }}</span>
                         @endif
                     </div><!-- End .price-box -->
                 </div><!-- End .product-details -->
@@ -74,8 +92,9 @@
         </div><!-- End .products-slider -->
     </div><!-- End .products-section -->
 
-    @endif
-    </div><!-- End .container -->
+</div><!-- End .container -->
+@endif
+
 
 
 
