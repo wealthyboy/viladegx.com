@@ -67,7 +67,7 @@
                         @endif
                         @if($feautered_product->brand_name)
                             <div  class="product-brand bold">
-                                {{ $product->brand_name }} 
+                                {{ $feautered_product->brand_name }} 
                             </div>
                         @endif
 
