@@ -54409,7 +54409,7 @@ var render = function() {
                             "button",
                             {
                               staticClass:
-                                "l-f1  pt-4 pb-4  btn btn--primary  btn-lg btn-block",
+                                "l-f1  pt-4 pb-4  btn btn-outline  btn-lg btn-block",
                               class: _vm.canAddToCart,
                               attrs: {
                                 type: "button",
