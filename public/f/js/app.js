@@ -10133,27 +10133,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var addProductToCart = function addProductToCart(_ref, _ref2) {
   var commit = _ref.commit;
-  var product_id = _ref2.product_id,
+  var product_variation_id = _ref2.product_variation_id,
       quantity = _ref2.quantity;
   return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/cart', {
-    product_id: product_id,
+    product_variation_id: product_variation_id,
     quantity: quantity
   }).then(function (response) {
     commit('appendToCart', response.data.data);
     commit('setCartMeta', response.data.meta);
+    document.getElementById("icon-trigger").click();
     return Promise.resolve();
   });
 };
 var updateCart = function updateCart(_ref3, _ref4) {
   var commit = _ref3.commit;
-  var product_id = _ref4.product_id,
+  var product_variation_id = _ref4.product_variation_id,
       quantity = _ref4.quantity;
   return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/cart', {
-    product_id: product_id,
+    product_variation_id: product_variation_id,
     quantity: quantity
   }).then(function (response) {
     commit('appendToCart', response.data.data);
     commit('setCartMeta', response.data.meta);
+    document.getElementById("icon-trigger").click();
     return Promise.resolve();
   });
 };
@@ -10172,6 +10174,7 @@ var deleteCart = function deleteCart(_ref6, _ref7) {
   var commit = _ref6.commit;
   var cart_id = _ref7.cart_id;
   return axios__WEBPACK_IMPORTED_MODULE_0___default().delete('/api/cart/delete/' + cart_id + '').then(function (response) {
+    console.log(response.data);
     commit('setCart', response.data);
     commit('setCartMeta', response.data.meta);
 
@@ -10284,8 +10287,6 @@ var createAddress = function createAddress(_ref20, _ref21) {
     address: form.address,
     address_2: form.address_2,
     city: form.city,
-    email: form.email,
-    phone_number: form.phone_number,
     country_id: form.country_id,
     state_id: form.state_id,
     postal_code: form.postal_code
@@ -10331,8 +10332,6 @@ var updateAddresses = function updateAddresses(_ref24, _ref25) {
     address: form.address,
     address_2: form.address_2,
     city: form.city,
-    email: form.email,
-    phone_number: form.phone_number,
     country_id: form.country_id,
     state_id: form.state_id,
     postal_code: form.postal_code

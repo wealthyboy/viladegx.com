@@ -1,42 +1,49 @@
 import axios from 'axios'
 import store from './index'
 
-export const addProductToCart = ({ commit },{ product_id, quantity }) => {
+export const addProductToCart = ({ commit },{ product_variation_id, quantity }) => {
    return axios.post('/api/cart', {
-    product_id: product_id,
+       product_variation_id: product_variation_id,
        quantity
    }).then((response) => {
        commit('appendToCart',response.data.data)
        commit('setCartMeta',response.data.meta)
+       document.getElementById("icon-trigger").click()
        return Promise.resolve()
    })
 }
 
-export const updateCart = ({ commit },{ product_id, quantity }) => {
+export const updateCart = ({ commit },{ product_variation_id, quantity }) => {
     return axios.post('/api/cart', {
-        product_id: product_id,
+        product_variation_id: product_variation_id,
         quantity
     }).then((response) => {
         commit('appendToCart',response.data.data)
         commit('setCartMeta',response.data.meta)
+        document.getElementById("icon-trigger").click()
         return Promise.resolve()
     })
  }
 
 export const getCart = ({ commit }) => {
     commit('Loading',true)
+
     return axios.get('/api/cart').then((response)=>{
         commit('setCart',response.data)
         commit('setCartMeta',response.data.meta)
         document.getElementById('js-loading').style.display='none';
         commit('Loading',false)
+
+
         return Promise.resolve()
     }).catch(() =>{
     })
  }
 
 export const deleteCart = ({ commit },{cart_id}) => {
-    return axios.delete('/api/cart/delete/'+ cart_id +'').then((response)=>{        
+    return axios.delete('/api/cart/delete/'+ cart_id +'').then((response)=>{
+        console.log(response.data)
+        
         commit('setCart',response.data)
         commit('setCartMeta',response.data.meta)
         if(response.data.data.length == 0){
@@ -77,9 +84,9 @@ export const addProductToWishList = ({ commit,dispatch },{ product_variation_id 
     }).catch((error) =>{
         dispatch('flashMessage', "Sorry your item could not be saved.Please try again")
     })
-}
+ }
 
-export const getWislist= ({ commit }) => {
+ export const getWislist= ({ commit }) => {
         commit('Loading',true)
     return axios.get('/api/wishlist').then((response)=>{
         document.getElementById('js-loading').style.display='none';
@@ -90,7 +97,7 @@ export const getWislist= ({ commit }) => {
     }).catch((error) =>{
         console.log("could not get wishlist");
     })
-}
+ }
 
 
 export const deleteWishlist = ({ commit },{id}) => {
@@ -141,8 +148,6 @@ export const createAddress = ({ dispatch, commit },{ form ,context }) => {
         address: form.address,
         address_2: form.address_2,
         city: form.city,
-        email: form.email,
-        phone_number: form.phone_number,
         country_id: form.country_id,
         state_id: form.state_id,
         postal_code: form.postal_code,
@@ -173,8 +178,6 @@ export const updateAddresses = ({ dispatch,commit },{form,id}) => {
         address: form.address,
         address_2: form.address_2,
         city: form.city,
-        email: form.email,
-        phone_number: form.phone_number,
         country_id: form.country_id,
         state_id: form.state_id,
         postal_code: form.postal_code,
