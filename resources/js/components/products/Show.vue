@@ -444,7 +444,6 @@ export default {
                 this.canNotAddToCart = true
                 this.cText = "Sold Out"
                 this.quantity = 0;
-                console.log(error)
             }
         },
         owlCarousels: function () {

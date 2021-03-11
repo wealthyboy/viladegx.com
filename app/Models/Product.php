@@ -110,6 +110,43 @@ class Product extends Model
         return $this->hasMany(ProductVariationValue::class);
 	}
 
+
+	
+	public function product_inventory()
+	{
+		$inventory  = [];
+		$attributes  = [];
+		$stock = [];
+		$a = [];
+        foreach ($this->variants as  $variant) {
+			$first = ProductVariationValue::where("product_variation_id", $variant->id)->orderBy('attribute_parent_id','asc')->first();
+			foreach ($variant->product_variation_values->slice(1) as  $variation_value) {
+				$stock[$first->name][optional($variation_value->parent_attribute)->name][ $variation_value->name ] = $variation_value->name;
+			}
+		}
+        $inventory = collect($stock);
+        $stock = "[$inventory]";
+		return $stock;
+	}
+
+
+	public function product_stock()
+	{
+		$inventory  = [];
+		$attribute  = [];
+        foreach ($this->variants as  $variant) {
+		    $inventory[
+			   implode('_',$variant->product_variation_values->pluck('name')->toArray())
+		    ] =  array_merge(
+						    $variant->toArray(),[
+							   'images' => $variant->images->toArray()
+						]);
+		}
+        $inventory = collect($inventory);
+        $stock = "[$inventory]";
+		return $stock;
+	}
+
 	
 	public function getAverageRatingAttribute(){
 		return (new Review())->highest_rating($this->id);
@@ -119,6 +156,15 @@ class Product extends Model
 	public function getAverageRatingCountAttribute(){
         return (new Review())->number_of_occurencies($this->id);
 	}
+
+	public function getInventoryAttribute(){
+		return $this->product_inventory();
+	}
+
+	public function getStockAttribute(){
+		return $this->product_stock();
+	}
+
 	
 
 	public function getIsWishlistAttribute(){
