@@ -722,6 +722,7 @@ background: white;
   font-family: "Am Basis" , sans-serif;
   border-bottom: none;
   font-size: 2.8rem;
+  text-transform: capitalize;
 }
 
 .prod-full-screen i {

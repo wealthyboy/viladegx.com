@@ -34,7 +34,7 @@
 @if ( $products->count() )
 
 
-<div class="container-fluid">
+<div class="container-fluid mt-5 mb-5">
     
 
     <div class="products-section pt-0">
