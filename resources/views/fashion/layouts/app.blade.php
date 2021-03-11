@@ -33,7 +33,7 @@
 						<button class="mobile-menu-toggler" type="button">
 							<i class="icon-menu"></i>
 						</button>
-						<a href="/" class="logo">
+						<a href="/fashion" class="logo">
 							<img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
 						</a>
 					</div><!-- End .header-center -->
