@@ -5067,13 +5067,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -54373,7 +54366,7 @@ var render = function() {
                       "div",
                       { staticClass: "row ml-1 no-gutters mb-2 mt-2" },
                       [
-                        _c("div", { staticClass: "col-11" }, [
+                        _c("div", { staticClass: "col-7" }, [
                           _c(
                             "button",
                             {
@@ -54419,84 +54412,72 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _vm.$root.loggedIn
-                          ? _c("div", { staticClass: "col-1 mt-1" }, [
-                              !_vm.wishlistText
-                                ? _c(
-                                    "a",
-                                    {
-                                      staticClass: "mt-4",
-                                      attrs: {
-                                        href: "#",
-                                        title: "Add to Wishlist"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          $event.preventDefault()
-                                          return _vm.addToWishList($event)
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _c("span", { staticClass: "fa-stack" }, [
-                                        _c("i", {
-                                          staticClass:
-                                            "fas fa-circle fa-stack-2x",
-                                          class: {
-                                            "color--light": _vm.is_wishlist
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("i", {
-                                          staticClass:
-                                            "fas fa-heart  fa-stack-1x fa-inverse",
-                                          class: {
-                                            "color--primary": _vm.is_wishlist
-                                          }
-                                        })
-                                      ])
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.wishlistText
+                        _c("div", { staticClass: "col-7 " }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "l-f1  pt-4 pb-4  btn btn--primary  btn-lg btn-block",
+                              class: _vm.canAddToCart,
+                              attrs: {
+                                type: "button",
+                                name: "add-to-cart",
+                                value: "add_to_cart"
+                              },
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.addToCart($event)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                Wishlist \n                                "
+                              ),
+                              _vm.loading
                                 ? _c("span", {
                                     staticClass:
-                                      "spinner-border spinner-border-sm  ml-3",
+                                      "spinner-border spinner-border-sm float-right ml-3",
                                     attrs: {
                                       role: "status",
                                       "aria-hidden": "true"
                                     }
                                   })
-                                : _vm._e()
-                            ])
-                          : _c("div", { staticClass: "col-1 mt-1" }, [
+                                : _vm._e(),
+                              _vm._v(" "),
+                              !_vm.loading
+                                ? _c("i", { staticClass: "icon-shopping-cart" })
+                                : _vm._e(),
+                              _vm._v(" "),
                               _c(
-                                "a",
+                                "svg",
                                 {
-                                  staticClass: "mt-4",
+                                  staticStyle: { float: "right" },
                                   attrs: {
-                                    "data-toggle": "modal",
-                                    "data-target": "#login-modal",
-                                    href: "#",
-                                    title: "Add to Wishlist"
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      $event.preventDefault()
-                                      return _vm.addToWishList($event)
-                                    }
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    viewBox: "0 0 24 24"
                                   }
                                 },
-                                [_vm._m(2)]
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      "fill-rule": "evenodd",
+                                      d:
+                                        "M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"
+                                    }
+                                  })
+                                ]
                               )
-                            ])
+                            ]
+                          )
+                        ])
                       ]
                     )
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "product-single-tabs" }, [
-                    _vm._m(3),
+                    _vm._m(2),
                     _vm._v(" "),
                     _c("div", { staticClass: "tab-content bg--gray" }, [
                       _c(
@@ -54520,7 +54501,7 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _vm._m(4)
+                      _vm._m(3)
                     ])
                   ])
                 ]
@@ -54553,16 +54534,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "prod-full-screen" }, [
       _c("i", { staticClass: "fas fa-search-plus fa-3x" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "fa-stack" }, [
-      _c("i", { staticClass: "fas fa-circle fa-stack-2x" }),
-      _vm._v(" "),
-      _c("i", { staticClass: "fas fa-heart  fa-stack-1x fa-inverse" })
     ])
   },
   function() {
