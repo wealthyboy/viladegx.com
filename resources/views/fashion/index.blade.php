@@ -74,12 +74,14 @@
                     <div class="price-box mx-auto mt-1">
                         @if( $feautered_product->default_discounted_price)
                             <span class="old-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price)   }}</span>
-                            <span class="product-price text-danger ml-1">
+                            <span class="product-price  ml-1">
                                 |
                                 @if( $feautered_product->default_percentage_off )
                                     {{ $feautered_product->default_percentage_off }}%
                                 @endif
-                                {{ $feautered_product->currency }}{{ number_format($feautered_product->default_discounted_price)  }}
+                                <span class="text-danger">
+                                   {{ $feautered_product->currency }}{{ number_format($feautered_product->default_discounted_price)  }}
+                                </span>
                             </span>
                         @else
                             <span class="product-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price) }}</span>
