@@ -444,6 +444,7 @@ export default {
                 this.canNotAddToCart = true
                 this.cText = "Sold Out"
                 this.quantity = 0;
+                console.log(error)
             }
         },
         owlCarousels: function () {
@@ -488,8 +489,6 @@ export default {
             getReviews:    'getReviews'
         }),
         addToCart: function(){
-            //let qty =  document.getElementById('add-to-cart-quantity').value
-            //if (qty === '') {return}
             this.cText = "Adding...."
             this.loading = true;
             this.addProductToCart({

@@ -5281,6 +5281,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.canNotAddToCart = true;
         this.cText = "Sold Out";
         this.quantity = 0;
+        console.log(error);
       }
     },
     owlCarousels: function owlCarousels() {},
@@ -5333,8 +5334,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     addToCart: function addToCart() {
       var _this4 = this;
 
-      //let qty =  document.getElementById('add-to-cart-quantity').value
-      //if (qty === '') {return}
       this.cText = "Adding....";
       this.loading = true;
       this.addProductToCart({
