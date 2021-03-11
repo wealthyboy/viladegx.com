@@ -5061,11 +5061,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -54463,41 +54458,39 @@ var render = function() {
                         ])
                       ]
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-single-tabs" }, [
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "tab-content bg--gray" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "tab-pane fade show active pl-2",
-                          attrs: {
-                            id: "product-desc-content",
-                            role: "tabpanel",
-                            "aria-labelledby": "product-tab-desc"
-                          }
-                        },
-                        [
-                          _c("div", {
-                            staticClass:
-                              "product-desc-content  pl-2 pb-2 color--primary",
-                            domProps: {
-                              innerHTML: _vm._s(_vm.product.description)
-                            }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _vm._m(3)
-                    ])
                   ])
                 ]
               )
             ],
             2
-          )
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "product-single-tabs" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "tab-content bg--gray" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "tab-pane fade show active pl-2",
+                  attrs: {
+                    id: "product-desc-content",
+                    role: "tabpanel",
+                    "aria-labelledby": "product-tab-desc"
+                  }
+                },
+                [
+                  _c("div", {
+                    staticClass:
+                      "product-desc-content  pl-2 pb-2 color--primary",
+                    domProps: { innerHTML: _vm._s(_vm.product.description) }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _vm._m(3)
+            ])
+          ])
         ]
       ),
       _vm._v(" "),

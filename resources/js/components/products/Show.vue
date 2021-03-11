@@ -184,16 +184,15 @@
                         </div>
                     </div><!-- End .product-filters-container -->
 
-                    <!-- <div class="grey-9 mb-3 clearfix">
-                        <div class="">
-                            <div class="text-info"><span>Delivery Options</span></div>
-                            <small class=""><span>International Delivery available</span></small></br>
-                            <small class="ml-4"><span>STANDARD DELIVERY</span> : <span class=""> 1-7 working days</span></small>
-                        </div>
-                    </div> -->
 
 
-                    <div class="product-single-tabs">
+                    
+                </div><!-- End .product-single-details -->
+
+                 
+            </div><!-- End .row -->
+
+            <div class="product-single-tabs">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item pl-2">
                                 <a class="nav-link active" id="product-tab-desc" data-toggle="tab" href="#product-desc-content" role="tab" aria-controls="product-desc-content" aria-selected="true">Description</a>
@@ -228,10 +227,6 @@
                         </div><!-- End .tab-content -->
                     </div><!-- End .product-single-tabs -->
 
-                </div><!-- End .product-single-details -->
-
-                 
-            </div><!-- End .row -->
         </div><!-- End .product-single-container -->
         <login-modal />
         <register-modal />
