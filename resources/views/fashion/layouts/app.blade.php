@@ -173,16 +173,16 @@
 							<div class="col-sm-6 col-xl-6">
 								<div class="widget widget-newsletter">
 									<h4 class="widget-title">Subscribe to our newsletter.</h4>
-									<p>Get all the latest information on events, sales and offers. Sign up for newsletter today.</p>
+									<p>Sign up for exclusive early Sale access and tailored new arrivals..</p>
 									<news-letter />
 
 								</div>
 								<p>
 									<div class="contact-widget follow">
 										<div class="social-icons">
-											<a href="https://facebook.com/hautesignatures.ng/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-											<a href="https://instagram.com/hautesignatures.ng?igshid=zqjic4sfh041" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-											<a href="https://wa.me/2348092907541" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+											<a href="" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+											<a href="" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+											<a href="" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
 										</div><!-- End .social-icons -->
 									</div>
 								</p>
