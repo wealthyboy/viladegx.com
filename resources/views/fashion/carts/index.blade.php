@@ -2,10 +2,10 @@
   
 
 
-@extends('layouts.app')
+@extends('fashion.layouts.app')
  
 @section('content')
-@include('_partials.top_banner')
+@include('fashion._partials.top_banner')
 
 
 <section class="breadcrumb no-banner cart-page justify-content-center">
