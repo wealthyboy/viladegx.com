@@ -162,16 +162,16 @@
 
                            
                         </div>
-                        <div class="row ml-1 no-gutters mb-2 mt-2">
+                        <div class="row ml-1 mb-2 mt-2">
                             
 
-                            <div class="col-7">
+                            <div class="col-8">
                                 <button @click.prevent="addToCart"  :class="canAddToCart"  type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn--primary  add-to-cart btn-lg btn-block">
                                     {{ cartText }}
                                     <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <div class="ml-3 col-5 pr-2">
+                            <div class=" col-4">
                                 <button @click.prevent="addToCart"  :class="canAddToCart"  type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block">
                                     <span>Wishlist</span> 
                                     <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
