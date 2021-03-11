@@ -77,7 +77,7 @@
                             <span class="product-price  ml-1">
                                 |
                                 @if( $feautered_product->default_percentage_off )
-                                    {{ $feautered_product->default_percentage_off }}%
+                                    {{ $feautered_product->default_percentage_off }}% OFF
                                 @endif
                                 <span class="text-danger">
                                    {{ $feautered_product->currency }}{{ number_format($feautered_product->default_discounted_price)  }}
