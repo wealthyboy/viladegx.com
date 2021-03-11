@@ -5064,9 +5064,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
 
 
 
@@ -54400,19 +54397,12 @@ var render = function() {
                                       "aria-hidden": "true"
                                     }
                                   })
-                                : _vm._e(),
-                              _vm._v(" "),
-                              !_vm.loading
-                                ? _c("i", {
-                                    staticClass: "icon-shopping-cart",
-                                    staticStyle: { float: "right" }
-                                  })
                                 : _vm._e()
                             ]
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-7 " }, [
+                        _c("div", { staticClass: "col-5" }, [
                           _c(
                             "button",
                             {
@@ -54444,10 +54434,6 @@ var render = function() {
                                       "aria-hidden": "true"
                                     }
                                   })
-                                : _vm._e(),
-                              _vm._v(" "),
-                              !_vm.loading
-                                ? _c("i", { staticClass: "icon-shopping-cart" })
                                 : _vm._e(),
                               _vm._v(" "),
                               _c(

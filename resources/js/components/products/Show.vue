@@ -169,16 +169,13 @@
                                 <button @click.prevent="addToCart"  :class="canAddToCart"  type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn--primary  btn-lg btn-block">
                                     {{ cartText }}
                                     <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
-                                    <i  style="float: right;"  v-if="!loading" class="icon-shopping-cart"></i>
                                 </button>
                             </div>
-                            <div class="col-7 ">
+                            <div class="col-5">
                                 <button @click.prevent="addToCart"  :class="canAddToCart"  type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn--primary  btn-lg btn-block">
                                     Wishlist 
                                     <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
-                                    <i    v-if="!loading" class="icon-shopping-cart"></i>
                                     <svg style="float: right;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"></path></svg>
-
                                 </button>
                             </div>
                             
