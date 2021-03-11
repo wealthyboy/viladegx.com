@@ -155,8 +155,6 @@
 			</div><!-- End .header-bottom -->
 
 			
-
-
 			
 		</header><!-- End .header -->
 

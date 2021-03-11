@@ -132,7 +132,7 @@ class ProductController extends Controller
         $product->image        = $request->image;
         $product->width        = $request->width;
         $product->description  = $request->description;
-        $product->sale_price_expires = $request->sale_price_expires ? Helper::getFormatedDate($request->sale_price_expires.true) : null;
+        $product->sale_price_expires = strpos($request->sale_price_expires,'/') == true ? Helper::getFormatedDate($request->sale_price_expires.true) : null;
         $product->allow       = $request->allow ? $request->allow : 0;
         $product->brand_id    = $request->brand_id;
         $product->total = 2;
@@ -207,7 +207,7 @@ class ProductController extends Controller
         $product_variation->sale_price = $request->sale_price;
         $product_variation->image = $request->image;
         $product_variation->width = $request->width;
-        $product_variation->sale_price_expires =  $request->sale_price_expires ? Helper::getFormatedDate($request->sale_price_expires.true) : null;
+        $product_variation->sale_price_expires =  strpos($request->sale_price_expires,'/') == true ? Helper::getFormatedDate($request->sale_price_expires.true) : null;
         $product_variation->length = $request->length;
         $product_variation->weight = $request->weight;
         $product_variation->quantity  = $request->quantity;
@@ -275,7 +275,7 @@ class ProductController extends Controller
                     $product_variation->sale_price =  null !== $request->variation_sale_price[$key] ?$request->variation_sale_price[$key] : $request->sale_price;
                     $product_variation->image = $request->variation_image[$key];
                     $product_variation->width = $request->variation_width[$key];
-                    $product_variation->sale_price_expires = Helper::getFormatedDate($request->variation_sale_price_expires[$key],true);
+                    $product_variation->sale_price_expires = strpos($request->variation_sale_price_expires[$key],'/') == true ? Helper::getFormatedDate($request->variation_sale_price_expires[$key],true) : null;
                     $product_variation->length = $request->variation_length[$key];
                     $product_variation->weight = $request->variation_weight[$key];
                     $product_variation->extra_percent_off  = $request->extra_percent_off[$key];
