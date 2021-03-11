@@ -60,7 +60,7 @@
                         
                         @if($feautered_product->colours->count()  && $feautered_product->colours->count() > 1)
                             <div  class="justify-content-center d-flex mb-1">
-                                @foreach($product->colours as $color)
+                                @foreach($feautered_product->colours as $color)
                                 <div   style="border:1px solid #222; height: 15px; width: 15px; border-radius: 50%; background-color: {{ $color->color_code }};" class="mr-1"></div>
                                 @endforeach
                             </div>
