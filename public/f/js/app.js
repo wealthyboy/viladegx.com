@@ -54424,9 +54424,8 @@ var render = function() {
                               }
                             },
                             [
-                              _vm._v(
-                                "\n                                Wishlist \n                                "
-                              ),
+                              _c("span", [_vm._v("Wishlist")]),
+                              _vm._v(" "),
                               _vm.loading
                                 ? _c("span", {
                                     staticClass:
