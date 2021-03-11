@@ -53,6 +53,9 @@ class Product extends Model
 		'image_to_show_m',
 		'image_to_show_tn',
 		'colours',
+		'inventory',
+		'stock',
+		
 	];
 
 	protected $cascadeDeletes = ['meta_fields','attributes','variants','categories'];
