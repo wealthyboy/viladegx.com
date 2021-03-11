@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\Cart;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
+use App\Models\ProductVariation;
 use App\Models\Cart;
 use App\Models\User;
 use App\Models\SystemSetting;
