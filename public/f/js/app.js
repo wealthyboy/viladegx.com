@@ -5232,7 +5232,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       try {
         var i = JSON.parse(this.product.inventory);
-        console.log(this.product.inventory);
         var s = JSON.parse(this.product.stock);
         var variation;
 
@@ -5270,6 +5269,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.images = vTs.images.length ? vTs.images : this.product.default_variation.images;
         }
 
+        console.log(vTs);
         this.quantity = vTs.quantity;
         this.price = vTs.converted_price;
         this.percentage_off = vTs.percentage_off;

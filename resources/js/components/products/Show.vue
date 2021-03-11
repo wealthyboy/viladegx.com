@@ -397,7 +397,6 @@ export default {
 
             try { 
                 let i = JSON.parse(this.product.inventory) 
-                console.log(this.product.inventory) 
                 let s = JSON.parse(this.product.stock)  
                 let variation;                
                 if ( typeof i[0].length === 'undefined' ) {
@@ -432,7 +431,8 @@ export default {
                     this.image = vTs.image
                     this.image_m = vTs.image_m
                     this.images = vTs.images.length ? vTs.images : this.product.default_variation.images 
-                }       
+                }  
+                console.log(vTs)     
                 this.quantity = vTs.quantity
                 this.price = vTs.converted_price 
                 this.percentage_off = vTs.percentage_off
