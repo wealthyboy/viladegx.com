@@ -31,6 +31,53 @@
     </div>
 </div>
 
+<div class="container-fluid">
+    
+    @if ( $products->count() )
+
+    <div class="products-section pt-0">
+        <h2 class="section-title bold">Related Products</h2>
+
+        <div class="products-slider owl-carousel owl-theme dots-top">
+            @foreach( $products as $feautered_product)
+
+            <div class="product-default inner-quickview inner-icon">
+                <figure>
+                    <a href="{{ $feautered_product->link }}">
+                        <img src="{{ $feautered_product->image_to_show_m }}">
+                    </a>
+                    @if $feautered_product->default_percentage_off)
+                    <div class="label-group">
+                        <span class="product-label label-sale">-{{ $feautered_product->default_percentage_off }}%</span>
+                    </div>
+                    @endif
+                    
+                </figure>
+                <div class="product-details">
+                    <h3 class="product-title">
+                        <a href="{{ $feautered_product->link }}">{{ $feautered_product->product_name }}</a>
+                    </h3>
+                    <div class="price-box">
+                        @if ( $feautered_product->default_discounted_price ) 
+                            <span class="old-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price)  }}</span>
+                            <span class="product-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->default_discounted_price)  }}</span>
+                        @else
+                           <span class="product-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price)  }}</span>
+                        @endif
+                    </div><!-- End .price-box -->
+                </div><!-- End .product-details -->
+            </div>
+
+
+            @endforeach
+           
+        </div><!-- End .products-slider -->
+    </div><!-- End .products-section -->
+
+    @endif
+    </div><!-- End .container -->
+
+
 
 <!--End Portfolio-->
     <!--End Categories-->
