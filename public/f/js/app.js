@@ -5200,88 +5200,95 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, 1000); // Will alert once, after a second.
     },
     getAttribute: function getAttribute(evt, key) {
-      var attr = null,
-          attrs,
-          fA,
-          oA,
+      this.cartError = null;
+      var active_attribute = null,
+          variation,
+          first_attribute,
+          active_other_attribute,
+          other_attribute,
           oAv,
           ooA,
+          iam,
           f = false,
           af = false,
           cA;
-      attr = document.querySelector('.active-attribute');
-      fA = document.querySelectorAll('.first-attribute');
-      oA = document.querySelectorAll('.other-attribute');
-      oAv = document.querySelector('.o-a');
+      var inventory = JSON.parse(this.product.inventory);
+      var stock = JSON.parse(this.product.stock);
+      first_attribute = document.querySelectorAll(".first-attribute");
+      other_attribute = document.querySelectorAll(".other-attribute");
+      /**
+       * Toggle active statte
+       */
 
-      if (evt.target.classList.contains('first-attribute')) {
-        fA.forEach(function (elm, key) {
-          elm.classList.remove('active-attribute');
+      if (evt.target.classList.contains("first-attribute")) {
+        first_attribute.forEach(function (elm, key) {
+          elm.classList.remove("active-attribute");
         });
-        af = true;
-        evt.target.classList.add('active-attribute');
+        evt.target.classList.add("active-attribute");
       }
+      /**
+       * Toggle active statte for other attributes
+       */
 
-      if (evt.target.classList.contains('other-attribute')) {
-        oA.forEach(function (elm, key) {
-          elm.classList.remove('active-other-attribute');
+
+      if (evt.target.classList.contains("other-attribute")) {
+        other_attribute.forEach(function (elm, key) {
+          elm.classList.remove("active-other-attribute");
         });
-        f = true;
-        evt.target.classList.add('active-other-attribute');
+        evt.target.classList.add("active-other-attribute");
       }
 
       try {
-        var i = JSON.parse(this.product.inventory);
-        var s = JSON.parse(this.product.stock);
-        var variation;
+        if (typeof inventory[0].length === "undefined") {
+          var v = inventory[0][evt.target.dataset.value];
 
-        if (typeof i[0].length === 'undefined') {
-          var v = i[0][evt.target.dataset.value];
-
-          for (var _i in v) {
-            if (_i !== evt.target.dataset.name) {
-              this.attributesData = Object.keys(v[_i]);
+          for (var i in v) {
+            if (i !== evt.target.dataset.name) {
+              this.attributesData = Object.keys(v[i]);
             }
           }
-
-          if (af) {
-            cA = evt.target.dataset.value;
-          } else {
-            cA = attr.dataset.value;
-          }
-
-          if (f) {
-            ooA = evt.target.dataset.value;
-          } else {
-            ooA = this.attributesData[0];
-          }
-
-          variation = cA + '_' + ooA;
-        } else {
-          variation = evt.target.dataset.value;
         }
 
-        var vTs = s[0][variation];
+        active_attribute = document.querySelector(".active-attribute");
+        active_other_attribute = document.querySelector(".active-other-attribute");
 
-        if (key == 'Colors') {
+        if (active_attribute && this.attributesData.length != 0) {
+          variation = active_attribute.dataset.value + "_" + this.attributesData[0];
+        }
+
+        if (active_attribute && this.attributesData.length == 0) {
+          variation = active_attribute.dataset.value;
+        }
+
+        if (!active_attribute && active_other_attribute !== null) {
+          variation = active_other_attribute.dataset.value;
+        }
+
+        if (active_attribute && other_attribute.length !== 0 && key != "Colors") {
+          variation = active_attribute.dataset.value + "_" + evt.target.dataset.value;
+        }
+
+        console.log(variation, this.attributesData, evt.target.dataset.value);
+        var vTs = stock[0][variation];
+
+        if (key == "Colors") {
           this.image = vTs.image;
           this.image_m = vTs.image_m;
-          this.images = vTs.images.length ? vTs.images : this.product.default_variation.images;
+          this.images = vTs.images;
         }
 
-        console.log(vTs);
         this.quantity = vTs.quantity;
         this.price = vTs.converted_price;
         this.percentage_off = vTs.percentage_off;
         this.discounted_price = vTs.discounted_price || vTs.default_discounted_price;
         this.product_variation_id = vTs.id;
         this.canNotAddToCart = false;
-        this.cText = "Add To Cart";
+        this.cText = this.quantity >= 1 ? "Add To Cart" : "Item is sold out";
       } catch (error) {
+        console.log(error);
         this.canNotAddToCart = true;
         this.cText = "Sold Out";
         this.quantity = 0;
-        console.log(error);
       }
     },
     owlCarousels: function owlCarousels() {},
