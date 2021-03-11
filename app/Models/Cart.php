@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Product;
 use App\Traits\FormatPrice;
 use App\Http\Helper;
 
