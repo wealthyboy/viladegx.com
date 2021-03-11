@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Api\Cart;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
-use App\Product;
-use App\Cart;
-use App\User;
+use App\Models\Product;
+use App\Models\Cart;
+use App\Models\User;
+use App\Models\SystemSetting;
+
 use Storage;
 use App\Http\Resources\CartIndexResource;
 use App\Http\Resources\CartResource;
-use App\SystemSetting;
 use App\Http\Helper;
 
 
