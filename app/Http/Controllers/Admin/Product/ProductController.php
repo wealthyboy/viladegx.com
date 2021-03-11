@@ -150,7 +150,7 @@ class ProductController extends Controller
 
         /**
          * Save categories
-         */
+        */
         $categories = Category::find($request->category_id);
 
         if(!empty($request->category_id)){
@@ -179,7 +179,6 @@ class ProductController extends Controller
                      * Sync each category with parent attribute
                     */
                     $category->attributes()->syncWithoutDetaching($parent_id);
-
                     $cA[$parent_id] = ['parent_id'=>null]; 
                     $cA[$value] = ['parent_id'=>$parent_id]; 
                 }
@@ -299,8 +298,7 @@ class ProductController extends Controller
             }
         }
 
-        
-
+    
         
         (new Activity)->Log("Created a new product {$request->product_name}");
         return \Redirect::to('/admin/products');
