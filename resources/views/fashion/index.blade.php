@@ -48,11 +48,7 @@
                     <a href="{{ $feautered_product->link }}">
                         <img src="{{ $feautered_product->image_to_show_m }}">
                     </a>
-                    @if( $feautered_product->default_percentage_off )
-                    <div class="label-group">
-                        <span class="product-label label-sale">-{{ $feautered_product->default_percentage_off }}%</span>
-                    </div>
-                    @endif
+                    
                     
                 </figure>
                 <div class="product-details text-center">
@@ -78,7 +74,13 @@
                     <div class="price-box mx-auto mt-1">
                         @if( $feautered_product->default_discounted_price)
                             <span class="old-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price)   }}</span>
-                            <span class="product-price text-danger">{{ $feautered_product->currency }}{{ number_format($feautered_product->default_discounted_price)  }}</span>
+                            <span class="product-price text-danger ml-1">
+                                |
+                                @if( $feautered_product->default_percentage_off )
+                                    {{ $feautered_product->default_percentage_off }}%
+                                @endif
+                                {{ $feautered_product->currency }}{{ number_format($feautered_product->default_discounted_price)  }}
+                            </span>
                         @else
                             <span class="product-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price) }}</span>
                         @endif
