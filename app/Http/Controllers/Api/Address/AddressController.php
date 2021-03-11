@@ -5,18 +5,19 @@ namespace App\Http\Controllers\Api\Address;
 
 use App\Address;
 
-use App\User;
 
 use Illuminate\Support\Facades\Auth;
 
 use Validator;
-use App\State;
+use App\Models\State;
+use App\Models\Location;
+use App\Models\User;
+
+
 use App\Http\Controllers\Controller;
-use App\Location;
 use App\Http\Resources\AddressResource;
 use Illuminate\Http\Request;
 use App\Http\Resources\LocationResource;
-use App\Shipping;
 
 class AddressController extends Controller
 {
