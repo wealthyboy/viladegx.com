@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\Address;
 
 
-use App\Address;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -13,8 +12,7 @@ use App\Models\State;
 use App\Models\Location;
 use App\Models\User;
 use App\Models\Shipping;
-
-
+use App\Models\Address;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AddressResource;
