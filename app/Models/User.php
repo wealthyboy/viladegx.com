@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
 	protected $fillable = [
-		'name','last_name', 'email','phone','verified','password','permission','user_type'
+		'name','last_name', 'email','phone','verified','password','permission','type'
 	];
 
 	/**
@@ -49,9 +49,6 @@ class User extends Authenticatable
 	}
 
 
-	public function sales(){
-		return $this->hasMany(Sale::class,'merchant_id');	
-	}
 
 
 	public function active_address(){
