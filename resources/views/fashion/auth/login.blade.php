@@ -28,7 +28,7 @@
 
                                 <div class="tab-pane fade fade" id="product-more-info-content" role="tabpanel" aria-labelledby="product-tab-more-info">
                                     <div class="product-desc-content">
-                                    <form method="POST" class="pl-4 pr-4 mt-3" action="/register">
+                                    <form method="POST" class="pl-4 pr-4 mt-3" action="/fashion/register">
                                         @if ($errors->any() )
                                             <div class="alert alert-danger">
                                                 <ul>
