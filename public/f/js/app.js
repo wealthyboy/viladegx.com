@@ -50979,7 +50979,10 @@ var staticRenderFns = [
     return _c("div", { staticClass: "dropdown-cart-action" }, [
       _c(
         "a",
-        { staticClass: "btn btn-dark btn-block", attrs: { href: "/cart" } },
+        {
+          staticClass: "btn btn-dark btn-block",
+          attrs: { href: "/fashion/cart" }
+        },
         [_vm._v("View Cart")]
       )
     ])
@@ -50991,7 +50994,10 @@ var staticRenderFns = [
     return _c("div", { staticClass: "dropdown-cart-action" }, [
       _c(
         "a",
-        { staticClass: "btn btn-dark btn-block", attrs: { href: "/checkout" } },
+        {
+          staticClass: "btn btn-dark btn-block",
+          attrs: { href: "/fashion/checkout" }
+        },
         [_vm._v("Checkout")]
       )
     ])

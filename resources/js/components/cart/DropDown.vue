@@ -52,11 +52,11 @@
         </div>
         <!-- End .dropdown-cart-total -->
         <div class="dropdown-cart-action">
-          <a href="/cart" class="btn btn-dark btn-block">View Cart</a>
+          <a href="/fashion/cart" class="btn btn-dark btn-block">View Cart</a>
         </div>
         <!-- End .dropdown-cart-total -->
         <div class="dropdown-cart-action">
-          <a href="/checkout" class="btn btn-dark btn-block">Checkout</a>
+          <a href="/fashion/checkout" class="btn btn-dark btn-block">Checkout</a>
         </div>
         <!-- End .dropdown-cart-total -->
       </div>
