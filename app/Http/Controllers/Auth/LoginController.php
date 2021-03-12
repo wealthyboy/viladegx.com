@@ -117,7 +117,7 @@ class LoginController extends Controller
      * @param \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function logout(Request $request,$page)
+    public function logout(Request $request)
     {
         $this->guard()->logout();
 
@@ -130,7 +130,7 @@ class LoginController extends Controller
 	    }
 
 
-       return redirect('/'.$page);
+       return redirect('/fashion');
     }
 
 	
