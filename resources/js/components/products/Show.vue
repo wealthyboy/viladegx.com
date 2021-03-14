@@ -4,41 +4,12 @@
         <div class="product-single-container product-single-default">
             <div class="row">
                 <div class="col-md-6 d-sm-block d-md-none product-single-gallery">
-                    <div class="product-slider-container">
-                        <div class="product-single-carousel owl-carousel owl-theme">
-                            <div class="product-item">
-                                <img class="product-single-image"    :data-zoom-image="image" :src="image" />
-                            </div>
-                            <div v-for="image in images" :key="image.id" class="product-item">
-                                <img  class="product-single-image"   :data-zoom-image="image.image" :src="image.image"  v-if="image.image !== ''"  :alt="image.image_tn">
-                            </div>
-                        </div>
-                        <!-- End .product-single-carousel -->
-                    </div>
+                    <images  :image="image" :images="images" />
                 </div><!-- End .product-single-gallery -->
                 <div class="col-md-7">
-                    <div class="product-single-gallery popup-gallery">
-                        <div class="row no-gutters">
-                            <div class="col-6 d-none d-lg-block d-xl-block  d-md-block  product-item">
-                                <div class="inner">
-                                    <img  :data-zoom-image="image" :src="image"   alt="product name">
-                                </div>
-                            </div><!-- End .col-6 -->
-                            <div  v-for="image in images" :key="image.id"  class="col-6 d-none d-xl-block  d-md-block  product-item">
-                                <div class="inner">
-                                    <img  :src="image.image"   :data-zoom-image="image.image" alt="product name">
-                                    <span   class="prod-full-screen">
-                                        <i class="fas fa-search-plus fa-3x"></i>
-                                    </span>
-                                </div>
-                            </div><!-- End .col-6 -->
-                           
-                        </div><!-- End .row -->
-                    </div><!-- End .product-single-gallery -->
+                    <images  :image="image" :images="images" />
                 </div><!-- End .col-md-8 -->
-
-
-               
+                
                 <div v-for="(img,index)  in variant_images" :key="img.id"  :id="index" class="border   d-none col-md-7">
                     <div class="product-single-gallery popup-gallery">
                         <div class="row no-gutters">
@@ -182,49 +153,50 @@
                             </div>
                             
                         </div>
-                    </div><!-- End .product-filters-container -->
-
-
-
-                    
+                    </div><!-- End .product-filters-container -->   
                 </div><!-- End .product-single-details -->
-
-                 
             </div><!-- End .row -->
 
             <div class="product-single-tabs">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item pl-2">
-                                <a class="nav-link active" id="product-tab-desc" data-toggle="tab" href="#product-desc-content" role="tab" aria-controls="product-desc-content" aria-selected="true">Description</a>
-                            </li>
-                           
-                            <li class="nav-item">
-                                <a class="nav-link" id="Warranty_Return" data-toggle="tab" href="#Warranty-Return" role="tab" aria-controls="Warranty-Return" aria-selected="false"> Warranty & Return</a>
-                            </li>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item pl-2">
+                        <a class="nav-link active" id="product-tab-desc" data-toggle="tab" href="#product-desc-content" role="tab" aria-controls="product-desc-content" aria-selected="true">Description</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" id="Warranty_Return" data-toggle="tab" href="#Warranty-Return" role="tab" aria-controls="Warranty-Return" aria-selected="false"> Warranty & Return</a>
+                    </li>
 
-                        </ul>
-                        <div class="tab-content ">
-                            <div class="tab-pane fade show active pl-2" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
+                </ul>
+                <div class="tab-content ">
+                    <div class="tab-pane fade show active pl-2" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
+                        <div class="row">
+                            <div class="col">
                                 <div v-html="product.description" class="product-desc-content  pl-2 pb-2 color--primary"></div><!-- End .product-desc-content -->
-                            </div><!-- End .tab-pane -->
+                            </div>
+                            <div class="col">
+                                
+                            </div>
+                        </div>
+                    </div><!-- End .tab-pane -->
 
-            
-                            <div class="tab-pane fade fade" id="Warranty-Return" role="tabpanel" aria-labelledby="Warranty-Return">
-                                <div class="product-desc-content pl-4 pb-2 color--primary">
-                                    <h4>WARRANTY</h4> 
-                                    We offer a lifetime 100% authenticity guarantee for all of our items.</br>
-                                    In the improbable scenario of a sale of an inauthentic item, you will receive a 100% refund, including the cost of return.</br>
-                                    <h4 class="mt-2 pt-2 border-top">RETURNS</h4>
-                                    You can return a purchased item within 3 days of receipt.</br> 
-                                    No return fee is charged for returns within the Nigeria.</br>  
-                                    However, based on the destination country a shipping fees is charged for returns made outside of Nigeria.</br>
-                                    Customs duties and taxes are applicable and borne by the customer.</br>
-                                </div><!-- End .product-desc-content -->
-                            </div><!-- End .tab-pane -->
+    
+                    <div class="tab-pane fade fade" id="Warranty-Return" role="tabpanel" aria-labelledby="Warranty-Return">
+                        <div class="product-desc-content pl-4 pb-2 color--primary">
+                            <h4>WARRANTY</h4> 
+                            We offer a lifetime 100% authenticity guarantee for all of our items.</br>
+                            In the improbable scenario of a sale of an inauthentic item, you will receive a 100% refund, including the cost of return.</br>
+                            <h4 class="mt-2 pt-2 border-top">RETURNS</h4>
+                            You can return a purchased item within 3 days of receipt.</br> 
+                            No return fee is charged for returns within the Nigeria.</br>  
+                            However, based on the destination country a shipping fees is charged for returns made outside of Nigeria.</br>
+                            Customs duties and taxes are applicable and borne by the customer.</br>
+                        </div><!-- End .product-desc-content -->
+                    </div><!-- End .tab-pane -->
 
-                            
-                        </div><!-- End .tab-content -->
-                    </div><!-- End .product-single-tabs -->
+                    
+                </div><!-- End .tab-content -->
+            </div><!-- End .product-single-tabs -->
 
         </div><!-- End .product-single-container -->
         <login-modal />

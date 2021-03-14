@@ -4514,14 +4514,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     images: Array,
@@ -4827,34 +4819,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -53314,60 +53278,67 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "product-page-gallery" }, [
-    _c("div", { staticClass: "product-gallery-media mfp-gallery-popup" }, [
-      _c(
-        "div",
-        { staticClass: "product-media-slider" },
-        [
-          _c(
+  return _c("div", { staticClass: "product-single-gallery popup-gallery" }, [
+    _c(
+      "div",
+      { staticClass: "row no-gutters" },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-6 d-none d-lg-block d-xl-block  d-md-block  product-item"
+          },
+          [
+            _c("div", { staticClass: "inner" }, [
+              _c("img", {
+                attrs: {
+                  "data-zoom-image": _vm.image,
+                  src: _vm.image,
+                  alt: "product name"
+                }
+              })
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _vm._l(_vm.images, function(image) {
+          return _c(
             "div",
             {
-              staticClass: "product-gallery-image mfp-gallery-popup-link",
-              attrs: { "data-mfp-src": _vm.image }
+              key: image.id,
+              staticClass: "col-6 d-none d-xl-block  d-md-block  product-item"
             },
-            [_c("img", { attrs: { src: _vm.image, alt: "Shop Online" } })]
-          ),
-          _vm._v(" "),
-          _vm._l(_vm.images, function(image) {
-            return _c(
-              "div",
-              {
-                key: image.id,
-                staticClass: "product-gallery-image mfp-gallery-popup-link",
-                attrs: { "data-mfp-src": image.image }
-              },
-              [_c("img", { attrs: { src: image.image, alt: "" } })]
-            )
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "product-gallery-media-thumb" }, [
-      _c(
-        "div",
-        { staticClass: "product-media-thumb-slider thumb-vertical-slider" },
-        [
-          _c("a", { staticClass: "product-gallery-image" }, [
-            _c("img", { attrs: { src: _vm.image, alt: "Shop Online" } })
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.images, function(image) {
-            return _c(
-              "a",
-              { key: image.id, staticClass: "product-gallery-image" },
-              [_c("img", { attrs: { src: image.image, alt: image.image } })]
-            )
-          })
-        ],
-        2
-      )
-    ])
+            [
+              _c("div", { staticClass: "inner" }, [
+                _c("img", {
+                  attrs: {
+                    src: image.image,
+                    "data-zoom-image": image.image,
+                    alt: "product name"
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(0, true)
+              ])
+            ]
+          )
+        })
+      ],
+      2
+    )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "prod-full-screen" }, [
+      _c("i", { staticClass: "fas fa-search-plus fa-3x" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -53757,106 +53728,23 @@ var render = function() {
                     "col-md-6 d-sm-block d-md-none product-single-gallery"
                 },
                 [
-                  _c("div", { staticClass: "product-slider-container" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "product-single-carousel owl-carousel owl-theme"
-                      },
-                      [
-                        _c("div", { staticClass: "product-item" }, [
-                          _c("img", {
-                            staticClass: "product-single-image",
-                            attrs: {
-                              "data-zoom-image": _vm.image,
-                              src: _vm.image
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _vm._l(_vm.images, function(image) {
-                          return _c(
-                            "div",
-                            { key: image.id, staticClass: "product-item" },
-                            [
-                              image.image !== ""
-                                ? _c("img", {
-                                    staticClass: "product-single-image",
-                                    attrs: {
-                                      "data-zoom-image": image.image,
-                                      src: image.image,
-                                      alt: image.image_tn
-                                    }
-                                  })
-                                : _vm._e()
-                            ]
-                          )
-                        })
-                      ],
-                      2
-                    )
-                  ])
-                ]
+                  _c("images", {
+                    attrs: { image: _vm.image, images: _vm.images }
+                  })
+                ],
+                1
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-7" }, [
-                _c(
-                  "div",
-                  { staticClass: "product-single-gallery popup-gallery" },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "row no-gutters" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "col-6 d-none d-lg-block d-xl-block  d-md-block  product-item"
-                          },
-                          [
-                            _c("div", { staticClass: "inner" }, [
-                              _c("img", {
-                                attrs: {
-                                  "data-zoom-image": _vm.image,
-                                  src: _vm.image,
-                                  alt: "product name"
-                                }
-                              })
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm._l(_vm.images, function(image) {
-                          return _c(
-                            "div",
-                            {
-                              key: image.id,
-                              staticClass:
-                                "col-6 d-none d-xl-block  d-md-block  product-item"
-                            },
-                            [
-                              _c("div", { staticClass: "inner" }, [
-                                _c("img", {
-                                  attrs: {
-                                    src: image.image,
-                                    "data-zoom-image": image.image,
-                                    alt: "product name"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _vm._m(0, true)
-                              ])
-                            ]
-                          )
-                        })
-                      ],
-                      2
-                    )
-                  ]
-                )
-              ]),
+              _c(
+                "div",
+                { staticClass: "col-md-7" },
+                [
+                  _c("images", {
+                    attrs: { image: _vm.image, images: _vm.images }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
               _vm._l(_vm.variant_images, function(img, index) {
                 return _c(
@@ -53912,7 +53800,7 @@ var render = function() {
                                       }
                                     }),
                                     _vm._v(" "),
-                                    _vm._m(1, true)
+                                    _vm._m(0, true)
                                   ])
                                 ]
                               )
@@ -54485,7 +54373,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", { staticClass: "product-single-tabs" }, [
-            _vm._m(2),
+            _vm._m(1),
             _vm._v(" "),
             _c("div", { staticClass: "tab-content " }, [
               _c(
@@ -54499,15 +54387,21 @@ var render = function() {
                   }
                 },
                 [
-                  _c("div", {
-                    staticClass:
-                      "product-desc-content  pl-2 pb-2 color--primary",
-                    domProps: { innerHTML: _vm._s(_vm.product.description) }
-                  })
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col" }, [
+                      _c("div", {
+                        staticClass:
+                          "product-desc-content  pl-2 pb-2 color--primary",
+                        domProps: { innerHTML: _vm._s(_vm.product.description) }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col" })
+                  ])
                 ]
               ),
               _vm._v(" "),
-              _vm._m(3)
+              _vm._m(2)
             ])
           ])
         ]
@@ -54521,14 +54415,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "prod-full-screen" }, [
-      _c("i", { staticClass: "fas fa-search-plus fa-3x" })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -54604,11 +54490,11 @@ var staticRenderFns = [
           [
             _c("h4", [_vm._v("WARRANTY")]),
             _vm._v(
-              " \n                                We offer a lifetime 100% authenticity guarantee for all of our items."
+              " \n                        We offer a lifetime 100% authenticity guarantee for all of our items."
             ),
             _c("br"),
             _vm._v(
-              "\n                                In the improbable scenario of a sale of an inauthentic item, you will receive a 100% refund, including the cost of return."
+              "\n                        In the improbable scenario of a sale of an inauthentic item, you will receive a 100% refund, including the cost of return."
             ),
             _c("br"),
             _vm._v(" "),
@@ -54616,19 +54502,19 @@ var staticRenderFns = [
               _vm._v("RETURNS")
             ]),
             _vm._v(
-              "\n                                You can return a purchased item within 3 days of receipt."
+              "\n                        You can return a purchased item within 3 days of receipt."
             ),
             _c("br"),
             _vm._v(
-              " \n                                No return fee is charged for returns within the Nigeria."
+              " \n                        No return fee is charged for returns within the Nigeria."
             ),
             _c("br"),
             _vm._v(
-              "  \n                                However, based on the destination country a shipping fees is charged for returns made outside of Nigeria."
+              "  \n                        However, based on the destination country a shipping fees is charged for returns made outside of Nigeria."
             ),
             _c("br"),
             _vm._v(
-              "\n                                Customs duties and taxes are applicable and borne by the customer."
+              "\n                        Customs duties and taxes are applicable and borne by the customer."
             ),
             _c("br")
           ]

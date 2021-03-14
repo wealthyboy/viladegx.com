@@ -274,9 +274,6 @@
 	</div><!-- End .mobile-menu-container -->
 
 
-	
-
-	
 
 	<!-- Add Cart Modal -->
 	<div class="modal fade" id="addCartModal" tabindex="-1" role="dialog" aria-labelledby="addCartModal" aria-hidden="true">
