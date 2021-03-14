@@ -176,7 +176,7 @@
                      </tr>
                      <tr>
                         <td colspan="6" class="text-right">Coupon</td>
-                        <td class="text-right"> {{ $order->isCouponForAmb() }}  &nbsp; {{  $order->coupon ?  $order->coupon.'  -%'.$order->voucher()->amount . 'off'  : '---' }}</td>
+                        <td class="text-right">   &nbsp; {{  $order->coupon ?  $order->coupon.'  -%'.$order->voucher()->amount . 'off'  : '---' }}</td>
                      </tr>
                      <tr>
                         <td colspan="6" class="text-right">Shipping</td>
