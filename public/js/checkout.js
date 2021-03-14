@@ -2205,28 +2205,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2375,7 +2353,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.payment_is_processing = true;
       this.payment_method = "card";
       var handler = PaystackPop.setup({
-        key: "pk_live_c4f922bc8d4448065ad7bd3b0a545627fb2a084f",
+        key: "pk_test_2659f44a347260823efb597be7b846264d5cb393",
         //'pk_live_c4f922bc8d4448065ad7bd3b0a545627fb2a084f',//'pk_test_844112398c9a22ef5ca147e85860de0b55a14e7c',
         email: context.meta.user.email,
         amount: context.amount * 100,
@@ -22832,206 +22810,6 @@ var render = function() {
                             _vm._v(" "),
                             _c("h4", [_vm._v("Choose Delivery Option")]),
                             _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "border pl-3 mb-1 ",
-                                class: { "border-danger": _vm.delivery_error }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "custom-control custom-radio"
-                                  },
-                                  [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.delivery_option,
-                                          expression: "delivery_option"
-                                        }
-                                      ],
-                                      staticClass: "custom-control-input",
-                                      attrs: {
-                                        type: "radio",
-                                        value:
-                                          "1 Bassie Ogamba Street, off Adeniran Ogunsanya , SURULERE (₦200 to be paid at pick up address",
-                                        id: "pick_up_surulere",
-                                        name: "delivery_option",
-                                        required: ""
-                                      },
-                                      domProps: {
-                                        checked: _vm._q(
-                                          _vm.delivery_option,
-                                          "1 Bassie Ogamba Street, off Adeniran Ogunsanya , SURULERE (₦200 to be paid at pick up address"
-                                        )
-                                      },
-                                      on: {
-                                        change: function($event) {
-                                          _vm.delivery_option =
-                                            "1 Bassie Ogamba Street, off Adeniran Ogunsanya , SURULERE (₦200 to be paid at pick up address"
-                                        }
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _vm._m(3)
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "custom-control custom-radio "
-                                  },
-                                  [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.delivery_option,
-                                          expression: "delivery_option"
-                                        }
-                                      ],
-                                      staticClass: "custom-control-input",
-                                      attrs: {
-                                        type: "radio",
-                                        value:
-                                          "Plot 14, Gbelegbo street, by TOB Plaza, MAGODO PHASE 1, OLOWORA. Tejumade",
-                                        id: "pick_up_magodo",
-                                        name: "delivery_option",
-                                        required: ""
-                                      },
-                                      domProps: {
-                                        checked: _vm._q(
-                                          _vm.delivery_option,
-                                          "Plot 14, Gbelegbo street, by TOB Plaza, MAGODO PHASE 1, OLOWORA. Tejumade"
-                                        )
-                                      },
-                                      on: {
-                                        change: function($event) {
-                                          _vm.delivery_option =
-                                            "Plot 14, Gbelegbo street, by TOB Plaza, MAGODO PHASE 1, OLOWORA. Tejumade"
-                                        }
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _vm._m(4)
-                                  ]
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "border pl-3 mb-1",
-                                class: { "border-danger": _vm.delivery_error }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "custom-control  mt-1 mb-1 custom-radio mt-1 mb-1"
-                                  },
-                                  [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.delivery_option,
-                                          expression: "delivery_option"
-                                        }
-                                      ],
-                                      staticClass: "custom-control-input",
-                                      attrs: {
-                                        type: "radio",
-                                        value: "Stock Pilling",
-                                        id: "stock_pilling",
-                                        name: "delivery_option",
-                                        required: ""
-                                      },
-                                      domProps: {
-                                        checked: _vm._q(
-                                          _vm.delivery_option,
-                                          "Stock Pilling"
-                                        )
-                                      },
-                                      on: {
-                                        change: function($event) {
-                                          _vm.delivery_option = "Stock Pilling"
-                                        }
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _vm._m(5)
-                                  ]
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "border pl-3 mb-1",
-                                class: { "border-danger": _vm.delivery_error }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "custom-control  custom-radio mt-1 mb-1"
-                                  },
-                                  [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.delivery_option,
-                                          expression: "delivery_option"
-                                        }
-                                      ],
-                                      staticClass: "custom-control-input",
-                                      attrs: {
-                                        type: "radio",
-                                        value: "shipping",
-                                        id: "shipping",
-                                        name: "delivery_option",
-                                        required: ""
-                                      },
-                                      domProps: {
-                                        checked: _vm._q(
-                                          _vm.delivery_option,
-                                          "shipping"
-                                        )
-                                      },
-                                      on: {
-                                        change: function($event) {
-                                          _vm.delivery_option = "shipping"
-                                        }
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "custom-control-label",
-                                        attrs: { for: "shipping" }
-                                      },
-                                      [_vm._v("Shipping")]
-                                    )
-                                  ]
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
                             _c("p", {}),
                             _c("p", {
                               staticClass: "form-field-wrapper   col-sm-12"
@@ -23047,15 +22825,14 @@ var render = function() {
                                 }
                               },
                               [
-                                _vm.$root.settings.shipping_is_free == 0 &&
-                                _vm.delivery_option == "shipping"
+                                _vm.$root.settings.shipping_is_free == 0
                                   ? _c(
                                       "div",
                                       {
                                         staticClass: "shipping  select-custom"
                                       },
                                       [
-                                        _vm._m(6),
+                                        _vm._m(3),
                                         _vm._v(" "),
                                         _c(
                                           "select",
@@ -23431,7 +23208,7 @@ var render = function() {
                       "div",
                       { staticClass: "cart_totalse" },
                       [
-                        _vm._m(7),
+                        _vm._m(4),
                         _vm._v(" "),
                         _vm._l(_vm.carts, function(cart) {
                           return _c(
@@ -23811,58 +23588,6 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("h3", [_vm._v("2. PAYMENT")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "custom-control-label",
-        attrs: { for: "pick_up_surulere" }
-      },
-      [
-        _vm._v(" PICK UP OPTION 1  "),
-        _c("span", { staticClass: "ml-3 text-info" }, [
-          _vm._v(
-            "(1 Bassie Ogamba Street, off Adeniran Ogunsanya , SURULERE (₦200 to be paid at pick up address)   Pick up resumes 4th January 2021"
-          )
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      { staticClass: "custom-control-label", attrs: { for: "pick_up_magodo" } },
-      [
-        _vm._v("  PICK UP OPTION 2  "),
-        _c("span", { staticClass: "ml-3  text-info" }, [
-          _vm._v(
-            "(Plot 14, Gbelegbo street, by TOB Plaza, MAGODO PHASE 1, OLOWORA. )"
-          )
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      { staticClass: "custom-control-label", attrs: { for: "stock_pilling" } },
-      [
-        _vm._v("Stock Pile  "),
-        _c("span", { staticClass: "ml-3  text-info" }, [
-          _vm._v("Free for 1st month after which ₦500 applies every week")
-        ])
-      ]
-    )
   },
   function() {
     var _vm = this

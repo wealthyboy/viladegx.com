@@ -137,36 +137,14 @@
                                 <span v-if="coupon_error"  class="text-capitalize bold ml-3 text-danger">{{coupon_error}}</span >
 
                                 <h4>Choose Delivery Option</h4>
-                                <div :class="{'border-danger': delivery_error}" class="border pl-3 mb-1 ">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" value="1 Bassie Ogamba Street, off Adeniran Ogunsanya , SURULERE (₦200 to be paid at pick up address" v-model="delivery_option" class="custom-control-input" id="pick_up_surulere" name="delivery_option" required>
-                                        <label class="custom-control-label" for="pick_up_surulere"> PICK UP OPTION 1  <span class="ml-3 text-info">(1 Bassie Ogamba Street, off Adeniran Ogunsanya , SURULERE (₦200 to be paid at pick up address)   Pick up resumes 4th January 2021</span></label>
-                                    </div>
-                                    <div class="custom-control custom-radio ">
-                                        <input type="radio" value="Plot 14, Gbelegbo street, by TOB Plaza, MAGODO PHASE 1, OLOWORA. Tejumade" v-model="delivery_option" class="custom-control-input" id="pick_up_magodo" name="delivery_option" required>
-                                        <label class="custom-control-label" for="pick_up_magodo">  PICK UP OPTION 2  <span class="ml-3  text-info">(Plot 14, Gbelegbo street, by TOB Plaza, MAGODO PHASE 1, OLOWORA. )</span></label>
-                                    </div>
-                                </div>
-                                <div :class="{'border-danger': delivery_error}" class="border pl-3 mb-1">
-                                    <div  class="custom-control  mt-1 mb-1 custom-radio mt-1 mb-1">
-                                        <input type="radio" value="Stock Pilling" v-model="delivery_option" class="custom-control-input" id="stock_pilling" name="delivery_option" required>
-                                        <label class="custom-control-label" for="stock_pilling">Stock Pile  <span class="ml-3  text-info">Free for 1st month after which ₦500 applies every week</span></label>
-                                    </div>
-                                </div>
-                                 
-                                <div :class="{'border-danger': delivery_error}" class="border pl-3 mb-1">
-                                    <div class="custom-control  custom-radio mt-1 mb-1">
-                                        <input type="radio" value="shipping" v-model="delivery_option" class="custom-control-input" id="shipping" name="delivery_option" required>
-                                        <label class="custom-control-label" for="shipping">Shipping</label>
-                                    </div>
-                                </div>
-
+                                
+                                
                                 
                           
                                 <p  class="">
                                     <p  class="form-field-wrapper   col-sm-12">
                                         <form method="POST"  id="checkout-form-2" class="form-group" action="/checkout/confirm">
-                                            <div v-if="$root.settings.shipping_is_free == 0 && delivery_option =='shipping' " class="shipping  select-custom">
+                                            <div v-if="$root.settings.shipping_is_free == 0 " class="shipping  select-custom">
                                                 <label for="shipping_country">SELECT SHIPPING &nbsp;<abbr class="required text-danger" title="required">*</abbr></label>
                                                 <select @change="addShippingPrice"  name="shipping_id" id="shipping_price" class="form-control  input--lg" autocomplete="shipping" tabindex="-1" aria-hidden="true">
                                                     <option value="" selected="selected">Choose a shipping</option> 
@@ -466,7 +444,7 @@ export default {
       this.payment_is_processing = true;
       this.payment_method = "card";
       var handler = PaystackPop.setup({
-        key: "pk_live_c4f922bc8d4448065ad7bd3b0a545627fb2a084f", //'pk_live_c4f922bc8d4448065ad7bd3b0a545627fb2a084f',//'pk_test_844112398c9a22ef5ca147e85860de0b55a14e7c',
+        key: "pk_test_2659f44a347260823efb597be7b846264d5cb393", //'pk_live_c4f922bc8d4448065ad7bd3b0a545627fb2a084f',//'pk_test_844112398c9a22ef5ca147e85860de0b55a14e7c',
         email: context.meta.user.email,
         amount: context.amount * 100,
         currency: "NGN",
