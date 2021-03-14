@@ -27,7 +27,7 @@ class Order extends Model
 	}
 
 	public function shipping(){
-		return $this->belongsTo(Shipping::classs);	
+		return $this->belongsTo(Shipping::class);	
 	}
 
 	public function getShipPriceAttribute(){
@@ -38,19 +38,6 @@ class Order extends Model
 		$voucher = Voucher::where('code',$this->coupon)->first();
 		if(null !== $voucher ){
 			return $voucher;
-		}
-		return false;
-	}
-
-	public  function isCouponForAmb()
-	{
-
-		if($this->coupon ){
-			$amb = Ambassador::where('unique_code',$this->coupon)->first();
-			if ($amb){
-                return '<a href="/admin/ambassadors/$amb->id">Ambassodor</a>';
-			}
-			return null;
 		}
 		return false;
 	}
