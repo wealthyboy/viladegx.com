@@ -53,7 +53,7 @@ class WebHookController extends Controller
             $order->currency       =  optional($currency)->symbol ?? '₦';
             $order->invoice        =  "INV-".date('Y')."-".rand(10000,39999);
             $order->payment_type   =  $request->data['authorization']['channel'];
-           // $order->delivery_note   =  $input['delivery_note'];
+            $order->delivery_note   =  $input['delivery_note'];
             $order->total          =  $input['total'];
             $order->ip             =  $request->data['ip_address'];
             $order->save();
@@ -74,6 +74,11 @@ class WebHookController extends Controller
                 $product_variation->quantity =  $qty < 1 ? 0 : $qty;
                 $product_variation->save();
                 //Delete all the cart
+
+                //Delete all the cart
+                $cart->remember_token = null;
+                $cart->status = 'paid';
+                $cart->save();
             }
             $admin_emails = explode(',',$this->settings->alert_email);
             $symbol = optional($currency)->symbol  ;
