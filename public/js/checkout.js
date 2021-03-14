@@ -2197,14 +2197,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2259,7 +2251,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return this.$root.settings.shipping_is_free == 0 ? "Shipping is based on your location" : this.meta.currency + "0.00";
     }
   }),
-  watch: {},
   created: function created() {
     var _this = this;
 
@@ -2299,7 +2290,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         };
       }
     },
-    payWithPaystack: function payWithPaystack() {
+    makePayment: function makePayment() {
       var context = this;
       var cartIds = [];
       this.carts.forEach(function (cart, key) {
@@ -23075,85 +23066,43 @@ var render = function() {
                             staticClass: "form-field-wrapper   col-sm-12 mb-3"
                           },
                           [
-                            !_vm.meta.isAdmin
-                              ? [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass:
-                                        "btn   bold  btn--primary btn-round btn-lg btn-block",
-                                      class: {
-                                        disabled: _vm.payment_is_processing
-                                      },
-                                      attrs: {
-                                        type: "button",
-                                        name: "checkout_place_order",
-                                        id: "p lace_order",
-                                        value: "Place order",
-                                        "data-value": "Place Order"
-                                      },
-                                      on: { click: _vm.payWithPaystack }
-                                    },
-                                    [
-                                      _vm.checkingout
-                                        ? _c("span", {
-                                            staticClass:
-                                              "spinner-border spinner-border-sm",
-                                            attrs: {
-                                              role: "status",
-                                              "aria-hidden": "true"
-                                            }
-                                          })
-                                        : _vm._e(),
-                                      _vm._v(
-                                        "\n                                    " +
-                                          _vm._s(_vm.order_text) +
-                                          "\n                                "
-                                      )
-                                    ]
+                            [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn   bold  btn--primary btn-round btn-lg btn-block",
+                                  class: {
+                                    disabled: _vm.payment_is_processing
+                                  },
+                                  attrs: {
+                                    type: "button",
+                                    name: "checkout_place_order",
+                                    id: "p lace_order",
+                                    value: "Place order",
+                                    "data-value": "Place Order"
+                                  },
+                                  on: { click: _vm.makePayment }
+                                },
+                                [
+                                  _vm.checkingout
+                                    ? _c("span", {
+                                        staticClass:
+                                          "spinner-border spinner-border-sm",
+                                        attrs: {
+                                          role: "status",
+                                          "aria-hidden": "true"
+                                        }
+                                      })
+                                    : _vm._e(),
+                                  _vm._v(
+                                    "\n                                    " +
+                                      _vm._s(_vm.order_text) +
+                                      "\n                                "
                                   )
                                 ]
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _vm.meta.isAdmin
-                              ? [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass:
-                                        "btn   bold  btn--primary btn-round btn-lg btn-block",
-                                      class: {
-                                        disabled: _vm.payment_is_processing
-                                      },
-                                      attrs: {
-                                        type: "button",
-                                        name: "checkout_place_order",
-                                        id: "p lace_order",
-                                        value: "Place order",
-                                        "data-value": "Place Order"
-                                      },
-                                      on: { click: _vm.payAsAdmin }
-                                    },
-                                    [
-                                      _vm.checkingout
-                                        ? _c("span", {
-                                            staticClass:
-                                              "spinner-border spinner-border-sm",
-                                            attrs: {
-                                              role: "status",
-                                              "aria-hidden": "true"
-                                            }
-                                          })
-                                        : _vm._e(),
-                                      _vm._v(
-                                        "\n                                    " +
-                                          _vm._s(_vm.order_text) +
-                                          "\n                                "
-                                      )
-                                    ]
-                                  )
-                                ]
-                              : _vm._e()
+                              )
+                            ]
                           ],
                           2
                         )

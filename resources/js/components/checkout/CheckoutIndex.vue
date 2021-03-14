@@ -138,9 +138,7 @@
 
                                 <h4>Choose Delivery Option</h4>
                                 
-                                
-                                
-                          
+                        
                                 <p  class="">
                                     <p  class="form-field-wrapper   col-sm-12">
                                         <form method="POST"  id="checkout-form-2" class="form-group" action="/checkout/confirm">
@@ -195,20 +193,14 @@
 
 
                             <p class="form-field-wrapper   col-sm-12 mb-3">
-                                
-                                <template v-if="!meta.isAdmin">
-                                    <button @click="payWithPaystack" type="button" :class="{'disabled': payment_is_processing}" class="btn   bold  btn--primary btn-round btn-lg btn-block" name="checkout_place_order" id="p lace_order" value="Place order" data-value="Place Order">
+                                <template>
+                                    <button @click="makePayment" type="button" :class="{'disabled': payment_is_processing}" class="btn   bold  btn--primary btn-round btn-lg btn-block" name="checkout_place_order" id="p lace_order" value="Place order" data-value="Place Order">
                                         <span v-if="checkingout" class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
                                         {{ order_text }}
                                     </button>
                                 </template >
 
-                                <template  v-if="meta.isAdmin">
-                                    <button @click="payAsAdmin" type="button" :class="{'disabled': payment_is_processing}" class="btn   bold  btn--primary btn-round btn-lg btn-block" name="checkout_place_order" id="p lace_order" value="Place order" data-value="Place Order">
-                                        <span v-if="checkingout" class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
-                                        {{ order_text }}
-                                    </button>
-                                </template >
+                                
                                 
                             </p>
                         </div>
@@ -348,9 +340,7 @@ export default {
         : this.meta.currency + "0.00";
     },
   },
-  watch: {
-    
-  },
+
   created() {
     this.scriptLoaded = new Promise((resolve) => {
       this.loadScript(() => {
@@ -389,7 +379,7 @@ export default {
         };
       }
     },
-    payWithPaystack: function () {
+    makePayment: function () {
     
       let context = this;
       var cartIds = [];
