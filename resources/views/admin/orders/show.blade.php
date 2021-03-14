@@ -164,7 +164,6 @@
                         <td class="td-number">
                            <small>{{  $order->currency }}</small>{{ $order_product->total   }}
                         </td>
-                        
                      </tr>
                      @endforeach                               
                   </tbody>
