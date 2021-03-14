@@ -24,7 +24,6 @@
 	<link rel="stylesheet" href="/f/css/skins/skin-default.css?version={{ str_random(6) }}">
 
     @yield('page-css')
-    <link href="/f/css/custom.css?version={{ str_random(6) }}" rel="stylesheet" type="text/css" />
     <meta property="og:site_name" content="avenuemontaigne Co">
     <meta property="og:url" content="https://avenuemontaigne.ng/">
     <meta property="og:title" content="avenuemontaigne">

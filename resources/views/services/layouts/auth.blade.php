@@ -2,11 +2,7 @@
 
 <body>
 	<div id="app" class="page-wrapper">
-		
-
 		<header class="header">
-			
-
 			<div class="header-middle">
 				<div class="container">
 					<div class="header-center order-first order-lg-0 ml-0">

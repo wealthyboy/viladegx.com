@@ -4,6 +4,11 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/f/js').vue()
 
+mix.js('resources/js/services.js', 'public/s/js/services_js.js').vue()
+
+
+mix.sass('resources/css/services.scss', 'public/s/css/services_style.css');
+
 mix.styles([
    'public/backend/css/bootstrap.min.css',
    'public/backend/css/dashboard.css',
