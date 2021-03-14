@@ -2336,6 +2336,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }]
         },
         callback: function callback(response) {
+          console.log(response);
+
           if (response.status == "success") {
             context.paymentIsComplete = true;
           } else {

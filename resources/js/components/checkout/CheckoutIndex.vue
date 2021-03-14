@@ -431,6 +431,7 @@ export default {
           ],
         },
         callback: function (response) {
+          console.log(response)
           if (response.status == "success") {
             context.paymentIsComplete = true;
           } else {
