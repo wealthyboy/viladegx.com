@@ -90,7 +90,7 @@ class WebHookController extends Controller
                 ->bcc($admin_emails[0])
                 ->send(new OrderReceipt($order,$this->settings,$symbol));
             } catch (\Throwable $th) {
-                Log::info("Mail error :".$th);
+                Log::error("Mail error :". $th);
             }
 
             //delete cart
