@@ -29,7 +29,7 @@
                      </tr>
                      <tr>
                         <td><button data-toggle="tooltip" title="Shipping Method" class="btn btn-info btn-xs"><i class="fa fa-truck fa-fw"></i></button></td>
-                        <td>Shipping : {{ optional($order->shipping)->parent->name }}</td>
+                        <td>Shipping : {{ optional(optional($order->shipping)->parent)->name }}</td>
                      </tr>
                   </tbody>
                </table>
