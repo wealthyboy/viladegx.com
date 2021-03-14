@@ -2259,34 +2259,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return this.$root.settings.shipping_is_free == 0 ? "Shipping is based on your location" : this.meta.currency + "0.00";
     }
   }),
-  watch: {
-    // whenever delivery_option changes, this function will run
-    delivery_option: function delivery_option(val) {
-      this.delivery_error = false;
-      /**
-       * If the delivery option changes
-       */
-
-      if (val != "shipping") {
-        this.shipping_id = null;
-        this.shipping_price = 0;
-      }
-
-      if (this.voucher.length && !this.shipping_price) {
-        this.shipping_price = 0;
-        this.amount = this.voucher[0].sub_total;
-        this.shipping_id = null;
-        return;
-      } else if (this.voucher.length && this.shipping_price) {
-        this.amount = parseInt(this.shipping_price) + parseInt(this.voucher[0].sub_total);
-        return;
-      } else {
-        this.amount = this.meta.sub_total;
-        this.shipping_id = null;
-        return;
-      }
-    }
-  },
+  watch: {},
   created: function created() {
     var _this = this;
 
@@ -2327,11 +2300,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     payWithPaystack: function payWithPaystack() {
-      if (!this.delivery_option) {
-        this.delivery_error = true;
-        return;
-      }
-
       var context = this;
       var cartIds = [];
       this.carts.forEach(function (cart, key) {
@@ -2343,7 +2311,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return false;
       }
 
-      if (this.delivery_option == "shipping" && this.$root.settings.shipping_is_free == 0 && !this.shipping_price) {
+      if (this.$root.settings.shipping_is_free == 0 && !this.shipping_price) {
         this.error = "Please select your shipping method";
         return false;
       }
