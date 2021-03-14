@@ -2307,6 +2307,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return false;
       }
 
+      if (!this.coupon) {
+        this.amount = this.meta.sub_total;
+      }
+
       var form = document.getElementById("checkout-form-2");
       this.order_text = "Please wait. We are almost done......";
       this.payment_is_processing = true;

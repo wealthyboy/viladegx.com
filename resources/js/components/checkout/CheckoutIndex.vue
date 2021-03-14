@@ -401,6 +401,10 @@ export default {
         return false;
       }
 
+      if (!this.coupon){
+        this.amount = this.meta.sub_total 
+      }
+
       let form = document.getElementById("checkout-form-2");
       this.order_text = "Please wait. We are almost done......";
       this.payment_is_processing = true;
