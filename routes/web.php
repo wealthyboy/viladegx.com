@@ -77,7 +77,7 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
     Route::get('/products/barcode/{product}','Admin\Product\ProductController@barcode')->name('barcode');
     Route::post('load-attributes','Admin\Product\ProductController@loadAttr');
     Route::get('products/{id}/variation', 'Admin\Variation\ProductVariationController@index')->name('variations');
-    Route::get('get-related-attributes',  'Admin\Product\ProductController@index')->name('variations');
+    Route::get('get-related-attributes',  'Admin\Product\ProductController@index');
 
     /* INFORMATION */
     Route::resource('pages','Information\InformationController',['name' => 'pages']);
