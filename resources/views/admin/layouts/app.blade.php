@@ -186,14 +186,14 @@
                 <div class="collapse {{ $helper->active_link(['orders']) ? 'in' : ''}}" id="shop">
                     <ul class="nav">
                         <li  class="{{ $helper->active_link(['orders']) }} ">
-                            <a href="{{ route('admin.orders.index') }}">
+                            <a href="{{ route('admin.orders.index',['type'=> 'fashion']) }}">
                                 <span class="sidebar-mini"> C </span>
                                 <span class="sidebar-normal"> Orders  Fashion</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="{{ route('admin.orders.index') }}">
+                            <a href="{{ route('admin.orders.index',['type'=> 'reservation']) }}">
                                 <span class="sidebar-mini"> C </span>
                                 <span class="sidebar-normal"> Orders  Reservation</span>
                             </a>

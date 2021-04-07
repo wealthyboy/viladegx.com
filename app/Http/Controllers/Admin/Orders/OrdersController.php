@@ -25,9 +25,9 @@ class OrdersController extends Controller{
 	   $this->settings =  \DB::table('system_settings')->first();
     }
 
-    public function index ( ) { 
+    public function index (Request $request) { 
 	
-		$orders = Order::has('ordered_products')->where('type','fashion')->orderBy('created_at','desc')->get();
+		$orders = Order::has('ordered_products')->where('type', $request->type)->orderBy('created_at','desc')->get();
         return view('admin.orders.index',compact('orders'));
     }
     
