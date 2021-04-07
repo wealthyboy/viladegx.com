@@ -1,10 +1,7 @@
 @include('fashion._partials.header_styles')
 <body class="">
 	<div id="app" class="page-wrapper">
-     	
-        
 		<header class="header fixed-top">
-		    
 			<div class="header-middle">
 				<div class="container">
 						<div class="header-left w-lg-max ml-auto ml-lg-0">
@@ -148,14 +145,18 @@
 						</ul>
 					</nav>
 					<div class="search-bar float-right mt-2">
-						<div class="input-group mb-2">
-							<input type="text" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-							<div class="input-group-append">
-								<button class="btn search-btn" type="button">
-								    <svg data-icon-id="magnifierSmall" data-icon-set="farfetch-2020" id="iconLoaded-magnifierSmall"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11 5a6 6 0 103.476 10.89l3.01 3.01 1.413-1.415-3.008-3.008A6 6 0 0011 5zm-4 6a4 4 0 118 0 4 4 0 01-8 0z"></path></svg></svg>
-								</button>
+					   <form action="/search" method="get">
+							<div class="input-group mb-2">
+								<input type="text" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+								<div class="input-group-append">
+									<button class="btn search-btn" type="submit">
+										<svg data-icon-id="magnifierSmall"  id="iconLoaded-magnifierSmall">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11 5a6 6 0 103.476 10.89l3.01 3.01 1.413-1.415-3.008-3.008A6 6 0 0011 5zm-4 6a4 4 0 118 0 4 4 0 01-8 0z"></path></svg>
+										</svg>
+									</button>
+								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div><!-- End .container -->
 				
