@@ -6537,10 +6537,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }), u(window).on("scroll", function () {
     p.scrollBtnAppear();
   });
-}(jQuery), $(".megamenu-fixed-width").css("width", $(document).width());
-$('li.SHOES').on('click', function () {
-  console.log(true);
-});
+}(jQuery);
+$(".megamenu-fixed-width").css("width", $(document).width());
 
 /***/ }),
 

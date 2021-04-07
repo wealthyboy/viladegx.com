@@ -1,30 +1,36 @@
 @include('fashion._partials.header_styles')
 <body class="">
 	<div id="app" class="page-wrapper">
+     	
+        
 		<header class="header fixed-top">
+		    
 			<div class="header-middle">
 				<div class="container">
-					<div class="header-left w-lg-max ml-auto ml-lg-0 d-none d-lg-block">
-					    <div class="header-dropdown mt-1">
-							<a href="#" class="pl-0"><img src="/f/img/ng.png" alt="Ng">₦</a>
-							<div class="header-menu">
-								<ul>
-									<li><a href="#"><img src="/f/img/en.png" alt="England flag">£</a></li>
-									<li><a href="#"><img src="/f/img/us.png" alt="France flag">€</a></li>
-									<li><a href="#"><img src="/f/img/ng.png" alt="Ng">₦</a></li>
+						<div class="header-left w-lg-max ml-auto ml-lg-0">
+							<div class="header-dropdown mt-1  d-none d-lg-block">
+								<a href="#" class="pl-0">
+									<img src="/f/img/ng.png" alt="Ng">₦
+								</a>
+								<div class="header-menu">
+									<ul>
+										<li><a href="#"><img src="/f/img/en.png" alt="England flag">£</a></li>
+										<li><a href="#"><img src="/f/img/us.png" alt="France flag">€</a></li>
+										<li><a href="#"><img src="/f/img/ng.png" alt="Ng">₦</a></li>
+									</ul>
+								</div><!-- End .header-menu -->
+							</div>
+							<nav class="main-nav d-lg-flex d-xl-flex  d-md-flex w-lg-max d-none d-lg-block">
+								<ul class="menu mt-1 ml-5">
+									@foreach( $global_categories   as  $category)
+										<li id="{{ $category->name }}" class="p-d-down    {{ $category->name }}">
+											<a class="{{ $category->name }}" style="color: {{  $category->text_color }} !important" href="#">{{ $category->name }}</a>
+										</li>
+									@endforeach
 								</ul>
-							</div><!-- End .header-menu -->
+							</nav>
 						</div>
-						<nav class="main-nav d-flex w-lg-max ">
-							<ul class="menu mt-1 ml-5">
-								@foreach( $global_categories   as  $category)
-									<li class="p-d-down    {{ $category->name }}">
-										<a style="color: {{  $category->text_color }} !important" href="#">{{ $category->name }}</a>
-									</li>
-								@endforeach
-							</ul>
-                        </nav>
-					</div>
+					
 					<div class="header-center order-first order-lg-0 ml-0 ml-lg-auto">
 						<button class="mobile-menu-toggler" type="button">
 							<i class="icon-menu"></i>
@@ -44,7 +50,7 @@
 						<ul class="menu">
 							
                             @foreach( $global_categories[0]->children   as  $category)
-                                <li  class="d-down {{ $category->parent->name }}">
+                                <li  class="d-down d-none {{ $category->parent->name }}">
                                    <a style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
 
                                     <div class="megamenu megamenu-fixed-width">
@@ -293,6 +299,22 @@
     @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')
+		let nav = document.querySelectorAll('li.p-d-down')
+		let child_nav = document.querySelectorAll('li.d-down')
+		    nav.forEach(function(elm,key){
+				const cl = elm.getAttribute('id')
+                elm.addEventListener('mouseenter', function(e){
+					child_nav.forEach(function(el,i){
+						el.classList.add('d-none')
+						if (!el.classList.contains('d-none')){
+                            el.classList.add('d-none')
+						}
+						if (el.classList.contains(cl)){
+                            el.classList.remove('d-none')
+						}
+					})
+				})
+            })
     </script>
 </body>
 </html>
