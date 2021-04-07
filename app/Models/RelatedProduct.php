@@ -13,4 +13,9 @@ class RelatedProduct extends Model
     public function product_variation(){
         return $this->belongsTo(ProductVariation::class,'related_id');
     }
+
+
+    public function product(){
+        return $this->belongsTo(Product::class,'related_id');
+    }
 }
