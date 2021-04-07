@@ -30,7 +30,7 @@ class SearchController extends Controller
 			$url['url'] = '/api/search?q='.$filtered_array['q']; 
 			$url = collect($url);
 			$breadcrumb = 'Search'; 
-			return view('products.index',compact('q','breadcrumb','url'));   
+			return view('fashion.products.index',compact('q','breadcrumb','url'));   
 		} 
    }
 

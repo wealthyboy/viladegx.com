@@ -185,7 +185,7 @@ Route::group(['middleware' => 'currencyByIp','prefix' => '/fashion'], function()
     //     return view('errors.503');
     // });
     
-    Route::get('/search',                         'Search\SearchController@index');
+    Route::get('/search',                        'Products\ProductsController@search');
     Route::get('cart/delete/{cart_id}',           'Cart\CartController@delete');
     Route::post('cart-delete',                    'Cart\CartController@delete');
     Route::get('wishlist',                        'Favorites\FavoritesController@index')->name('wishlist');

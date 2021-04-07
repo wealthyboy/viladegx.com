@@ -122,7 +122,7 @@ class ProductsController extends Controller
                 'products' => $products->toArray(),
             ]); 
         }
-        return view('products.index',compact('products','breadcrumb'));  
+        return view('fashion.products.index',compact('products','breadcrumb'));  
     }
 
 

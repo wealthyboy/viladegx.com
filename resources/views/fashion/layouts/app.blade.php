@@ -145,9 +145,9 @@
 						</ul>
 					</nav>
 					<div class="search-bar float-right mt-2">
-					   <form action="/search" method="get">
+					   <form action="/fashion/search" method="get">
 							<div class="input-group mb-2">
-								<input type="text" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+								<input type="text" name="q" class="form-control search-input" placeholder="Search">
 								<div class="input-group-append">
 									<button class="btn search-btn" type="submit">
 										<svg data-icon-id="magnifierSmall"  id="iconLoaded-magnifierSmall">
