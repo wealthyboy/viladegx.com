@@ -90,6 +90,7 @@ class ProductsController extends Controller
         $attributes =  collect($data);
         $attributes = $attributes->count() && $product->product_type == 'variable' ? $attributes : '{}';
         $related_products = RelatedProduct::where(['product_id' => $product->id])->get();
+        dd($related_products->load('products'));
         $product->load(["variants","variants.images","default_variation","default_variation.images"]);
     	return view('fashion.products.show',compact('category','related_products','attributes','product','page_title'));
     }
