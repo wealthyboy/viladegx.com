@@ -52,7 +52,7 @@ class WebHookController extends Controller
             $order->currency       =  optional($currency)->symbol ?? '₦';
             $order->invoice        =  "INV-".date('Y')."-".rand(10000,39999);
             $order->payment_type   =  $request->data['authorization']['channel'];
-            $order->type   =  'fashion';
+            $order->type   =  $input['type'];
             $order->delivery_note   =  $input['delivery_note'];
             $order->total          =  $input['total'];
             $order->ip             =  $request->data['ip_address'];

@@ -2327,6 +2327,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             display_name: context.meta.user.name,
             customer_id: context.meta.user.id,
             coupon: context.coupon_code,
+            type: 'fashion',
             shipping_id: context.shipping_id,
             shipping_price: context.shipping_price,
             cart: cartIds,
