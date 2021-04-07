@@ -21,7 +21,7 @@
 								<ul class="menu mt-1 ml-5">
 									@foreach( $global_categories   as  $category)
 										<li id="{{ $category->name }}" class="p-d-down    {{ $category->name }}">
-											<a class="{{ $category->name }}" style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }} }}">{{ $category->name }}</a>
+											<a class="{{ $category->name }}" style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
 										</li>
 									@endforeach
 								</ul>
