@@ -24,7 +24,7 @@
 								<ul class="menu mt-1 ml-5">
 									@foreach( $global_categories   as  $category)
 										<li id="{{ $category->name }}" class="p-d-down    {{ $category->name }}">
-											<a class="{{ $category->name }}" style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
+											<a class="{{ $category->name }}" style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }} }}">{{ $category->name }}</a>
 										</li>
 									@endforeach
 								</ul>
@@ -58,24 +58,29 @@
 										    <div class="col-lg-9">
 											    <div class="row">
 												    @foreach (  $category->children as $childs)
-													<div class="col-lg-2">
-														<a href="{{ $childs->link() }}" class="category-heading">{{ str_contains($childs->name,'No') ? '' :  $childs->name}} </a>
 														@if ($childs->children->count())
-															<ul class="submenu">
-															    @if ($childs->children->count() > 12)
-																	@foreach (  $childs->children->take(12) as $children)
-																		<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
-																	@endforeach
-																	<li ><a  class="bold text-danger" href="/view/{{ $childs->slug }}">View All</a></li>
-																@else
-																    @foreach (  $childs->children as $children)
-																	   <li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
-															      	@endforeach
+
+															<div class="col-lg-2">
+																<a href="{{ $childs->link() }}" class="category-heading">{{ str_contains($childs->name,'No') ? '' :  $childs->name}} </a>
+																@if ($childs->children->count())
+																	<ul class="submenu">
+																		@if ($childs->children->count() > 12)
+																			@foreach (  $childs->children->take(12) as $children)
+																				<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
+																			@endforeach
+																			<li ><a  class="bold text-danger" href="/view/{{ $childs->slug }}">View All</a></li>
+																		@else
+																			@foreach (  $childs->children as $children)
+																			<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
+																			@endforeach
+																		@endif
+																		
+																	</ul>
 																@endif
-																
-															</ul>
+															</div><!-- End .col-lg-4 -->
+
 														@endif
-													</div><!-- End .col-lg-4 -->
+
 													@endforeach
 		                                        </div>
 											</div>
