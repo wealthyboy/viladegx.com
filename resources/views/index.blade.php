@@ -1,128 +1,80 @@
-@include('fashion._partials.header_styles')
-<body class="">
-	<div id="app" class="page-wrapper">
-     	
-        
-		<header class="header fixed-top">
-		    
-			<div class="header-middle">
-				<div class="container">
-					<div class="header-center order-first order-lg-0 ml-0 ml-lg-auto">
-						<button class="mobile-menu-toggler" type="button">
-							<i class="icon-menu"></i>
-						</button>
-						<a href="/" class="logo">
-							<img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
-						</a>
-					</div><!-- End .header-center -->
-				</div><!-- End .container -->
-			</div><!-- End .header-middle -->
-
-			<div class="header-bottom sticky-header d-none d-lg-block">
-				<div class="container">
-					<nav class="main-nav d-flex w-lg-max ">
-						<ul class="menu">
-                            <li  class="d-down ">
-                                <a  target="_blank" href="/fashion/">Fashion</a>
-                            </li>
-                            <li  class="d-down">
-                                <a  target="_blank" href="/fashion/">Apartments</a>
-                            </li>
-						</ul>
-					</nav>
-					
-				</div><!-- End .container -->
-				
-			</div><!-- End .header-bottom -->
-
-			
-			
-		</header><!-- End .header -->
-
-		
-        <main class="main main-page">
-            <div class="container-fliud mt-3">
-                <div  class="row align-items-start ">
-                    <div data-title="" class="">
-                        <div class="banner-box">
-                            <a class="portfolio-thumb" href="">
-                                <img src="" alt="" />
-                            </a>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </main> 
-
-		
-
-		<footer class="footer">
-			<div class="footer-bottom">
-				<div class="container d-flex justify-content-center align-items-center flex-wrap">
-					<p class="footer-copyright py-3 pr-4 mb-0">© {{ config('app.name') }}. 2020. All Rights Reserved</p>
-					@if ( auth()->check() && auth()->user()->isAdmin() )
-					  <p class="footer-copyright py-3 pr-4 mb-0"><a target="_blank" href="/admin" >Go to Admin</a></p>
-					@endif
-				</div><!-- End .container -->
-			</div><!-- End .footer-bottom -->
-        </footer>
-
-			
-    </div><!-- End .page-wrapper -->
-
-	<div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
-
-	<div class="mobile-menu-container">
-		<div class="mobile-menu-wrapper">
-			<span class="mobile-menu-close"><i class="icon-cancel"></i></span>
-			<nav class="mobile-nav">
-				<ul class="mobile-menu">
-				@foreach( $global_categories   as  $category)
-				    <li>
-						<a href="/products/{{ $category->slug }}">{{ $category->name }}</a>
-						@if ($category->isCategoryHaveMultipleChildren())
-							<ul>
-							    @foreach (  $category->children as $children)
-
-								<li>
-								<a href="/products/{{ $children->slug }}" class="category-heading">{{ $children->name }} </a>
-								   @if ($children->children->count())
-										<ul>
-										    @foreach (  $children->children as $children)
-                                                <li><a href="/products/{{ $children->slug }}">{{ $children->name }}</a></li>
-                                            @endforeach
-										</ul>
-									@endif
-								</li>
-								@endforeach
-							</ul>
-						@elseif ( !$category->isCategoryHaveMultipleChildren() && $category->children->count() )
-							<ul>
-								@foreach (  $category->children as $children)
-									<li><a class="category-heading" href="/products/{{ $children->slug }}">{{ $children->name }}</a></li>
-								@endforeach 
-							</ul>
-						@endif
-					</li>
-					
-				@endforeach
-				</ul>
-			</nav><!-- End .mobile-nav -->
-
-			
-		</div><!-- End .mobile-menu-wrapper -->
-	</div><!-- End .mobile-menu-container -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Jumbotron Template · Bootstrap</title>
 
 
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-	<a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
-	<!-- Plugins JS File -->
-	<script src="/f/js/app.js?version={{ str_random(6) }}" type="text/javascript"></script>
-    @yield('page-scripts')
-    <script type="text/javascript">
-        @yield('inline-scripts')
-    </script>
-</body>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">
+     <img src="{{ $system_settings->logo_path() }}" width="150" alt="{{ Config('app.name') }} Logo">
+
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Fashion <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Apartments</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+</nav>
+
+<main role="main">
+  
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      
+      
+    </div>
+
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>&copy; Company 2017-2019</p>
+</footer>
+
+
 </html>
 
 

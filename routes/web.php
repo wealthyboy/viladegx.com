@@ -177,13 +177,13 @@ Route::group(['middleware' => 'currencyByIp','prefix' => '/fashion'], function()
     Route::get('cart/all/in/cart',                'Cart\CartController@all_in_cart');
     Route::get('reviews/{product}',               'Api\Reviews\ReviewsController@index');
     Route::post('reviews/store',                  'Api\Reviews\ReviewsController@store');
-    Route::post('/load-login-modal', function ( ) { 
-        return view('modal.login.modal_body');
-    });
+    // Route::post('/load-login-modal', function ( ) { 
+    //     return view('modal.login.modal_body');
+    // });
 
-    Route::post('/admin/permission-denied', function ( ) { 
-        return view('errors.503');
-    });
+    // Route::post('/admin/permission-denied', function ( ) { 
+    //     return view('errors.503');
+    // });
     
     Route::get('/search',                         'Search\SearchController@index');
     Route::get('cart/delete/{cart_id}',           'Cart\CartController@delete');

@@ -1,13 +1,10 @@
 @include('fashion._partials.header_styles')
 <body class="">
 	<div id="app" class="page-wrapper">
-     	
-        
 		<header class="header fixed-top">
-		    
 			<div class="header-middle">
 				<div class="container">
-					<div class="header-left w-lg-max ml-auto ml-lg-0 ">
+					<div class="header-left w-lg-max ml-auto ml-lg-0 d-none d-lg-block">
 					    <div class="header-dropdown mt-1">
 							<a href="#" class="pl-0"><img src="/f/img/ng.png" alt="Ng">₦</a>
 							<div class="header-menu">
@@ -15,7 +12,6 @@
 									<li><a href="#"><img src="/f/img/en.png" alt="England flag">£</a></li>
 									<li><a href="#"><img src="/f/img/us.png" alt="France flag">€</a></li>
 									<li><a href="#"><img src="/f/img/ng.png" alt="Ng">₦</a></li>
-
 								</ul>
 							</div><!-- End .header-menu -->
 						</div>
