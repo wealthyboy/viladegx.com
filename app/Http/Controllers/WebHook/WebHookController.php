@@ -43,7 +43,6 @@ class WebHookController extends Controller
             $user     =  User::findOrFail($input['customer_id']);
             $carts    =  Cart::find($input['cart']);
             $currency =  Currency::where('iso_code3',$request->data['currency'])->first();
-        
             $order->user_id = $user->id;
             $order->address_id     =  optional($user->active_address)->id;
             $order->coupon         =  $input['coupon'];
@@ -53,6 +52,7 @@ class WebHookController extends Controller
             $order->currency       =  optional($currency)->symbol ?? '₦';
             $order->invoice        =  "INV-".date('Y')."-".rand(10000,39999);
             $order->payment_type   =  $request->data['authorization']['channel'];
+            $order->type   =  'fashion';
             $order->delivery_note   =  $input['delivery_note'];
             $order->total          =  $input['total'];
             $order->ip             =  $request->data['ip_address'];
@@ -73,8 +73,6 @@ class WebHookController extends Controller
                 $qty  = $product_variation->quantity - $cart->quantity;
                 $product_variation->quantity =  $qty < 1 ? 0 : $qty;
                 $product_variation->save();
-                //Delete all the cart
-
                 //Delete all the cart
                 $cart->remember_token = null;
                 $cart->status = 'paid';

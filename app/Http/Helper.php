@@ -45,20 +45,24 @@ class Helper{
     {   
         //createFromDate  $year ,$month , $day
         if ($date !== null || $date !== 1) {
-            if ($changeFormat){
-                $exp_date = explode('/', $date);
-                $month  = $exp_date[0];//Month
-                $day    = $exp_date[1];//Day
-                $year   = $exp_date[2];//YEar
-                $formarted_date =Carbon::createFromDate($year, $month, $day);
-            } else {
-                $exp_date = explode('-', $date);
-                $formarted_date = Carbon::createFromDate($exp_date[0], $exp_date[1], $exp_date[2]);//
-            }
-            return $formarted_date;
-        }
 
-        
+            $exp_date = explode('/', $date);
+
+            if ( count($exp_date) > 1) {
+                if ($changeFormat){
+                    $exp_date = explode('/', $date);
+                    $month  = $exp_date[0];//Month
+                    $day    = $exp_date[1];//Day
+                    $year   = $exp_date[2];//YEar
+                    $formarted_date =Carbon::createFromDate($year, $month, $day);
+                } else {
+                    $exp_date = explode('-', $date);
+                    $formarted_date = Carbon::createFromDate($exp_date[0], $exp_date[1], $exp_date[2]);//
+                }
+                return $formarted_date;
+            }
+
+        }
         return null;
     }
 

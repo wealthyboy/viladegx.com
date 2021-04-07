@@ -604,7 +604,7 @@ class ProductController extends Controller
                                 'width' => $request->edit_variation_width[$variant_id]  ? $request->edit_variation_width[$variant_id] : $request->width,
                                 'length' => $request->edit_variation_length[$variant_id],
                                 'image' => $request->edit_variation_image[$variant_id], 
-                                'sale_price_expires' => !empty($request->edit_variation_sale_price_expires[$variant_id]) ?   Helper::getFormatedDate($request->edit_variation_sale_price_expires[$variant_id],true) : Helper::getFormatedDate($request->sale_price_expires.true),
+                                'sale_price_expires' => Helper::getFormatedDate($request->edit_variation_sale_price_expires[$variant_id],true),
                                 'weight' => $request->edit_variation_weight[$variant_id],
                                 'quantity'  => $request->edit_variation_quantity[$variant_id] ? $request->edit_variation_quantity[$variant_id] : $request->quantity,
                                 'product_id' => $product->id,
