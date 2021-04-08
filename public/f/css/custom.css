@@ -618,6 +618,10 @@ background: white;
     border-radius: 50%;
 }
 
+.btn-icon-group svg {
+    width: 27px;
+}
+
 .horizontal-filter {
     background-color: #fff;
 }
