@@ -57,6 +57,8 @@
         </div><!--modal-content-->
 
     </div><!--modal-dialog-->
+    <register-modal />
+
 
 </div>
 

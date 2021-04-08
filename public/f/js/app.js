@@ -2220,6 +2220,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -48945,180 +48947,190 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "modal fade ",
-        attrs: { id: "login-modal", role: "dialog" }
-      },
-      [
-        _c("div", { staticClass: "modal-dialog" }, [
-          _c("div", { staticClass: "modal-content " }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c("div", { staticClass: "modal-title" }, [
-                _c("img", {
-                  attrs: {
-                    width: "100",
-                    height: "100",
-                    src: "/images/logo/" + _vm.$root.settings.store_logo
-                  }
-                })
+  return _c(
+    "div",
+    [
+      _c(
+        "div",
+        {
+          staticClass: "modal fade ",
+          attrs: { id: "login-modal", role: "dialog" }
+        },
+        [
+          _c("div", { staticClass: "modal-dialog" }, [
+            _c("div", { staticClass: "modal-content " }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c("div", { staticClass: "modal-title" }, [
+                  _c("img", {
+                    attrs: {
+                      width: "100",
+                      height: "100",
+                      src: "/images/logo/" + _vm.$root.settings.store_logo
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
               ]),
               _vm._v(" "),
-              _vm._m(0)
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("div", {}, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "form",
-                  {
-                    attrs: { method: "POST", action: "#" },
-                    on: {
-                      submit: function($event) {
-                        $event.preventDefault()
-                        return _vm.authenticate($event)
+              _c("div", { staticClass: "modal-body" }, [
+                _c("div", {}, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "form",
+                    {
+                      attrs: { method: "POST", action: "#" },
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.authenticate($event)
+                        }
                       }
-                    }
-                  },
-                  [
-                    _c("p", {}, [
-                      _c("label", { attrs: { for: "username" } }, [
-                        _vm._v("Email address")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.email,
-                            expression: "email"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "email",
-                          type: "email",
-                          name: "email",
-                          value: "",
-                          required: "",
-                          autofocus: ""
-                        },
-                        domProps: { value: _vm.email },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.email = $event.target.value
-                          }
-                        }
-                      })
-                    ]),
-                    _vm.errors.length
-                      ? _c("p", { staticClass: "text-danger bold" }, [
-                          _vm._v(" Email/Password not found")
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _c("p"),
-                    _vm._v(" "),
-                    _c("p", {}, [
-                      _c("label", { attrs: { for: "password" } }, [
-                        _vm._v("Password")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.password,
-                            expression: "password"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "password",
-                          type: "password",
-                          name: "password",
-                          required: ""
-                        },
-                        domProps: { value: _vm.password },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.password = $event.target.value
-                          }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "clearfix" }),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "form-field-wrapper form-row" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "ml-1 btn btn--primary btn-round btn-lg btn-block",
-                          attrs: {
-                            type: "submit",
-                            id: "login_form_button",
-                            "data-loading": "Loading",
-                            name: "login",
-                            value: "Log in"
-                          }
-                        },
-                        [
-                          _vm.loading
-                            ? _c("span", {
-                                staticClass: "spinner-border spinner-border-sm",
-                                attrs: { role: "status", "aria-hidden": "true" }
-                              })
-                            : _vm._e(),
-                          _vm._v(
-                            "\n                                    Log In\n                                "
-                          )
-                        ]
-                      )
-                    ])
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer text-cenetr" }, [
-              _c("p", {}, [
-                _vm._v("Don't have an account? "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "color--primary bold",
-                    attrs: {
-                      "data-toggle": "modal",
-                      "data-target": "#register-modal",
-                      href: "#"
                     },
-                    on: { click: _vm.closeLogin }
-                  },
-                  [_vm._v(" Create One ")]
-                )
+                    [
+                      _c("p", {}, [
+                        _c("label", { attrs: { for: "username" } }, [
+                          _vm._v("Email address")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.email,
+                              expression: "email"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "email",
+                            type: "email",
+                            name: "email",
+                            value: "",
+                            required: "",
+                            autofocus: ""
+                          },
+                          domProps: { value: _vm.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.email = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm.errors.length
+                        ? _c("p", { staticClass: "text-danger bold" }, [
+                            _vm._v(" Email/Password not found")
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("p"),
+                      _vm._v(" "),
+                      _c("p", {}, [
+                        _c("label", { attrs: { for: "password" } }, [
+                          _vm._v("Password")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.password,
+                              expression: "password"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "password",
+                            type: "password",
+                            name: "password",
+                            required: ""
+                          },
+                          domProps: { value: _vm.password },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.password = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" }),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "form-field-wrapper form-row" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "ml-1 btn btn--primary btn-round btn-lg btn-block",
+                            attrs: {
+                              type: "submit",
+                              id: "login_form_button",
+                              "data-loading": "Loading",
+                              name: "login",
+                              value: "Log in"
+                            }
+                          },
+                          [
+                            _vm.loading
+                              ? _c("span", {
+                                  staticClass:
+                                    "spinner-border spinner-border-sm",
+                                  attrs: {
+                                    role: "status",
+                                    "aria-hidden": "true"
+                                  }
+                                })
+                              : _vm._e(),
+                            _vm._v(
+                              "\n                                    Log In\n                                "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer text-cenetr" }, [
+                _c("p", {}, [
+                  _vm._v("Don't have an account? "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "color--primary bold",
+                      attrs: {
+                        "data-toggle": "modal",
+                        "data-target": "#register-modal",
+                        href: "#"
+                      },
+                      on: { click: _vm.closeLogin }
+                    },
+                    [_vm._v(" Create One ")]
+                  )
+                ])
               ])
             ])
           ])
-        ])
-      ]
-    )
-  ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("register-modal")
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -49223,7 +49235,7 @@ var render = function() {
                   attrs: {
                     width: "100",
                     height: "100",
-                    src: _vm.$root.settings.store_logo
+                    src: "/images/logo/" + _vm.$root.settings.store_logo
                   }
                 })
               ]),
