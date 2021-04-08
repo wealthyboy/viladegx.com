@@ -5,6 +5,8 @@
             <div class="row">
                 <div class="col-md-6 d-sm-block d-md-none product-single-gallery">
                     <images  :image="image" :images="images" />
+                    
+
                 </div><!-- End .product-single-gallery -->
                 <div class="col-md-7">
                     <images  :image="image" :images="images" />
@@ -16,6 +18,12 @@
                             <div class="col-6 d-none d-lg-block d-xl-block  d-md-block  product-item">
                                 <div class="inner">
                                     <img  :data-zoom-image="img.image_to_show" :src="img.image_to_show"   alt="product name">
+                                    <image-zoom 
+                                        regular="img.image_to_show" 
+                                        zoom="path-to-zoom.jpg"
+                                        >				
+                                    </image-zoom>
+
                                 </div>
                             </div><!-- End .col-6 -->
                             <div  v-for="image in img.images" :key="image.id"  class="col-6 d-none d-xl-block  d-md-block  product-item">
@@ -218,7 +226,6 @@ import  LoginModal from '../auth/LoginModal.vue'
 import  RegisterModal from '../auth/RegisterModal.vue'
 import  { mapGetters,mapActions } from 'vuex'
 import  Pagination from '../pagination/Pagination.vue'
-import imageZoom from 'vue-image-zoomer';
 
 
 export default {

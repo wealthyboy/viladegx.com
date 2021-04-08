@@ -4811,10 +4811,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Images_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Images.vue */ "./resources/js/components/products/Images.vue");
 /* harmony import */ var _auth_LoginModal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../auth/LoginModal.vue */ "./resources/js/components/auth/LoginModal.vue");
 /* harmony import */ var _auth_RegisterModal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../auth/RegisterModal.vue */ "./resources/js/components/auth/RegisterModal.vue");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _pagination_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pagination/Pagination.vue */ "./resources/js/components/pagination/Pagination.vue");
-/* harmony import */ var vue_image_zoomer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-image-zoomer */ "./node_modules/vue-image-zoomer/dist/vueImageZoom.js");
-/* harmony import */ var vue_image_zoomer__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_image_zoomer__WEBPACK_IMPORTED_MODULE_4__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5034,7 +5032,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5051,7 +5056,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     LoginModal: _auth_LoginModal_vue__WEBPACK_IMPORTED_MODULE_1__.default,
     Pagination: _pagination_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__.default,
     RegisterModal: _auth_RegisterModal_vue__WEBPACK_IMPORTED_MODULE_2__.default,
-    imageZoom: (vue_image_zoomer__WEBPACK_IMPORTED_MODULE_4___default())
+    imageZoom: imageZoom
   },
   data: function data() {
     return {
@@ -5096,7 +5101,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       submiting: false
     };
   },
-  computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_5__.mapGetters)({
+  computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_4__.mapGetters)({
     cart: 'cart',
     loggedIn: 'loggedIn',
     wishlist: 'wishlist',
@@ -5305,7 +5310,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     removeColor: function removeColor(color) {
       this.color = '';
     }
-  }, (0,vuex__WEBPACK_IMPORTED_MODULE_5__.mapActions)({
+  }, (0,vuex__WEBPACK_IMPORTED_MODULE_4__.mapActions)({
     addProductToCart: 'addProductToCart',
     addProductToWishList: 'addProductToWishList',
     createReviews: 'createReviews',
@@ -9987,6 +9992,8 @@ var Comments = __webpack_require__(/*! ./components/blog/Comments.vue */ "./reso
 
 var Images = __webpack_require__(/*! ./components/images/Images.vue */ "./resources/js/components/images/Images.vue").default;
 
+var ImageZoom = __webpack_require__(/*! vue-image-zoomer */ "./node_modules/vue-image-zoomer/dist/vueImageZoom.js").default;
+
 var token = document.head.querySelector('meta[name="csrf-token"]');
 Window.token = token.content;
 vue__WEBPACK_IMPORTED_MODULE_1__.default.filter('priceFormat', function (value) {
@@ -10015,7 +10022,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     ChangePassword: ChangePassword,
     Comments: Comments,
     SignUp: SignUp,
-    Images: Images
+    Images: Images,
+    ImageZoom: ImageZoom
   }
 });
 
@@ -53790,15 +53798,27 @@ var render = function() {
                                   "col-6 d-none d-lg-block d-xl-block  d-md-block  product-item"
                               },
                               [
-                                _c("div", { staticClass: "inner" }, [
-                                  _c("img", {
-                                    attrs: {
-                                      "data-zoom-image": img.image_to_show,
-                                      src: img.image_to_show,
-                                      alt: "product name"
-                                    }
-                                  })
-                                ])
+                                _c(
+                                  "div",
+                                  { staticClass: "inner" },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        "data-zoom-image": img.image_to_show,
+                                        src: img.image_to_show,
+                                        alt: "product name"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("image-zoom", {
+                                      attrs: {
+                                        regular: "img.image_to_show",
+                                        zoom: "path-to-zoom.jpg"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
                               ]
                             ),
                             _vm._v(" "),

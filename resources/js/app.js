@@ -39,6 +39,7 @@ const ResetPassword =  require('./components/auth/ResetPassword.vue').default
 const ChangePassword =  require('./components/auth/ChangePassword.vue').default
 const Comments =  require('./components/blog/Comments.vue').default
 const Images =  require('./components/images/Images.vue').default
+const ImageZoom = require('vue-image-zoomer').default;
 
 
 
@@ -73,6 +74,7 @@ const app = new Vue({
         Comments,
         SignUp,
         Images,
+        ImageZoom
     }   
 });
 

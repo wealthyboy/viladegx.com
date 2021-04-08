@@ -60,9 +60,22 @@
   
   <div class="container">
     <!-- Example row of columns -->
-    <div class="row">
-      
-      
+    <div class="row">     
+        <div data-title="" class="col-6  p-0 text-center">
+            <div class="banner-box">
+                <a class="portfolio-thumb" href="">
+                    <img src="https://avenuemontaigne.ng/uploads/LbTofMzhmOJE9MkpDGTba2uCmB7Y2yYtGew0uZPJ.jpg" alt="" />
+                </a>
+            </div>
+        </div> 
+
+        <div data-title="" class="col-6  p-0 text-center">
+            <div class="banner-box">
+                <a class="portfolio-thumb" href="">
+                    <img src="https://avenuemontaigne.ng/uploads/3ljHDEzjFhTKex6vIwz7B404M0Xxu1SvW024cDEt.jpg" alt="" />
+                </a>
+            </div>
+        </div>
     </div>
 
 
