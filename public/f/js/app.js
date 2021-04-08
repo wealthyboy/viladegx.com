@@ -6543,6 +6543,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
 }(jQuery);
 $(".megamenu-fixed-width").css("width", $(document).width());
+$('.btn-icon-group').on('click', function () {
+  console.log(true);
+});
 
 /***/ }),
 
