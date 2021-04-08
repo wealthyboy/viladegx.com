@@ -6227,7 +6227,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }
         }).done(function (res) {
           self.find('.product-wishlist-icon-fillled').removeClass('d-none');
-          $(this).find('.product-wishlist-icon').addClass('d-none');
+          self.find('.product-wishlist-icon').addClass('d-none');
         })["catch"](function () {
           console.log(false);
         });
