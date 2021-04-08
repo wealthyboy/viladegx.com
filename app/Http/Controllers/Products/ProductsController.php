@@ -80,6 +80,9 @@ class ProductsController extends Controller
     public function show(Request $request,Category $category,Product $product)  { 
         $page_title = "{$product->product_name}";
         $favorites ='';
+        $parent_category =  explode('-',$category->slug);
+        $parent_category =  $parent_category[0];
+
         $data= [];
         foreach ($product->parent_attributes as  $parent_attribute) {
             if ($parent_attribute->p_attribute_children()){
@@ -91,7 +94,7 @@ class ProductsController extends Controller
         $attributes = $attributes->count() && $product->product_type == 'variable' ? $attributes : '{}';
         $related_products = RelatedProduct::where(['product_id' => $product->id])->get();
         $product->load(["variants","variants.images","default_variation","default_variation.images"]);
-    	return view('fashion.products.show',compact('category','related_products','attributes','product','page_title'));
+    	return view('fashion.products.show',compact('category','parent_category','related_products','attributes','product','page_title'));
     }
 
     
