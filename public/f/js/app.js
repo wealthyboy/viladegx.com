@@ -4208,6 +4208,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -52853,8 +52854,15 @@ var render = function() {
     _c(
       "a",
       {
-        staticClass: "header-icon  pl-1 pr-2",
-        attrs: { href: "/fashion/wishlist" }
+        staticClass: "dropdown-toggle dropdown-arrow ",
+        attrs: {
+          href: "/fashion/wishlist",
+          role: "button",
+          "data-toggle": "dropdown",
+          "aria-haspopup": "true",
+          "aria-expanded": "false",
+          "data-display": "static"
+        }
       },
       [
         _c(
