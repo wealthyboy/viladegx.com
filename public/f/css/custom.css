@@ -30,6 +30,81 @@
     font-style: normal;
 }
 
+:root {
+    --primary-color: #342c27;
+    --fontSizeXS: 1.1rem;
+    --fontSizeS: 1.4rem;
+    --fontSizeM: 1.6rem;
+    --fontSizeMCondensed: 1.6rem;
+    --fontSizeL: 1.9rem;
+    --fontSizeLCondensed: 1.9rem;
+    --fontSizeXL: 2.8rem;
+    --fontSizeXXL: 7.3rem;
+    --fontSizeXXLBoldMobile: 2.6rem;
+    --fontSizeXXXLBold: 16.5rem;
+    --fontSizeXXXLBoldMobile: 12.67361vw;
+    --fontSizeTomXS: 2.2rem;
+    --fontSizeTomHeroMD: 4.7rem;
+    --fontSizeTomHeroLG: 5.6rem;
+    --fontSizeTomHeroXL: 7.3rem;
+    --fontSizeTomEditorialPostsSM: 4.2rem;
+    --fontSizeTomEditorial2PostsLG: 4.7rem;
+    --fontSizeTomEditorial2PostsXL: 5.6rem;
+    --fontSizeTomEditorial3PostsLG: 4.2rem;
+    --fontSizeTomEditorial3PostsXL: 4.7rem;
+    --lineHeightXS: 1.272;
+    --lineHeightS: 1.285;
+    --lineHeightM: 1.375;
+    --lineHeightMCondensed: 1.375;
+    --lineHeightL: 1.368;
+    --lineHeightLCondensed: 1.368;
+    --lineHeightXL: 1.318;
+    --lineHeightXXL: 1.068;
+    --lineHeightXXLBold: 1.286;
+    --lineHeightXXLBoldMobile: 1.231;
+    --lineHeightXXXLBold: 1.119;
+    --lineHeightTomXS: 1.318;
+    --lineHeightTomHeroMD: 1.234;
+    --lineHeightTomHeroLG: 1.25;
+    --lineHeightTomHeroXL: 1.26;
+    --lineHeightTomEditorialPostsSM: 1.238;
+    --lineHeightTomEditorial2PostsLG: 1.234;
+    --lineHeightTomEditorial2PostsXL: 1.25;
+    --lineHeightTomEditorial3PostsLG: 1.238;
+    --lineHeightTomEditorial3PostsXL: 1.234;
+    --letterSpacingNormal: normal;
+    --letterSpacingMCondensed: normal;
+    --letterSpacingLCondensed: normal;
+    --textTransformNone: none;
+    --textTransformUppercase: none;
+    --textTransformUppercaseBrand: none;
+    --displayTextTransform: uppercase;
+    --displayLineHeight: 1;
+    --displayFontSizeXs: 2.6rem;
+    --displayFontSizeSm: 3rem;
+    --displayFontSizeMd: 2.6rem;
+    --displayFontSizeLg: 3rem;
+    --displayFontSizeXl: 3rem;
+    --displayArabicLineHeight: 1.307;
+    --displayArabicLineHeightSm: 1.266;
+    --displayArabicLineHeightMd: 1.307;
+    --displayArabicLineHeightLg: 1.266;
+    --displayArabicLineHeightXl: 1.266;
+    --displayAsianLineHeight: 1.307;
+    --displayAsianLineHeightSm: 1.266;
+    --displayAsianLineHeightMd: 1.307;
+    --displayAsianLineHeightLg: 1.266;
+    --displayAsianLineHeightXl: 1.266;
+    --displayLargeLineHeight: 1;
+    --displayLargeTextTransform: uppercase;
+    --displayLargeFontSize: 3.2rem;
+    --displayLargeFontSizeSm: 4.8rem;
+    --displayLargeArabicLineHeight: 1.25;
+    --displayLargeArabicResponsiveLineHeight: 1.167;
+    --displayLargeAsianLineHeight: 1.25;
+    --displayLargeAsianResponsiveLineHeight: 1.167;
+}
+
 body {
     font-size: 14px;
     line-height: 1.7;
@@ -41,7 +116,7 @@ body {
 }
 
 ::selection {
-    background-color: #222;
+    background-color: var(--primary-color);
     color: #fff;
 }
 
@@ -86,6 +161,7 @@ h5.text-uppercase.mt-n3 {
 
 .breadcrumb-title {
     font-family: "Ams Extended D", sans-serif !important;
+    text-transform: uppercase;
 }
 
 strong,
@@ -127,8 +203,8 @@ input {
 }
 
 /***
-    Header
-  */
+  Header
+*/
 .header-middle {
     padding: 0px;
     margin-top: -15px;
@@ -214,6 +290,10 @@ input {
     margin-top: 137px;
 }
 
+.mobile-menu-container {
+    background-color: var(--primary-color) !important;
+}
+
 .header-bottom .input-group-append button svg {
     width: 30px;
     height: 30px;
@@ -259,8 +339,8 @@ input {
 }
 
 /*
-     Forms
-  */
+   Forms
+*/
 
 .form-control {
     height: 4.5rem;
@@ -335,8 +415,8 @@ button.add-to-wishlist svg {
 }
 
 /*
-    Carousel
-  */
+  Carousel
+*/
 
 .main-banner-slider .owl-dots {
     margin-top: -30px !important;
@@ -422,14 +502,14 @@ button.add-to-wishlist svg {
 }
 
 /*.checkbox-label input:checked ~ .checkbox-custom {
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    -webkit-transform: rotate(0deg) scale(1);
-    -ms-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-    opacity:1;
-    border: 2px solid #FFFFFF;
-  }*/
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity:1;
+  border: 2px solid #FFFFFF;
+}*/
 
 .checkbox-label .checkbox-custom::after {
     position: absolute;
@@ -452,20 +532,20 @@ button.add-to-wishlist svg {
 }
 
 /*.checkbox-label input:checked ~ .checkbox-custom::after {
-  -webkit-transform: rotate(45deg) scale(1);
-  -ms-transform: rotate(45deg) scale(1);
-  transform: rotate(45deg) scale(1);
-    content: "";
-    opacity: 1;
-    left: 5px;
-    top: 1px;
-    width: 2px;
-    height: 5px;
-    background-color: #fff;
-    border-width: 0 2px 2px 0;
-  border-radius: 0;
-  background: white;
-  }*/
+-webkit-transform: rotate(45deg) scale(1);
+-ms-transform: rotate(45deg) scale(1);
+transform: rotate(45deg) scale(1);
+  content: "";
+  opacity: 1;
+  left: 5px;
+  top: 1px;
+  width: 2px;
+  height: 5px;
+  background-color: #fff;
+  border-width: 0 2px 2px 0;
+border-radius: 0;
+background: white;
+}*/
 
 .checkbox-label input:checked ~ .checkbox-custom::after {
     -webkit-transform: rotate(45deg) scale(1);
@@ -539,6 +619,17 @@ button.add-to-wishlist svg {
     border-radius: 50%;
 }
 
+.inner-icon figure .btn-icon-group {
+    right: 0 !important;
+    top: 0 !important;
+}
+
+.btn-icon-group svg {
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+}
+
 .horizontal-filter {
     background-color: #fff;
 }
@@ -548,7 +639,6 @@ button.add-to-wishlist svg {
     color: #313131;
     font-size: 1.5rem;
     font-weight: 600;
-    font-family: inherit;
     line-height: 1.4;
     text-transform: uppercase;
 }
@@ -611,8 +701,8 @@ button.add-to-wishlist svg {
 }
 
 /**
-    Banners 
-  **/
+  Banners 
+**/
 
 .image-link {
     display: block;
@@ -946,7 +1036,7 @@ footer a:focus {
 }
 
 .footer {
-    background: #342c27;
+    background: var(--primary-color);
 }
 
 @media only screen and (max-width: 850px) {
@@ -984,5 +1074,10 @@ footer a:focus {
 
     .main.main-page {
         margin-top: 60px;
+    }
+
+    .header-icon svg,
+    .dropdown-arrow svg {
+        width: 21px;
     }
 }
