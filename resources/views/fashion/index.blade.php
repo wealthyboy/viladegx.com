@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('fashion_partials.top_banner')
+@include('fashion._partials.top_banner')
 
 <div class="container-fliud mt-3">
     <div  class="row align-items-start ">
