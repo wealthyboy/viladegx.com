@@ -145,7 +145,7 @@
 						</ul>
 					</nav>
 					<div class="search-bar float-right mt-2">
-					   <form class="mt-2" action="/fashion/search" method="get">
+					   <form  action="/fashion/search" method="get">
 							<div class="input-group mb-2">
 								<input type="text" name="q" class="form-control search-input" placeholder="Search">
 								<div class="input-group-append">
