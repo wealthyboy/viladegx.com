@@ -52874,7 +52874,7 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("span", { staticClass: "cart-count badge-circle" }, [
-          _vm._v(_vm._s(_vm.wishlist.length))
+          _vm._v(_vm._s(0))
         ])
       ]
     ),
