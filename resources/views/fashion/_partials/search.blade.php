@@ -8,7 +8,7 @@
 
 <div class="widget">
     <h3 class="widget-title ">
-        <a data-toggle="collapse" href="#widget-prices" role="button" class="bold" aria-expanded="true" aria-controls="widget-body-2">Prices</a>
+        <a data-toggle="collapse" href="#widget-prices" role="button" class="" aria-expanded="true" aria-controls="widget-body-2">Prices</a>
     </h3>
     <div class="collapsed bold" id="widget-prices">
         <div class="widget-body">
@@ -62,7 +62,7 @@
 @foreach($category_attributes as $category)
     <div  class="widget">
         <h3 class="widget-title">
-            <a class="collapsed bold"   data-toggle="collapse" href="#widget-body-4{{ $category->id }}" role="button" aria-expanded="true" aria-controls="widget-body-4{{ $category->id}}">{{ optional($category)->name }}</a>
+            <a class="collapsed "   data-toggle="collapse" href="#widget-body-4{{ $category->id }}" role="button" aria-expanded="true" aria-controls="widget-body-4{{ $category->id}}">{{ optional($category)->name }}</a>
         </h3>
         <div class="collapse"  id="widget-body-4{{ $category->id }}">
             <div class="widget-body">
