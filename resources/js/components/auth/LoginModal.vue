@@ -4,7 +4,7 @@
    <div class="modal-dialog" style="">        <!-- Modal content-->
         <div class="modal-content ">
             <div class="modal-header">
-                <div class="modal-title"><img width="100" height="100" :src="$root.settings.store_logo" /></div>
+                <div class="modal-title"><img width="100" height="100" :src="logo" /></div>
                  <span class="bold text-large "><button type="button" class="close" id="login_modal" data-dismiss="modal"><i class="fas fa-times"></i></button></span>
             </div>
             <div class="modal-body">
@@ -80,6 +80,9 @@ export default {
        ...mapGetters({
             errors: 'errors'
         }),
+        logo(){
+           '/images/logo/' +this.$root.settings.store_logo
+        }
     },
     methods:{
         ...mapActions({

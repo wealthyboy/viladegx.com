@@ -2230,9 +2230,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   components: {
     RegisterModal: _RegisterModal_vue__WEBPACK_IMPORTED_MODULE_0__.default
   },
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
+  computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
     errors: 'errors'
-  })),
+  })), {}, {
+    logo: function logo() {
+      '/images/logo/' + this.$root.settings.store_logo;
+    }
+  }),
   methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapActions)({
     login: 'login'
   })), {}, {
@@ -48948,11 +48952,7 @@ var render = function() {
             _c("div", { staticClass: "modal-header" }, [
               _c("div", { staticClass: "modal-title" }, [
                 _c("img", {
-                  attrs: {
-                    width: "100",
-                    height: "100",
-                    src: _vm.$root.settings.store_logo
-                  }
+                  attrs: { width: "100", height: "100", src: _vm.logo }
                 })
               ]),
               _vm._v(" "),
