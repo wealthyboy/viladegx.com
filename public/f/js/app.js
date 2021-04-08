@@ -5043,8 +5043,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Images: _Images_vue__WEBPACK_IMPORTED_MODULE_0__.default,
     LoginModal: _auth_LoginModal_vue__WEBPACK_IMPORTED_MODULE_1__.default,
     Pagination: _pagination_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__.default,
-    RegisterModal: _auth_RegisterModal_vue__WEBPACK_IMPORTED_MODULE_2__.default,
-    imageZoom: imageZoom
+    RegisterModal: _auth_RegisterModal_vue__WEBPACK_IMPORTED_MODULE_2__.default
   },
   data: function data() {
     return {

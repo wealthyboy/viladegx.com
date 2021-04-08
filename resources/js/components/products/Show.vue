@@ -228,7 +228,6 @@ export default {
        LoginModal,
        Pagination,
        RegisterModal,
-       imageZoom
     },
     data(){
         return {
