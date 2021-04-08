@@ -6232,7 +6232,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           url: "/api/wishlist",
           type: "POST",
           data: {
-            "product_id": self.data('pid')
+            "product_variation_id": self.data('pid')
           }
         }).done(function (res) {
           self.find('.product-wishlist-icon-fillled').removeClass('d-none');
