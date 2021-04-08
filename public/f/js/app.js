@@ -6212,6 +6212,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     },
     addToWishlist: function addToWishlist() {
       u(".product-wishlist-icon-fillled").on('click', function () {
+        //$(this).find('')
         console.log(true);
       });
     },
