@@ -4226,8 +4226,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })),
   created: function created() {
     this.getWislist();
-    var token = document.head.querySelector('meta[name="csrf-token"]');
-    this.token = token.content;
   },
   methods: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapActions)({
     getWislist: 'getWislist'
@@ -52915,9 +52913,11 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("span", { staticClass: "cart-count badge-circle" }, [
-            _vm._v(_vm._s(_vm.cartItemCount))
-          ])
+          _vm.cartItemCount >= 1
+            ? _c("span", { staticClass: "cart-count badge-circle" }, [
+                _vm._v(_vm._s(_vm.cartItemCount))
+              ])
+            : _vm._e()
         ]
       ),
       _vm._v(" "),
