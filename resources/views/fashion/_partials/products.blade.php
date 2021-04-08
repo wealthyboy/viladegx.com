@@ -19,7 +19,7 @@
 
                 @auth
                     <!-- // The user is authenticated... -->
-                    <div    data-pid="{{ $product->id }}" class="btn-icon-group">
+                    <div    data-pid="{{ $product->default_variation_id }}" class="btn-icon-group">
                 @endauth
 
                 @guest
