@@ -48952,7 +48952,11 @@ var render = function() {
             _c("div", { staticClass: "modal-header" }, [
               _c("div", { staticClass: "modal-title" }, [
                 _c("img", {
-                  attrs: { width: "100", height: "100", src: _vm.logo }
+                  attrs: {
+                    width: "100",
+                    height: "100",
+                    src: "images/logo/" + _vm.$root.settings.store_logo
+                  }
                 })
               ]),
               _vm._v(" "),
