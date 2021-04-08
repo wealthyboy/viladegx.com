@@ -2254,7 +2254,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.loading = true;
       this.login({
         email: this.email,
-        password: this.password
+        password: this.password,
+        context: this
       })["catch"](function (error) {
         _this.loading = false;
         _this.errors = error.response.data.error || error.response.data.errors;
@@ -10243,7 +10244,8 @@ var deleteWishlist = function deleteWishlist(_ref14, _ref15) {
 var login = function login(_ref16, _ref17) {
   var commit = _ref16.commit;
   var email = _ref17.email,
-      password = _ref17.password;
+      password = _ref17.password,
+      context = _ref17.context;
   return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/fashion/login', {
     email: email,
     password: password
@@ -10251,6 +10253,8 @@ var login = function login(_ref16, _ref17) {
     location.reload();
     return Promise.resolve();
   })["catch"](function (error) {
+    context.loading = false;
+
     if (error.response.status == 500) {
       commit('setFormErrors', {
         general: "We could register you.Please try again later"
@@ -49074,10 +49078,10 @@ var render = function() {
                           {
                             staticClass:
                               "ml-1 btn btn--primary btn-round btn-lg btn-block",
+                            class: { disabled: _vm.loading },
                             attrs: {
                               type: "submit",
                               id: "login_form_button",
-                              "data-loading": "Loading",
                               name: "login",
                               value: "Log in"
                             }

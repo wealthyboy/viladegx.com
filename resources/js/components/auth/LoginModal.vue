@@ -40,7 +40,7 @@
                             </div>
                             <div class="clearfix"></div>
                             <p class="form-field-wrapper form-row">
-                                <button type="submit"  id="login_form_button" data-loading="Loading" class="ml-1 btn btn--primary btn-round btn-lg btn-block" name="login" value="Log in">
+                                <button type="submit"  id="login_form_button"  :class="{ 'disabled': loading }" class="ml-1 btn btn--primary btn-round btn-lg btn-block" name="login" value="Log in">
                                     <span  v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                     Log In
                                 </button>
@@ -101,7 +101,8 @@ export default {
             this.loading = true
             this.login({
                 email:this.email,
-                password:this.password
+                password:this.password,
+                context: this
             }).catch((error)=>{
                 this.loading = false
                 this.errors = error.response.data.error ||  error.response.data.errors

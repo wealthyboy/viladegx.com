@@ -109,14 +109,15 @@ export const deleteWishlist = ({ commit },{id}) => {
     })
  }
 
-export const login = ({ commit },{ email,password }) => {
+export const login = ({ commit },{ email, password, context }) => {
     return axios.post('/fashion/login', {
         email: email,
         password:password
     }).then((response) => {
         location.reload()
         return Promise.resolve()
-    }).catch((error)=>{
+    }).catch((error)=> {
+        context.loading = false
         if ( error.response.status == 500 ){
             commit('setFormErrors', {
                 general: "We could register you.Please try again later"
