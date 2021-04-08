@@ -17,7 +17,7 @@
 	<link rel="icon" type="image/png" href="/img/favicon-96x96.png">
 	<link rel="apple-touch-icon" href="/img/favicon-96x96.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/f/css/bootstrap.min.css">
 	<!-- Main CSS File -->
 	<link rel="stylesheet" href="/f/css/style.min.css?version={{ str_random(6) }}">
 	<link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
