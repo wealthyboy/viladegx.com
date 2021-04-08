@@ -78,7 +78,7 @@ export  const updateCartMeta =  ({commit}, payload)  => {
 
 export const addProductToWishList = ({ commit,dispatch },{ product_variation_id }) => {
 
-    
+
     return axios.post('/api/wishlist', {
         product_variation_id: product_variation_id,
     }).then((response) => {
@@ -110,7 +110,7 @@ export const deleteWishlist = ({ commit },{id}) => {
  }
 
 export const login = ({ commit },{ email,password }) => {
-    return axios.post('/login', {
+    return axios.post('/fashion/login', {
         email: email,
         password:password
     }).then((response) => {

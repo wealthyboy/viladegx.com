@@ -10244,7 +10244,7 @@ var login = function login(_ref16, _ref17) {
   var commit = _ref16.commit;
   var email = _ref17.email,
       password = _ref17.password;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/login', {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/fashion/login', {
     email: email,
     password: password
   }).then(function (response) {
