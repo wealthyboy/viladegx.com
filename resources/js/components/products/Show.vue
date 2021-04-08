@@ -18,7 +18,6 @@
                             <div class="col-6 d-none d-lg-block d-xl-block  d-md-block  product-item">
                                 <div class="inner">
                                     <img  :data-zoom-image="img.image_to_show" :src="img.image_to_show"   alt="product name">
-                                    
                                 </div>
                             </div><!-- End .col-6 -->
                             <div  v-for="image in img.images" :key="image.id"  class="col-6 d-none d-xl-block  d-md-block  product-item">
@@ -33,11 +32,6 @@
                         </div><!-- End .row -->
                     </div><!-- End .product-single-gallery -->
                 </div><!-- End .col-md-8 -->
-
-
-
-
-
 
                 <div id="imageModal" class="image-modal">
                     <span class="image-modal-close close">&times;</span>
@@ -63,7 +57,6 @@
                                             <img  class="product-single-image"   :data-zoom-image="image.image" :src="image.image"  v-if="image.image !== ''"  :alt="image.image_tn">
                                         </div>
                                     </div>
-                                    
                                 </div>
                                 <div class="d-none d-sm-block d-md-none">
                                     <div class="prod-thumbnail-under owl-dots tn" id='carousel-custom-dots'>
