@@ -210,6 +210,8 @@ Route::group(['middleware' => 'currencyByIp','prefix' => '/services'], function(
     Auth::routes();
     Route::get('login/{service}',                 'Auth\SocialLoginController@redirect');
     Route::get('login/{service}/callback',        'Auth\SocialLoginController@callback');
+    Route::post('login/',                         'Auth\LoginController@login');
+
     Route::get('account',                         'Account\AccountController@index')->name('account');
     Route::post('account',                        'Account\AccountController@update');
     Route::get('products/{category}',             'Products\ProductsController@index');
