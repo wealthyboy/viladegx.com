@@ -1,5 +1,5 @@
 
-<div class="top-notice text-white bg--gray mt-5">
+<div class="top-notice text-white bg--dark mt-5">
     <div class="container-fluid text-center">
         <div class="row">
             
