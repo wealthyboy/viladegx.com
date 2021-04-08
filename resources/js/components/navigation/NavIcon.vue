@@ -32,14 +32,15 @@
             </div><!-- End .header-menu  -->
         </div>
             <a href="/fashion/wishlist" class="header-icon  pl-1 pr-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"></path></svg>
+                <span  class="cart-count badge-circle">{{wishlistCount}}</span>
             </a>
 
 
         <div class="dropdown cart-dropdown">
             <a href="#" class="dropdown-toggle dropdown-arrow " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7 8V7a5 5 0 1110 0v1h5v14H2V12a4 4 0 014-4h1zm2-1a3 3 0 116 0v1H9V7zm-2 3v3h2v-3h6v3h2v-3h3v10H4v-8a2 2 0 012-2h1z"></path></svg>
-                <span class="cart-count badge-circle">1</span>
+                <span class="cart-count badge-circle">{{ cartItemCount }}</span>
             </a>
 
             

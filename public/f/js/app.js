@@ -4207,6 +4207,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -52875,7 +52876,11 @@ var render = function() {
               }
             })
           ]
-        )
+        ),
+        _vm._v(" "),
+        _c("span", { staticClass: "cart-count badge-circle" }, [
+          _vm._v(_vm._s(_vm.wishlistCount))
+        ])
       ]
     ),
     _vm._v(" "),
@@ -52913,7 +52918,9 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("span", { staticClass: "cart-count badge-circle" }, [_vm._v("1")])
+          _c("span", { staticClass: "cart-count badge-circle" }, [
+            _vm._v(_vm._s(_vm.cartItemCount))
+          ])
         ]
       ),
       _vm._v(" "),
