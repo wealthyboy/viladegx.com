@@ -5758,7 +5758,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     initialised: !1,
     mobile: !1,
     init: function init() {
-      this.initialised || (this.initialised = !0, this.checkMobile(), this.stickyHeader(), this.headerSearchToggle(), this.mMenuIcons(), this.mMenuToggle(), this.mobileMenu(), this.scrollToTop(), this.quantityInputs(), this.countTo(), this.tooltip(), this.popover(), this.changePassToggle(), this.changeBillToggle(), this.catAccordion(), this.toggleFilter(), this.toggleSidebar(), this.productTabSroll(), this.scrollToElement(), this.loginPopup(), this.modalView(), this.productManage(), this.ratingTooltip(), this.windowClick(), this.popupMenu(), this.topNotice(), this.ratingForm(), this.parallax(), this.sideMenu(), u.fn.superfish && this.menuInit(), u.fn.owlCarousel && this.owlCarousels(), "object" == (typeof noUiSlider === "undefined" ? "undefined" : _typeof(noUiSlider)) && this.filterSlider(), u.fn.themeSticky && this.stickySidebar(), u.fn.magnificPopup && this.lightBox(), u.fn.Morphext && this.wordRotate(), u.fn.isotope && this.isotopes(), u.fn.elevateZoom && this.zoomImage());
+      this.initialised || (this.initialised = !0, this.checkMobile(), this.stickyHeader(), this.headerSearchToggle(), this.mMenuIcons(), this.mMenuToggle(), this.mobileMenu(), this.scrollToTop(), this.addToWishlist(), this.quantityInputs(), this.countTo(), this.tooltip(), this.popover(), this.changePassToggle(), this.changeBillToggle(), this.catAccordion(), this.toggleFilter(), this.toggleSidebar(), this.productTabSroll(), this.scrollToElement(), this.loginPopup(), this.modalView(), this.productManage(), this.ratingTooltip(), this.windowClick(), this.popupMenu(), this.topNotice(), this.ratingForm(), this.parallax(), this.sideMenu(), u.fn.superfish && this.menuInit(), u.fn.owlCarousel && this.owlCarousels(), "object" == (typeof noUiSlider === "undefined" ? "undefined" : _typeof(noUiSlider)) && this.filterSlider(), u.fn.themeSticky && this.stickySidebar(), u.fn.magnificPopup && this.lightBox(), u.fn.Morphext && this.wordRotate(), u.fn.isotope && this.isotopes(), u.fn.elevateZoom && this.zoomImage());
     },
     checkMobile: function checkMobile() {
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? this.mobile = !0 : this.mobile = !1;
@@ -6208,6 +6208,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         u("html, body").animate({
           scrollTop: 0
         }, 1200), e.preventDefault();
+      });
+    },
+    addToWishlist: function addToWishlist() {
+      u(".btn-icon-group").on('click', function () {
+        console.log(true);
       });
     },
     newsletterPopup: function newsletterPopup() {
