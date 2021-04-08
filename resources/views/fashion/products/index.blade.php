@@ -19,7 +19,7 @@
                             </ol>
                         </div>
                     </nav>
-                    <h3 class="breadcrumb-title"> DESIGNER {{ $breadcrumb }} FOR  {{ $parent_category }}</h3>
+                    <h2 class="breadcrumb-title"> DESIGNER {{ $breadcrumb }} FOR  {{ $parent_category }}</h2>
                     <p class="text-center"> {{ isset($category) ? $category->description : '' }}</p>
                 </div>
             </div>

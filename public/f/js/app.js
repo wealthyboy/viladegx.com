@@ -6212,7 +6212,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     },
     addToWishlist: function addToWishlist() {
       u(".btn-icon-group").on('click', function () {
-        $(this).find('.product-wishlist-icon-fillled').removeClass('d-none');
+        var self = $(this);
+        self.find('.product-wishlist-icon-fillled').removeClass('d-none');
+        $.ajax({
+          url: "/api/wishlist",
+          type: "POST",
+          data: {
+            "product_id": self.data('pid')
+          }
+        }).done(function (res) {
+          console.log(true);
+        });
         $(this).find('.product-wishlist-icon').addClass('d-none');
       });
     },
