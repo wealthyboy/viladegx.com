@@ -36,13 +36,4 @@
         </p>
         
 
-        <div class="mt-4 pt-4 text-center border-top">
-            <div class="social-login-wrapper">
-                <div class="btn-group">
-                    <a class="btn btn-social-login btn-md btn-gplus mb-1"><i class="fab fa-google pt-1"></i><span>Google</span></a>
-                    <a class="btn btn-social-login btn-md btn-facebook mb-1"><i class="icon-facebook"></i><span>Facebook</span></a>
-                </div>
-            </div>
-            
-        </div>
     </form>
