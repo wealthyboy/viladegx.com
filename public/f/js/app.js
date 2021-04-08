@@ -6212,7 +6212,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     },
     addToWishlist: function addToWishlist() {
       u(".btn-icon-group").on('click', function () {
-        $(this).find('.product-wishlist-icon-fillled').removeClass('d-none').addClass('d-none');
+        $(this).find('.product-wishlist-icon-fillled').removeClass('d-none');
+        $(this).find('.product-wishlist-icon').addClass('d-none');
       });
     },
     newsletterPopup: function newsletterPopup() {
