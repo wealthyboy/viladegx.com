@@ -87,5 +87,7 @@
 
 
 <login-modal />
+<register-modal />
+
     
 

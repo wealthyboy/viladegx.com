@@ -2217,6 +2217,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -9984,6 +9987,8 @@ var NavIcon = __webpack_require__(/*! ./components/navigation/NavIcon.vue */ "./
 
 var LoginModal = __webpack_require__(/*! ./components/auth/LoginModal.vue */ "./resources/js/components/auth/LoginModal.vue").default;
 
+var RegisterModal = __webpack_require__(/*! ./components/auth/RegisterModal.vue */ "./resources/js/components/auth/RegisterModal.vue").default;
+
 var CartSummary = __webpack_require__(/*! ./components/cart/Cart.vue */ "./resources/js/components/cart/Cart.vue").default;
 
 var NewsLetter = __webpack_require__(/*! ./components/newsletter/Index.vue */ "./resources/js/components/newsletter/Index.vue").default;
@@ -10025,6 +10030,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     ProductShow: ProductShow,
     NavIcon: NavIcon,
     LoginModal: LoginModal,
+    RegisterModal: RegisterModal,
     CartSummary: CartSummary,
     NewsLetter: NewsLetter,
     FavoriteIndex: FavoriteIndex,
