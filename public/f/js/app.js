@@ -6226,9 +6226,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             "product_id": self.data('pid')
           }
         }).done(function (res) {
-          console.log(true);
+          self.find('.product-wishlist-icon-fillled').removeClass('d-none');
+          $(this).find('.product-wishlist-icon').addClass('d-none');
+        })["catch"](function () {
+          console.log(false);
         });
-        $(this).find('.product-wishlist-icon').addClass('d-none');
       });
     },
     newsletterPopup: function newsletterPopup() {
