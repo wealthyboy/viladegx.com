@@ -161,6 +161,7 @@ h5.text-uppercase.mt-n3 {
 
 .breadcrumb-title {
     font-family: "Ams Extended D", sans-serif !important;
+    text-transform: uppercase;
 }
 
 strong,
