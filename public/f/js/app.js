@@ -4222,7 +4222,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
     cartItemCount: 'cartItemCount',
-    wishlistCount: 'wishlistCount'
+    wishlist: 'wishlist'
   })),
   created: function created() {
     this.getWislist();
@@ -52874,7 +52874,7 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("span", { staticClass: "cart-count badge-circle" }, [
-          _vm._v(_vm._s(_vm.wishlistCount))
+          _vm._v(_vm._s(_vm.wishlist.length))
         ])
       ]
     ),
