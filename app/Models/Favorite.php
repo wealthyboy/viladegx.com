@@ -31,19 +31,19 @@ class Favorite extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function scopeCreateOrDelete(Builder $builder,$user_id,$product_id){
+    public function scopeCreateOrDelete(Builder $builder,$user_id,$id){
 
-       $favorite = $builder->where(['user_id'=>$user_id,'product_id'=> $product_id])->first();
-        if ( null !== $favorite ) { 
-            $favorite->delete();
-            return false;
-        }  else {
-            $favorite = new Favorite;
-            $favorite->user_id = $user_id;
-            $favorite->product_id = $product_id;
-            $favorite->save();
-            return true;
-        }
-    }
+        $favorite = $builder->where(['user_id'=>$user_id,'product_variation_id'=>$id])->first();
+         if ( null !== $favorite ) { 
+             $favorite->delete();
+             return false;
+         }  else {
+             $favorite = new Favorite;
+             $favorite->user_id = $user_id;
+             $favorite->product_variation_id = $id;
+             $favorite->save();
+             return true;
+         }
+     }
 	
 }
