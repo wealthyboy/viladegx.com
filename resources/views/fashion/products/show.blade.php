@@ -39,7 +39,7 @@
                 </figure>
                 <div class="product-details">
                     <h3 class="product-title">
-                        <a href="{{ optional($related_product->product_variation)->link }}">{{ optional($related_product->product)->name }}</a>
+                        <a href="{{ optional($related_product->product_variation)->link }}">{{ optional($related_product->product)->product_name }}</a>
                     </h3>
                     <div class="price-box">
                         @if (optional($related_product->product)->default_discounted_price ) 
