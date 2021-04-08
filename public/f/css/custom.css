@@ -618,6 +618,11 @@ background: white;
     border-radius: 50%;
 }
 
+.inner-icon figure .btn-icon-group {
+    right: 0 !important;
+    top: 0 !important;
+}
+
 .btn-icon-group svg {
     width: 27px;
     height: 27px;
