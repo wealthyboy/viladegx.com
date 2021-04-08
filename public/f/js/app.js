@@ -9935,8 +9935,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+/* harmony import */ var vue_image_zoomer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-image-zoomer */ "./node_modules/vue-image-zoomer/dist/vueImageZoom.js");
+/* harmony import */ var vue_image_zoomer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_image_zoomer__WEBPACK_IMPORTED_MODULE_1__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -9992,14 +9994,13 @@ var Comments = __webpack_require__(/*! ./components/blog/Comments.vue */ "./reso
 
 var Images = __webpack_require__(/*! ./components/images/Images.vue */ "./resources/js/components/images/Images.vue").default;
 
-var ImageZoom = __webpack_require__(/*! vue-image-zoomer */ "./node_modules/vue-image-zoomer/dist/vueImageZoom.js").default;
 
 var token = document.head.querySelector('meta[name="csrf-token"]');
 Window.token = token.content;
-vue__WEBPACK_IMPORTED_MODULE_1__.default.filter('priceFormat', function (value) {
+vue__WEBPACK_IMPORTED_MODULE_2__.default.filter('priceFormat', function (value) {
   return new Intl.NumberFormat().format(value);
 });
-var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
+var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   el: '#app',
   store: _store__WEBPACK_IMPORTED_MODULE_0__.default,
   data: Window.user,
