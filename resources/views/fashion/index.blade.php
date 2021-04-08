@@ -2,20 +2,7 @@
 
 @section('content')
 
-<div class="top-notice text-white bg--gray mt-5">
-    <div class="container-fluid text-center">
-        <div class="row">
-            
-            <div class="col-12">
-                <h5 class="d-inline-block text-uppercase mb-0">
-                    Incoming | <a href="#">Shop the latest arrivals here</a>
-                </h5>
-            </div>
-
-        </div>
-        
-    </div><!-- End .container -->
-</div>
+@include('fashion_partials.top_banner')
 
 <div class="container-fliud mt-3">
     <div  class="row align-items-start ">
