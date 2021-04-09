@@ -6249,6 +6249,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (self.data('iswishlist') == true) {
             self.find('.product-wishlist-icon-fillled').addClass('d-none');
             self.find('.product-wishlist-icon').removeClass('d-none');
+            self.data('iswishlist', 0);
           } else {
             self.find('.product-wishlist-icon-fillled').removeClass('d-none');
             self.find('.product-wishlist-icon').addClass('d-none');
