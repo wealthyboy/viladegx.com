@@ -10,8 +10,24 @@ require ('../../public/f/js/loadProducts.jquery.js')
 
 //Wishlist Code
 
-let wishlist = document.querySelectorAll('.btn-icon-group')
-    console.log(wishlist)
+// let wishlist = document.querySelectorAll('.btn-icon-group')
+//     wishlist.forEach(function(elm,key){
+//         values.push(elm.value)
+//     }) 
+   $(".btn-icon-group").on('click',function(){
+        let self = $(this)
+        $.ajax({
+            url: "/api/wishlist",
+            type: "POST",
+            data: { "product_variation_id": self.data('pid') }
+        }).done(function(res){
+            self.find('.product-wishlist-icon-fillled').removeClass('d-none')
+            self.find('.product-wishlist-icon').addClass('d-none')
+            store.commit('appendToWishlist',res.data)
+        }).catch(function(){
+            console.log(false)
+        })
+    })
 
 
 
