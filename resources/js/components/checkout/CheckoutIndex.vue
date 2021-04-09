@@ -122,7 +122,7 @@
                                 </div>
 
                                 <div class="cart-discount  mt-3 col-sm-12">
-                                    <h4>Apply Discount Code</h4>
+                                    <label>Apply Discount Code</label>
                                     <div class="input-group">
                                         <input type="text" v-model="coupon"  class="form-control" placeholder="Enter discount code" required="">
                                         <div class="input-group-append">
@@ -134,9 +134,8 @@
                                     </div><!-- End .input-group -->
                                 </div>
                         
-                                <span v-if="coupon_error"  class="text-capitalize bold ml-3 text-danger">{{coupon_error}}</span >
+                                <small v-if="coupon_error"  class="text-capitalize bold ml-3 text-danger">{{coupon_error}}</small>
 
-                                <h4>Choose Delivery Option</h4>
                                 
                         
                                 <p  class="">
