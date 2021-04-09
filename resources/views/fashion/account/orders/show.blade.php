@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-9  pb-3">
                 <h2 class="">Your Order</h2>
-                <section class="top mb-3">
+                <section class="top  bg--light mb-3">
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
