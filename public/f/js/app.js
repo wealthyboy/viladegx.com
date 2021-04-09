@@ -5037,6 +5037,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -9983,12 +9989,6 @@ __webpack_require__(/*! ../../public/f/js/plugins.js */ "./public/f/js/plugins.j
 __webpack_require__(/*! ../../public/f/js/main.min.js */ "./public/f/js/main.min.js");
 
 __webpack_require__(/*! ../../public/f/js/loadProducts.jquery.js */ "./public/f/js/loadProducts.jquery.js"); //Wishlist Code
-// let wishlist = document.querySelectorAll('.btn-icon-group')
-//     wishlist.forEach(function(elm,key){
-//         elm.addEventListener('click', function(e){
-//            console.log(e,this)
-//         },false)
-//     }) 
 // $(".btn-icon-group").on('click',function(){
 //     let self = $(this)
 //     if ( self.data('pid') == 0 ) { return; }
@@ -54575,12 +54575,30 @@ var render = function() {
             "div",
             { staticClass: "row" },
             [
-              _c("div", {
-                staticClass:
-                  "col-md-6 d-sm-block d-md-none product-single-gallery"
-              }),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "col-md-6 d-sm-block d-md-none product-single-gallery"
+                },
+                [
+                  _c("images", {
+                    attrs: { image: _vm.image, images: _vm.images }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-7" }),
+              _c(
+                "div",
+                { staticClass: "col-md-7" },
+                [
+                  _c("images", {
+                    attrs: { image: _vm.image, images: _vm.images }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
               _vm._l(_vm.variant_images, function(img, index) {
                 return _c(
@@ -54595,32 +54613,55 @@ var render = function() {
                       "div",
                       { staticClass: "product-single-gallery popup-gallery" },
                       [
-                        _c("div", { staticClass: "row no-gutters" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "col-6 d-none d-lg-block d-xl-block  d-md-block  product-item"
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "inner" },
-                                [
-                                  _c("image-zoom", {
+                        _c(
+                          "div",
+                          { staticClass: "row no-gutters" },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "col-6 d-none d-lg-block d-xl-block  d-md-block  product-item"
+                              },
+                              [
+                                _c("div", { staticClass: "inner" }, [
+                                  _c("img", {
                                     attrs: {
-                                      regular:
-                                        "https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp",
-                                      zoom:
-                                        "https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp"
+                                      "data-zoom-image": img.image_to_show,
+                                      src: img.image_to_show,
+                                      alt: "product name"
                                     }
                                   })
-                                ],
-                                1
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _vm._l(img.images, function(image) {
+                              return _c(
+                                "div",
+                                {
+                                  key: image.id,
+                                  staticClass:
+                                    "col-6 d-none d-xl-block  d-md-block  product-item"
+                                },
+                                [
+                                  _c("div", { staticClass: "inner" }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: image.image,
+                                        "data-zoom-image": image.image,
+                                        alt: "product name"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _vm._m(0, true)
+                                  ])
+                                ]
                               )
-                            ]
-                          )
-                        ])
+                            })
+                          ],
+                          2
+                        )
                       ]
                     )
                   ]
@@ -55251,7 +55292,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", { staticClass: "product-single-tabs" }, [
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c("div", { staticClass: "tab-content " }, [
               _c(
@@ -55279,7 +55320,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(1)
+              _vm._m(2)
             ])
           ])
         ]
@@ -55293,6 +55334,14 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "prod-full-screen" }, [
+      _c("i", { staticClass: "fas fa-search-plus fa-3x" })
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
