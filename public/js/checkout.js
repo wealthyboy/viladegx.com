@@ -23160,10 +23160,7 @@ var render = function() {
                               _c("div", { staticClass: "col-md-9 col-6" }, [
                                 _c(
                                   "div",
-                                  {
-                                    staticClass:
-                                      "tag mb-1 brand-name bold color--gray"
-                                  },
+                                  { staticClass: "tag mb-1 brand-name bold" },
                                   [_vm._v(_vm._s(cart.brand))]
                                 ),
                                 _vm._v(" "),

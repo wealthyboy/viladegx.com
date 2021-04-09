@@ -223,7 +223,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 col-6">
-                                    <div class="tag mb-1 brand-name bold color--gray">{{ cart.brand }}</div>
+                                    <div class="tag mb-1 brand-name bold">{{ cart.brand }}</div>
                                     <div><a href="#">{{ cart.product_name }}</a></div>
                                     <!--Product Ratting-->
                                     <div class="product-item-prices d-flex"  v-if="cart.product_variation.discounted_price">
