@@ -71,7 +71,7 @@
                                 name="address" 
                             >
                             <span   v-if="errors.address">
-                                <small   class="text-danger  help-block">{{ formatError(errors.address) }}</small>
+                                <small  class="text-danger  help-block">{{ formatError(errors.address) }}</small>
                             </span>
                         </p>
                         <p class="form-group reduce-gutters col-lg-12">

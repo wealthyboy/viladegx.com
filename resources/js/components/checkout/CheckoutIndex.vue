@@ -133,7 +133,6 @@
                                         </div>
                                     </div><!-- End .input-group -->
                                     <small v-if="coupon_error"  class="text-capitalize bold ml-3 text-danger">{{coupon_error}}</small>
-
                                 </div>
                         
 
