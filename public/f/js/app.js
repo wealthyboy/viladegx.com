@@ -4229,13 +4229,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     //this.getWislist()
     axios.get('/api/wishlist').then(function (response) {
-      document.getElementById('js-loading').style.display = 'none';
+      console.log(response);
 
       _this.$store.commit('setWishlist', response.data.data);
+
+      console;
     })["catch"](function (error) {
       console.log("could not get wishlist");
     });
-    console.log(this.wishlist);
   },
   methods: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapActions)({
     getWislist: 'getWislist'
