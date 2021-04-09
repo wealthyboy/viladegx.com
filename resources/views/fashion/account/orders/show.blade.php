@@ -13,7 +13,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
-                                <h4 class="text-uppercas">Shipping Address</h4>
+                                <h4 class="text-uppercase">Shipping Address</h4>
                                 <span id="">{{ optional($order->address)->first_name }} {{ optional($order->address)->last_name }}</span>
                                     <br />{{ optional($order->address)->address }}
                                     <br /> {{ optional($order->address)->city }} &nbsp;
