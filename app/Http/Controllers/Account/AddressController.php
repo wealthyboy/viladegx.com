@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Account;
 
 
-use App\Address;
+use App\Models\Address;
+use App\Models\User;
+use App\Models\State;
+use App\Models\Location;
 
-use App\User;
+
 
 use Illuminate\Support\Facades\Auth;
 
 use Validator;
-use App\State;
 use App\Http\Controllers\Controller;
-use App\Location;
 
 use Illuminate\Http\Request;
 
