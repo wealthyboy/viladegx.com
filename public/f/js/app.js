@@ -4229,11 +4229,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     //this.getWislist()
     axios.get('/api/wishlist').then(function (response) {
-      console.log(response);
-
       _this.$store.commit('setWishlist', response.data.data);
-
-      console;
     })["catch"](function (error) {
       console.log("could not get wishlist");
     });
@@ -52917,7 +52913,7 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("span", { staticClass: "wishlist-count" }, [
-          _vm._v(_vm._s(_vm.wishlist))
+          _vm._v(_vm._s(_vm.wishlist.length))
         ])
       ]
     ),
