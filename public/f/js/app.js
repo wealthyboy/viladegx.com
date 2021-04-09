@@ -52011,7 +52011,7 @@ var render = function() {
                                   "help-block error  text-danger text-sm-left"
                               },
                               [
-                                _c("strong", { staticClass: "text-danger" }, [
+                                _c("small", { staticClass: "text-danger" }, [
                                   _vm._v(
                                     _vm._s(
                                       _vm.formatError(_vm.errors.first_name)
@@ -52079,7 +52079,7 @@ var render = function() {
                                   "help-block error  text-danger text-sm-left"
                               },
                               [
-                                _c("strong", { staticClass: "text-danger" }, [
+                                _c("small", { staticClass: "text-danger" }, [
                                   _vm._v(
                                     _vm._s(
                                       _vm.formatError(_vm.errors.last_name)
@@ -52149,7 +52149,7 @@ var render = function() {
                                   },
                                   [
                                     _c(
-                                      "strong",
+                                      "small",
                                       { staticClass: "text-danger" },
                                       [
                                         _vm._v(
@@ -52225,7 +52225,7 @@ var render = function() {
                                   },
                                   [
                                     _c(
-                                      "strong",
+                                      "small",
                                       { staticClass: "text-danger" },
                                       [
                                         _vm._v(
@@ -52294,8 +52294,8 @@ var render = function() {
                         _vm.errors.address
                           ? _c("span", [
                               _c(
-                                "span",
-                                { staticClass: "text-danger bold help-block" },
+                                "small",
+                                { staticClass: "text-danger  help-block" },
                                 [
                                   _vm._v(
                                     _vm._s(_vm.formatError(_vm.errors.address))
@@ -52390,7 +52390,7 @@ var render = function() {
                         _vm._v(" "),
                         _vm.errors.city
                           ? _c("span", [
-                              _c("strong", { staticClass: "text-danger" }, [
+                              _c("small", { staticClass: "text-danger" }, [
                                 _vm._v(_vm._s(_vm.formatError(_vm.errors.city)))
                               ])
                             ])
@@ -52599,7 +52599,7 @@ var render = function() {
                                 attrs: { role: "" }
                               },
                               [
-                                _c("strong", { staticClass: "text-danger" }, [
+                                _c("small", { staticClass: "text-danger" }, [
                                   _vm._v(" Please select your state")
                                 ])
                               ]

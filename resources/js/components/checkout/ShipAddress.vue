@@ -13,7 +13,7 @@
                             name="first_name"
                             >
                             <span class="help-block error  text-danger text-sm-left" v-if="errors.first_name">
-                                <strong   class="text-danger">{{ formatError(errors.first_name) }}</strong>
+                                <small   class="text-danger">{{ formatError(errors.first_name) }}</small>
                             </span>
                         </p>
                         <p class="form-group reduce-gutters col-lg-6">
@@ -28,7 +28,7 @@
                                 name="last_name" 
                             >
                             <span class="help-block error  text-danger text-sm-left" v-if="errors.last_name">
-                                <strong   class="text-danger">{{ formatError(errors.last_name) }}</strong>
+                                <small   class="text-danger">{{ formatError(errors.last_name) }}</small>
                             </span>
                         </p>
 
@@ -42,7 +42,7 @@
                             name="email"
                             >
                             <span class="help-block error  text-danger text-sm-left" v-if="errors.first_name">
-                                <strong   class="text-danger">{{ formatError(errors.first_name) }}</strong>
+                                <small   class="text-danger">{{ formatError(errors.first_name) }}</small>
                             </span>
                         </p>
                         <p  v-if="meta.isAdmin" class="form-group reduce-gutters col-lg-6">
@@ -57,7 +57,7 @@
                                 name="phone_number" 
                             >
                             <span class="help-block error  text-danger text-sm-left" v-if="errors.last_name">
-                                <strong   class="text-danger">{{ formatError(errors.last_name) }}</strong>
+                                <small   class="text-danger">{{ formatError(errors.last_name) }}</small>
                             </span>
                         </p>
                         <p class="form-group reduce-gutters col-md-12">
@@ -71,7 +71,7 @@
                                 name="address" 
                             >
                             <span   v-if="errors.address">
-                                <span   class="text-danger bold help-block">{{ formatError(errors.address) }}</span>
+                                <small   class="text-danger  help-block">{{ formatError(errors.address) }}</small>
                             </span>
                         </p>
                         <p class="form-group reduce-gutters col-lg-12">
@@ -90,7 +90,7 @@
                                 name="city"
                             >
                             <span  v-if="errors.city">
-                                <strong  class="text-danger">{{ formatError(errors.city) }}</strong>
+                                <small  class="text-danger">{{ formatError(errors.city) }}</small>
                             </span>
                         </p>
                         <p class="form-group  reduce-gutters col-lg-6">
@@ -118,7 +118,7 @@
                                 <option :value="state.id" v-for="(state,index) in states" :key="state.id" :selected="[index ? 'selected': '']">{{ state.name }}</option>
                             </select>
                             <span  class="text-danger" role="" v-if="errors.state_id">
-                                <strong   class="text-danger"> Please select your state</strong>
+                                <small   class="text-danger"> Please select your state</small>
                             </span>
                         </p>
 
