@@ -6224,29 +6224,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, 1200), e.preventDefault();
       });
     },
-    addToWishlist: function addToWishlist() {
-      u(".btn-icon-group").on('click', function () {
-        var self = $(this);
-
-        if (self.data('pid') == 0) {
-          return;
-        }
-
-        $.ajax({
-          url: "/api/wishlist",
-          type: "POST",
-          data: {
-            "product_variation_id": self.data('pid')
-          }
-        }).done(function (res) {
-          self.find('.product-wishlist-icon-fillled').removeClass('d-none');
-          self.find('.product-wishlist-icon').addClass('d-none');
-          console.log(store);
-          store.commit('appendToWishlist', res.data);
-        })["catch"](function () {
-          console.log(false);
-        });
-      });
+    addToWishlist: function addToWishlist() {// u(".btn-icon-group").on('click',function(){
+      //   let self = $(this)
+      //   if ( self.data('pid') == 0 ) { return; }
+      //   $.ajax({
+      //     url: "/api/wishlist",
+      //     type: "POST",
+      //     data: { "product_variation_id": self.data('pid') }
+      //   }).done(function(res){
+      //     self.find('.product-wishlist-icon-fillled').removeClass('d-none')
+      //     self.find('.product-wishlist-icon').addClass('d-none')
+      //     console.log(store)
+      //     store.commit('appendToWishlist',res.data)
+      //   }).catch(function(){
+      //     console.log(false)
+      //   })
+      // })
     },
     newsletterPopup: function newsletterPopup() {
       u.magnificPopup.open({
