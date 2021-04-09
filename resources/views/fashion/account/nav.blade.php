@@ -18,7 +18,7 @@
                     class="list-group-item list-group-item-action bold text-uppercase p-4"><i class="fas fa-sign-out-alt left"></i> Logout
                     
                     
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                <form id="logout-form" action="/fashion/logout" method="POST" style="display: none;">
                     @csrf
                 </form>      
             </a>

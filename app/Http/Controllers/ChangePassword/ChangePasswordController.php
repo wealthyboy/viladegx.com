@@ -21,6 +21,6 @@ class ChangePasswordController extends Controller
         $page_title = 'Change Password';
         $user = $request->user();
         $active = true;
-        return view('account.change_password.index',compact('active','page_title','user'));
+        return view('fashion.account.change_password.index',compact('active','page_title','user'));
     }
 }

@@ -102,7 +102,7 @@ class AddressController extends Controller
 					]);
 				}
 					
-				return redirect('/address');
+				return redirect('/fashion/address');
 					
 			}
   
@@ -144,7 +144,7 @@ class AddressController extends Controller
 
 					}
 
-		        	return view('partials.address',compact('address'));
+		        	return view('fashion.partials.address',compact('address'));
 		        }
 		        return redirect()->back()->with('status', ' Successfully Deleted ');//reject if we have ; 
 		    }  
@@ -188,13 +188,13 @@ class AddressController extends Controller
 						  return view('account.art.includes.address',compact('address')); 
 
 					    }
-			        	return view('partials.address',compact('address'));
+			        	return view('fashion.partials.address',compact('address'));
 			        }
 					
 				   return redirect()->action('Account\AddressController@index');
 			  } else  {
 			  
-			       return view('account.address.edit',compact('states','page_title','address')); 
+			       return view('fashion.account.address.edit',compact('states','page_title','address')); 
 			 
 			    }
 				
