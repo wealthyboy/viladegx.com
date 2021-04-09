@@ -10,28 +10,30 @@ require ('../../public/f/js/loadProducts.jquery.js')
 
 //Wishlist Code
 
-// let wishlist = document.querySelectorAll('.btn-icon-group')
-//     wishlist.forEach(function(elm,key){
-//         values.push(elm.value)
-//     }) 
+let wishlist = document.querySelectorAll('.btn-icon-group')
+    wishlist.forEach(function(elm,key){
+        elm.addEventListener('click', function(e){
+           console.log(e,this)
+        })
+    }) 
 console.log($(".btn-icon-group"))
-$(".btn-icon-group").on('click',function(){
-    let self = $(this)
+// $(".btn-icon-group").on('click',function(){
+//     let self = $(this)
 
-    if ( self.data('pid') == 0 ) { return; }
-    $.ajax({
-      url: "/api/wishlist",
-      type: "POST",
-      data: { "product_variation_id": self.data('pid') }
-    }).done(function(res){
-      self.find('.product-wishlist-icon-fillled').removeClass('d-none')
-      self.find('.product-wishlist-icon').addClass('d-none')
-      console.log(store)
-      store.commit('appendToWishlist',res.data)
-    }).catch(function(){
-      console.log(false)
-    })
-})
+//     if ( self.data('pid') == 0 ) { return; }
+//     $.ajax({
+//       url: "/api/wishlist",
+//       type: "POST",
+//       data: { "product_variation_id": self.data('pid') }
+//     }).done(function(res){
+//       self.find('.product-wishlist-icon-fillled').removeClass('d-none')
+//       self.find('.product-wishlist-icon').addClass('d-none')
+//       console.log(store)
+//       store.commit('appendToWishlist',res.data)
+//     }).catch(function(){
+//       console.log(false)
+//     })
+// })
 
 
 

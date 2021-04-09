@@ -9968,35 +9968,31 @@ __webpack_require__(/*! ../../public/f/js/plugins.js */ "./public/f/js/plugins.j
 __webpack_require__(/*! ../../public/f/js/main.min.js */ "./public/f/js/main.min.js");
 
 __webpack_require__(/*! ../../public/f/js/loadProducts.jquery.js */ "./public/f/js/loadProducts.jquery.js"); //Wishlist Code
-// let wishlist = document.querySelectorAll('.btn-icon-group')
-//     wishlist.forEach(function(elm,key){
-//         values.push(elm.value)
-//     }) 
 
 
-console.log($(".btn-icon-group"));
-$(".btn-icon-group").on('click', function () {
-  var self = $(this);
-
-  if (self.data('pid') == 0) {
-    return;
-  }
-
-  $.ajax({
-    url: "/api/wishlist",
-    type: "POST",
-    data: {
-      "product_variation_id": self.data('pid')
-    }
-  }).done(function (res) {
-    self.find('.product-wishlist-icon-fillled').removeClass('d-none');
-    self.find('.product-wishlist-icon').addClass('d-none');
-    console.log(_store__WEBPACK_IMPORTED_MODULE_0__.default);
-    _store__WEBPACK_IMPORTED_MODULE_0__.default.commit('appendToWishlist', res.data);
-  })["catch"](function () {
-    console.log(false);
+var wishlist = document.querySelectorAll('.btn-icon-group');
+wishlist.forEach(function (elm, key) {
+  elm.addEventListener('click', function (e) {
+    console.log(e, this);
   });
 });
+console.log($(".btn-icon-group")); // $(".btn-icon-group").on('click',function(){
+//     let self = $(this)
+//     if ( self.data('pid') == 0 ) { return; }
+//     $.ajax({
+//       url: "/api/wishlist",
+//       type: "POST",
+//       data: { "product_variation_id": self.data('pid') }
+//     }).done(function(res){
+//       self.find('.product-wishlist-icon-fillled').removeClass('d-none')
+//       self.find('.product-wishlist-icon').addClass('d-none')
+//       console.log(store)
+//       store.commit('appendToWishlist',res.data)
+//     }).catch(function(){
+//       console.log(false)
+//     })
+// })
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
