@@ -52887,11 +52887,9 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _vm.wishlist.length
-          ? _c("span", { staticClass: "wishlist-count" }, [
-              _vm._v(_vm._s(_vm.wishlist.length))
-            ])
-          : _vm._e()
+        _c("span", { staticClass: "wishlist-count" }, [
+          _vm._v(_vm._s(_vm.wishlist))
+        ])
       ]
     ),
     _vm._v(" "),
