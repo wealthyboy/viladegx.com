@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Account;
 
 
-use App\Address;
+use App\Models\Address;
 
 
-use App\User;
+use App\Models\User;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;

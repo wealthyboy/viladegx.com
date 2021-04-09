@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Orders;
 
 use Illuminate\Http\Request;
 
-use App\Order;
-use App\Product;
-use App\User;
-use App\OrderedProduct;
-use App\Addres;
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\User;
+use App\Models\OrderedProduct;
+use App\Models\Addres;
+use App\Models\SystemSetting;
+
 use App\Http\Controllers\Controller;
-use App\SystemSetting;
 use App\Http\Helper;
 
 
