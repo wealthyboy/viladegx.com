@@ -6253,6 +6253,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           } else {
             self.find('.product-wishlist-icon-fillled').removeClass('d-none');
             self.find('.product-wishlist-icon').addClass('d-none');
+            self.data('iswishlist', 1);
           }
 
           $('.wishlist-count').removeClass('d-none').text(res.data.length);
