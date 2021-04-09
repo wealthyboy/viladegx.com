@@ -52658,8 +52658,7 @@ var render = function() {
                             _c(
                               "button",
                               {
-                                staticClass:
-                                  "btn btn--lg btn--white bold color--primary",
+                                staticClass: "btn btn--lg  bold color--primary",
                                 attrs: { type: "submit", value: "Submit" }
                               },
                               [

@@ -128,7 +128,7 @@
                                 Save & Continue
                             </button>
                             <p v-if="addresses.length" class="form-group col-6 col-md-6 text-left">
-                                <button type="submit" class="btn btn--lg btn--white bold color--primary"  value="Submit">
+                                <button type="submit" class="btn btn--lg  bold color--primary"  value="Submit">
                                     <span  v-if="submiting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                     Save 
                                 </button>
