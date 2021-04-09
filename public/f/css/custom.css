@@ -385,7 +385,6 @@ select.form-control:not([size]):not([multiple]) {
 
 .btn {
     padding: 1rem 4.2rem;
-    font-family: "Am basis", sans-serif;
     line-height: 1.429;
 }
 
