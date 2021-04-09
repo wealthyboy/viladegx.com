@@ -53,7 +53,7 @@ export const clearMessage= (state , meta) =>{
 
 
 export const appendToWishlist= (state , wishlist) =>{
-   state.wishlist =wishlist;
+   state.wishlist = wishlist;
 }
 
 export const loggedIn = (state , auth) =>{

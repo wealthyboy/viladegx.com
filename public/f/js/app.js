@@ -6224,19 +6224,28 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, 1200), e.preventDefault();
       });
     },
-    addToWishlist: function addToWishlist() {// u(".btn-icon-group").on('click',function(){
-      //   let self = $(this)
-      //   $.ajax({
-      //     url: "/api/wishlist",
-      //     type: "POST",
-      //     data: { "product_variation_id": self.data('pid') }
-      //   }).done(function(res){
-      //     self.find('.product-wishlist-icon-fillled').removeClass('d-none')
-      //     self.find('.product-wishlist-icon').addClass('d-none')
-      //   }).catch(function(){
-      //     console.log(false)
-      //   })
-      // })
+    addToWishlist: function addToWishlist() {
+      u(".btn-icon-group").on('click', function () {
+        var self = $(this);
+
+        if (self.data('pid') == 0) {
+          return;
+        }
+
+        $.ajax({
+          url: "/api/wishlist",
+          type: "POST",
+          data: {
+            "product_variation_id": self.data('pid')
+          }
+        }).done(function (res) {
+          self.find('.product-wishlist-icon-fillled').removeClass('d-none');
+          self.find('.product-wishlist-icon').addClass('d-none');
+          store.commit('appendToWishlist', res.data);
+        })["catch"](function () {
+          console.log(false);
+        });
+      });
     },
     newsletterPopup: function newsletterPopup() {
       u.magnificPopup.open({
@@ -9970,28 +9979,12 @@ __webpack_require__(/*! ../../public/f/js/loadProducts.jquery.js */ "./public/f/
 //         values.push(elm.value)
 //     }) 
 
-
-$(".btn-icon-group").on('click', function () {
-  var self = $(this);
-  $.ajax({
-    url: "/api/wishlist",
-    type: "POST",
-    data: {
-      "product_variation_id": self.data('pid')
-    }
-  }).done(function (res) {
-    self.find('.product-wishlist-icon-fillled').removeClass('d-none');
-    self.find('.product-wishlist-icon').addClass('d-none');
-    _store__WEBPACK_IMPORTED_MODULE_0__.default.commit('appendToWishlist', res.data);
-  })["catch"](function () {
-    console.log(false);
-  });
-});
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
 
 var ProductsIndex = __webpack_require__(/*! ./components/products/Index.vue */ "./resources/js/components/products/Index.vue").default;
 
