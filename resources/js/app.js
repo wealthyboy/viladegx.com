@@ -10,13 +10,12 @@ require ('../../public/f/js/loadProducts.jquery.js')
 
 //Wishlist Code
 
-let wishlist = document.querySelectorAll('.btn-icon-group')
-    wishlist.forEach(function(elm,key){
-        elm.addEventListener('click', function(e){
-           console.log(e,this)
-        },false)
-    }) 
-console.log($(".btn-icon-group"))
+// let wishlist = document.querySelectorAll('.btn-icon-group')
+//     wishlist.forEach(function(elm,key){
+//         elm.addEventListener('click', function(e){
+//            console.log(e,this)
+//         },false)
+//     }) 
 // $(".btn-icon-group").on('click',function(){
 //     let self = $(this)
 

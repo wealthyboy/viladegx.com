@@ -6224,22 +6224,29 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, 1200), e.preventDefault();
       });
     },
-    addToWishlist: function addToWishlist() {// u(".btn-icon-group").on('click',function(){
-      //   let self = $(this)
-      //   if ( self.data('pid') == 0 ) { return; }
-      //   $.ajax({
-      //     url: "/api/wishlist",
-      //     type: "POST",
-      //     data: { "product_variation_id": self.data('pid') }
-      //   }).done(function(res){
-      //     self.find('.product-wishlist-icon-fillled').removeClass('d-none')
-      //     self.find('.product-wishlist-icon').addClass('d-none')
-      //     console.log(store)
-      //     store.commit('appendToWishlist',res.data)
-      //   }).catch(function(){
-      //     console.log(false)
-      //   })
-      // })
+    addToWishlist: function addToWishlist() {
+      u(".btn-icon-group").on('click', function () {
+        var self = $(this);
+
+        if (self.data('pid') == 0) {
+          return;
+        }
+
+        $.ajax({
+          url: "/api/wishlist",
+          type: "POST",
+          data: {
+            "product_variation_id": self.data('pid')
+          }
+        }).done(function (res) {
+          self.find('.product-wishlist-icon-fillled').removeClass('d-none');
+          self.find('.product-wishlist-icon').addClass('d-none');
+          console.log(store, true);
+          store.commit('appendToWishlist', res.data);
+        })["catch"](function () {
+          console.log(false);
+        });
+      });
     },
     newsletterPopup: function newsletterPopup() {
       u.magnificPopup.open({
@@ -9968,15 +9975,13 @@ __webpack_require__(/*! ../../public/f/js/plugins.js */ "./public/f/js/plugins.j
 __webpack_require__(/*! ../../public/f/js/main.min.js */ "./public/f/js/main.min.js");
 
 __webpack_require__(/*! ../../public/f/js/loadProducts.jquery.js */ "./public/f/js/loadProducts.jquery.js"); //Wishlist Code
-
-
-var wishlist = document.querySelectorAll('.btn-icon-group');
-wishlist.forEach(function (elm, key) {
-  elm.addEventListener('click', function (e) {
-    console.log(e, this);
-  }, false);
-});
-console.log($(".btn-icon-group")); // $(".btn-icon-group").on('click',function(){
+// let wishlist = document.querySelectorAll('.btn-icon-group')
+//     wishlist.forEach(function(elm,key){
+//         elm.addEventListener('click', function(e){
+//            console.log(e,this)
+//         },false)
+//     }) 
+// $(".btn-icon-group").on('click',function(){
 //     let self = $(this)
 //     if ( self.data('pid') == 0 ) { return; }
 //     $.ajax({
@@ -9998,6 +10003,7 @@ console.log($(".btn-icon-group")); // $(".btn-icon-group").on('click',function()
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
 
 var ProductsIndex = __webpack_require__(/*! ./components/products/Index.vue */ "./resources/js/components/products/Index.vue").default;
 
