@@ -73,7 +73,14 @@ export default {
         })
     } ,
     created(){
-       this.getWislist()
+       //this.getWislist()
+
+       axios.get('/api/wishlist').then((response)=>{
+        document.getElementById('js-loading').style.display='none';
+        this.$store.commit('setWishlist',response.data.data)
+    }).catch((error) =>{
+        console.log("could not get wishlist");
+    })
 
        console.log(this.wishlist)
     },

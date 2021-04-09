@@ -4225,7 +4225,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     wishlist: 'wishlist'
   })),
   created: function created() {
-    this.getWislist();
+    var _this = this;
+
+    //this.getWislist()
+    axios.get('/api/wishlist').then(function (response) {
+      document.getElementById('js-loading').style.display = 'none';
+
+      _this.$store.commit('setWishlist', response.data.data);
+    })["catch"](function (error) {
+      console.log("could not get wishlist");
+    });
     console.log(this.wishlist);
   },
   methods: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapActions)({
