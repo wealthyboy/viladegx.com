@@ -90,9 +90,8 @@ export const addProductToWishList = ({ commit,dispatch },{ product_variation_id 
         commit('Loading',true)
     return axios.get('/api/wishlist').then((response)=>{
         document.getElementById('js-loading').style.display='none';
-        commit('appendToWishlist',response.data.data)
+        commit('setWishlist',response.data.data)
         commit('Loading',false)
-
         return Promise.resolve()
     }).catch((error) =>{
         console.log("could not get wishlist");

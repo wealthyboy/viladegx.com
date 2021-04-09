@@ -52,7 +52,7 @@ export const clearMessage= (state , meta) =>{
 }
 
 
-export const appendToWishlist= (state , wishlist) =>{
+export const setWishlist= (state , wishlist) =>{
    state.wishlist = wishlist;
 }
 

@@ -74,10 +74,12 @@ export default {
     } ,
     created(){
        this.getWislist()
+
+       console.log(this.wishlist)
     },
     methods:{
         ...mapActions({
-             getWislist:'getWislist',
+            getWislist:'getWislist',
         })
     }
 }

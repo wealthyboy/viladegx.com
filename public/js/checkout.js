@@ -3172,7 +3172,7 @@ var getWislist = function getWislist(_ref13) {
   commit('Loading', true);
   return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/wishlist').then(function (response) {
     document.getElementById('js-loading').style.display = 'none';
-    commit('appendToWishlist', response.data.data);
+    commit('setWishlist', response.data.data);
     commit('Loading', false);
     return Promise.resolve();
   })["catch"](function (error) {
@@ -3731,7 +3731,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "setShowForm": () => (/* binding */ setShowForm),
 /* harmony export */   "setNotification": () => (/* binding */ setNotification),
 /* harmony export */   "clearMessage": () => (/* binding */ clearMessage),
-/* harmony export */   "appendToWishlist": () => (/* binding */ appendToWishlist),
+/* harmony export */   "setWishlist": () => (/* binding */ setWishlist),
 /* harmony export */   "loggedIn": () => (/* binding */ loggedIn),
 /* harmony export */   "addToAddress": () => (/* binding */ addToAddress),
 /* harmony export */   "addToLocations": () => (/* binding */ addToLocations),
@@ -3776,7 +3776,7 @@ var setNotification = function setNotification(state, notification) {
 var clearMessage = function clearMessage(state, meta) {
   state.message = null;
 };
-var appendToWishlist = function appendToWishlist(state, wishlist) {
+var setWishlist = function setWishlist(state, wishlist) {
   state.wishlist = wishlist;
 };
 var loggedIn = function loggedIn(state, auth) {
