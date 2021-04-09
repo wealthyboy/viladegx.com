@@ -5,7 +5,7 @@
 <aside class="sidebar-shop  order-lg-first mobile-sidebar">
    <div class="pin-wrapper" style="">
       <div class="sidebar-wrapper" style="">
-        <h2 class="page-title">Dashboard</h2>
+        <h2 class="">Dashboard</h2>
 
         <div class="list-group">
             <a href="/fashion/account" class="list-group-item list-group-item-action text-uppercase bold p-4"><i class="fa fa-user-circle"></i> Account</a>

@@ -8,7 +8,7 @@
                     @include('account.nav')
                 </div>
                 <div class="col-md-7">
-                    <h2 class="page-title">Address </h2>
+                    <h2 class="">Address </h2>
                     <div class="card card-plain">
                         <div id="stored_address"  class="card-body">
                             <div id="full-bg"  class="position-relative">

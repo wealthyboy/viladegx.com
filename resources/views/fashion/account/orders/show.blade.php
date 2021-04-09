@@ -8,7 +8,7 @@
                 @include('account.nav')
             </div>
             <div class="col-md-9 bg--light mt-3 pb-3">
-                <h2 class="page-title">Your Order</h2>
+                <h2 class="">Your Order</h2>
                 <section class="top mb-3">
                     <div class="container">
                         <div class="row">

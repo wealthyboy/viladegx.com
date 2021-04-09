@@ -9,7 +9,7 @@
                 @include('account.nav')
             </div>
             <div class="col-md-7">
-                <h2 class="page-title">Change Password</h2>
+                <h2 class="">Change Password</h2>
                 <div class="card card-plain">
                    <div id="stored_address"  class="card-body">
                        <change-password />
