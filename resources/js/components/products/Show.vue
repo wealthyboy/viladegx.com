@@ -4,12 +4,10 @@
         <div class="product-single-container product-single-default">
             <div class="row">
                 <div class="col-md-6 d-sm-block d-md-none product-single-gallery">
-                    <images  :image="image" :images="images" />
                     
 
                 </div><!-- End .product-single-gallery -->
                 <div class="col-md-7">
-                    <images  :image="image" :images="images" />
                 </div><!-- End .col-md-8 -->
                 
                 <div v-for="(img,index)  in variant_images" :key="img.id"  :id="index" class="border   d-none col-md-7">

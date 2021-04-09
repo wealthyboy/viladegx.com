@@ -5037,8 +5037,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -54577,30 +54575,12 @@ var render = function() {
             "div",
             { staticClass: "row" },
             [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-md-6 d-sm-block d-md-none product-single-gallery"
-                },
-                [
-                  _c("images", {
-                    attrs: { image: _vm.image, images: _vm.images }
-                  })
-                ],
-                1
-              ),
+              _c("div", {
+                staticClass:
+                  "col-md-6 d-sm-block d-md-none product-single-gallery"
+              }),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-md-7" },
-                [
-                  _c("images", {
-                    attrs: { image: _vm.image, images: _vm.images }
-                  })
-                ],
-                1
-              ),
+              _c("div", { staticClass: "col-md-7" }),
               _vm._v(" "),
               _vm._l(_vm.variant_images, function(img, index) {
                 return _c(
