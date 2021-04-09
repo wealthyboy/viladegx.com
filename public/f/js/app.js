@@ -6248,7 +6248,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }).done(function (res) {
           self.find('.product-wishlist-icon-fillled').removeClass('d-none');
           self.find('.product-wishlist-icon').addClass('d-none');
-          $('.wishlist-count').text(res.data.length);
+          $('.wishlist-count').removeClass('d-none').text(res.data.length);
         })["catch"](function () {
           console.log(false);
         });
@@ -52912,9 +52912,14 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _c("span", { staticClass: "wishlist-count" }, [
-          _vm._v(_vm._s(_vm.wishlist.length))
-        ])
+        _c(
+          "span",
+          {
+            staticClass: "wishlist-count",
+            class: { "d-none": _vm.wishlist.length }
+          },
+          [_vm._v(_vm._s(_vm.wishlist.length))]
+        )
       ]
     ),
     _vm._v(" "),
