@@ -5039,15 +5039,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -54624,69 +54615,32 @@ var render = function() {
                       "div",
                       { staticClass: "product-single-gallery popup-gallery" },
                       [
-                        _c(
-                          "div",
-                          { staticClass: "row no-gutters" },
-                          [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "col-6 d-none d-lg-block d-xl-block  d-md-block  product-item"
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "inner" },
-                                  [
-                                    _c("img", {
-                                      attrs: {
-                                        "data-zoom-image": img.image_to_show,
-                                        src: img.image_to_show,
-                                        alt: "product name"
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c("image-zoom", {
-                                      attrs: {
-                                        regular:
-                                          "https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp",
-                                        zoom:
-                                          "https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp"
-                                      }
-                                    })
-                                  ],
-                                  1
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _vm._l(img.images, function(image) {
-                              return _c(
+                        _c("div", { staticClass: "row no-gutters" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-6 d-none d-lg-block d-xl-block  d-md-block  product-item"
+                            },
+                            [
+                              _c(
                                 "div",
-                                {
-                                  key: image.id,
-                                  staticClass:
-                                    "col-6 d-none d-xl-block  d-md-block  product-item"
-                                },
+                                { staticClass: "inner" },
                                 [
-                                  _c("div", { staticClass: "inner" }, [
-                                    _c("img", {
-                                      attrs: {
-                                        src: image.image,
-                                        "data-zoom-image": image.image,
-                                        alt: "product name"
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _vm._m(0, true)
-                                  ])
-                                ]
+                                  _c("image-zoom", {
+                                    attrs: {
+                                      regular:
+                                        "https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp",
+                                      zoom:
+                                        "https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp"
+                                    }
+                                  })
+                                ],
+                                1
                               )
-                            })
-                          ],
-                          2
-                        )
+                            ]
+                          )
+                        ])
                       ]
                     )
                   ]
@@ -55317,7 +55271,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", { staticClass: "product-single-tabs" }, [
-            _vm._m(1),
+            _vm._m(0),
             _vm._v(" "),
             _c("div", { staticClass: "tab-content " }, [
               _c(
@@ -55345,7 +55299,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(1)
             ])
           ])
         ]
@@ -55359,14 +55313,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "prod-full-screen" }, [
-      _c("i", { staticClass: "fas fa-search-plus fa-3x" })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

@@ -17,7 +17,6 @@
                         <div class="row no-gutters">
                             <div class="col-6 d-none d-lg-block d-xl-block  d-md-block  product-item">
                                 <div class="inner">
-                                    <img  :data-zoom-image="img.image_to_show" :src="img.image_to_show"   alt="product name">
                                     <image-zoom 
                                         regular="https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp" 
                                         zoom="https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp">
@@ -26,15 +25,7 @@
 
                                 </div>
                             </div><!-- End .col-6 -->
-                            <div  v-for="image in img.images" :key="image.id"  class="col-6 d-none d-xl-block  d-md-block  product-item">
-                                <div class="inner">
-                                    <img  :src="image.image"   :data-zoom-image="image.image" alt="product name">
-                                    <span   class="prod-full-screen">
-                                        <i class="fas fa-search-plus fa-3x"></i>
-                                    </span>
-                                </div>
-                            </div><!-- End .col-6 -->
-                           
+                            
                         </div><!-- End .row -->
                     </div><!-- End .product-single-gallery -->
                 </div><!-- End .col-md-8 -->
