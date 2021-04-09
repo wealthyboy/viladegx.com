@@ -4,7 +4,7 @@ namespace App\Http;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use App\SystemSetting;
+use App\Models\SystemSetting;
 
 
 
