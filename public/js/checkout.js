@@ -24146,7 +24146,7 @@ var render = function() {
                         _vm.errors.country_id
                           ? _c("span", { attrs: { role: "" } }, [
                               _c(
-                                "strong",
+                                "small",
                                 { staticClass: "text-capitalize text-danger" },
                                 [_vm._v(" Please select your country")]
                               )
@@ -24291,7 +24291,7 @@ var render = function() {
                               "button",
                               {
                                 staticClass: "btn btn--lg  bold color--primary",
-                                attrs: { type: "submit", value: "Submit" }
+                                attrs: { type: "submit" }
                               },
                               [
                                 _vm.submiting

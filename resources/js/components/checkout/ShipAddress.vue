@@ -108,7 +108,7 @@
                                 <option :value="country.id" v-for="country in locations" :key="country.id">{{ country.name }}</option>
                             </select>
                             <span  class="" role="" v-if="errors.country_id">
-                                <strong  class="text-capitalize text-danger"> Please select your country</strong>
+                                <small  class="text-capitalize text-danger"> Please select your country</small>
                             </span>
                         </p>
                         <p class="form-group reduce-gutters col-sm-6  select-custom">
@@ -128,7 +128,7 @@
                                 Save & Continue
                             </button>
                             <p v-if="addresses.length" class="form-group col-6 col-md-6 text-left">
-                                <button type="submit" class="btn btn--lg  bold color--primary"  value="Submit">
+                                <button type="submit" class="btn btn--lg  bold color--primary" >
                                     <span  v-if="submiting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                     Save 
                                 </button>
