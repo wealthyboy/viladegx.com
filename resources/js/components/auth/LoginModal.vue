@@ -85,9 +85,7 @@ export default {
        ...mapGetters({
             errors: 'errors'
         }),
-        logo(){
-           '/images/logo/' +this.$root.settings.store_logo
-        }
+        
     },
     methods:{
         ...mapActions({

@@ -18,6 +18,12 @@
                             <div class="col-6 d-none d-lg-block d-xl-block  d-md-block  product-item">
                                 <div class="inner">
                                     <img  :data-zoom-image="img.image_to_show" :src="img.image_to_show"   alt="product name">
+                                    <image-zoom 
+                                        regular="https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp" 
+                                        zoom="https://avenuemontaigne.ng/images/products/ZYRlny6BagFz6oWXAAcJGmE6a4jtGCUjsXEjzB5o.webp">
+                                    </image-zoom>
+
+
                                 </div>
                             </div><!-- End .col-6 -->
                             <div  v-for="image in img.images" :key="image.id"  class="col-6 d-none d-xl-block  d-md-block  product-item">
@@ -214,6 +220,7 @@ import  LoginModal from '../auth/LoginModal.vue'
 import  RegisterModal from '../auth/RegisterModal.vue'
 import  { mapGetters,mapActions } from 'vuex'
 import  Pagination from '../pagination/Pagination.vue'
+import imageZoom from './imageZoom';
 
 
 export default {
@@ -228,6 +235,7 @@ export default {
        LoginModal,
        Pagination,
        RegisterModal,
+       imageZoom
     },
     data(){
         return {
@@ -420,9 +428,6 @@ export default {
                 variation =
                     active_attribute.dataset.value + "_" + evt.target.dataset.value;
                 }
-
-                console.log(variation, this.attributesData, evt.target.dataset.value);
-
 
                 let vTs = stock[0][variation];
                 if (key == "Colors") {
