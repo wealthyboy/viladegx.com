@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row ">
             <div class="col-md-3">
-                @include('account.nav')
+                @include('fashion.account.nav')
             </div>
             <div class="col-md-9 bg--light mt-3 pb-3">
                 <h2 class="">Your Order</h2>
