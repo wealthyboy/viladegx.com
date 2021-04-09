@@ -2,7 +2,7 @@
 
 <div class="sidebar-overlay"></div>
 <div class="sidebar-toggle"><i class="fas fa-sliders-h"></i></div>
-<aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
+<aside class="sidebar-shop  order-lg-first mobile-sidebar">
    <div class="pin-wrapper" style="">
       <div class="sidebar-wrapper" style="">
         <h2 class="page-title">Dashboard</h2>
