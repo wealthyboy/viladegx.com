@@ -9,7 +9,7 @@
                 @include('fashion.account.nav')
             </div>
             <div class="col-md-7">
-                <h2 class="page-title ">Account</h2>
+                <h2 class=" ">Account</h2>
 
                 <div class="card card-plain">
                     <div class="card-body">
