@@ -173,7 +173,7 @@ class Product extends Model
 	public function getIsWishlistAttribute(){
 		if ( auth()->check() ){
 			$user = auth()->user();
-			return null !== Favorite::where(['user_id' => $user->id,'product_variation_id',$this->default_variation_id])->first() ? true : false;
+			return null !== Favorite::where(['user_id' => $user->id,'product_variation_id'=> $this->default_variation_id])->first() ? true : false;
 		}
 		return null;
 	}
