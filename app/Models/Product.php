@@ -171,7 +171,11 @@ class Product extends Model
 	
 
 	public function getIsWishlistAttribute(){
-        return null !== Favorite::where('product_variation_id',$this->default_variation_id)->first() ? true : false;
+		if ( auth()->check() ){
+			$user = auth()->user();
+			return null !== Favorite::where(['user_id' => $user->id,'product_variation_id',$this->default_variation_id])->first() ? true : false;
+		}
+		return null;
 	}
 
 
