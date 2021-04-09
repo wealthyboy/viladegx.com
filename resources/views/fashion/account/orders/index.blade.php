@@ -27,7 +27,7 @@
                                     <td class="text-left">#{{ $order->id }}</td>
                                     <td class="text-left">{{ Auth::user()->fullname() }}</td>
                                     <td class="text-left">{{ $order->created_at->format('d/m/y') }}</td>
-                                    <td class="text-right"><a href="/order/{{ $order->id}}"  class=" p-5"><i class="fa fa-eye"></i> view</a></td>
+                                    <td class="text-right"><a href="/fashion/order/{{ $order->id}}"  class=" p-5"><i class="fa fa-eye"></i> view</a></td>
                                 </tr>
                                 @endforeach
                                     
