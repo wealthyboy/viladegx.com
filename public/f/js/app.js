@@ -52873,7 +52873,7 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _c("span", { staticClass: "cart-count badge-circle" }, [_vm._v("1")])
+        _c("span", { staticClass: "wishlist-count" }, [_vm._v("1")])
       ]
     ),
     _vm._v(" "),
