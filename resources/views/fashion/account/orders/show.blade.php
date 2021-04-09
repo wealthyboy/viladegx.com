@@ -9,11 +9,11 @@
             </div>
             <div class="col-md-9  pb-3">
                 <h2 class="">Your Order</h2>
-                <section class="top  bg--light mb-3">
+                <section class="top  bg--light mb-1 pl-3 pr-3 ">
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
-                                <h3>Shipping Address</h3>
+                                <h4 class="text-uppercas">Shipping Address</h4>
                                 <span id="">{{ optional($order->address)->first_name }} {{ optional($order->address)->last_name }}</span>
                                     <br />{{ optional($order->address)->address }}
                                     <br /> {{ optional($order->address)->city }} &nbsp;
@@ -22,12 +22,12 @@
                                 </span>
                             </div>
                             <div class="col-4">
-                                <h3>Payment Method</h3>
+                                <h4 class="text-uppercase">Payment Method</h4>
                                 {{ $order->payment_type }}
                             </div>
                            
                             <div class="col-4">
-                                <h3>Cart Total</h3>
+                                <h4 class="text-uppercase">Cart Total</h4>
                                 <span><span class="bold" id="subtotal">Subtotal:</span> {{ $order->currency }}{{ $order->total }}</span></span>  </br>
                                 <span><span class="bold" id="subtotal">Shipping:</span> {{ $order->currency  }}{{  $order->ship_price }}</span></span>  </br> 
                                 <span><span class="bold" id="subtotal">Coupon:</span>   {{  $order->coupon ?  $order->coupon.'  -%'.$order->voucher()->amount .'  off' : '---' }}</span></span>  </br> 
