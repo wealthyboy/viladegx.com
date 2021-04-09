@@ -23510,7 +23510,7 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("h3", [_vm._v("2. PAYMENT")])
+      _c("h3", { staticClass: "breadcrumb-title" }, [_vm._v("2. PAYMENT")])
     ])
   },
   function() {

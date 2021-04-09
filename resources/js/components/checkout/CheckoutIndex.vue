@@ -67,7 +67,7 @@
                             </div>
                            
                         </span>
-                        <h3>2. PAYMENT</h3>
+                        <h3 class="breadcrumb-title">2. PAYMENT</h3>
                     </div>
                     <div class="row" v-if="addresses.length" id="add-new-address-form" >
                         <div class="form-field-wrapper  col-sm-12 ">
