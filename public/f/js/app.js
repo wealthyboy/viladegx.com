@@ -9964,13 +9964,16 @@ __webpack_require__(/*! ../../public/f/js/plugins.js */ "./public/f/js/plugins.j
 
 __webpack_require__(/*! ../../public/f/js/main.min.js */ "./public/f/js/main.min.js");
 
-__webpack_require__(/*! ../../public/f/js/loadProducts.jquery.js */ "./public/f/js/loadProducts.jquery.js");
+__webpack_require__(/*! ../../public/f/js/loadProducts.jquery.js */ "./public/f/js/loadProducts.jquery.js"); //Wishlist Code
+
+
+var wishlist = document.querySelectorAll('.btn-icon-group');
+console.log(wishlist);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
 
 var ProductsIndex = __webpack_require__(/*! ./components/products/Index.vue */ "./resources/js/components/products/Index.vue").default;
 

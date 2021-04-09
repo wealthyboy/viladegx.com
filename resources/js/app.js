@@ -8,6 +8,13 @@ require ('../../public/f/js/main.min.js')
 require ('../../public/f/js/loadProducts.jquery.js')
 
 
+//Wishlist Code
+
+let wishlist = document.querySelectorAll('.btn-icon-group')
+    console.log(wishlist)
+
+
+
 
 
 /**
