@@ -7,7 +7,7 @@
             <div class="col-md-3">
                 @include('fashion.account.nav')
             </div>
-            <div class="col-md-9 bg--light mt-3 pb-3">
+            <div class="col-md-9  pb-3">
                 <h2 class="">Your Order</h2>
                 <section class="top mb-3">
                     <div class="container">
