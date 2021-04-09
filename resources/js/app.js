@@ -14,7 +14,24 @@ require ('../../public/f/js/loadProducts.jquery.js')
 //     wishlist.forEach(function(elm,key){
 //         values.push(elm.value)
 //     }) 
-   
+console.log($(".btn-icon-group"))
+$(".btn-icon-group").on('click',function(){
+    let self = $(this)
+
+    if ( self.data('pid') == 0 ) { return; }
+    $.ajax({
+      url: "/api/wishlist",
+      type: "POST",
+      data: { "product_variation_id": self.data('pid') }
+    }).done(function(res){
+      self.find('.product-wishlist-icon-fillled').removeClass('d-none')
+      self.find('.product-wishlist-icon').addClass('d-none')
+      console.log(store)
+      store.commit('appendToWishlist',res.data)
+    }).catch(function(){
+      console.log(false)
+    })
+})
 
 
 

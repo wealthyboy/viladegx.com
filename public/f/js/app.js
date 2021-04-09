@@ -9980,12 +9980,35 @@ __webpack_require__(/*! ../../public/f/js/loadProducts.jquery.js */ "./public/f/
 //         values.push(elm.value)
 //     }) 
 
+
+console.log($(".btn-icon-group"));
+$(".btn-icon-group").on('click', function () {
+  var self = $(this);
+
+  if (self.data('pid') == 0) {
+    return;
+  }
+
+  $.ajax({
+    url: "/api/wishlist",
+    type: "POST",
+    data: {
+      "product_variation_id": self.data('pid')
+    }
+  }).done(function (res) {
+    self.find('.product-wishlist-icon-fillled').removeClass('d-none');
+    self.find('.product-wishlist-icon').addClass('d-none');
+    console.log(_store__WEBPACK_IMPORTED_MODULE_0__.default);
+    _store__WEBPACK_IMPORTED_MODULE_0__.default.commit('appendToWishlist', res.data);
+  })["catch"](function () {
+    console.log(false);
+  });
+});
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
 
 var ProductsIndex = __webpack_require__(/*! ./components/products/Index.vue */ "./resources/js/components/products/Index.vue").default;
 
