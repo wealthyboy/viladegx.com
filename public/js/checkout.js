@@ -2196,6 +2196,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -22761,20 +22762,20 @@ var render = function() {
                                       )
                                     ]
                                   )
-                                ])
+                                ]),
+                                _vm._v(" "),
+                                _vm.coupon_error
+                                  ? _c(
+                                      "small",
+                                      {
+                                        staticClass:
+                                          "text-capitalize bold ml-3 text-danger"
+                                      },
+                                      [_vm._v(_vm._s(_vm.coupon_error))]
+                                    )
+                                  : _vm._e()
                               ]
                             ),
-                            _vm._v(" "),
-                            _vm.coupon_error
-                              ? _c(
-                                  "small",
-                                  {
-                                    staticClass:
-                                      "text-capitalize bold ml-3 text-danger"
-                                  },
-                                  [_vm._v(_vm._s(_vm.coupon_error))]
-                                )
-                              : _vm._e(),
                             _vm._v(" "),
                             _c("p", {}),
                             _c("p", {
