@@ -6246,8 +6246,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             "product_variation_id": self.data('pid')
           }
         }).done(function (res) {
-          self.find('.product-wishlist-icon-fillled').removeClass('d-none');
-          self.find('.product-wishlist-icon').addClass('d-none');
+          if (self.data('iswishlist') == true) {
+            self.find('.product-wishlist-icon-fillled').addClass('d-none');
+            self.find('.product-wishlist-icon').removeClass('d-none');
+          } else {
+            self.find('.product-wishlist-icon-fillled').removeClass('d-none');
+            self.find('.product-wishlist-icon').addClass('d-none');
+          }
+
           $('.wishlist-count').removeClass('d-none').text(res.data.length);
         })["catch"](function () {
           console.log(false);

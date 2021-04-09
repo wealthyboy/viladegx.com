@@ -19,12 +19,12 @@
 
                 @auth
                     <!-- // The user is authenticated... -->
-                    <div    data-pid="{{ $product->default_variation_id }}" class="btn-icon-group">
+                    <div  data-iswishlist="{{ $product->is_wishlist ? 1: 0}}"   data-pid="{{ $product->default_variation_id }}" class="btn-icon-group">
                 @endauth
 
                 @guest
                     <!-- // The user is not authenticated... -->
-                    <div  data-toggle="modal" data-target="#login-modal"  data-pid="0" class="btn-icon-group">
+                    <div  data-toggle="modal" data-target="#login-modal" data-iswishlist="{{ $product->is_wishlist ? 1: 0}}"  data-pid="0" class="btn-icon-group">
                 @endguest
                    <svg class="product-wishlist-icon-fillled  {{ !$product->is_wishlist ? 'd-none': ''}}">
                         <use xlink:href="#iconStarFill">
