@@ -57,6 +57,8 @@ const FavoriteIndex = require('./components/favorites/Index.vue').default
 const Messages =  require('./components/message/index.vue').default
 const Addresses =  require('./components/checkout/Addresses.vue').default
 const ShipAddress =  require('./components/checkout/ShipAddress.vue').default
+const LoginRegister =  require('./components/auth/LoginRegister.vue').default
+
 
 
 const ForgotPassword =  require('./components/auth/ForgotPassword.vue').default
@@ -99,6 +101,7 @@ const app = new Vue({
         Comments,
         SignUp,
         Images,
+        LoginRegister
         
     }   
 });
