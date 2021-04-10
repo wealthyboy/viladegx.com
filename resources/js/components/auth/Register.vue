@@ -3,7 +3,6 @@
         
         <div class="row ">
 
-            {{ errorsBag }}
             
             <p class="form-group p-1 col-6">
                 <label for="first_name">First Name</label>

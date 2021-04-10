@@ -2529,7 +2529,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -11388,6 +11387,7 @@ var register = function register(_ref18, _ref19) {
     window.location.href = response.data.url;
   })["catch"](function (error) {
     context.loading = false;
+    console.log(error.response.data.errors);
 
     if (error.response.status == 500 || error.response.status == 404) {
       commit('setFormErrors', {
@@ -50782,7 +50782,6 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "row " }, [
-        _vm._v("\n\n        " + _vm._s(_vm.errorsBag) + "\n        \n        "),
         _c("p", { staticClass: "form-group p-1 col-6" }, [
           _c("label", { attrs: { for: "first_name" } }, [_vm._v("First Name")]),
           _vm._v(" "),
