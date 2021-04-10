@@ -54777,7 +54777,7 @@ var render = function() {
           "span",
           {
             staticClass: "wishlist-count",
-            class: { "d-none": _vm.wishlist.length }
+            class: { "d-none": !_vm.wishlist.length }
           },
           [_vm._v(_vm._s(_vm.wishlist.length))]
         )
