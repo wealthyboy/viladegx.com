@@ -103,7 +103,7 @@
             </p>
             <div class="clearfix"></div>
             <p class="form-group text-right col-12 mt-2">
-                <button type="submit" class="btn btn-lg btn-block btn--primary ml-1 bold" name="register" >
+                <button type="submit" :class="{ 'disabled': loading }" class="btn btn-lg btn-block btn--primary ml-1 bold" name="register" >
                     <span  v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     Register
                 </button>

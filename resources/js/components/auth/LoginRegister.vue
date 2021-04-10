@@ -46,7 +46,7 @@
                                             <div class="clearfix"></div>
 
                                             <p class="form-group ">
-                                                <button type="submit" id="login_form_button"  class="ml-1 btn btn--primary btn-round btn-lg btn-block" name="login" >
+                                                <button type="submit" id="login_form_button"  :class="{ 'disabled': loading }" class="ml-1 btn btn--primary btn-round btn-lg btn-block" name="login" >
                                                     <span  v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                     Log In
                                                 </button>

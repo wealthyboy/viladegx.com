@@ -50619,6 +50619,7 @@ var render = function() {
                               {
                                 staticClass:
                                   "ml-1 btn btn--primary btn-round btn-lg btn-block",
+                                class: { disabled: _vm.loading },
                                 attrs: {
                                   type: "submit",
                                   id: "login_form_button",
@@ -51094,6 +51095,7 @@ var render = function() {
             "button",
             {
               staticClass: "btn btn-lg btn-block btn--primary ml-1 bold",
+              class: { disabled: _vm.loading },
               attrs: { type: "submit", name: "register" }
             },
             [
