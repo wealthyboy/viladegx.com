@@ -50780,6 +50780,7 @@ var render = function() {
       }
     },
     [
+      _vm._v("\n     " + _vm._s(_vm.errors) + "\n    "),
       _c("div", { staticClass: "row " }, [
         _c("p", { staticClass: "form-group p-1 col-6" }, [
           _c("label", { attrs: { for: "first_name" } }, [_vm._v("First Name")]),

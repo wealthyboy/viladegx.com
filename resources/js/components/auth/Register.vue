@@ -1,6 +1,6 @@
 <template>
     <form method="POST" @submit.prevent="submit" class="pl-4 pr-4 mt-3" action="/fashion/register">
-        
+         {{errors}}
         <div class="row ">
 
             
