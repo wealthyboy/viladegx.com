@@ -153,83 +153,13 @@
         </main> 
 
 		<footer class="footer">
-			<div class="footer-middle">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-lg-12 col-md-8">
-							<div class="widget widget-newsletter border-bottom pb-5">
-								<h4 class="widget-title m-b-1 pb-2">Subscribe newsletter</h4>
-								<div class="row">
-									<div class="col-lg-6">
-										<p class="pt-2 mb-lg-0">Get all the latest information on Events, Sales and Offers. Sign up for newsletter today.</p>
-									</div><!-- End .col-lg-6 -->
-									<div class="col-lg-6">
-										
-										<news-letter />
-									</div><!-- End .col-lg-6 -->
-								</div><!-- End .row -->
-							</div><!-- End .widget -->
+				
+          <div class="footer-bottom text-center">
+            <div class="container d-flex justify-content-center align-items-center flex-wrap">
+              <p class="footer-copyright py-3 pr-4 mb-0">©.AvenueMontaigne {{ date('Y') }}. All Rights Reserved</p>
+            </div><!-- End .container -->
 
-							<div class="row pt-3">
-                                @foreach($footer_info as $info)
-                                    <div class="col-sm-3 col-6 col-lg-3">
-                                        <div class="widget">
-                                            <h2 class="widget-title">{{ title_case($info->title) }}</h2>
-                                            @if($info->children->count())
-                                               <ul class="">
-                                                    @foreach($info->children as $info)
-														<li>
-															<a href="{{ $info->link }}">
-																{{ $info->title }}
-															</a>
-														</li>
-                                                    @endforeach
-                                                </ul>
-                                            @endif
-                                            
-                                        </div><!-- End .widget -->
-                                    </div><!-- End .col-sm-6 -->
-								@endforeach
-								<div class="col-sm-3 col-6 col-lg-3">
-								    <div class="widget">
-									    <h2 class="widget-title">FOLLOW US</h2>
-									    <div class="social-icons">
-											<a href="{{ $system_settings->facebook_link }}" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>
-											<a href="{{  $system_settings->twitter_link }}" class="social-icon" target="_blank"><i class="icon-twitter"></i></a>
-											<a href="{{  $system_settings->instagram_link }}" class="social-icon" target="_blank"><i class="icon-instagram"></i></a>
-										</div><!-- End .social-icons -->
-                                        <br/>
-										<h2 class="widget-title">PAYMENTS</h2>
-									    <div class="payment-icons d-flex">
-										    <div class="ms mr-3">
-											   <img src="/img/business.png"  class="payment-mastercard" alt="make payment with mastercard">
-											</div>
-											<div class="vs mr-2">
-											    <img src="/img/visa-card-ohram.png"  class="payment-visa" alt="make payment with mastercard">
-											</div>
-											<div class="vv ml-3">
-											    <img src="https://theluxurysale.com/uploads/FPPVD3wLv0beoQtpi3N9H5s9acRv0yf3blevt2U8.png" class="payment-verve" alt="make payment with mastercard">
-											</div>
-										</div><!-- End .social-icons -->
-									</div>
-		                        </div>								
-							</div><!-- End .row -->
-						</div><!-- End .col-lg-9 -->
-					</div><!-- End .row -->
-				</div><!-- End .container -->
-			</div><!-- End .footer-middle -->
-
-			<div class="footer-bottom text-center">
-				<div class="container d-flex justify-content-center align-items-center flex-wrap">
-					<p class="footer-copyright py-3 pr-4 mb-0">© THELUXURYSALE. {{ date('Y') }}. All Rights Reserved</p>
-					@if ( auth()->check() && auth()->user()->isAdmin() )
-					  <p class="footer-copyright py-3 pr-4 mb-0"><a target="_blank" href="/admin" >Go to Admin</a></p>
-					@endif
-
-				</div><!-- End .container -->
-				<p class="color--light text-uppercase bold pr-4 mb-0">© THELUXURYSALE. Affiliate of Wear It All Luxury</p>
-
-			</div><!-- End .footer-bottom -->
+          </div><!-- End .footer-bottom -->
         </footer>	
     </div><!-- End .page-wrapper -->
 
@@ -272,11 +202,6 @@
 				</ul>
 			</nav><!-- End .mobile-nav -->
 
-			<div class="social-icons">
-				<a href="" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>
-				<a href="" class="social-icon" target="_blank"><i class="icon-twitter"></i></a>
-				<a href="" class="social-icon" target="_blank"><i class="icon-instagram"></i></a>
-			</div><!-- End .social-icons -->
 		</div><!-- End .mobile-menu-wrapper -->
 	</div><!-- End .mobile-menu-container -->
 
