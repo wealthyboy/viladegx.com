@@ -11412,7 +11412,8 @@ var register = function register(_ref18, _ref19) {
   var commit = _ref18.commit;
   var context = _ref19.context;
   return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/fashion/register', context.form).then(function (response) {
-    console.log(response); // window.location.href = response.data.url
+    console.log(response);
+    window.location.href = response.data.url;
   })["catch"](function (error) {
     context.loading = false;
     console.log(error.response.data.errors);
