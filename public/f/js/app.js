@@ -54719,7 +54719,7 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     _vm.$root.loggedIn
-      ? _c("div", { staticClass: "ml-4" }, [
+      ? _c("div", { staticClass: "header-dropdown ml-4" }, [
           _c(
             "a",
             {
@@ -54777,7 +54777,7 @@ var render = function() {
           "span",
           {
             staticClass: "wishlist-count",
-            class: { "d-none": !_vm.wishlist.length }
+            class: { "d-none": _vm.wishlist.length }
           },
           [_vm._v(_vm._s(_vm.wishlist.length))]
         )
