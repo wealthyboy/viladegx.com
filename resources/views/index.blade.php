@@ -67,8 +67,6 @@
 							<a href="#" class="search-toggle mr-1" role="button"><i class="icon-search-3 "></i></a>
 							<form action="/search" method="get">
 								<div class="header-search-wrapper">
-									<input type="search" class="form-control" name="q" id="q" placeholder="Search..." required>
-									<button class="btn icon-search-3 p-0" type="submit"></button>
 								</div><!-- End .header-search-wrapper -->
 							</form>
 						</div><!-- End .header-search -->
@@ -91,58 +89,13 @@
 				<div class="container">
 					<nav class="main-nav d-flex w-lg-max justify-content-center">
 						<ul class="menu">
-							
-                            @foreach( $global_categories   as  $category)
-
-                                <li>
-                                   <a href="{{ $category->link() }}">{{ $category->name }}</a>
-                                   @if ($category->isCategoryHaveMultipleChildren())
-
-                                    <div class="megamenu megamenu-fixed-width">
-                                        <div class="row">
-										    <div class="col-lg-9">
-											    <div class="row">
-													@foreach (  $category->children as $childs)
-													<div class="col-lg-2">
-														<a href="{{ $childs->link() }}" class="category-heading">{{ str_contains($childs->name,'No') ? '' :  $childs->name}} </a>
-														@if ($childs->children->count())
-															<ul class="submenu">
-															    @if ($childs->children->count() > 12)
-																	@foreach (  $childs->children->take(12) as $children)
-																		<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
-																	@endforeach
-																	<li ><a  class="bold text-danger" href="/view/{{ $childs->slug }}">View All</a></li>
-																@else
-																    @foreach (  $childs->children as $children)
-																	   <li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
-															      	@endforeach
-																@endif
-																
-															</ul>
-														@endif
-													</div><!-- End .col-lg-4 -->
-													@endforeach
-		                                        </div>
-		                                    </div>
-		                                    
-											<div class="col-lg-3">
-												@if ($category->image)
-													<div class="col-lg-12 p-0">
-														<img src="{{ $category->image }}" alt="{{ $category->name }}" class="product-promo">
-													</div><!-- End .col-lg-4 -->
-												@endif
-		                                   </div>
-                                        </div><!-- End .row -->
-                                    </div><!-- End .megamenu -->
-                                    @elseif ( !$category->isCategoryHaveMultipleChildren() && $category->children->count() )
-                                        <ul>
-                                            @foreach (  $category->children as $children)
-                                               <li><a href="/products/{{ $children->slug }}">{{ $children->name }}</a></li>
-                                            @endforeach 
-                                        </ul>
-                                    @endif
-                                </li>
-                            @endforeach
+							 
+                <li>
+                  <a href="">Fashion</a>
+                </li>
+                <li>
+                  <a href="">Apartments</a>
+                </li>
 						</ul>
 					</nav>
 				</div><!-- End .container -->
@@ -170,35 +123,12 @@
 			<span class="mobile-menu-close"><i class="icon-cancel"></i></span>
 			<nav class="mobile-nav">
 				<ul class="mobile-menu">
-				@foreach( $global_categories   as  $category)
-				    <li>
-						<a href="{{ $category->link() }}">{{ $category->name }}</a>
-						@if ($category->isCategoryHaveMultipleChildren())
-							<ul>
-							    @foreach (  $category->children as $children)
-
-								<li>
-								   <a href="{{ $children->link() }}" class="category-heading">{{ str_contains($children->name,'No') ? '' :  $children->name}} </a>
-								   @if ($children->children->count())
-										<ul>
-										    @foreach (  $children->children as $children)
-                                                <li><a href="{{ $children->link() }}">{{ $children->name }}</a></li>
-                                            @endforeach
-										</ul>
-									@endif
-								</li>
-								@endforeach
-							</ul>
-						@elseif ( !$category->isCategoryHaveMultipleChildren() && $category->children->count() )
-							<ul>
-								@foreach (  $category->children as $children)
-									<li><a class="category-heading" href="/products/{{ $category->slug }}">{{ $children->name }}</a></li>
-								@endforeach 
-							</ul>
-						@endif
-					</li>
-					
-				@endforeach
+            <li>
+              <a href="">Fashion</a>
+            </li>
+            <li>
+              <a href="">Apartments</a>
+            </li>
 				</ul>
 			</nav><!-- End .mobile-nav -->
 
