@@ -64,7 +64,7 @@
               <div class="col-6    p-0 pr-1 pl-1  mb-1  p-0 text-center">
                   <div class="banner-box">
                       <a class="portfolio-thumb" href="">
-                          <img src="https://avenuemontaigne.ng/uploads/LbTofMzhmOJE9MkpDGTba2uCmB7Y2yYtGew0uZPJ.jpg" alt="" />
+                          <img src="https://avenuemontaigne.ng/uploads/3ljHDEzjFhTKex6vIwz7B404M0Xxu1SvW024cDEt.jpg" alt="" />
                       </a>
                   </div>
               </div>
