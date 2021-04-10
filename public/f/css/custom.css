@@ -264,6 +264,10 @@ input {
     border-right: none !important;
 }
 
+.search-bar form {
+    margin-bottom: 0px !important;
+}
+
 .sticky-header {
     margin-top: -42px;
 }
