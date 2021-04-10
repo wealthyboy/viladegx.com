@@ -111,7 +111,8 @@ export const login = ({ commit },{ email, password, context }) => {
         email: email,
         password:password
     }).then((response) => {
-        location.reload()
+        console.log(response)
+        //location.reload()
         return Promise.resolve()
     }).catch((error)=> {
         context.loading = false

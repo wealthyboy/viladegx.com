@@ -11382,7 +11382,8 @@ var login = function login(_ref16, _ref17) {
     email: email,
     password: password
   }).then(function (response) {
-    location.reload();
+    console.log(response); //location.reload()
+
     return Promise.resolve();
   })["catch"](function (error) {
     context.loading = false;

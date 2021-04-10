@@ -78,7 +78,8 @@ class LoginController extends Controller
         if ($this->attemptLogin($request)) {
             if ($request->ajax()){
                 return response()->json([
-                    'loggenIn' => true
+                    'loggenIn' => true,
+                    'url' => \Session::get('url.intended', url('/'))
                 ]);
             }
             return $this->sendLoginResponse($request);
