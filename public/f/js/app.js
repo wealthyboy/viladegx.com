@@ -6131,7 +6131,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     initialised: !1,
     mobile: !1,
     init: function init() {
-      this.initialised || (this.initialised = !0, this.checkMobile(), this.stickyHeader(), this.headerSearchToggle(), this.mMenuIcons(), this.mMenuToggle(), this.mobileMenu(), this.scrollToTop(), this.addToWishlist(), this.quantityInputs(), this.countTo(), this.tooltip(), this.popover(), this.changePassToggle(), this.changeBillToggle(), this.catAccordion(), this.toggleFilter(), this.toggleSidebar(), this.productTabSroll(), this.scrollToElement(), this.loginPopup(), this.modalView(), this.productManage(), this.ratingTooltip(), this.windowClick(), this.popupMenu(), this.topNotice(), this.ratingForm(), this.parallax(), this.sideMenu(), u.fn.superfish && this.menuInit(), u.fn.owlCarousel && this.owlCarousels(), "object" == (typeof noUiSlider === "undefined" ? "undefined" : _typeof(noUiSlider)) && this.filterSlider(), u.fn.themeSticky && this.stickySidebar(), u.fn.magnificPopup && this.lightBox(), u.fn.Morphext && this.wordRotate(), u.fn.isotope && this.isotopes(), u.fn.elevateZoom && this.zoomImage());
+      this.initialised || (this.initialised = !0, this.checkMobile(), this.stickyHeader(), this.headerSearchToggle(), this.mMenuIcons(), this.mMenuToggle(), this.mobileMenu(), this.scrollToTop(), this.addToWishlist(), this.countTo(), this.tooltip(), this.popover(), this.changePassToggle(), this.changeBillToggle(), this.catAccordion(), this.toggleFilter(), this.toggleSidebar(), this.productTabSroll(), this.scrollToElement(), this.loginPopup(), this.modalView(), this.productManage(), this.ratingTooltip(), this.windowClick(), this.popupMenu(), this.topNotice(), this.ratingForm(), this.parallax(), this.sideMenu(), u.fn.superfish && this.menuInit(), u.fn.owlCarousel && this.owlCarousels(), "object" == (typeof noUiSlider === "undefined" ? "undefined" : _typeof(noUiSlider)) && this.filterSlider(), u.fn.themeSticky && this.stickySidebar(), u.fn.magnificPopup && this.lightBox(), u.fn.Morphext && this.wordRotate(), u.fn.isotope && this.isotopes(), u.fn.elevateZoom && this.zoomImage());
     },
     checkMobile: function checkMobile() {
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? this.mobile = !0 : this.mobile = !1;
@@ -6167,6 +6167,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               t = e.parent().offset().left,
               o = e.outerWidth(),
               i = u(window).width() - 45 - t - o;
+          console.log(i);
           i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px");
         });
       }
@@ -6710,27 +6711,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }, 800);
         }, 250), e.preventDefault();
       });
-    },
-    quantityInputs: function quantityInputs() {
-      u.fn.TouchSpin && (u(".vertical-quantity").TouchSpin({
-        verticalbuttons: !0,
-        verticalup: "",
-        verticaldown: "",
-        verticalupclass: "icon-up-dir",
-        verticaldownclass: "icon-down-dir",
-        buttondown_class: "btn btn-outline",
-        buttonup_class: "btn btn-outline",
-        initval: 1,
-        min: 1
-      }), u(".horizontal-quantity").TouchSpin({
-        verticalbuttons: !1,
-        buttonup_txt: "",
-        buttondown_txt: "",
-        buttondown_class: "btn btn-outline btn-down-icon",
-        buttonup_class: "btn btn-outline btn-up-icon",
-        initval: 1,
-        min: 1
-      }));
     },
     ajaxLoading: function ajaxLoading() {
       u("body").append("<div class='ajax-overlay'><i class='porto-loading-icon'></i></div>");
