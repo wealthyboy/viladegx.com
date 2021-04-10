@@ -19,6 +19,10 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-user">
                                     <div class="product-desc-content">
+                                        <span  v-if="errors.general">
+                                            <small  class="text-danger">{{ formatError(errors.general) }}</small>
+                                        </span>
+
                                         <form method="POST" @submit.prevent="authenticate" class="login_form pl-4 pr-4 mt-3" action="/fashion/login">
                                             <!--<p class="large">Great to have you back!</p>-->
                                             <p class="form-group">
@@ -93,6 +97,9 @@ export default {
        ...mapGetters({
             errors: 'errors'
         }),
+    },
+    formatError(error){
+        return Array.isArray(error) ? error[0] : error
     },
     methods:{
         ...mapActions({

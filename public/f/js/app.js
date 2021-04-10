@@ -2357,6 +2357,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2373,6 +2377,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
     errors: 'errors'
   })),
+  formatError: function formatError(error) {
+    return Array.isArray(error) ? error[0] : error;
+  },
   methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapActions)({
     login: 'login'
   })), {}, {
@@ -11373,7 +11380,7 @@ var login = function login(_ref16, _ref17) {
   })["catch"](function (error) {
     context.loading = false;
 
-    if (error.response.status == 500 || error.response.status == 404) {
+    if (typeof error.response.data.errors === 'undefined') {
       commit('setFormErrors', {
         general: "We could register you.Please try again later"
       });
@@ -50506,6 +50513,16 @@ var render = function() {
                   },
                   [
                     _c("div", { staticClass: "product-desc-content" }, [
+                      _vm.errors.general
+                        ? _c("span", [
+                            _c("small", { staticClass: "text-danger" }, [
+                              _vm._v(
+                                _vm._s(_vm.formatError(_vm.errors.general))
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
                       _c(
                         "form",
                         {

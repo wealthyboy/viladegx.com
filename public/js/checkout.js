@@ -3200,7 +3200,7 @@ var login = function login(_ref16, _ref17) {
   })["catch"](function (error) {
     context.loading = false;
 
-    if (error.response.status == 500 || error.response.status == 404) {
+    if (typeof error.response.data.errors === 'undefined') {
       commit('setFormErrors', {
         general: "We could register you.Please try again later"
       });
