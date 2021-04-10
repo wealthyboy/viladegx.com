@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
       </div>
       <div class="col-4 text-center">
         <a class="blog-header-logo text-dark" href="#">
-            <img src="{{ $system_settings->logo_path() }}" width="150" alt="{{ Config('app.name') }} Logo">
+            <img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
 
         </a>
       </div>
