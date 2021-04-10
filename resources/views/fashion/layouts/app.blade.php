@@ -99,7 +99,7 @@
                             @foreach( $global_categories->slice(1)   as  $category)
 							   @foreach( $category->children   as  $category)
 
-                                <li class="d-down   {{ $category->parent->name  }}">
+                                <li style="visibility: hidden;" class="d-down   {{ $category->parent->name  }}">
                                    <a style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
 
                                     <div class="megamenu megamenu-fixed-width">
