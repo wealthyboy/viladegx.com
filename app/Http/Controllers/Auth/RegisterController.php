@@ -76,5 +76,26 @@ class RegisterController extends Controller
     }
 
 
+
+    
+	/**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function registered(Request $request, $user)
+    {   
+        if ($request->ajax()){
+            return response()->json([
+                'loggenIn' => true,
+                'url' => \Session::get('url.intended', url('/'))
+            ]);
+        }
+		return redirect()->intended($this->redirectPath());
+    }
+
+
     
 }

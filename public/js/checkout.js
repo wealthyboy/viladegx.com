@@ -3195,8 +3195,7 @@ var login = function login(_ref16, _ref17) {
     email: email,
     password: password
   }).then(function (response) {
-    console.log(response); //location.reload()
-
+    window.location.href = response.data.url;
     return Promise.resolve();
   })["catch"](function (error) {
     context.loading = false;
@@ -3215,7 +3214,7 @@ var register = function register(_ref18, _ref19) {
   var commit = _ref18.commit;
   var context = _ref19.context;
   return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/register', context.form).then(function (response) {
-    location.reload();
+    window.location.href = response.data.url;
   })["catch"](function (error) {
     context.loading = false;
 

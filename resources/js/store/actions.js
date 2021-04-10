@@ -111,8 +111,7 @@ export const login = ({ commit },{ email, password, context }) => {
         email: email,
         password:password
     }).then((response) => {
-        console.log(response)
-        //location.reload()
+        window.location.href = response.data.url
         return Promise.resolve()
     }).catch((error)=> {
         context.loading = false
@@ -129,7 +128,7 @@ export const login = ({ commit },{ email, password, context }) => {
 
 export const register = ({ commit },{ context }) => {
     return axios.post('/register',context.form).then((response) => {
-        location.reload()
+        window.location.href = response.data.url
     }).catch((error) =>{
         context.loading = false
         if ( error.response.status == 500 ){
