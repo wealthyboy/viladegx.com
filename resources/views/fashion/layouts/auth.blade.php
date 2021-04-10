@@ -36,9 +36,8 @@
 	<a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
 
 	<!-- Plugins JS File -->
-    <script src="/js/app.js?version={{ str_random(6) }}" type="text/javascript"></script>
+    <script src="/f/js/app.js?version={{ str_random(6) }}" type="text/javascript"></script>
 	<!-- Main JS File -->
-	<script src="/js/main.min.js?version={{ str_random(6) }}"></script>
     @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')
