@@ -2455,6 +2455,79 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -50710,164 +50783,365 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "form",
+    {
+      staticClass: "pl-4 pr-4 mt-3",
+      attrs: { method: "POST", action: "/fashion/register" },
+      on: {
+        submit: function($event) {
+          $event.preventDefault()
+          return _vm.submit($event)
+        }
+      }
+    },
+    [
+      _c("div", { staticClass: "row " }, [
+        _c("p", { staticClass: "form-group p-1 col-6" }, [
+          _c("label", { attrs: { for: "first_name" } }, [_vm._v("First Name")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.first_name,
+                expression: "form.first_name"
+              }
+            ],
+            staticClass: "form-control  required",
+            class: { "has-danger": _vm.errors.first_name },
+            attrs: {
+              id: "first_name",
+              type: "text",
+              name: "first_name",
+              value: ""
+            },
+            domProps: { value: _vm.form.first_name },
+            on: {
+              input: [
+                function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "first_name", $event.target.value)
+                },
+                function($event) {
+                  return _vm.removeError($event)
+                }
+              ],
+              blur: function($event) {
+                return _vm.vInput($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.errors.first_name
+            ? _c("span", [
+                _c("small", { staticClass: "text-danger" }, [
+                  _vm._v(_vm._s(_vm.formatError(_vm.errors.first_name)))
+                ])
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "form-group  p-1 col-6" }, [
+          _c("label", { attrs: { for: "last_name" } }, [_vm._v("Last Name")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.last_name,
+                expression: "form.last_name"
+              }
+            ],
+            staticClass: "form-control required",
+            class: { "has-danger": _vm.errors.last_name },
+            attrs: {
+              id: "last_name",
+              type: "text",
+              name: "last_name",
+              value: ""
+            },
+            domProps: { value: _vm.form.last_name },
+            on: {
+              input: [
+                function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "last_name", $event.target.value)
+                },
+                function($event) {
+                  return _vm.removeError($event)
+                }
+              ],
+              blur: function($event) {
+                return _vm.vInput($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.errors.last_name
+            ? _c("span", [
+                _c("small", { staticClass: "text-danger" }, [
+                  _vm._v(_vm._s(_vm.formatError(_vm.errors.last_name)))
+                ])
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearfix" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "form-group p-1 col-6" }, [
+          _c("label", { attrs: { for: "email" } }, [_vm._v("Email address")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.email,
+                expression: "form.email"
+              }
+            ],
+            staticClass: "form-control required",
+            class: { "has-danger": _vm.errors.email },
+            attrs: { id: "email", type: "email", name: "email", value: "" },
+            domProps: { value: _vm.form.email },
+            on: {
+              input: [
+                function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "email", $event.target.value)
+                },
+                function($event) {
+                  return _vm.removeError($event)
+                }
+              ],
+              blur: function($event) {
+                return _vm.vInput($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.errors.email
+            ? _c("span", [
+                _c("small", { staticClass: "text-danger" }, [
+                  _vm._v(_vm._s(_vm.formatError(_vm.errors.email)))
+                ])
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "form-field-wrapper  p-2  col-6" }, [
+          _c("label", { attrs: { for: "username" } }, [_vm._v("Phone number")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.phone_number,
+                expression: "form.phone_number"
+              }
+            ],
+            staticClass: "form-control required",
+            class: { "has-danger": _vm.errors.phone_number },
+            attrs: {
+              id: "phone_number",
+              type: "text",
+              name: "phone_number",
+              value: ""
+            },
+            domProps: { value: _vm.form.phone_number },
+            on: {
+              input: [
+                function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "phone_number", $event.target.value)
+                },
+                function($event) {
+                  return _vm.removeError($event)
+                }
+              ],
+              blur: function($event) {
+                return _vm.vInput($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.errors.phone_number
+            ? _c("span", [
+                _c("strong", { staticClass: "text-danger" }, [
+                  _vm._v(_vm._s(_vm.formatError(_vm.errors.phone_number)))
+                ])
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearfix" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "form-field-wrapper p-2 col-6" }, [
+          _c("label", { attrs: { for: "password" } }, [_vm._v("Password")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.password,
+                expression: "form.password"
+              }
+            ],
+            staticClass: "form-control required",
+            class: { "has-danger": _vm.errors.password },
+            attrs: { id: "password", type: "password", value: "" },
+            domProps: { value: _vm.form.password },
+            on: {
+              input: [
+                function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "password", $event.target.value)
+                },
+                function($event) {
+                  return _vm.removeError($event)
+                }
+              ],
+              blur: function($event) {
+                return _vm.vInput($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.errors.password
+            ? _c("span", [
+                _c("strong", { staticClass: "text-danger" }, [
+                  _vm._v(_vm._s(_vm.formatError(_vm.errors.password)))
+                ])
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "form-field-wrapper p-2 col-6" }, [
+          _c("label", { attrs: { for: "password_confirmation" } }, [
+            _vm._v("Confirm Password")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.password_confirmation,
+                expression: "form.password_confirmation"
+              }
+            ],
+            staticClass: "form-control required",
+            class: { "has-danger": _vm.errors.password_confirmation },
+            attrs: {
+              id: "password_confirmation",
+              type: "password",
+              name: "password_confirmation",
+              value: ""
+            },
+            domProps: { value: _vm.form.password_confirmation },
+            on: {
+              input: [
+                function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.form,
+                    "password_confirmation",
+                    $event.target.value
+                  )
+                },
+                function($event) {
+                  return _vm.removeError($event)
+                }
+              ],
+              blur: function($event) {
+                return _vm.vInput($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.errors.password_confirmation
+            ? _c("span", [
+                _c("strong", { staticClass: "text-danger" }, [
+                  _vm._v(
+                    _vm._s(_vm.formatError(_vm.errors.password_confirmation))
+                  )
+                ])
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearfix" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "form-group text-right col-12 mt-2" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-lg btn-block btn--primary ml-1 bold",
+              attrs: { type: "submit", name: "register" }
+            },
+            [
+              _vm.loading
+                ? _c("span", {
+                    staticClass: "spinner-border spinner-border-sm",
+                    attrs: { role: "status", "aria-hidden": "true" }
+                  })
+                : _vm._e(),
+              _vm._v("\n                Register\n            ")
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "form",
-      {
-        staticClass: "pl-4 pr-4 mt-3",
-        attrs: { method: "POST", action: "/fashion/register" }
-      },
-      [
-        _c("div", { staticClass: "row " }, [
-          _c("p", { staticClass: "form-group p-1 col-6" }, [
-            _c("label", { attrs: { for: "first_name" } }, [
-              _vm._v("First Name")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "first_name",
-                type: "text",
-                name: "first_name",
-                value: "",
-                required: "",
-                autofocus: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "form-group  p-1 col-6" }, [
-            _c("label", { attrs: { for: "last_name" } }, [_vm._v("Last Name")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "last_name",
-                type: "text",
-                name: "last_name",
-                value: "",
-                required: "",
-                autofocus: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "clearfix" }),
-          _vm._v(" "),
-          _c("p", { staticClass: "form-group p-1 col-6" }, [
-            _c("label", { attrs: { for: "email" } }, [_vm._v("Email address")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "email",
-                type: "email",
-                name: "email",
-                value: "",
-                required: "",
-                autofocus: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "form-group p-1 col-6" }, [
-            _c("label", { attrs: { for: "phone_number" } }, [
-              _vm._v("Phone Number")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "phone_number",
-                type: "text",
-                name: "phone_number",
-                value: "",
-                required: "",
-                autofocus: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "clearfix" }),
-          _vm._v(" "),
-          _c("p", { staticClass: "form-group p-1 col-6" }, [
-            _c("label", { attrs: { for: "password" } }, [_vm._v("Password")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "password",
-                type: "password",
-                name: "password",
-                required: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "form-group p-1 col-6" }, [
-            _c("label", { attrs: { for: "password" } }, [
-              _vm._v("Confirm Password")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "password",
-                type: "password",
-                name: "password_confirmation",
-                required: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "clearfix" }),
-          _vm._v(" "),
-          _c("p", { staticClass: "form-group text-right col-12 mt-2" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-lg btn-block btn--primary ml-1 bold",
-                attrs: { type: "submit", name: "register", value: "Log in" }
-              },
-              [_vm._v("Register")]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-center border-top pt-5" }, [
-          _vm._v(" By registering your details, you agree with our "),
-          _c(
-            "a",
-            {
-              staticClass: "color--primary bold",
-              attrs: {
-                href:
-                  "https://avenuemontaigne.ng/fashion/pages/terms-conditions"
-              }
-            },
-            [_vm._v("Terms & Conditions")]
-          ),
-          _vm._v(" , and "),
-          _c(
-            "a",
-            {
-              staticClass: "color--primary bold",
-              attrs: {
-                href: "https://avenuemontaigne.ng/fashion/pages/privacy-policy"
-              }
-            },
-            [_vm._v("Privacy and Cookie Policy.")]
-          )
-        ])
-      ]
-    )
+    return _c("p", { staticClass: "text-center border-top pt-5" }, [
+      _vm._v(" By registering your details, you agree with our "),
+      _c(
+        "a",
+        {
+          staticClass: "color--primary bold",
+          attrs: {
+            href: "https://avenuemontaigne.ng/fashion/pages/terms-conditions"
+          }
+        },
+        [_vm._v("Terms & Conditions")]
+      ),
+      _vm._v(" , and "),
+      _c(
+        "a",
+        {
+          staticClass: "color--primary bold",
+          attrs: {
+            href: "https://avenuemontaigne.ng/fashion/pages/privacy-policy"
+          }
+        },
+        [_vm._v("Privacy and Cookie Policy.")]
+      )
+    ])
   }
 ]
 render._withStripped = true
