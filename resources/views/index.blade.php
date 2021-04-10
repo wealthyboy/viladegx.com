@@ -54,14 +54,14 @@
       <main class="main main-page">
         <div class="container-fliud mt-3">
           <div  class="row align-items-start ">
-              <div class="col-6    p-0 pr-1 pl-1  mb-1  p-0 text-center">
+              <div class="col-md-6 col-12    p-0 pr-1 pl-1  mb-1  p-0 text-center">
                   <div class="banner-box">
                       <a class="portfolio-thumb" href="/fashion">
                           <img src="https://avenuemontaigne.ng/uploads/LbTofMzhmOJE9MkpDGTba2uCmB7Y2yYtGew0uZPJ.jpg" alt="" />
                       </a>
                   </div>
               </div> 
-              <div class="col-6    p-0 pr-1 pl-1  mb-1  p-0 text-center">
+              <div class="col-md-6 col-12   p-0 pr-1 pl-1  mb-1  p-0 text-center">
                   <div class="banner-box">
                       <a class="portfolio-thumb" href="/services">
                           <img src="https://avenuemontaigne.ng/uploads/3ljHDEzjFhTKex6vIwz7B404M0Xxu1SvW024cDEt.jpg" alt="" />
