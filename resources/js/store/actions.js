@@ -128,8 +128,7 @@ export const login = ({ commit },{ email, password, context }) => {
 
 export const register = ({ commit },{ context }) => {
     return axios.post('/fashion/register',context.form).then((response) => {
-        console.log(response.data.url)
-       // window.location.href = response.data.url
+        window.location.href = response.data.url
     }).catch((error) =>{
         context.loading = false
         console.log(error.response.data.errors)
