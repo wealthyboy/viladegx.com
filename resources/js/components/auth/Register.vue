@@ -1,6 +1,9 @@
 <template>
     <form method="POST" @submit.prevent="submit" class="pl-4 pr-4 mt-3" action="/fashion/register">
-         {{errors}}
+        <span  v-if="errors.general">
+            <small  class="text-danger">{{ formatError(errors.general) }}</small>
+        </span>
+
         <div class="row ">
 
             
