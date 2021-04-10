@@ -4538,6 +4538,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -54776,7 +54794,37 @@ var render = function() {
                 ]
               )
             ]
-          )
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "header-menu " }, [
+            _c("ul", [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _c("li", [
+                _vm._m(2),
+                _vm._v(" "),
+                _c(
+                  "form",
+                  {
+                    staticStyle: { display: "none" },
+                    attrs: {
+                      id: "logout-form",
+                      action: "/fashion/logout",
+                      method: "POST"
+                    }
+                  },
+                  [
+                    _c("input", {
+                      attrs: { type: "hidden", name: "_token" },
+                      domProps: { value: _vm.$root.token }
+                    })
+                  ]
+                )
+              ])
+            ])
+          ])
         ])
       : _vm._e(),
     _vm._v(" "),
@@ -54860,7 +54908,57 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        { staticClass: "color--primary", attrs: { href: "/fashion/account" } },
+        [_c("i", { staticClass: "fas fa-user left mr-2" }), _vm._v("Account")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        { staticClass: "color--primary", attrs: { href: "/fashion/orders" } },
+        [
+          _c("i", { staticClass: "fas fa-sign-out-alt left mr-1" }),
+          _vm._v(" Orders")
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "color--primary",
+        attrs: {
+          href: "/fashion/logout",
+          onclick:
+            "event.preventDefault();\n                                                    document.getElementById('logout-form').submit();"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-sign-out-alt left mr-1" }),
+        _vm._v(
+          "\n                                        \n                                        Logout\n                                    "
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
