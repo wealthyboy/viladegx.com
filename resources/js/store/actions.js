@@ -131,8 +131,7 @@ export const register = ({ commit },{ context }) => {
         window.location.href = response.data.url
     }).catch((error) =>{
         context.loading = false
-        console.log(error.response.data.errors)
-        if ( error.response.status == 500  || error.response.status == 404){
+        if ( typeof error.response.data.errors  === 'undefined'){
             commit('setFormErrors', {
                 general: "We could register you.Please try again later"
             })
