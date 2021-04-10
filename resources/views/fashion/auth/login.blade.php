@@ -2,6 +2,6 @@
  
 @section('content')
    
- <login-register />
+ <login />
  
 @endsection

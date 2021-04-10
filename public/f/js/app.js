@@ -10165,7 +10165,7 @@ var Addresses = __webpack_require__(/*! ./components/checkout/Addresses.vue */ "
 
 var ShipAddress = __webpack_require__(/*! ./components/checkout/ShipAddress.vue */ "./resources/js/components/checkout/ShipAddress.vue").default;
 
-var LoginRegister = __webpack_require__(/*! ./components/auth/LoginRegister.vue */ "./resources/js/components/auth/LoginRegister.vue").default;
+var Login = __webpack_require__(/*! ./components/auth/LoginRegister.vue */ "./resources/js/components/auth/LoginRegister.vue").default;
 
 var ForgotPassword = __webpack_require__(/*! ./components/auth/ForgotPassword.vue */ "./resources/js/components/auth/ForgotPassword.vue").default;
 
@@ -10207,7 +10207,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     Comments: Comments,
     SignUp: SignUp,
     Images: Images,
-    LoginRegister: LoginRegister
+    Login: Login
   }
 });
 
