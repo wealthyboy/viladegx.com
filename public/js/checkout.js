@@ -3217,6 +3217,7 @@ var register = function register(_ref18, _ref19) {
     window.location.href = response.data.url;
   })["catch"](function (error) {
     context.loading = false;
+    console.log(error.response.data.errors);
 
     if (typeof error.response.data.errors === 'undefined') {
       commit('setFormErrors', {
