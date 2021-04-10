@@ -64,7 +64,7 @@
                         :class="{'has-danger': errors.phone_number}"
                         value="" >
                         <span  v-if="errors.phone_number">
-                            <strong  class="text-danger">{{ formatError(errors.phone_number) }}</strong>
+                            <small  class="text-danger">{{ formatError(errors.phone_number) }}</small>
                         </span>
             </p>
             <div class="clearfix"></div>
@@ -81,7 +81,7 @@
                         :class="{'has-danger': errors.password}"
                         value="" >
                         <span  v-if="errors.password">
-                            <strong  class="text-danger">{{ formatError(errors.password) }}</strong>
+                            <small  class="text-danger">{{ formatError(errors.password) }}</small>
                         </span>
             </p>
 
@@ -98,7 +98,7 @@
                         :class="{'has-danger': errors.password_confirmation}"
                         value="" >
                         <span  v-if="errors.password_confirmation">
-                            <strong  class="text-danger">{{ formatError(errors.password_confirmation) }}</strong>
+                            <small  class="text-danger">{{ formatError(errors.password_confirmation) }}</small>
                         </span>
             </p>
             <div class="clearfix"></div>

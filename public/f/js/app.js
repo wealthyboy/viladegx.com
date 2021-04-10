@@ -50979,7 +50979,7 @@ var render = function() {
           _vm._v(" "),
           _vm.errors.phone_number
             ? _c("span", [
-                _c("strong", { staticClass: "text-danger" }, [
+                _c("small", { staticClass: "text-danger" }, [
                   _vm._v(_vm._s(_vm.formatError(_vm.errors.phone_number)))
                 ])
               ])
@@ -51024,7 +51024,7 @@ var render = function() {
           _vm._v(" "),
           _vm.errors.password
             ? _c("span", [
-                _c("strong", { staticClass: "text-danger" }, [
+                _c("small", { staticClass: "text-danger" }, [
                   _vm._v(_vm._s(_vm.formatError(_vm.errors.password)))
                 ])
               ])
@@ -51078,7 +51078,7 @@ var render = function() {
           _vm._v(" "),
           _vm.errors.password_confirmation
             ? _c("span", [
-                _c("strong", { staticClass: "text-danger" }, [
+                _c("small", { staticClass: "text-danger" }, [
                   _vm._v(
                     _vm._s(_vm.formatError(_vm.errors.password_confirmation))
                   )
