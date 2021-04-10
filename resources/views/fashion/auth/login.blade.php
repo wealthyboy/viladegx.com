@@ -12,21 +12,21 @@
                         <div class="product-single-tabs">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="product-tab-desc" data-toggle="tab" href="#product-desc-content" role="tab" aria-controls="product-desc-content" aria-selected="true">Login</a>
+                                    <a class="nav-link active" id="login-user" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="product-tab-more-info" data-toggle="tab" href="#product-more-info-content" role="tab" aria-controls="product-more-info-content" aria-selected="false">I'm new here</a>
+                                    <a class="nav-link" id="register-user" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">I'm new here</a>
                                 </li>
                                 
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
+                                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-user">
                                     <div class="product-desc-content">
                                         @include('fashion._partials.login')
                                     </div><!-- End .product-desc-content -->
                                 </div><!-- End .tab-pane -->
 
-                                <div class="tab-pane fade fade" id="product-more-info-content" role="tabpanel" aria-labelledby="product-tab-more-info">
+                                <div class="tab-pane fade fade" id="register" role="tabpanel" aria-labelledby="register-user">
                                     <div class="product-desc-content">
                                     <form method="POST" class="pl-4 pr-4 mt-3" action="/fashion/register">
                                         @if ($errors->any() )
