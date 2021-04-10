@@ -90,7 +90,7 @@ class RegisterController extends Controller
         if ($request->ajax()){
             return response()->json([
                 'loggenIn' => true,
-                'url' => \Session::get('url.intended', url('/'))
+                'url' => \Session::get('url.intended', url('/fashion'))
             ]);
         }
 		return redirect()->intended($this->redirectPath());

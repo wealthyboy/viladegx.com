@@ -80,7 +80,7 @@ class LoginController extends Controller
                 
                 return response()->json([
                     'loggenIn' => true,
-                    'url' => \Session::get('url.intended', url('/'))
+                    'url' => \Session::get('url.intended', url('/fashion'))
                 ]);
             }
             return $this->sendLoginResponse($request);
