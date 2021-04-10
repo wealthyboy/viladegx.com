@@ -74,14 +74,14 @@ class LoginController extends Controller
 
             return $this->sendLockoutResponse($request);
         }
-
+        
         if ($this->attemptLogin($request)) {
             if ($request->ajax()){
-                sdsdsd
+                
                 return response()->json([
                     'loggenIn' => true,
                     'url' => \Session::get('url.intended', url('/'))
-                ]);
+                ],500);
             }
             return $this->sendLoginResponse($request);
         }
