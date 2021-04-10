@@ -63,7 +63,7 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function login(Request $request)
-    {  sdsdsd
+    {  
         $this->validateLogin($request);
         
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -77,6 +77,7 @@ class LoginController extends Controller
 
         if ($this->attemptLogin($request)) {
             if ($request->ajax()){
+                sdsdsd
                 return response()->json([
                     'loggenIn' => true,
                     'url' => \Session::get('url.intended', url('/'))
