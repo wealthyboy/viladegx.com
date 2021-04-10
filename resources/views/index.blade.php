@@ -21,13 +21,13 @@
    
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/f/css/bootstrap.min.css">
 	<!-- Main CSS File -->
-	<link rel="stylesheet" href="/css/style.min.css?version={{ str_random(6) }}">
-	<link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
-	<link rel="stylesheet" href="/css/skins/skin-default.css">
+	<link rel="stylesheet" href="/f/css/style.min.css?version={{ str_random(6) }}">
+	<link rel="stylesheet" type="text/css" href="/f/vendor/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="/f/css/skins/skin-default.css">
     @yield('page-css')
-    <link href="/css/custom.css?version={{ str_random(6) }}" rel="stylesheet" type="text/css" />
+    <link href="/f/css/custom.css?version={{ str_random(6) }}" rel="stylesheet" type="text/css" />
     <meta property="og:site_name" content="Ohram Co">
     <meta property="og:url" content="https://theluxurysale.com/">
     <meta property="og:title" content=" theluxurysale">
