@@ -115,7 +115,7 @@ export const login = ({ commit },{ email, password, context }) => {
         return Promise.resolve()
     }).catch((error)=> {
         context.loading = false
-        if ( error.response.status == 500 ){
+        if ( error.response.status == 500  || error.response.status == 404 ){
             commit('setFormErrors', {
                 general: "We could register you.Please try again later"
             })
@@ -127,11 +127,11 @@ export const login = ({ commit },{ email, password, context }) => {
 
 
 export const register = ({ commit },{ context }) => {
-    return axios.post('/register',context.form).then((response) => {
+    return axios.post('/fashion/register',context.form).then((response) => {
         window.location.href = response.data.url
     }).catch((error) =>{
         context.loading = false
-        if ( error.response.status == 500 ){
+        if ( error.response.status == 500  || error.response.status == 404){
             commit('setFormErrors', {
                 general: "We could register you.Please try again later"
             })

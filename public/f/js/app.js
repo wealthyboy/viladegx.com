@@ -11369,7 +11369,7 @@ var login = function login(_ref16, _ref17) {
   })["catch"](function (error) {
     context.loading = false;
 
-    if (error.response.status == 500) {
+    if (error.response.status == 500 || error.response.status == 404) {
       commit('setFormErrors', {
         general: "We could register you.Please try again later"
       });
@@ -11382,12 +11382,12 @@ var login = function login(_ref16, _ref17) {
 var register = function register(_ref18, _ref19) {
   var commit = _ref18.commit;
   var context = _ref19.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/register', context.form).then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/fashion/register', context.form).then(function (response) {
     window.location.href = response.data.url;
   })["catch"](function (error) {
     context.loading = false;
 
-    if (error.response.status == 500) {
+    if (error.response.status == 500 || error.response.status == 404) {
       commit('setFormErrors', {
         general: "We could register you.Please try again later"
       });
