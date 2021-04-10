@@ -2,6 +2,8 @@
     <form method="POST" @submit.prevent="submit" class="pl-4 pr-4 mt-3" action="/fashion/register">
         
         <div class="row ">
+
+            {{ errorsBag }}
             
             <p class="form-group p-1 col-6">
                 <label for="first_name">First Name</label>
