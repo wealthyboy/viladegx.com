@@ -35,7 +35,7 @@
          <!-- End .header-middle -->
          <div class="header-bottom sticky-header d-none d-lg-block">
             <div class="container">
-               <nav class="main-nav d-flex w-lg-max justify-content-center">
+               <nav class="main-nav d-flex w-lg-max mt-2 justify-content-center">
                   <ul class="menu">
                      <li>
                         <a href="">Fashion</a>
