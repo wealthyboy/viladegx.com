@@ -80,7 +80,7 @@
 							<img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
 						</a>
 					</div><!-- End .header-center -->
-                    <nav-icon    />
+          <div class="header-right w-lg-max ml-0 ml-lg-auto"></div>
 
 				</div><!-- End .container -->
 			</div><!-- End .header-middle -->
