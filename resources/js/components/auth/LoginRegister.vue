@@ -19,16 +19,16 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-user">
                                     <div class="product-desc-content">
-                                        <form method="POST" class="login_form pl-4 pr-4 mt-3" action="/fashion/login">
+                                        <form method="POST" @submit.prevent="authenticate" class="login_form pl-4 pr-4 mt-3" action="/fashion/login">
                                             <!--<p class="large">Great to have you back!</p>-->
                                             <p class="form-group">
                                                 <label for="username">Email address</label>
-                                                <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-                                               
+                                                <input  v-model="email" id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                                                <small class="text-danger bold" v-if="errors.length"> Email/Password not found</small>
                                             </p>
                                             <p class="form-group">
                                                 <label for="password">Password</label>
-                                                <input id="password" type="password" class="form-control" name="password" required>
+                                                <input  v-model="password" id="password" type="password" class="form-control" name="password" required>
                                             </p>
                                             <div class="d-flex justify-content-between">
                                                 <p class="form-group">
@@ -46,7 +46,10 @@
                                             <div class="clearfix"></div>
 
                                             <p class="form-group ">
-                                                <button type="submit" id="login_form_button" data-loading="Loading" class=" ml-1 btn btn--primary btn-round btn-lg btn-block" name="login" value="Log in">Log In</button>
+                                                <button type="submit" id="login_form_button"  class="ml-1 btn btn--primary btn-round btn-lg btn-block" name="login" >
+                                                    <span  v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                    Log In
+                                                </button>
                                             </p>
                                             
 
@@ -56,48 +59,7 @@
 
                                 <div class="tab-pane fade fade" id="register" role="tabpanel" aria-labelledby="register-user">
                                     <div class="product-desc-content">
-                                    <form method="POST" class="pl-4 pr-4 mt-3" action="/fashion/register">
-                                        
-                                        <div class="row ">
-                                            
-                                            <p class="form-group p-1 col-6">
-                                                <label for="first_name">First Name</label>
-                                                <input id="first_name" type="text" class="form-control" name="first_name" value="" required autofocus>
-                                            </p>
-                                            <p class="form-group  p-1 col-6">
-                                                <label for="last_name">Last Name</label>
-                                                <input id="last_name" type="text" class="form-control" name="last_name" value="" required autofocus>
-                                            </p>
-                                            <div class="clearfix"></div>
-
-                                            <p class="form-group p-1 col-6">
-                                                <label for="email">Email address</label>
-                                                <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-                                            </p>
-                                            <p class="form-group p-1 col-6">
-                                                <label for="phone_number">Phone Number</label>
-                                                <input id="phone_number" type="text" class="form-control" name="phone_number" value="" required autofocus>
-                                            </p>
-                                            <div class="clearfix"></div>
-
-                                            <p class="form-group p-1 col-6">
-                                                <label for="password">Password</label>
-                                                <input id="password" type="password" class="form-control" name="password" required>
-                                            </p>
-                                            <p class="form-group p-1 col-6">
-                                                <label for="password">Confirm Password</label>
-                                                <input id="password" type="password" class="form-control" name="password_confirmation" required>
-                                            </p>
-                                            <div class="clearfix"></div>
-                                            <p class="form-group text-right col-12 mt-2">
-                                                <button type="submit" class="btn btn-lg btn-block btn--primary ml-1 bold" name="register" value="Log in">Register</button>
-                                            </p>
-                                        
-                                        </div>
-                                        <p class="text-center border-top pt-5"> By registering your details, you agree with our <a class="color--primary bold" href="https://avenuemontaigne.ng/fashion/pages/terms-conditions">Terms & Conditions</a> , and <a class="color--primary bold" href="https://avenuemontaigne.ng/fashion/pages/privacy-policy">Privacy and Cookie Policy.</a> </p>
-
-                                    </form>
-
+                                       <register />
                                     </div><!-- End .product-desc-content -->
                                 </div><!-- End .tab-pane -->
 
@@ -111,7 +73,45 @@
     </section>
 
 </template>
+
 <script>
- 
+import { mapGetters, mapActions } from 'vuex'
+import  Register from './Register.vue'
+
+export default {
+    data(){
+        return {
+            email: '',
+            password: '',
+            loading:false
+        }
+    },
+    components:{
+       Register,
+    },
+    computed:{
+       ...mapGetters({
+            errors: 'errors'
+        }),
+    },
+    methods:{
+        ...mapActions({
+            login:'login',
+        }),
+        
+        authenticate: function(){
+            this.loading = true
+            this.login({
+                email:this.email,
+                password:this.password,
+                context: this
+            }).catch((error)=>{
+                this.loading = false
+                this.errors = error.response.data.error ||  error.response.data.errors
+            })
+        }
+    }
+    
+}
 </script>
 
