@@ -6167,8 +6167,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               t = e.parent().offset().left,
               o = e.outerWidth(),
               i = u(window).width() - 45 - t - o;
-          console.log(e.parent('li:hidden').offset().left);
-          i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px");
+          i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "-" + t + "px");
         });
       }
 
