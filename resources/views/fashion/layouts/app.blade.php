@@ -307,9 +307,9 @@
         @yield('inline-scripts')
 		var n = 0;
 		$( ".show-d" ).mouseenter(function() {
-		   console.log(true)
+		   console.log($(this).offset())
 		}).mouseleave(function() {
-			console.log(true)
+			console.log($(this).offset())
 		});
 		let nav = document.querySelectorAll('li.p-d-down')
 		let child_nav = document.querySelectorAll('li.d-down')
