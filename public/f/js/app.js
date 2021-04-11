@@ -6162,9 +6162,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
 
       function e() {
-        var a = document.querySelectorAll('.megamenu-fixed-width').forEach(function (el, i) {
-          console.log(a.parentNode);
-        });
+        var a = document.querySelectorAll('.megamenu-fixed-width');
+        console.log(a);
         u(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function () {
           var e = u(this),
               t = e.parent().offset().left,
