@@ -6927,7 +6927,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }(jQuery);
 $(".megamenu-fixed-width").css("width", $(document).width());
 $('.show-d').each(function () {
-  console.log(true);
+  $(this).css("height", "0px");
 }); // $(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function() {
 //   var e = $(this)
 //     if( e.parent().hasClass('dont-show') ){ e.parent().addClass('d-none') }
