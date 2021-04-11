@@ -56364,7 +56364,7 @@ var render = function() {
                             _c("span", { staticClass: "float-right " }, [
                               _c(
                                 "svg",
-                                { staticClass: "wishlist-icon-fillled mr-3" },
+                                { staticClass: "wishlist-icon-fillled mr-4" },
                                 [
                                   _c(
                                     "use",
@@ -56407,7 +56407,7 @@ var render = function() {
                                 ]
                               ),
                               _vm._v(" "),
-                              _c("svg", { staticClass: "wishlist-icon mr-3" }, [
+                              _c("svg", { staticClass: "wishlist-icon mr-4" }, [
                                 _c(
                                   "use",
                                   { attrs: { "xlink:href": "#iconStar" } },
