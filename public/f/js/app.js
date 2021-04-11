@@ -6925,8 +6925,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     p.scrollBtnAppear();
   });
 }(jQuery);
-$(".megamenu-fixed-width").css("width", $(document).width());
-console.log($(".show")); // $(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function() {
+$(".megamenu-fixed-width").css("width", $(document).width()); //$(".d-show").on(function() {
+//   var e = $(this)
+//     if( e.parent().hasClass('dont-show') ){ e.parent().addClass('d-none') }
+// });
+// $(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function() {
 //   var e = $(this)
 //     if( e.parent().hasClass('dont-show') ){ e.parent().addClass('d-none') }
 // });
