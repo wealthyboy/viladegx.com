@@ -6926,7 +6926,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
 }(jQuery);
 $(".megamenu-fixed-width").css("width", $(document).width());
-console.log($('.show-d')); // $(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function() {
+$('.show-d').each(function () {
+  console.log(true);
+}); // $(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function() {
 //   var e = $(this)
 //     if( e.parent().hasClass('dont-show') ){ e.parent().addClass('d-none') }
 // });
