@@ -305,6 +305,9 @@
     @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')
+		$(".d-down.dont-show.Women.test").each(function(){
+			$(this).css("height", "0px")
+		})
 		let nav = document.querySelectorAll('li.p-d-down')
 		let child_nav = document.querySelectorAll('li.d-down')
 		    nav.forEach(function(elm,key){
