@@ -99,7 +99,7 @@
                             @foreach( $global_categories->slice(1)   as  $category)
 							   @foreach( $category->children   as  $category)
 
-                                <li class="d-down show-d  {{ $category->parent->name  }}">
+                                <li class="d-down d-none show-d  {{ $category->parent->name  }}">
                                    <a style="color: {{  $category->text_color }} !important" href="/fashion/products/{{ $category->slug }}">{{ $category->name }}</a>
 
                                     <div class="megamenu megamenu-fixed-width">
@@ -305,7 +305,12 @@
     @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')
-		//$( "li.p-d-down.Men" ).mouseenter();
+		var n = 0;
+		$( ".show-d" ).mouseenter(function() {
+		   console.log(true)
+		}).mouseleave(function() {
+			console.log(true)
+		});
 		let nav = document.querySelectorAll('li.p-d-down')
 		let child_nav = document.querySelectorAll('li.d-down')
 		    nav.forEach(function(elm,key){
