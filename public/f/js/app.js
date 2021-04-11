@@ -6164,7 +6164,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       function e() {
         var a = document.querySelectorAll('.menu .megamenu-fixed-width');
         a.forEach(function (el, i) {
-          console.log(el);
+          console.log(el.parentNode);
         });
         u(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function () {
           var e = u(this),
