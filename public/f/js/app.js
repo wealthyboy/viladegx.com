@@ -6926,7 +6926,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     p.scrollBtnAppear();
   });
 }(jQuery);
-$(".megamenu-fixed-width").css("width", $(document).width()); // $(".megamenu-fixed-width").each(function() {
+$(".megamenu-fixed-width").css("width", $(document).width());
+$('li.dont-show').each(function () {
+  $(this).addClass('d-none');
+}); // $(".megamenu-fixed-width").each(function() {
 //   if ( $(this).parent().hasClass('dont-show') ){ $(this).parent().addClass('d-none')  }
 // })
 
