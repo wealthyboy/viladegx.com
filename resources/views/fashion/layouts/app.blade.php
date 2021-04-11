@@ -308,7 +308,7 @@
 		var n = 0;
 		$( ".show-d" ).mouseenter(function() {
 		   let t = $(this).offset().left
-		   $(this).find(".menu:not(.menu-vertical) .megamenu-fixed-width").css("left", "-" + t + "px")
+		   $(this).find(".megamenu-fixed-width").css("left", "-" + t + "px")
 		}).mouseleave(function() {
 			console.log($(this).offset())
 		});
