@@ -6168,11 +6168,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               o = e.outerWidth(),
               i = u(window).width() - 45 - t - o;
           console.log(e.parent().offset());
-          i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px");
-
-          if (e.parent().hasClass('dont-show')) {
-            e.parent().addClass('d-none');
-          }
+          i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px"); //if ( e.parent().hasClass('dont-show') ){ e.parent().addClass('d-none') }
         });
       }
 
@@ -6931,6 +6927,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
 }(jQuery);
 $(".megamenu-fixed-width").css("width", $(document).width());
+$(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function () {
+  var e = $(this);
+
+  if (e.parent().hasClass('dont-show')) {
+    e.parent().addClass('d-none');
+  }
+});
 
 /***/ }),
 
