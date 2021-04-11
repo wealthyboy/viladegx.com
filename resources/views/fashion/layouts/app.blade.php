@@ -305,6 +305,8 @@
     @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')
+
+		//this is for the navigation
 		var n = 0;
 		$( ".show-d" ).mouseenter(function() {
 		   let t = $(this).offset().left
