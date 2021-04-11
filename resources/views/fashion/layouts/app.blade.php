@@ -307,6 +307,7 @@
         @yield('inline-scripts')
 		$(".d-down.dont-show.Women.test").each(function(){
 			$(this).css("display", "block")
+			console.log(true)
 
 
 		})
