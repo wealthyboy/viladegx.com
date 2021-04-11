@@ -317,6 +317,8 @@
 						}
 						if (el.classList.contains(cl)){
                             el.classList.remove('d-none')
+							el.classList.remove('dont-show')
+
 						}
 					})
 				})
