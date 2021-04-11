@@ -6169,6 +6169,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               i = u(window).width() - 45 - t - o;
           console.log(e.parent().offset());
           i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px");
+
+          if (e.parent().hasClass('dont-show')) {
+            e.parent().addClass('d-none');
+          }
         });
       }
 
@@ -6926,12 +6930,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     p.scrollBtnAppear();
   });
 }(jQuery);
-$(".megamenu-fixed-width").css("width", $(document).width()); // $('meli.dont-show').each(function(){
-//   $(this).addClass('d-none') 
-// })
-// $(".megamenu-fixed-width").each(function() {
-//   if ( $(this).parent().hasClass('dont-show') ){ $(this).parent().addClass('d-none')  }
-// })
+$(".megamenu-fixed-width").css("width", $(document).width());
 
 /***/ }),
 
