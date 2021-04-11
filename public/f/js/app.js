@@ -6167,13 +6167,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               t = e.parent().offset().left,
               o = e.outerWidth(),
               i = u(window).width() - 45 - t - o;
+          console.log(e.offset());
           i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px");
 
           if (e.parent().hasClass('dont-show')) {
             e.parent().addClass('d-none');
           }
-
-          console.log(e.offset());
         });
       }
 
