@@ -5393,7 +5393,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -56362,10 +56361,10 @@ var render = function() {
                                 })
                               : _vm._e(),
                             _vm._v(" "),
-                            _c("span", { staticClass: "float-right" }, [
+                            _c("span", { staticClass: "float-right " }, [
                               _c(
                                 "svg",
-                                { staticClass: "wishlist-icon-fillled" },
+                                { staticClass: "wishlist-icon-fillled mr-3" },
                                 [
                                   _c(
                                     "use",
@@ -56408,7 +56407,7 @@ var render = function() {
                                 ]
                               ),
                               _vm._v(" "),
-                              _c("svg", { staticClass: "wishlist-icon" }, [
+                              _c("svg", { staticClass: "wishlist-icon mr-3" }, [
                                 _c(
                                   "use",
                                   { attrs: { "xlink:href": "#iconStar" } },
