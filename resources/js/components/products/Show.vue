@@ -6,7 +6,6 @@
                 <div class="col-md-6 d-sm-block d-md-none product-single-gallery">
                     <images  :image="image" :images="images" />
                     
-
                 </div><!-- End .product-single-gallery -->
                 <div class="col-md-7">
                     <images  :image="image" :images="images" />
@@ -180,7 +179,7 @@
                                 <div v-html="product.description" class="product-desc-content  pl-2 pb-2 color--primary"></div><!-- End .product-desc-content -->
                             </div>
                             <div class="col">
-                                
+                                <images  :image="image" :images="images" />
                             </div>
                         </div>
                     </div><!-- End .tab-pane -->

@@ -5394,7 +5394,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -56484,7 +56483,16 @@ var render = function() {
                       })
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col" })
+                    _c(
+                      "div",
+                      { staticClass: "col" },
+                      [
+                        _c("images", {
+                          attrs: { image: _vm.image, images: _vm.images }
+                        })
+                      ],
+                      1
+                    )
                   ])
                 ]
               ),
