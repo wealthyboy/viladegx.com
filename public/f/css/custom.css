@@ -212,7 +212,7 @@ input {
 }
 
 .menu .dont-show {
-    height: 0px;
+    height: 1px;
 }
 
 .main-nav .menu .megamenu {
