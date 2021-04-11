@@ -211,10 +211,6 @@ input {
     font-weight: 400 !important;
 }
 
-.menu .dont-show {
-    height: 1px;
-}
-
 .main-nav .menu .megamenu {
     top: 100%;
     left: -15px;

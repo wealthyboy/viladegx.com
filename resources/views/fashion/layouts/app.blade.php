@@ -305,7 +305,7 @@
     @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')
-		$( "li.p-d-down.Men" ).mouseenter();
+		//$( "li.p-d-down.Men" ).mouseenter();
 		let nav = document.querySelectorAll('li.p-d-down')
 		let child_nav = document.querySelectorAll('li.d-down')
 		    nav.forEach(function(elm,key){
