@@ -6162,16 +6162,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
 
       function e() {
-        var a = document.querySelectorAll('.menu .megamenu-fixed-width');
-        a.forEach(function (el, i) {
-          console.log(el.parentNode.getBoundingClientRect().left);
-        });
         u(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function () {
           var e = u(this),
               t = e.parent().offset().left,
               o = e.outerWidth(),
               i = u(window).width() - 45 - t - o;
           i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px");
+
+          if (e.parent().hasClass('dont-show')) {
+            e.parent().addClass('d-none');
+          }
         });
       }
 
