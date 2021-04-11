@@ -307,7 +307,8 @@
         @yield('inline-scripts')
 		var n = 0;
 		$( ".show-d" ).mouseenter(function() {
-		   console.log($(this).offset())
+		   let t = $(this).offset()
+		   $(this).find(".menu:not(.menu-vertical) .megamenu-fixed-width").css("left", "-" + t + "px")
 		}).mouseleave(function() {
 			console.log($(this).offset())
 		});
