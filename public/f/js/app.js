@@ -6162,7 +6162,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
 
       function e() {
-        var a = document.querySelectorAll('.megamenu-fixed-width');
+        var a = document.querySelectorAll('.menu .megamenu-fixed-width');
         console.log(a);
         u(".menu:not(.menu-vertical) .megamenu-fixed-width").each(function () {
           var e = u(this),
