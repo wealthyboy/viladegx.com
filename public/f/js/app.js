@@ -6171,7 +6171,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           i < 0 ? e.css("left", "-" + t + "px") : e.css("left", "0px");
 
           if (e.parent().hasClass('show-d')) {
-            e.parent().addClass('dont-show');
+            e.parent().addClass('test').css("height", "0px");
           }
         });
       }
