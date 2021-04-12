@@ -5414,6 +5414,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -55808,7 +55814,9 @@ var render = function() {
                             )
                       ])
                     ])
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1)
                 ]
               )
             ],
@@ -55816,7 +55824,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", { staticClass: "product-single-tabs" }, [
-            _vm._m(1),
+            _vm._m(2),
             _vm._v(" "),
             _c("div", { staticClass: "tab-content " }, [
               _c(
@@ -55853,7 +55861,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(3)
             ])
           ])
         ]
@@ -55873,6 +55881,19 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "prod-full-screen" }, [
       _c("i", { staticClass: "fas fa-search-plus fa-3x" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12 mt-3 text-center" }, [
+      _c("span", { staticClass: "bold color--gray" }, [
+        _vm._v("Estimated Delivery Time")
+      ]),
+      _c("br"),
+      _vm._v(" "),
+      _c("span", [_vm._v("3 to 4 working days")])
     ])
   },
   function() {
