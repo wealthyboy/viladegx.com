@@ -3160,8 +3160,9 @@ var addProductToWishList = function addProductToWishList(_ref11, _ref12) {
   var product_variation_id = _ref12.product_variation_id;
   return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/wishlist', {
     product_variation_id: product_variation_id
-  }).then(function (response) {
-    commit('appendToWishlist', response.data.data);
+  }).then(function (res) {
+    //donot
+    console.log(res.data);
   })["catch"](function (error) {
     dispatch('flashMessage', "Sorry your item could not be saved.Please try again");
   });

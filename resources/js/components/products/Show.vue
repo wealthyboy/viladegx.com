@@ -521,12 +521,7 @@ export default {
             this.wishlistText = true
             this.addProductToWishList({
                 product_variation_id:this.product_variation_id,
-            }).then((response)=>{
-                this.wishlistText = false
-
-                console.log(response)
-
-                 
+            }).then( () =>{                 
                 //this.is_wishlist = false
             })
         }, 
