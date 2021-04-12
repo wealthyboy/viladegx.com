@@ -55582,266 +55582,273 @@ var render = function() {
                         : _vm._e()
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "row ml-1 mb-2 mt-2" }, [
-                      _c("div", { staticClass: "col-8" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "l-f1  pt-4 pb-4  btn btn--primary  add-to-cart btn-lg btn-block",
-                            class: _vm.canAddToCart,
-                            attrs: {
-                              type: "button",
-                              name: "add-to-cart",
-                              value: "add_to_cart"
-                            },
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.addToCart($event)
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                " +
-                                _vm._s(_vm.cartText) +
-                                "\n                                "
-                            ),
-                            _vm.loading
-                              ? _c("span", {
-                                  staticClass:
-                                    "spinner-border spinner-border-sm float-right ml-3",
-                                  attrs: {
-                                    role: "status",
-                                    "aria-hidden": "true"
-                                  }
-                                })
-                              : _vm._e()
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: " col-4" }, [
-                        _vm.$root.loggedIn
-                          ? _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block",
-                                attrs: {
-                                  type: "button",
-                                  name: "add-to-cart",
-                                  value: "add_to_cart"
-                                },
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.addToWishList($event)
-                                  }
-                                }
+                    _c(
+                      "div",
+                      { staticClass: "row ml-1 mb-2 mt-2 no-gutters" },
+                      [
+                        _c("div", { staticClass: "col-8" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "l-f1  pt-4 pb-4  btn btn--primary  add-to-cart btn-lg btn-block",
+                              class: _vm.canAddToCart,
+                              attrs: {
+                                type: "button",
+                                name: "add-to-cart",
+                                value: "add_to_cart"
                               },
-                              [
-                                _c("span", [_vm._v("Wishlist")]),
-                                _vm._v(" "),
-                                _vm.wishlistText
-                                  ? _c("span", {
-                                      staticClass:
-                                        "spinner-border spinner-border-sm float-right ml-3",
-                                      attrs: {
-                                        role: "status",
-                                        "aria-hidden": "true"
-                                      }
-                                    })
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _c("span", { staticClass: "float-right " }, [
-                                  _vm.is_wishlist
-                                    ? _c(
-                                        "svg",
-                                        {
-                                          staticClass:
-                                            "wishlist-icon-fillled mr-4"
-                                        },
-                                        [
-                                          _c(
-                                            "use",
-                                            {
-                                              attrs: {
-                                                "xlink:href": "#iconStarFill"
-                                              }
-                                            },
-                                            [
-                                              _c(
-                                                "symbol",
-                                                {
-                                                  attrs: {
-                                                    "data-icon-id": "starFill",
-                                                    id: "iconStarFill"
-                                                  }
-                                                },
-                                                [
-                                                  _c(
-                                                    "svg",
-                                                    {
-                                                      attrs: {
-                                                        xmlns:
-                                                          "http://www.w3.org/2000/svg",
-                                                        viewBox: "0 0 24 24"
-                                                      }
-                                                    },
-                                                    [
-                                                      _c("path", {
-                                                        attrs: {
-                                                          "fill-rule":
-                                                            "evenodd",
-                                                          d:
-                                                            "M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922z"
-                                                        }
-                                                      })
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.addToCart($event)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(_vm.cartText) +
+                                  "\n                                "
+                              ),
+                              _vm.loading
+                                ? _c("span", {
+                                    staticClass:
+                                      "spinner-border spinner-border-sm float-right ml-3",
+                                    attrs: {
+                                      role: "status",
+                                      "aria-hidden": "true"
+                                    }
+                                  })
+                                : _vm._e()
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-4" }, [
+                          _vm.$root.loggedIn
+                            ? _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block",
+                                  attrs: {
+                                    type: "button",
+                                    name: "add-to-cart",
+                                    value: "add_to_cart"
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.addToWishList($event)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("span", [_vm._v("Wishlist")]),
+                                  _vm._v(" "),
+                                  _vm.wishlistText
+                                    ? _c("span", {
+                                        staticClass:
+                                          "spinner-border spinner-border-sm float-right ml-3",
+                                        attrs: {
+                                          role: "status",
+                                          "aria-hidden": "true"
+                                        }
+                                      })
                                     : _vm._e(),
                                   _vm._v(" "),
-                                  !_vm.is_wishlist
-                                    ? _c(
-                                        "svg",
-                                        { staticClass: "wishlist-icon mr-4 " },
-                                        [
-                                          _c(
-                                            "use",
-                                            {
-                                              attrs: {
-                                                "xlink:href": "#iconStar"
-                                              }
-                                            },
-                                            [
-                                              _c(
-                                                "symbol",
-                                                {
-                                                  attrs: {
-                                                    "data-icon-id": "star",
-                                                    "data-icon-set":
-                                                      "farfetch-2020",
-                                                    id: "iconStar"
-                                                  }
-                                                },
-                                                [
-                                                  _c(
-                                                    "svg",
-                                                    {
-                                                      attrs: {
-                                                        xmlns:
-                                                          "http://www.w3.org/2000/svg",
-                                                        viewBox: "0 0 24 24"
-                                                      }
-                                                    },
-                                                    [
-                                                      _c("path", {
-                                                        attrs: {
-                                                          "fill-rule":
-                                                            "evenodd",
-                                                          d:
-                                                            "M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"
-                                                        }
-                                                      })
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    : _vm._e()
-                                ])
-                              ]
-                            )
-                          : _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block",
-                                attrs: {
-                                  "data-toggle": "modal",
-                                  "data-target": "#login-modal",
-                                  type: "button",
-                                  name: "add-to-cart",
-                                  value: "add_to_cart"
-                                }
-                              },
-                              [
-                                _c("span", [_vm._v("Wishlist")]),
-                                _vm._v(" "),
-                                _vm.wishlistText
-                                  ? _c("span", {
-                                      staticClass:
-                                        "spinner-border spinner-border-sm float-right ml-3",
-                                      attrs: {
-                                        role: "status",
-                                        "aria-hidden": "true"
-                                      }
-                                    })
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _c("span", { staticClass: "float-right " }, [
-                                  _c(
-                                    "svg",
-                                    { staticClass: "wishlist-icon mr-4 " },
-                                    [
-                                      _c(
-                                        "use",
-                                        {
-                                          attrs: { "xlink:href": "#iconStar" }
-                                        },
-                                        [
-                                          _c(
-                                            "symbol",
-                                            {
-                                              attrs: {
-                                                "data-icon-id": "star",
-                                                "data-icon-set":
-                                                  "farfetch-2020",
-                                                id: "iconStar"
-                                              }
-                                            },
-                                            [
-                                              _c(
-                                                "svg",
-                                                {
-                                                  attrs: {
-                                                    xmlns:
-                                                      "http://www.w3.org/2000/svg",
-                                                    viewBox: "0 0 24 24"
-                                                  }
-                                                },
-                                                [
-                                                  _c("path", {
+                                  _c("span", { staticClass: "float-right " }, [
+                                    _vm.is_wishlist
+                                      ? _c(
+                                          "svg",
+                                          {
+                                            staticClass:
+                                              "wishlist-icon-fillled mr-4"
+                                          },
+                                          [
+                                            _c(
+                                              "use",
+                                              {
+                                                attrs: {
+                                                  "xlink:href": "#iconStarFill"
+                                                }
+                                              },
+                                              [
+                                                _c(
+                                                  "symbol",
+                                                  {
                                                     attrs: {
-                                                      "fill-rule": "evenodd",
-                                                      d:
-                                                        "M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"
+                                                      "data-icon-id":
+                                                        "starFill",
+                                                      id: "iconStarFill"
                                                     }
-                                                  })
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ])
-                              ]
-                            )
-                      ])
-                    ])
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "svg",
+                                                      {
+                                                        attrs: {
+                                                          xmlns:
+                                                            "http://www.w3.org/2000/svg",
+                                                          viewBox: "0 0 24 24"
+                                                        }
+                                                      },
+                                                      [
+                                                        _c("path", {
+                                                          attrs: {
+                                                            "fill-rule":
+                                                              "evenodd",
+                                                            d:
+                                                              "M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922z"
+                                                          }
+                                                        })
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    !_vm.is_wishlist
+                                      ? _c(
+                                          "svg",
+                                          {
+                                            staticClass: "wishlist-icon mr-4 "
+                                          },
+                                          [
+                                            _c(
+                                              "use",
+                                              {
+                                                attrs: {
+                                                  "xlink:href": "#iconStar"
+                                                }
+                                              },
+                                              [
+                                                _c(
+                                                  "symbol",
+                                                  {
+                                                    attrs: {
+                                                      "data-icon-id": "star",
+                                                      "data-icon-set":
+                                                        "farfetch-2020",
+                                                      id: "iconStar"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "svg",
+                                                      {
+                                                        attrs: {
+                                                          xmlns:
+                                                            "http://www.w3.org/2000/svg",
+                                                          viewBox: "0 0 24 24"
+                                                        }
+                                                      },
+                                                      [
+                                                        _c("path", {
+                                                          attrs: {
+                                                            "fill-rule":
+                                                              "evenodd",
+                                                            d:
+                                                              "M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"
+                                                          }
+                                                        })
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e()
+                                  ])
+                                ]
+                              )
+                            : _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block",
+                                  attrs: {
+                                    "data-toggle": "modal",
+                                    "data-target": "#login-modal",
+                                    type: "button",
+                                    name: "add-to-cart",
+                                    value: "add_to_cart"
+                                  }
+                                },
+                                [
+                                  _c("span", [_vm._v("Wishlist")]),
+                                  _vm._v(" "),
+                                  _vm.wishlistText
+                                    ? _c("span", {
+                                        staticClass:
+                                          "spinner-border spinner-border-sm float-right ml-3",
+                                        attrs: {
+                                          role: "status",
+                                          "aria-hidden": "true"
+                                        }
+                                      })
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("span", { staticClass: "float-right " }, [
+                                    _c(
+                                      "svg",
+                                      { staticClass: "wishlist-icon mr-4 " },
+                                      [
+                                        _c(
+                                          "use",
+                                          {
+                                            attrs: { "xlink:href": "#iconStar" }
+                                          },
+                                          [
+                                            _c(
+                                              "symbol",
+                                              {
+                                                attrs: {
+                                                  "data-icon-id": "star",
+                                                  "data-icon-set":
+                                                    "farfetch-2020",
+                                                  id: "iconStar"
+                                                }
+                                              },
+                                              [
+                                                _c(
+                                                  "svg",
+                                                  {
+                                                    attrs: {
+                                                      xmlns:
+                                                        "http://www.w3.org/2000/svg",
+                                                      viewBox: "0 0 24 24"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("path", {
+                                                      attrs: {
+                                                        "fill-rule": "evenodd",
+                                                        d:
+                                                          "M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"
+                                                      }
+                                                    })
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                        ])
+                      ]
+                    )
                   ]),
                   _vm._v(" "),
                   _vm._m(1),
