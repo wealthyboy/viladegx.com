@@ -36,13 +36,18 @@ class Favorite extends Model
         $favorite = $builder->where(['user_id'=>$user_id,'product_variation_id'=>$id])->first();
          if ( null !== $favorite ) { 
              $favorite->delete();
-             return false;
+
+             $favorites = $builder->where(['user_id'=>$user_id,'product_variation_id'=>$id])->all();
+
+             return $favorites;
          }  else {
-             $favorite = new Favorite;
-             $favorite->user_id = $user_id;
-             $favorite->product_variation_id = $id;
-             $favorite->save();
-             return true;
+            $favorite = new Favorite;
+            $favorite->user_id = $user_id;
+            $favorite->product_variation_id = $id;
+            $favorite->save();
+            $favorites = $builder->where(['user_id'=>$user_id,'product_variation_id'=>$id])->all();
+            return $favorites;
+
          }
      }
 	
