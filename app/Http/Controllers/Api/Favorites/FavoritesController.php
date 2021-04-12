@@ -46,7 +46,7 @@ class FavoritesController  extends Controller
          }
 
 		
-		return FavoritesResource::collection($favorites);
+		return FavoritesResource::collection($user->favorites);
 	}
 
 	public function destroy(Request $request,$id) 
