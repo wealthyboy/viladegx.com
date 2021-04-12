@@ -3380,8 +3380,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -51827,55 +51825,7 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-2" }, [
-                            _c("div", { staticClass: "pt-2 pb-4 form-group" }, [
-                              _c("label", { staticClass: "bold" }, [
-                                _vm._v("Qty")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "product-quantity select-custom",
-                                  attrs: { id: "quantity_1234" }
-                                },
-                                [
-                                  _c(
-                                    "select",
-                                    {
-                                      staticClass: "input--lg form-control",
-                                      attrs: {
-                                        id: "add-to-cart-quantity",
-                                        name: "qty"
-                                      },
-                                      on: {
-                                        change: function($event) {
-                                          return _vm.updateCartQty(
-                                            $event,
-                                            cart.product_variation.id
-                                          )
-                                        }
-                                      }
-                                    },
-                                    _vm._l(
-                                      parseInt(cart.product_variation.quantity),
-                                      function(x) {
-                                        return _c(
-                                          "option",
-                                          {
-                                            key: x,
-                                            domProps: {
-                                              selected: x == cart.quantity
-                                            }
-                                          },
-                                          [_vm._v(_vm._s(x))]
-                                        )
-                                      }
-                                    ),
-                                    0
-                                  )
-                                ]
-                              )
-                            ]),
+                            _vm._m(0, true),
                             _vm._v(" "),
                             _c("div", {}, [
                               _c(
@@ -51892,7 +51842,7 @@ var render = function() {
                                   }
                                 },
                                 [
-                                  _vm._m(0, true),
+                                  _vm._m(1, true),
                                   _vm._v(
                                     "\n                                         " +
                                       _vm._s(_vm.removeCart) +
@@ -51957,7 +51907,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(1)
+                  _vm._m(2)
                 ])
               ]
             )
@@ -51966,11 +51916,32 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     !_vm.loading && !_vm.carts.length
-      ? _c("div", { staticClass: "row justify-content-center" }, [_vm._m(2)])
+      ? _c("div", { staticClass: "row justify-content-center" }, [_vm._m(3)])
       : _vm._e()
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pt-2 pb-4 form-group" }, [
+      _c("label", { staticClass: "bold" }, [_vm._v("Qty")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "product-quantity select-custom",
+          attrs: { id: "quantity_1234" }
+        },
+        [
+          _vm._v(
+            "\n                                         1 \n                                     "
+          )
+        ]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

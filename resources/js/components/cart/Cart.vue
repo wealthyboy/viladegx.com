@@ -47,9 +47,7 @@
                                     <div class="pt-2 pb-4 form-group">                     
                                         <label class="bold">Qty</label>
                                         <div id="quantity_1234" class="product-quantity select-custom">
-                                            <select @change="updateCartQty($event,cart.product_variation.id)" id="add-to-cart-quantity" name="qty"  class="input--lg form-control"> 
-                                                <option   v-for="x in parseInt(cart.product_variation.quantity)" :selected="x == cart.quantity"  :key="x" >{{ x }}</option>
-                                            </select> 
+                                            1 
                                         </div>
                                     </div>
                                     <div class="">                     
