@@ -81,10 +81,7 @@ export const addProductToWishList = ({ commit,dispatch },{ product_variation_id,
         product_variation_id: product_variation_id,
     }).then((res) => {
         let resp = res.data;
-        if ( resp.status == 'added' ) {
-            context.is_wishlist = true
-        }
-
+        resp.status == 'added' ? context.is_wishlist = true : context.is_wishlist =false;
         context.wishlistText = false;
 
     }).catch((error) =>{

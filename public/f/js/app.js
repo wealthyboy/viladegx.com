@@ -10598,11 +10598,7 @@ var addProductToWishList = function addProductToWishList(_ref11, _ref12) {
     product_variation_id: product_variation_id
   }).then(function (res) {
     var resp = res.data;
-
-    if (resp.status == 'added') {
-      context.is_wishlist = true;
-    }
-
+    resp.status == 'added' ? context.is_wishlist = true : context.is_wishlist = false;
     context.wishlistText = false;
   })["catch"](function (error) {
     dispatch('flashMessage', "Sorry your item could not be saved.Please try again");
