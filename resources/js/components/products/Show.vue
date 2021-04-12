@@ -521,8 +521,7 @@ export default {
             this.wishlistText = true
             this.addProductToWishList({
                 product_variation_id:this.product_variation_id,
-            }).then( () =>{                 
-                //this.is_wishlist = false
+                context: this
             })
         }, 
         submit(){

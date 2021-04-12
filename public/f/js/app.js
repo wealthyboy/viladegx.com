@@ -5711,8 +5711,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     addToWishList: function addToWishList() {
       this.wishlistText = true;
       this.addProductToWishList({
-        product_variation_id: this.product_variation_id
-      }).then(function () {//this.is_wishlist = false
+        product_variation_id: this.product_variation_id,
+        context: this
       });
     },
     submit: function submit() {
@@ -10592,12 +10592,18 @@ var updateCartMeta = function updateCartMeta(_ref10, payload) {
 var addProductToWishList = function addProductToWishList(_ref11, _ref12) {
   var commit = _ref11.commit,
       dispatch = _ref11.dispatch;
-  var product_variation_id = _ref12.product_variation_id;
+  var product_variation_id = _ref12.product_variation_id,
+      context = _ref12.context;
   return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/wishlist', {
     product_variation_id: product_variation_id
   }).then(function (res) {
-    //donot
-    console.log(res.data);
+    var resp = res.data;
+
+    if (resp.status == 'added') {
+      context.is_wishlist = true;
+    }
+
+    context.wishlistText = false;
   })["catch"](function (error) {
     dispatch('flashMessage', "Sorry your item could not be saved.Please try again");
   });

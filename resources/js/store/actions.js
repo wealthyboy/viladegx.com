@@ -76,12 +76,17 @@ export  const updateCartMeta =  ({commit}, payload)  => {
 }
 
 
-export const addProductToWishList = ({ commit,dispatch },{ product_variation_id }) => {
+export const addProductToWishList = ({ commit,dispatch },{ product_variation_id, context }) => {
     return axios.post('/api/wishlist', {
         product_variation_id: product_variation_id,
     }).then((res) => {
-        //donot
-        console.log(res.data)
+        let resp = res.data;
+        if ( resp.status == 'added' ) {
+            context.is_wishlist = true
+        }
+
+        context.wishlistText = false;
+
     }).catch((error) =>{
         dispatch('flashMessage', "Sorry your item could not be saved.Please try again")
     })
