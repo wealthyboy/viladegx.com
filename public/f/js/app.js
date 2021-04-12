@@ -55945,7 +55945,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", {}, [
+    return _c("div", { staticClass: "mt-2" }, [
       _c("div", { staticClass: "feature-boxes-container row " }, [
         _c("div", { staticClass: "col-md-4 col-6" }, [
           _c(

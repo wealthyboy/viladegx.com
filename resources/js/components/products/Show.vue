@@ -181,7 +181,7 @@
                         <span class="bold color--gray">Estimated Delivery Time</span><br/>
                         <span>3 to 4 working days</span>
                     </div>
-                    <div class="">
+                    <div class="mt-2">
                         <div class="feature-boxes-container row ">
                             
                             <div class="col-md-4 col-6">
