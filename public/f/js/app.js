@@ -55592,7 +55592,7 @@ var render = function() {
                             {
                               staticClass:
                                 "l-f1  pt-4 pb-4  btn btn--primary  add-to-cart btn-lg btn-block",
-                              class: _vm.canAddToCart,
+                              class: { disabled: _vm.canNotAddToCart },
                               attrs: {
                                 type: "button",
                                 name: "add-to-cart",
