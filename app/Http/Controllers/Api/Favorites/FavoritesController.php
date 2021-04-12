@@ -40,8 +40,8 @@ class FavoritesController  extends Controller
              $favorite->delete();
          }  else {
             $favorite = new Favorite;
-            $favorite->user_id = $user_id;
-            $favorite->product_variation_id = $id;
+            $favorite->user_id = $user->id;
+            $favorite->product_variation_id = $request->product_variation_id;
             $favorite->save();
          }
 
