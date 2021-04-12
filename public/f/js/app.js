@@ -55586,7 +55586,7 @@ var render = function() {
                       "div",
                       { staticClass: "row ml-1 mb-2 mt-2 no-gutters" },
                       [
-                        _c("div", { staticClass: "col-8" }, [
+                        _c("div", { staticClass: "col-8 pr-1" }, [
                           _c(
                             "button",
                             {
