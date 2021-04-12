@@ -5448,9 +5448,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
 
 
 
@@ -55934,7 +55931,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mt-2" }, [
-      _c("div", { staticClass: "feature-boxes-container row " }, [
+      _c("div", { staticClass: "feature-boxes-container row no-gutters" }, [
         _c("div", { staticClass: " col-6" }, [
           _c(
             "div",

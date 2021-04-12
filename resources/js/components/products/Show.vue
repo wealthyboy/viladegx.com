@@ -182,11 +182,8 @@
                         <span>3 to 4 working days</span>
                     </div>
                     <div class="mt-2">
-                        <div class="feature-boxes-container row ">
-                           
-
-                    
-
+                        <div class="feature-boxes-container row no-gutters">
+                        
                             <div class=" col-6">
                                 <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
                                    <i class="fas fa-2x fa-phone"></i> 
