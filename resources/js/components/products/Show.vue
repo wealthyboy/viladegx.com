@@ -537,7 +537,7 @@ export default {
             let input = document.querySelectorAll('.rating_required');
             this.validateForm({ context:this, input:input })
             if ( Object.keys(this.errors).length !== 0 ){ 
-                if (!this.form.rating){
+                if ( !this.form.rating ){
                    this.noRating = true
                 }
                 return false; 

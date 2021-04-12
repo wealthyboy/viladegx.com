@@ -311,9 +311,7 @@
 		$( ".show-d" ).mouseenter(function() {
 		   let t = $(this).offset().left
 		   $(this).find(".megamenu-fixed-width").css("left", "-" + t + "px")
-		}).mouseleave(function() {
-			console.log($(this).offset())
-		});
+		})
 		let nav = document.querySelectorAll('li.p-d-down')
 		let child_nav = document.querySelectorAll('li.d-down')
 		    nav.forEach(function(elm,key){

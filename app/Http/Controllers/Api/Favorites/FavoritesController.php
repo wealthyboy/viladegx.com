@@ -37,16 +37,19 @@ class FavoritesController  extends Controller
 		
 		$favorite = Favorite::where(['user_id'=>$user->id,'product_variation_id'=>$request->product_variation_id])->first();
          if ( null !== $favorite ) { 
-             $favorite->delete();
+            if ( $favorite->delete() ){
+				return response()->json([ 'count' => $user->favorites->count(), 'status' => 'deleted' ]);
+			}
          }  else {
             $favorite = new Favorite;
             $favorite->user_id = $user->id;
             $favorite->product_variation_id = $request->product_variation_id;
             $favorite->save();
+			return response()->json([ 'count' => $user->favorites->count(),  'status' => 'added' ]);
          }
 
 		
-		return response()->json([ 'count' => $user->favorites->count() ]);
+		return response()->json([ 'error' => 'We could not save your item at the moment' ]);
 	}
 
 	public function destroy(Request $request,$id) 
