@@ -5414,7 +5414,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -55559,11 +55558,6 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "row ml-1 mb-2 mt-2" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.wishlist) +
-                          "\n\n                        "
-                      ),
                       _c("div", { staticClass: "col-8" }, [
                         _c(
                           "button",
