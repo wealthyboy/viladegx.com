@@ -35,7 +35,7 @@ class FavoritesController  extends Controller
 	{
 		$user = $request->user();
 		
-		$favorite = Favorite::where(['user_id'=>$user_id,'product_variation_id'=>$request->product_variation_id])->first();
+		$favorite = Favorite::where(['user_id'=>$user->id,'product_variation_id'=>$request->product_variation_id])->first();
          if ( null !== $favorite ) { 
              $favorite->delete();
          }  else {
