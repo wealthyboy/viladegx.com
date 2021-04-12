@@ -137,22 +137,40 @@
                                 </button>
                             </div>
                             <div class=" col-4">
-                                <button @click.prevent="addToCart"  :class="canAddToCart"  type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block">
+                                <button v-if="$root.loggedIn"  @click.prevent="addToWishList"    type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block">
                                     <span>Wishlist</span> 
-                                    <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
+                                    <span  v-if="wishlistText"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
                                     <span class="float-right ">
-                                        <svg class="wishlist-icon-fillled mr-4">
+                                        <svg v-if="is_wishlist" class="wishlist-icon-fillled mr-4">
                                             <use xlink:href="#iconStarFill">
                                                <symbol data-icon-id="starFill" id="iconStarFill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922z"></path></svg></symbol>
                                             </use>
                                         </svg>
-                                        <svg class="wishlist-icon mr-4">
+                                        <svg v-if="!is_wishlist" class="wishlist-icon mr-4 ">
                                             <use xlink:href="#iconStar">
                                             <symbol data-icon-id="star" data-icon-set="farfetch-2020" id="iconStar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"></path></svg></symbol>
                                             </use>
                                         </svg>
                                     </span>
                                 </button>
+
+
+                                <button v-else data-toggle="modal" data-target="#login-modal"  type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block">
+                                     <span>Wishlist</span> 
+                                    <span  v-if="wishlistText"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
+                                    <span class="float-right ">
+                                        
+                                        <svg  class="wishlist-icon mr-4 ">
+                                            <use xlink:href="#iconStar">
+                                            <symbol data-icon-id="star" data-icon-set="farfetch-2020" id="iconStar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"></path></svg></symbol>
+                                            </use>
+                                        </svg>
+                                    </span>
+                                </button>
+
+
+
+
                             </div>
                             
                         </div>
@@ -213,7 +231,6 @@ import  LoginModal from '../auth/LoginModal.vue'
 import  RegisterModal from '../auth/RegisterModal.vue'
 import  { mapGetters,mapActions } from 'vuex'
 import  Pagination from '../pagination/Pagination.vue'
-import imageZoom from './imageZoom';
 
 
 export default {
@@ -228,7 +245,7 @@ export default {
        LoginModal,
        Pagination,
        RegisterModal,
-       imageZoom
+       
     },
     data(){
         return {
