@@ -52007,7 +52007,7 @@ var staticRenderFns = [
           _vm._v("You don't have any items in your cart")
         ]),
         _vm._v(" "),
-        _c("a", { staticClass: "btn border", attrs: { href: "/" } }, [
+        _c("a", { staticClass: "btn border", attrs: { href: "/fashion" } }, [
           _vm._v("Continue Shopping")
         ])
       ])

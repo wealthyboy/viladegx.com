@@ -35,7 +35,7 @@
         <cart-summary  />
 
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mt-3">
         <div class="feature-boxes-container row ">
             <div class="col-6 col-md-3">
                 <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
