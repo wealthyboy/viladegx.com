@@ -51989,7 +51989,7 @@ var staticRenderFns = [
         {
           staticClass:
             "checkout-button btn btn--lg btn--primary bold full-width",
-          attrs: { href: "/checkout" }
+          attrs: { href: "/fashion/checkout" }
         },
         [_vm._v("Proceed to checkout")]
       )

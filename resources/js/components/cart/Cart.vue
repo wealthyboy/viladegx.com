@@ -81,7 +81,7 @@
                             <span class="price-amount amount bold float-right"><span class="currencySymbol">{{  meta.currency }}{{ meta.sub_total | priceFormat}}</span></span>
                         </div>
                         <div class="proceed-to-checkout">
-                            <a href="/checkout" class="checkout-button btn btn--lg btn--primary bold full-width">Proceed to checkout</a>
+                            <a href="/fashion/checkout" class="checkout-button btn btn--lg btn--primary bold full-width">Proceed to checkout</a>
                         </div>
                     </div>
                 </div>
