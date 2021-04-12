@@ -178,7 +178,6 @@
                     </div><!-- End .product-filters-container -->   
 
                     <div class="col-12 mt-3 text-center">
-                        
                         <span class="bold color--gray">Estimated Delivery Time</span><br/>
                         <span>3 to 4 working days</span>
                     </div>

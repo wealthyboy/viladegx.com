@@ -13,7 +13,7 @@
     @if ( optional($product)->related_products->count() )
 
     <div class="products-section pt-0">
-        <h2 class="section-title bold">Related Products</h2>
+        <h2 class="">Related Products</h2>
 
         <div class="products-slider owl-carousel owl-theme dots-top">
             @foreach( $related_products as $related_product)
@@ -30,10 +30,12 @@
                     @endif
                     
                 </figure>
-                <div class="product-details">
-                    <h3 class="product-title">
-                        <a href="{{ optional($related_product->product_variation)->link }}">{{ optional($related_product->product)->product_name }}</a>
-                    </h3>
+                <div class="product-details text-center">
+                    <div class="mx-auto">
+                        <div class="color--primary">
+                            <a href="{{ optional($related_product->product_variation)->link }}">{{ optional($related_product->product)->product_name }}</a>
+                        </div>
+                    </div>
                     <div class="price-box">
                         @if (optional($related_product->product)->default_discounted_price ) 
                             <span class="old-price">{{ optional($related_product->product)->currency }}{{ number_format(optional($related_product->product)->converted_price)  }}</span>
@@ -42,6 +44,7 @@
                            <span class="product-price">{{ optional($related_product->product)->currency }}{{ number_format(optional($related_product->product)->converted_price)  }}</span>
                         @endif
                     </div><!-- End .price-box -->
+
                 </div><!-- End .product-details -->
             </div>
 
