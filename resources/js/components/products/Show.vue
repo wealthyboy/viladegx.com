@@ -201,11 +201,11 @@
 
                             <div class="col-md-4 col-6">
                                 <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
-                                    <i class="fab fa-whatsapp"></i>
+                                   <i class="fas fa-2x fa-phone"></i> 
 
                                     <div class="feature-box-content">
-                                        <h3 class="mb-0 pb-1">WHATSAPP</h3>
-                                        <h5 class="m-b-3">Add us on +234 9043111111</h5>
+                                        <h3 class="mb-0 pb-1">Order by phone</h3>
+                                        <h5 class="m-b-3">Add us on +234 </h5>
                                         <p></p>
                                     </div><!-- End .feature-box-content -->
                                 </div><!-- End .feature-box -->
@@ -218,7 +218,6 @@
                                     <div class="feature-box-content">
                                         <h3 class="mb-0 pb-1">Returns</h3>
                                         <h5 class="m-b-3">Hassle free returns policy. Order with peace of mind</h5>
-
                                         <p></p>
                                     </div><!-- End .feature-box-content -->
                                 </div><!-- End .feature-box -->

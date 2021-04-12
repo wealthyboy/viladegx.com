@@ -5463,7 +5463,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -55979,14 +55978,14 @@ var staticRenderFns = [
                 "feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center"
             },
             [
-              _c("i", { staticClass: "fab fa-whatsapp" }),
+              _c("i", { staticClass: "fas fa-2x fa-phone" }),
               _vm._v(" "),
               _c("div", { staticClass: "feature-box-content" }, [
-                _c("h3", { staticClass: "mb-0 pb-1" }, [_vm._v("WHATSAPP")]),
-                _vm._v(" "),
-                _c("h5", { staticClass: "m-b-3" }, [
-                  _vm._v("Add us on +234 9043111111")
+                _c("h3", { staticClass: "mb-0 pb-1" }, [
+                  _vm._v("Order by phone")
                 ]),
+                _vm._v(" "),
+                _c("h5", { staticClass: "m-b-3" }, [_vm._v("Add us on +234 ")]),
                 _vm._v(" "),
                 _c("p")
               ])
