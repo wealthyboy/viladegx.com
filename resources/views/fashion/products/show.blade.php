@@ -3,18 +3,10 @@
 
 @include('fashion._partials.top_banner')
 
-<nav aria-label="breadcrumb" class="breadcrumb-nav">
-    <div class="container">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/"><i class="icon-home"></i></a></li>
-            <li class="breadcrumb-item bold"><a href="/products/{{ $category->slug }}"><small>{{ title_case($category->name) }}</small></a></li>
-            <li class="breadcrumb-item active" aria-current="page"><small>{{ $product->name }}</small></li>
-        </ol>
-    </div>
-</nav>
 
 
-<div class="container-fluid">
+
+<div class="container-fluid mt-1">
     <div>
         <product-show :attributes="{{ $attributes }}"  :product="{{ $product}}" />
     </div>
