@@ -55591,13 +55591,9 @@ var render = function() {
                             "button",
                             {
                               staticClass:
-                                "l-f1  pt-4 pb-4  btn btn--primary  add-to-cart btn-lg btn-block",
+                                "pt-4 pb-4  btn btn--primary  btn-lg btn-block",
                               class: { disabled: _vm.canNotAddToCart },
-                              attrs: {
-                                type: "button",
-                                name: "add-to-cart",
-                                value: "add_to_cart"
-                              },
+                              attrs: { type: "button" },
                               on: {
                                 click: function($event) {
                                   $event.preventDefault()
