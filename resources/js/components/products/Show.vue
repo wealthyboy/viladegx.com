@@ -132,7 +132,7 @@
                         <div class="row ml-1 mb-2 mt-2 no-gutters">
 
                             <div class="col-8">
-                                <button @click.prevent="addToCart"  :class="{ 'disabled': canNotAddToCart }"  type="button"  class="pt-4 pb-4  btn btn--primary  btn-lg btn-block">
+                                <button @click.prevent="addToCart"  :class="{ 'disabled': product.qty  < 1 }"  type="button"  class="pt-4 pb-4  btn btn--primary  btn-lg btn-block">
                                     {{ cartText }}
                                     <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
                                 </button>

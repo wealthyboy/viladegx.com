@@ -55592,7 +55592,7 @@ var render = function() {
                             {
                               staticClass:
                                 "pt-4 pb-4  btn btn--primary  btn-lg btn-block",
-                              class: { disabled: _vm.canNotAddToCart },
+                              class: { disabled: _vm.product.qty < 1 },
                               attrs: { type: "button" },
                               on: {
                                 click: function($event) {
