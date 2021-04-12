@@ -220,8 +220,8 @@
             </div><!-- End .product-single-tabs -->
 
         </div><!-- End .product-single-container -->
-        <login-modal />
-        <register-modal />
+        <login-modal :url="same" />
+        <register-modal :url="same" />
     </div>
 </template>
 <script>
@@ -522,6 +522,9 @@ export default {
                 product_variation_id:this.product_variation_id,
             }).then((response)=>{
                 this.wishlistText = false
+
+                console.log(this.wishlist)
+
                 if(this.wishlist.some(wishlist => wishlist.product_variation.id === this.product_variation_id)){
                     this.is_wishlist = true
                     return;

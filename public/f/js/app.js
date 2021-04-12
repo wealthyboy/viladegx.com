@@ -2225,6 +2225,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    uri: String
+  },
   data: function data() {
     return {
       email: '',
@@ -2251,7 +2254,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.login({
         email: this.email,
         password: this.password,
-        context: this
+        context: this,
+        uri: this.uri
       })["catch"](function (error) {
         _this.loading = false;
         _this.errors = error.response.data.error || error.response.data.errors;
@@ -5711,6 +5715,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         product_variation_id: this.product_variation_id
       }).then(function (response) {
         _this5.wishlistText = false;
+        console.log(_this5.wishlist);
 
         if (_this5.wishlist.some(function (wishlist) {
           return wishlist.product_variation.id === _this5.product_variation_id;
@@ -55862,9 +55867,9 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("login-modal"),
+      _c("login-modal", { attrs: { url: _vm.same } }),
       _vm._v(" "),
-      _c("register-modal")
+      _c("register-modal", { attrs: { url: _vm.same } })
     ],
     1
   )

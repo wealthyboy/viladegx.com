@@ -71,6 +71,9 @@ import { mapGetters, mapActions } from 'vuex'
 import  RegisterModal from './RegisterModal.vue'
 
 export default {
+    props:{
+        uri:String,
+    },
     data(){
         return {
             email: '',
@@ -100,7 +103,8 @@ export default {
             this.login({
                 email:this.email,
                 password:this.password,
-                context: this
+                context: this,
+                uri: this.uri
             }).catch((error)=>{
                 this.loading = false
                 this.errors = error.response.data.error ||  error.response.data.errors
