@@ -8,7 +8,7 @@
                         <input type="hidden" value="" name="_token" />
                         <div class="cart-product-table-wrap ">
                             <div v-for="cart in carts"  :key="cart.id" class="row cart-rows raised bg--light mb-3 pt-4 pb-4 border border-gray">
-                                <div class="col-md-2 col-6">
+                                <div class="col-md-3 col-6">
                                     <div class="cart-image">
                                         <img :src="cart.product_variation.image_tn" alt="">
                                     </div>
@@ -47,7 +47,9 @@
                                     <div class="pt-2 pb-4 form-group">                     
                                         <label class="bold">Qty</label>
                                         <div id="quantity_1234" class="product-quantity select-custom">
-                                            1 
+                                            <select @change="updateCartQty($event,cart.product_variation.id)" id="add-to-cart-quantity" name="qty"  class="input--lg form-control"> 
+                                                <option   v-for="x in parseInt(cart.product_variation.quantity)" :selected="x == cart.quantity"  :key="x" >{{ x }}</option>
+                                            </select> 
                                         </div>
                                     </div>
                                     <div class="">                     
