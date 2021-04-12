@@ -130,6 +130,8 @@
                            
                         </div>
                         <div class="row ml-1 mb-2 mt-2">
+                            {{ wishlist }}
+
                             <div class="col-8">
                                 <button @click.prevent="addToCart"  :class="canAddToCart"  type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn--primary  add-to-cart btn-lg btn-block">
                                     {{ cartText }}
