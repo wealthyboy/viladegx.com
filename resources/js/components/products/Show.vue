@@ -183,20 +183,8 @@
                     </div>
                     <div class="">
                         <div class="feature-boxes-container row ">
-                            <div class="col-6 col-md-3">
-                                <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
-                                    <i class="fas fa-truck"></i>
-
-                                    <div class="feature-box-content">
-                                        <h3 class="mb-0 pb-1">Express Delivery</h3>
-                                        <h5 class="m-b-3">Same day delivery within Lagos.</h5>
-
-                                        <p></p>
-                                    </div><!-- End .feature-box-content -->
-                                </div><!-- End .feature-box -->
-                            </div><!-- End .col-md-4 -->
-
-                            <div class="col-md-3 col-6">
+                            
+                            <div class="col-md-4 col-6">
                                 <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
                                     <i class="icon-credit-card"></i>
 
@@ -211,7 +199,7 @@
 
                     
 
-                            <div class="col-md-3 col-6">
+                            <div class="col-md-4 col-6">
                                 <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
                                     <i class="fab fa-whatsapp"></i>
 
@@ -223,7 +211,7 @@
                                 </div><!-- End .feature-box -->
                             </div><!-- End .col-md-4 -->
 
-                            <div class="col-md-3 col-6">
+                            <div class="col-md-4 col-6">
                                 <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
                                     <i class="icon-action-undo"></i>
 
