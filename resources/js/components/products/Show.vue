@@ -495,9 +495,7 @@ export default {
                 this.quantity = 0;
             }
        },
-        owlCarousels: function () {
-            
-        },
+        
         selectProductAttributes: function(){
             let values = [];
             let attributes = document.querySelectorAll('select.vs')
@@ -537,6 +535,7 @@ export default {
             getReviews:    'getReviews'
         }),
         addToCart: function(){
+            if (this.cText == 'Out of Stock') return;
             this.cText = "Adding...."
             this.loading = true;
             console.log(this.product_variation_id)

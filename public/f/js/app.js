@@ -5678,7 +5678,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.quantity = 0;
       }
     },
-    owlCarousels: function owlCarousels() {},
     selectProductAttributes: function selectProductAttributes() {
       var values = [];
       var attributes = document.querySelectorAll('select.vs');
@@ -5728,6 +5727,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     addToCart: function addToCart() {
       var _this4 = this;
 
+      if (this.cText == 'Out of Stock') return;
       this.cText = "Adding....";
       this.loading = true;
       console.log(this.product_variation_id);
