@@ -10,7 +10,7 @@
                             <div v-for="cart in carts"  :key="cart.id" class="row cart-rows raised bg--light mb-3 pt-4 pb-4">
                                 <div class="col-md-3 col-6">
                                     <div class="cart-image">
-                                        <img :src="cart.product_variation.image_tn" alt="">
+                                        <img :src="cart.product_variation.image_m" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-7 col-6">

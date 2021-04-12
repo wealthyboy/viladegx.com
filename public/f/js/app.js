@@ -51659,7 +51659,7 @@ var render = function() {
                             _c("div", { staticClass: "cart-image" }, [
                               _c("img", {
                                 attrs: {
-                                  src: cart.product_variation.image_tn,
+                                  src: cart.product_variation.image_m,
                                   alt: ""
                                 }
                               })
