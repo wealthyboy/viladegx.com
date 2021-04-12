@@ -83,6 +83,7 @@ export const addProductToWishList = ({ commit,dispatch },{ product_variation_id,
         let resp = res.data;
         resp.status == 'added' ? context.is_wishlist = true : context.is_wishlist =false;
         context.wishlistText = false;
+        $('.wishlist-count').removeClass('d-none').text(resp.count)
 
     }).catch((error) =>{
         dispatch('flashMessage', "Sorry your item could not be saved.Please try again")

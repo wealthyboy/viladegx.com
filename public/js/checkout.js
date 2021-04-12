@@ -3165,6 +3165,7 @@ var addProductToWishList = function addProductToWishList(_ref11, _ref12) {
     var resp = res.data;
     resp.status == 'added' ? context.is_wishlist = true : context.is_wishlist = false;
     context.wishlistText = false;
+    $('.wishlist-count').removeClass('d-none').text(resp.count);
   })["catch"](function (error) {
     dispatch('flashMessage', "Sorry your item could not be saved.Please try again");
   });
