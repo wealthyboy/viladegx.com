@@ -36,7 +36,7 @@
                             <a href="{{ optional($related_product->product_variation)->link }}">{{ optional($related_product->product)->product_name }}</a>
                         </div>
                     </div>
-                    <div class="price-box">
+                    <div class="price-box mx-auto mt-1">
                         @if (optional($related_product->product)->default_discounted_price ) 
                             <span class="old-price">{{ optional($related_product->product)->currency }}{{ number_format(optional($related_product->product)->converted_price)  }}</span>
                             <span class="product-price">{{ optional($related_product->product)->currency }}{{ number_format(optional($related_product->product)->default_discounted_price)  }}</span>
