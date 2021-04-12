@@ -5716,16 +5716,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         product_variation_id: this.product_variation_id
       }).then(function (response) {
         _this5.wishlistText = false;
-        console.log(_this5.wishlist);
-
-        if (_this5.wishlist.some(function (wishlist) {
-          return wishlist.product_variation.id === _this5.product_variation_id;
-        })) {
-          _this5.is_wishlist = true;
-          return;
-        }
-
-        _this5.is_wishlist = false;
+        console.log(response); //this.is_wishlist = false
       });
     },
     submit: function submit() {
@@ -6626,7 +6617,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             self.data('iswishlist', 1);
           }
 
-          $('.wishlist-count').removeClass('d-none').text(res.data.length);
+          $('.wishlist-count').removeClass('d-none').text(res.count);
         })["catch"](function () {
           console.log(false);
         });

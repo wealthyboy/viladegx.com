@@ -524,13 +524,10 @@ export default {
             }).then((response)=>{
                 this.wishlistText = false
 
-                console.log(this.wishlist)
+                console.log(response)
 
-                if(this.wishlist.some(wishlist => wishlist.product_variation.id === this.product_variation_id)){
-                    this.is_wishlist = true
-                    return;
-                } 
-                this.is_wishlist = false
+                 
+                //this.is_wishlist = false
             })
         }, 
         submit(){
