@@ -183,23 +183,11 @@
                     </div>
                     <div class="mt-2">
                         <div class="feature-boxes-container row ">
-                            
-                            <div class="col-md-4 col-6">
-                                <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
-                                    <i class="icon-credit-card"></i>
-
-                                    <div class="feature-box-content">
-                                        <h3 class="mb-0 pb-1">Secured Payment</h3>
-                                        <h5 class="m-b-3">Safe &amp; Fast</h5>
-
-                                        <p></p>
-                                    </div><!-- End .feature-box-content -->
-                                </div><!-- End .feature-box -->
-                            </div><!-- End .col-md-4 -->
+                           
 
                     
 
-                            <div class="col-md-4 col-6">
+                            <div class=" col-6">
                                 <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
                                    <i class="fas fa-2x fa-phone"></i> 
 
@@ -211,13 +199,13 @@
                                 </div><!-- End .feature-box -->
                             </div><!-- End .col-md-4 -->
 
-                            <div class="col-md-4 col-6">
+                            <div class="col-6">
                                 <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
                                     <i class="icon-action-undo"></i>
 
                                     <div class="feature-box-content">
-                                        <h3 class="mb-0 pb-1">Returns</h3>
-                                        <h5 class="m-b-3">Hassle free returns policy. Order with peace of mind</h5>
+                                        <h3 class="mb-0 pb-1">Money Back Guarantee</h3>
+                                        <h5 class="m-b-3">Get your money back. Read return policy</h5>
                                         <p></p>
                                     </div><!-- End .feature-box-content -->
                                 </div><!-- End .feature-box -->

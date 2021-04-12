@@ -5451,18 +5451,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -55947,30 +55935,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mt-2" }, [
       _c("div", { staticClass: "feature-boxes-container row " }, [
-        _c("div", { staticClass: "col-md-4 col-6" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center"
-            },
-            [
-              _c("i", { staticClass: "icon-credit-card" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "feature-box-content" }, [
-                _c("h3", { staticClass: "mb-0 pb-1" }, [
-                  _vm._v("Secured Payment")
-                ]),
-                _vm._v(" "),
-                _c("h5", { staticClass: "m-b-3" }, [_vm._v("Safe & Fast")]),
-                _vm._v(" "),
-                _c("p")
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 col-6" }, [
+        _c("div", { staticClass: " col-6" }, [
           _c(
             "div",
             {
@@ -55993,7 +55958,7 @@ var staticRenderFns = [
           )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 col-6" }, [
+        _c("div", { staticClass: "col-6" }, [
           _c(
             "div",
             {
@@ -56004,10 +55969,12 @@ var staticRenderFns = [
               _c("i", { staticClass: "icon-action-undo" }),
               _vm._v(" "),
               _c("div", { staticClass: "feature-box-content" }, [
-                _c("h3", { staticClass: "mb-0 pb-1" }, [_vm._v("Returns")]),
+                _c("h3", { staticClass: "mb-0 pb-1" }, [
+                  _vm._v("Money Back Guarantee")
+                ]),
                 _vm._v(" "),
                 _c("h5", { staticClass: "m-b-3" }, [
-                  _vm._v("Hassle free returns policy. Order with peace of mind")
+                  _vm._v("Get your money back. Read return policy")
                 ]),
                 _vm._v(" "),
                 _c("p")
