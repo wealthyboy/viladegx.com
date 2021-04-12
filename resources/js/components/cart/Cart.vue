@@ -14,7 +14,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-7 col-6">
-                                    <h5><a href="#">{{ cart.product_variation.name }}</a></h5>
+                                    <h5><a href="#">{{ cart.product_name }}</a></h5>
                                     <div class="product--share">
                                         <span class="bold">Item #:</span> {{ cart.product_variation.sku }}
                                     </div>

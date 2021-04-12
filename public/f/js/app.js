@@ -51669,7 +51669,7 @@ var render = function() {
                           _c("div", { staticClass: "col-md-7 col-6" }, [
                             _c("h5", [
                               _c("a", { attrs: { href: "#" } }, [
-                                _vm._v(_vm._s(cart.product_variation.name))
+                                _vm._v(_vm._s(cart.product_name))
                               ])
                             ]),
                             _vm._v(" "),
