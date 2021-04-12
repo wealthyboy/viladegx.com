@@ -51652,7 +51652,7 @@ var render = function() {
                         {
                           key: cart.id,
                           staticClass:
-                            "row cart-rows raised bg--light mb-3 pt-4 pb-4 border border-gray"
+                            "row cart-rows raised bg--light mb-3 pt-4 pb-4"
                         },
                         [
                           _c("div", { staticClass: "col-md-3 col-6" }, [
