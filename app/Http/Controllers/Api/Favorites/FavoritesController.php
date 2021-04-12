@@ -35,7 +35,15 @@ class FavoritesController  extends Controller
 	{
 		$user = $request->user();
 		
-		$favorites = Favorite::CreateOrDelete($user->id,$request->product_variation_id);
+		$favorite = Favorite::where(['user_id'=>$user_id,'product_variation_id'=>$request->product_variation_id])->first();
+         if ( null !== $favorite ) { 
+             $favorite->delete();
+         }  else {
+            $favorite = new Favorite;
+            $favorite->user_id = $user_id;
+            $favorite->product_variation_id = $id;
+            $favorite->save();
+         }
 
 		
 		return FavoritesResource::collection($favorites);

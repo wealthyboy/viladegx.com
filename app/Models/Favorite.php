@@ -33,11 +33,11 @@ class Favorite extends Model
 
     public function scopeCreateOrDelete(Builder $builder,$user_id,$id){
 
-        $favorite = $this->where(['user_id'=>$user_id,'product_variation_id'=>$id])->first();
+        $favorite = where(['user_id'=>$user_id,'product_variation_id'=>$id])->first();
          if ( null !== $favorite ) { 
              $favorite->delete();
 
-             $favorites = $this->where(['user_id'=>$user_id,'product_variation_id'=>$id])->all();
+             $favorites = $builder->where(['user_id'=>$user_id,'product_variation_id'=>$id])->all();
 
              return $favorites;
          }  else {
@@ -45,7 +45,7 @@ class Favorite extends Model
             $favorite->user_id = $user_id;
             $favorite->product_variation_id = $id;
             $favorite->save();
-            $favorites = $this->where(['user_id'=>$user_id,'product_variation_id'=>$id])->all();
+            $favorites = $builder->where(['user_id'=>$user_id,'product_variation_id'=>$id])->all();
             return $favorites;
 
          }
