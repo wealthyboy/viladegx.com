@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12  text-center border-bottom">
-                    <h1 class="breadcrumb-title">Your Cart</h1>
+                    <h2 class="breadcrumb-title">Your Cart</h2>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
   
    <!--Content-->
    
-<section class="bg--gray">          
+<section class="">          
     <div class="container-fluid">
         <div id="js-loading"  class="full-bg">
             <div class="signup--middle">
