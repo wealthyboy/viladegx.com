@@ -74,7 +74,7 @@ h6,
 
 .bgimg {
   /* Background image */
-  background-image: url('https://avenuemontaigne.ng/uploads/Jf4whgGakRpqamCMG9wRbdczuMI4IzbJyCUFOch4.jpg');
+  background-image: url('https://myshortlet.com/uploads/6XKpHK9lGURmBqv64tYsdFpcBpQk4eTVtE0JitDi.png');
   /* Full-screen */
   height: 100%;
   /* Center the background image */
@@ -148,35 +148,11 @@ hr {
   </div>
   
   <div class="middle">
-    <h1>Avenue Montaigne is Coming Soon</h1>
-    <h5>Our website is almost here !!!</p>
-    <p>Sign up below for first dibs on new arrivals ,vip surprises and more</p>
 
     <hr>
     <h1 class="target"></h1>
     <p>
      
-      <form id="signup-form"  class="form-group" action="#" >
-
-       <div class="form-row align-items-center">
-          <div class="col-sm-3 my-1">
-            <label class="sr-only" for="inlineFormInputName">First Name</label>
-            <input type="text" class="form-control" id="inlineFormInputName" name="fname" placeholder="First Name">
-          </div>
-          <div class="col-sm-3 my-1">
-            <label class="sr-only" for="inlineFormInputName">Last Name</label>
-            <input type="text" class="form-control" id="inlineFormInputName"  name="lname" placeholder="Last Name">
-          </div>
-          <div class="col-sm-3 my-1">
-            <label class="sr-only" for="inlineFormInputName">Email</label>
-            <input type="email" class="form-control" id="inlineFormInputName"  name="email" placeholder="Email">
-          </div>
-        
-          <div class="col-auto my-1">
-            <button type="submit" style="background-color: #000000; color: #ffffff; outline: none; border: none;" class="btn btn-primary">Sign Up</button>
-          </div>
-        </div>
-      </form>
     </p>
   </div>
   <div class="bottomleft">
@@ -187,7 +163,6 @@ hr {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
 
 <script>
-
 $().ready(function(){
     $.ajaxSetup({
         headers: {
@@ -196,10 +171,8 @@ $().ready(function(){
     });
 });
 
-
 $("#signup-form").submit(function(e){
   e.preventDefault()
-  
   $.ajax({
       url: "/newsletter/signup",
       type: 'POST',

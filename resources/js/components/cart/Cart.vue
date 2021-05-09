@@ -91,7 +91,7 @@
         
         <div class="row justify-content-center" v-if="!loading && !carts.length">
             <div class="col-md-10">
-                <div class="error-page text-center">
+                <div class="error-page text-center ">
                     <h1>Your Cart Is Empty</h1>
                     <p class="large">You don't have any items in your cart</p>
                     <a href="/fashion" class="btn border">Continue Shopping</a>
