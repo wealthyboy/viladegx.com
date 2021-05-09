@@ -1,192 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>{{ Config('app.name') }}  Coming soon</title>
-        <meta name="author" content="AchuWorld">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="description" content="{{ isset($page_meta_description) ? $page_meta_description : '' }}">
-        <meta name="keywords" content="{{ isset($settings->meta_tag_keywords) ? $settings->meta_tag_keywords : '' }}" />
-        <meta name="generator" content="Social Likes: http://social-likes.js.org/">
-
-          <!-- Favicone Icon -->
-        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
-        <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-        <link rel="icon" type="image/png" href="/img/favicon-96x96.png">
-        <link rel="apple-touch-icon" href="/img/favicon-96x96.png">
-
-        <!-- CSS -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet"> 
-
-</head>
-<style>
-
-  /* Set height to 100% for body and html to enable the background image to cover the whole page: */
-body, html {
-  height: 100%
-}
-
-body {
-  font-size: 14px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #e13b3f;
-  font-weight: 600;
-  font-family: 'Roboto', sans-serif
-}
+@include('fashion._partials.header_styles')
 
 
 
-::selection {
-  background-color: #222;
-  color: #fff;
-}
+<body class="">
+   <div id="app" class="page-wrapper">
+      <header class="header  fixed-top">
+         <div class="header-middle ">
+            <div class="container">
+               <div class="header-left w-lg-max ml-auto ml-lg-0">
+                  <div class="header-icon header-search header-search-inline header-search-category">
+                     <a href="#" class="search-toggle mr-1" role="button"><i class="icon-search-3 "></i></a>
+                     <form action="/search" method="get">
+                        <div class="header-search-wrapper">
+                        </div>
+                        <!-- End .header-search-wrapper -->
+                     </form>
+                  </div>
+                  <!-- End .header-search -->
+               </div>
+               <!-- End .header-left -->
+               <div class="header-center order-first order-lg-0 ml-0 ml-lg-auto">
+                  <button class="mobile-menu-toggler" type="button">
+                  <i class="icon-menu"></i>
+                  </button>
+                  <a href="/" class="logo">
+                  <img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
+                  </a>
+               </div>
+               <!-- End .header-center -->
+               <div class="header-right w-lg-max ml-0 ml-lg-auto"></div>
+            </div>
+            <!-- End .container -->
+         </div>
+         <!-- End .header-middle -->
+         <div class="header-bottom sticky-header d-none d-lg-block">
+            <div class="container">
+               <nav class="main-nav d-flex w-lg-max mt-2 justify-content-center">
+                  <ul class="menu">
+                     <li>
+                        <a href="">Fashion</a>
+                     </li>
+                     <li>
+                        <a href="">Apartments</a>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
+            <!-- End .container -->
+         </div>
+         <!-- End .header-bottom -->
+      </header>
+      <!-- End .header -->
+      <main class="main main-page">
+        <div class="container-fliud mt-3">
+          <div  class="row align-items-start ">
+              <div class="col-md-6 col-12    p-0 pr-1 pl-1  mb-1  p-0 text-center">
+                  <div class="banner-box">
+                      <a class="portfolio-thumb" href="/fashion">
+                          <img src="https://avenuemontaigne.ng/uploads/LbTofMzhmOJE9MkpDGTba2uCmB7Y2yYtGew0uZPJ.jpg" alt="" />
+                      </a>
+                  </div>
+              </div> 
+              <div class="col-md-6 col-12   p-0 pr-1 pl-1  mb-1  p-0 text-center">
+                  <div class="banner-box">
+                      <a class="portfolio-thumb" href="/services">
+                          <img src="https://avenuemontaigne.ng/uploads/3ljHDEzjFhTKex6vIwz7B404M0Xxu1SvW024cDEt.jpg" alt="" />
+                      </a>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+         <div class="footer-bottom text-center">
+            <div class="container d-flex justify-content-center align-items-center flex-wrap">
+               <p class="footer-copyright py-3 pr-4 mb-0">©.AvenueMontaigne {{ date('Y') }}. All Rights Reserved</p>
+            </div>
+            <!-- End .container -->
+         </div>
+         <!-- End .footer-bottom -->
+      </footer>
+   </div>
+   <!-- End .page-wrapper -->
+   <div class="mobile-menu-overlay"></div>
+   <!-- End .mobil-menu-overlay -->
+   <div class="mobile-menu-container">
+      <div class="mobile-menu-wrapper">
+         <span class="mobile-menu-close"><i class="icon-cancel"></i></span>
+         <nav class="mobile-nav">
+            <ul class="mobile-menu">
+               <li>
+                  <a href="">Fashion</a>
+               </li>
+               <li>
+                  <a href="">Apartments</a>
+               </li>
+            </ul>
+         </nav>
+         <!-- End .mobile-nav -->
+      </div>
+      <!-- End .mobile-menu-wrapper -->
+   </div>
+   <!-- End .mobile-menu-container -->
 
 
-a:visited {
-  background-color:none;
-}
+
+	
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-    font-variant-ligatures: common-ligatures;
-    margin-top: 0;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
-    color: #ffffff;
-}
 
-.bgimg {
-  /* Background image */
-  background-image: url('https://myshortlet.com/uploads/6XKpHK9lGURmBqv64tYsdFpcBpQk4eTVtE0JitDi.png');
-  /* Full-screen */
-  height: 100%;
-  /* Center the background image */
-  background-position: center;
-  /* Scale and zoom in the image */
-  background-size: cover;
-  /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
-  position: relative;
-  /* Add a white text color to all elements inside the .bgimg container */
-  color: white;
-  /* Add a font */
-  font-family: "Courier New", Courier, monospace;
-  /* Set the font-size to 25 pixels */
-  font-size: 25px;
-
-  position: relative;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 1;
-  transition: .5s ease;
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
-}
-
-
-/* Position text in the top-left corner */
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
-
-/* Position text in the bottom-left corner */
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-}
-
-/* Position text in the middle */
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #ffffff;
-}
-
-/* Style the <hr> element */
-hr {
-  margin: auto;
-  width: 40%;
-} 
-
-</style>
-
-
-<body>
-
-
-<div class="bgimg">
-  <div class="overlay">
-  </div>
-  
-  <div class="middle">
-
-    <hr>
-    <h1 class="target"></h1>
-    <p>
-     
-    </p>
-  </div>
-  <div class="bottomleft">
-    <p></p>
-  </div>
-</div> 
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
-
-<script>
-$().ready(function(){
-    $.ajaxSetup({
-        headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-});
-
-$("#signup-form").submit(function(e){
-  e.preventDefault()
-  $.ajax({
-      url: "/newsletter/signup",
-      type: 'POST',
-      data:$(this).serialize(),
-  }).done(function(res) {
-      $('#signup-form').remove()
-      $(".btn-primary").text("Loading......")
-      $("h1.target").html(res.message)
-  }).fail(function(){
-    $("h1.target").html("We could not sign you up at the moment .Please try again")
-  });
-})
-
-
-</script>
+	<!-- Plugins JS File -->
+	<script src="/f/js/app.js?version={{ str_random(6) }}" type="text/javascript"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
