@@ -52000,7 +52000,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-10" }, [
-      _c("div", { staticClass: "error-page text-center" }, [
+      _c("div", { staticClass: "error-page text-center " }, [
         _c("h1", [_vm._v("Your Cart Is Empty")]),
         _vm._v(" "),
         _c("p", { staticClass: "large" }, [
