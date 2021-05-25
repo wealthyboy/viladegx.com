@@ -3598,6 +3598,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)({
@@ -52219,22 +52223,27 @@ var render = function() {
                     _vm._v(" "),
                     _c("span", { staticClass: "cart-product-info" }, [
                       _c("span", { staticClass: "cart-product-qty" }, [
-                        _vm._v(_vm._s(cart.quantity) + " ")
+                        _vm._v(
+                          _vm._s(cart.quantity) +
+                            "\n                            "
+                        )
                       ]),
-                      _vm._v("\n              x "),
+                      _vm._v(
+                        "\n                            x\n                            "
+                      ),
                       _c("span", { staticClass: "cart-product-amount" }, [
                         _vm._v(_vm._s(""))
                       ]),
                       _vm._v(
                         _vm._s(_vm._f("priceFormat")(cart.price)) +
-                          "\n            "
+                          "\n                        "
                       )
                     ]),
                     _vm._v(" "),
                     cart.quantity < 1
                       ? _c("p", { staticClass: "text-danger bold" }, [
                           _vm._v(
-                            "\n              This item is no longer available\n            "
+                            "\n                            This item is no longer available\n                        "
                           )
                         ])
                       : _vm._e()
@@ -52317,10 +52326,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "dropdown-cart-action" }, [
       _c(
         "a",
-        {
-          staticClass: "btn btn-dark btn-block",
-          attrs: { href: "/fashion/cart" }
-        },
+        { staticClass: "btn btn-dark btn-block", attrs: { href: "/cart" } },
         [_vm._v("View Cart")]
       )
     ])
@@ -52332,10 +52338,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "dropdown-cart-action" }, [
       _c(
         "a",
-        {
-          staticClass: "btn btn-dark btn-block",
-          attrs: { href: "/fashion/checkout" }
-        },
+        { staticClass: "btn btn-dark btn-block", attrs: { href: "/checkout" } },
         [_vm._v("Checkout")]
       )
     ])
@@ -52345,14 +52348,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center pb-3" }, [
-      _c("img", {
-        attrs: {
-          width: "100",
-          height: "100",
-          src: "/images/utilities/shopping-cart-empty-side-view.svg"
-        }
-      }),
-      _vm._v(" "),
       _c("p", { staticClass: "bold" }, [_vm._v("Your cart is empty")])
     ])
   }
