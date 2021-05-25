@@ -55,7 +55,7 @@ class CheckoutController extends Controller
             return redirect()->to('/cart');
 		}
 		$csrf = json_encode(['csrf' => csrf_token()]);
-		return view('fashion.checkout.index',['csrf' => $csrf]);
+		return view('checkout.index',['csrf' => $csrf]);
 	}
 
 	

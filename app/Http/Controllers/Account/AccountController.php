@@ -40,7 +40,7 @@ class AccountController extends Controller
 			$settings =  $this->settings;
 			$user = $request->user();
 		    $active = true;
-		    return view('fashion.account.index',compact('active','page_title','user','settings'));
+		    return view('account.index',compact('active','page_title','user','settings'));
 		   
 		}
 		

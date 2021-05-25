@@ -4560,6 +4560,64 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4573,21 +4631,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     DropDown: _cart_DropDown__WEBPACK_IMPORTED_MODULE_0__.default
   },
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
-    cartItemCount: 'cartItemCount',
-    wishlist: 'wishlist'
+    cartItemCount: "cartItemCount",
+    wishlist: "wishlist"
   })),
   created: function created() {
     var _this = this;
 
     //this.getWislist()
-    axios.get('/api/wishlist').then(function (response) {
-      _this.$store.commit('setWishlist', response.data.data);
+    axios.get("/api/wishlist").then(function (response) {
+      _this.$store.commit("setWishlist", response.data.data);
     })["catch"](function (error) {
       console.log("could not get wishlist");
     });
   },
   methods: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapActions)({
-    getWislist: 'getWislist'
+    getWislist: "getWislist"
   }))
 });
 
@@ -10553,12 +10611,12 @@ var addProductToCart = function addProductToCart(_ref, _ref2) {
   var commit = _ref.commit;
   var product_variation_id = _ref2.product_variation_id,
       quantity = _ref2.quantity;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/cart', {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/cart", {
     product_variation_id: product_variation_id,
     quantity: quantity
   }).then(function (response) {
-    commit('appendToCart', response.data.data);
-    commit('setCartMeta', response.data.meta);
+    commit("appendToCart", response.data.data);
+    commit("setCartMeta", response.data.meta);
     document.getElementById("icon-trigger").click();
     return Promise.resolve();
   });
@@ -10567,34 +10625,34 @@ var updateCart = function updateCart(_ref3, _ref4) {
   var commit = _ref3.commit;
   var product_variation_id = _ref4.product_variation_id,
       quantity = _ref4.quantity;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/cart', {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/cart", {
     product_variation_id: product_variation_id,
     quantity: quantity
   }).then(function (response) {
-    commit('appendToCart', response.data.data);
-    commit('setCartMeta', response.data.meta);
+    commit("appendToCart", response.data.data);
+    commit("setCartMeta", response.data.meta);
     document.getElementById("icon-trigger").click();
     return Promise.resolve();
   });
 };
 var getCart = function getCart(_ref5) {
   var commit = _ref5.commit;
-  commit('Loading', true);
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/cart').then(function (response) {
-    commit('setCart', response.data);
-    commit('setCartMeta', response.data.meta);
-    document.getElementById('js-loading').style.display = 'none';
-    commit('Loading', false);
+  commit("Loading", true);
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/cart").then(function (response) {
+    commit("setCart", response.data);
+    commit("setCartMeta", response.data.meta);
+    document.getElementById("js-loading").style.display = "none";
+    commit("Loading", false);
     return Promise.resolve();
   })["catch"](function () {});
 };
 var deleteCart = function deleteCart(_ref6, _ref7) {
   var commit = _ref6.commit;
   var cart_id = _ref7.cart_id;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().delete('/api/cart/delete/' + cart_id + '').then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().delete("/api/cart/delete/" + cart_id + "").then(function (response) {
     console.log(response.data);
-    commit('setCart', response.data);
-    commit('setCartMeta', response.data.meta);
+    commit("setCart", response.data);
+    commit("setCartMeta", response.data.meta);
 
     if (response.data.data.length == 0) {
       $(".cart-page").remove();
@@ -10605,47 +10663,47 @@ var deleteCart = function deleteCart(_ref6, _ref7) {
 };
 var flashMessage = function flashMessage(_ref8, message) {
   var commit = _ref8.commit;
-  commit('setMessage', message);
+  commit("setMessage", message);
   setTimeout(function () {
-    commit('clearMessage');
+    commit("clearMessage");
   }, 3000);
 };
 var applyVoucher = function applyVoucher(_ref9, coupon) {
   var commit = _ref9.commit;
-  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/checkout/coupon', {
+  axios__WEBPACK_IMPORTED_MODULE_0___default().post("/checkout/coupon", {
     coupon: coupon
   }).then(function (response) {
-    commit('setCoupon', response.data);
+    commit("setCoupon", response.data);
     return Promise.resolve();
   })["catch"](function (error) {});
 };
 var updateCartMeta = function updateCartMeta(_ref10, payload) {
   var commit = _ref10.commit;
-  commit('setCartMeta', payload);
+  commit("setCartMeta", payload);
 };
 var addProductToWishList = function addProductToWishList(_ref11, _ref12) {
   var commit = _ref11.commit,
       dispatch = _ref11.dispatch;
   var product_variation_id = _ref12.product_variation_id,
       context = _ref12.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/wishlist', {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/wishlist", {
     product_variation_id: product_variation_id
   }).then(function (res) {
     var resp = res.data;
-    resp.status == 'added' ? context.is_wishlist = true : context.is_wishlist = false;
+    resp.status == "added" ? context.is_wishlist = true : context.is_wishlist = false;
     context.wishlistText = false;
-    $('.wishlist-count').removeClass('d-none').text(resp.count);
+    $(".wishlist-count").removeClass("d-none").text(resp.count);
   })["catch"](function (error) {
-    dispatch('flashMessage', "Sorry your item could not be saved.Please try again");
+    dispatch("flashMessage", "Sorry your item could not be saved.Please try again");
   });
 };
 var getWislist = function getWislist(_ref13) {
   var commit = _ref13.commit;
-  commit('Loading', true);
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/wishlist').then(function (response) {
-    document.getElementById('js-loading').style.display = 'none';
-    commit('setWishlist', response.data.data);
-    commit('Loading', false);
+  commit("Loading", true);
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/wishlist").then(function (response) {
+    document.getElementById("js-loading").style.display = "none";
+    commit("setWishlist", response.data.data);
+    commit("Loading", false);
     return Promise.resolve();
   })["catch"](function (error) {
     console.log("could not get wishlist");
@@ -10654,8 +10712,8 @@ var getWislist = function getWislist(_ref13) {
 var deleteWishlist = function deleteWishlist(_ref14, _ref15) {
   var commit = _ref14.commit;
   var id = _ref15.id;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().delete('/api/wishlist/delete/' + id + '').then(function (response) {
-    commit('appendToWishlist', response.data.data);
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().delete("/api/wishlist/delete/" + id + "").then(function (response) {
+    commit("appendToWishlist", response.data.data);
     return Promise.resolve();
   });
 };
@@ -10664,7 +10722,7 @@ var login = function login(_ref16, _ref17) {
   var email = _ref17.email,
       password = _ref17.password,
       context = _ref17.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/fashion/login', {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/login", {
     email: email,
     password: password
   }).then(function (response) {
@@ -10673,33 +10731,33 @@ var login = function login(_ref16, _ref17) {
   })["catch"](function (error) {
     context.loading = false;
 
-    if (typeof error.response.data.errors === 'undefined') {
-      commit('setFormErrors', {
+    if (typeof error.response.data.errors === "undefined") {
+      commit("setFormErrors", {
         general: "We could register you.Please try again later"
       });
       return;
     }
 
-    commit('setFormErrors', error.response.data.error);
+    commit("setFormErrors", error.response.data.error);
   });
 };
 var register = function register(_ref18, _ref19) {
   var commit = _ref18.commit;
   var context = _ref19.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/fashion/register', context.form).then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/register", context.form).then(function (response) {
     window.location.href = response.data.url;
   })["catch"](function (error) {
     context.loading = false;
     console.log(error.response.data.errors);
 
-    if (typeof error.response.data.errors === 'undefined') {
-      commit('setFormErrors', {
+    if (typeof error.response.data.errors === "undefined") {
+      commit("setFormErrors", {
         general: "We could register you.Please try again later"
       });
       return;
     }
 
-    commit('setFormErrors', error.response.data.errors);
+    commit("setFormErrors", error.response.data.errors);
   });
 };
 var createAddress = function createAddress(_ref20, _ref21) {
@@ -10707,7 +10765,7 @@ var createAddress = function createAddress(_ref20, _ref21) {
       commit = _ref20.commit;
   var form = _ref21.form,
       context = _ref21.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/addresses', {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/addresses", {
     first_name: form.first_name,
     last_name: form.last_name,
     address: form.address,
@@ -10717,17 +10775,17 @@ var createAddress = function createAddress(_ref20, _ref21) {
     state_id: form.state_id,
     postal_code: form.postal_code
   }).then(function (response) {
-    dispatch('setADl', response);
+    dispatch("setADl", response);
 
     if (response.data.data.length) {
-      commit('setShowForm', false);
+      commit("setShowForm", false);
     }
 
     context.submiting = false;
     return Promise.resolve();
   })["catch"](function (error) {
     if (!response.data.data.length) {
-      commit('setShowForm', false);
+      commit("setShowForm", false);
     }
 
     context.errors = error.response.data.errors;
@@ -10738,12 +10796,12 @@ var deleteAddress = function deleteAddress(_ref22, _ref23) {
       commit = _ref22.commit;
   var id = _ref23.id,
       context = _ref23.context;
-  axios__WEBPACK_IMPORTED_MODULE_0___default().delete('/api/addresses/' + id + '').then(function (response) {
+  axios__WEBPACK_IMPORTED_MODULE_0___default().delete("/api/addresses/" + id + "").then(function (response) {
     if (!response.data.data.length) {
-      commit('setShowForm', true);
+      commit("setShowForm", true);
     }
 
-    dispatch('setADl', response);
+    dispatch("setADl", response);
     context.submiting = false;
   });
 };
@@ -10752,7 +10810,7 @@ var updateAddresses = function updateAddresses(_ref24, _ref25) {
       commit = _ref24.commit;
   var form = _ref25.form,
       id = _ref25.id;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().put('/api/addresses/' + id, {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().put("/api/addresses/" + id, {
     first_name: form.first_name,
     last_name: form.last_name,
     address: form.address,
@@ -10762,16 +10820,16 @@ var updateAddresses = function updateAddresses(_ref24, _ref25) {
     state_id: form.state_id,
     postal_code: form.postal_code
   }).then(function (response) {
-    dispatch('setADl', response);
+    dispatch("setADl", response);
 
     if (response.data.data.length) {
-      commit('setShowForm', false);
+      commit("setShowForm", false);
     }
 
     return Promise.resolve();
   })["catch"](function () {
     if (response.data.data.length) {
-      commit('setShowForm', true);
+      commit("setShowForm", true);
     }
   });
 };
@@ -10779,12 +10837,12 @@ var getAddresses = function getAddresses(_ref26, _ref27) {
   var dispatch = _ref26.dispatch,
       commit = _ref26.commit;
   var context = _ref27.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/addresses').then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/addresses").then(function (response) {
     if (!response.data.data.length) {
-      commit('setShowForm', true);
+      commit("setShowForm", true);
     }
 
-    dispatch('setADl', response);
+    dispatch("setADl", response);
     return Promise.resolve();
   })["catch"](function (error) {//commit('setLoading',false)
     // if ( error.response.status == 500 ){
@@ -10802,9 +10860,9 @@ var updatePassword = function updatePassword(_ref28, _ref29) {
       dispatch = _ref28.dispatch;
   var payload = _ref29.payload,
       context = _ref29.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().put('/change/password', payload).then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().put("/change/password", payload).then(function (response) {
     context.loading = false;
-    commit('setMessage', response.data.message);
+    commit("setMessage", response.data.message);
   })["catch"](function (error) {
     context.loading = false;
 
@@ -10815,7 +10873,7 @@ var updatePassword = function updatePassword(_ref28, _ref29) {
 
     if (error.response.data.errors) {
       context.error = error.response.data.errors;
-      commit('setFormErrors', error.response.data.errors);
+      commit("setFormErrors", error.response.data.errors);
     }
   });
 };
@@ -10823,38 +10881,38 @@ var resetPassword = function resetPassword(_ref30, _ref31) {
   var commit = _ref30.commit;
   var payload = _ref31.payload,
       context = _ref31.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/reset/password', payload).then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/reset/password", payload).then(function (response) {
     context.loading = false;
-    commit('setMessage', response.data.message);
+    commit("setMessage", response.data.message);
   })["catch"](function (error) {
     context.loading = false;
 
     if (error.response.status == 500) {
       context.error = "We could not send your password reset link";
-      commit('setFormErrors', "We could not send your password reset link");
+      commit("setFormErrors", "We could not send your password reset link");
       return;
     }
 
     if (error.response.data.errors) {
-      commit('setFormErrors', error.response.data.errors);
+      commit("setFormErrors", error.response.data.errors);
       return;
     }
   });
 };
 var updateAddress = function updateAddress(_ref32, payload) {
   var commit = _ref32.commit;
-  commit('addToAddress', payload);
+  commit("addToAddress", payload);
 };
 var updateLocations = function updateLocations(_ref33, payload) {
   var commit = _ref33.commit;
-  commit('addToLocations', payload);
+  commit("addToLocations", payload);
 };
 var setADl = function setADl(_ref34, response) {
   var commit = _ref34.commit;
-  commit('addToAddress', response.data.data);
-  commit('addToLocations', response.data.meta.countries);
-  commit('setShipping', response.data.meta.shipping);
-  commit('setDefaultShipping', response.data.meta.default_shipping);
+  commit("addToAddress", response.data.data);
+  commit("addToLocations", response.data.meta.countries);
+  commit("setShipping", response.data.meta.shipping);
+  commit("setDefaultShipping", response.data.meta.default_shipping);
 };
 var validateForm = function validateForm(_ref35, _ref36) {
   var dispatch = _ref35.dispatch,
@@ -10867,37 +10925,37 @@ var validateForm = function validateForm(_ref35, _ref36) {
 
   if (input.length) {
     input.forEach(function (element, v) {
-      if (element.value == '') {
-        k = element.name.split('_').join(' ');
-        errors = Object.assign({}, errors, _defineProperty({}, element.name, k + '  is required'));
+      if (element.value == "") {
+        k = element.name.split("_").join(" ");
+        errors = Object.assign({}, errors, _defineProperty({}, element.name, k + "  is required"));
       }
 
-      if (element.name == 'email') {
+      if (element.name == "email") {
         var value = element.value;
 
         if (!validateEmail(value)) {
-          p.email = 'Please enter a valid email';
+          p.email = "Please enter a valid email";
         }
       }
     });
   }
 
-  if (context.form.password !== '' && typeof context.form.password_confirmation !== 'undefined' && context.form.password_confirmation !== '') {
+  if (context.form.password !== "" && typeof context.form.password_confirmation !== "undefined" && context.form.password_confirmation !== "") {
     if (context.form.password !== context.form.password_confirmation) {
-      p.password_confirmation = 'Password do not match';
+      p.password_confirmation = "Password do not match";
     }
   }
 
   errors = Object.assign({}, errors, p);
-  commit('setFormErrors', errors);
+  commit("setFormErrors", errors);
 };
 var forgotPassword = function forgotPassword(_ref37, _ref38) {
   var commit = _ref37.commit;
   var payload = _ref38.payload,
       context = _ref38.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/password/reset/link', payload).then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/password/reset/link", payload).then(function (response) {
     context.loading = false;
-    commit('setMessage', response.data.message);
+    commit("setMessage", response.data.message);
   })["catch"](function (error) {
     context.loading = false;
 
@@ -10905,12 +10963,12 @@ var forgotPassword = function forgotPassword(_ref37, _ref38) {
       var errors = {
         general: "We could not send your password reset link"
       };
-      commit('setFormErrors', errors);
+      commit("setFormErrors", errors);
       return;
     }
 
     if (error.response.data.errors) {
-      commit('setFormErrors', error.response.data.errors);
+      commit("setFormErrors", error.response.data.errors);
     }
   });
 };
@@ -10919,9 +10977,9 @@ var createReviews = function createReviews(_ref39, _ref40) {
   var payload = _ref40.payload,
       context = _ref40.context,
       form = _ref40.form;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/reviews/store', form).then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/reviews/store", form).then(function (response) {
     context.submiting = false;
-    commit('setReviews', response.data.data);
+    commit("setReviews", response.data.data);
   })["catch"](function (error) {
     context.submiting = false;
 
@@ -10929,12 +10987,12 @@ var createReviews = function createReviews(_ref39, _ref40) {
       var errors = {
         general: "We could not send your password reset link"
       };
-      commit('setFormErrors', errors);
+      commit("setFormErrors", errors);
       return;
     }
 
     if (error.response.data.errors) {
-      commit('setFormErrors', error.response.data.errors);
+      commit("setFormErrors", error.response.data.errors);
     }
   });
 };
@@ -10942,9 +11000,9 @@ var createComment = function createComment(_ref41, _ref42) {
   var commit = _ref41.commit;
   var payload = _ref42.payload,
       context = _ref42.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/blog', context.form).then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/blog", context.form).then(function (response) {
     context.submiting = false;
-    commit('setComments', response.data.data);
+    commit("setComments", response.data.data);
   })["catch"](function (error) {
     context.submiting = false;
 
@@ -10952,21 +11010,21 @@ var createComment = function createComment(_ref41, _ref42) {
       var errors = {
         general: "We could not send your password reset link"
       };
-      commit('setFormErrors', errors);
+      commit("setFormErrors", errors);
       return;
     }
 
     if (error.response.data.errors) {
-      commit('setFormErrors', error.response.data.errors);
+      commit("setFormErrors", error.response.data.errors);
     }
   });
 };
 var getReviews = function getReviews(_ref43, _ref44) {
   var commit = _ref43.commit;
   var context = _ref44.context;
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/reviews/' + context.product_slug).then(function (response) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/reviews/" + context.product_slug).then(function (response) {
     context.loading = false;
-    commit('setReviews', response.data.data);
+    commit("setReviews", response.data.data);
   })["catch"](function (error) {
     context.loading = false;
 
@@ -10974,19 +11032,19 @@ var getReviews = function getReviews(_ref43, _ref44) {
       var errors = {
         general: "We could not send your password reset link"
       };
-      commit('setFormErrors', errors);
+      commit("setFormErrors", errors);
       return;
     }
 
     if (error.response.data.errors) {
-      commit('setFormErrors', error.response.data.errors);
+      commit("setFormErrors", error.response.data.errors);
     }
   });
 };
 var clearError = function clearError(_ref45) {
   var commit = _ref45.commit;
   var errors = {};
-  commit('setFormErrors', errors);
+  commit("setFormErrors", errors);
 };
 var clearErrors = function clearErrors(_ref46, _ref47) {
   var commit = _ref46.commit;
@@ -10998,21 +11056,21 @@ var clearErrors = function clearErrors(_ref46, _ref47) {
 
   if (input.length) {
     input.forEach(function (element, v) {
-      if (element.value !== '') {
+      if (element.value !== "") {
         var prop = element.name;
         delete context.errorsBag[prop];
       }
 
-      if (context.form.password !== '' && typeof context.form.password_confirmation !== 'undefined' && context.form.password_confirmation !== '') {
+      if (context.form.password !== "" && typeof context.form.password_confirmation !== "undefined" && context.form.password_confirmation !== "") {
         if (context.form.password !== context.form.password_confirmation) {
-          p.password_confirmation = 'Password do not match';
+          p.password_confirmation = "Password do not match";
         }
       }
     });
   }
 
   errors = Object.assign({}, context.errorsBag, p);
-  commit('setFormErrors', errors);
+  commit("setFormErrors", errors);
 };
 var checkInput = function checkInput(_ref48, _ref49) {
   var commit = _ref48.commit;
@@ -11023,25 +11081,25 @@ var checkInput = function checkInput(_ref48, _ref49) {
       errMsg = [],
       k;
 
-  if (typeof input !== 'undefined') {
-    if (input.target.value == '') {
-      k = input.target.name.split('_').join(' ');
-      errMsg = Object.assign({}, errMsg, _defineProperty({}, input.target.name, k + '  is required'));
+  if (typeof input !== "undefined") {
+    if (input.target.value == "") {
+      k = input.target.name.split("_").join(" ");
+      errMsg = Object.assign({}, errMsg, _defineProperty({}, input.target.name, k + "  is required"));
     }
 
-    if (input.target.name == 'email') {
+    if (input.target.name == "email") {
       if (!validateEmail(input.target.value)) {
-        p.email = 'Please enter a valid email';
+        p.email = "Please enter a valid email";
       }
     }
   }
 
-  if (typeof context !== 'undefined') {
+  if (typeof context !== "undefined") {
     errMsg = Object.assign({}, context.errorsBag, errMsg);
   }
 
   errors = Object.assign({}, errMsg, p);
-  commit('setFormErrors', errors);
+  commit("setFormErrors", errors);
 };
 var validateEmail = function validateEmail(email) {
   return ruleE().test(String(email).toLowerCase());
@@ -54014,10 +54072,7 @@ var render = function() {
     !_vm.$root.loggedIn
       ? _c(
           "a",
-          {
-            staticClass: "header-icon  pl-1",
-            attrs: { href: "/fashion/login" }
-          },
+          { staticClass: "header-icon  pl-1", attrs: { href: "/login" } },
           [
             _c(
               "svg",
@@ -54045,10 +54100,7 @@ var render = function() {
       ? _c("div", { staticClass: "header-dropdown ml-4" }, [
           _c(
             "a",
-            {
-              staticClass: "header-icon  pl-1",
-              attrs: { href: "/fashion/account" }
-            },
+            { staticClass: "header-icon  pl-1", attrs: { href: "/account" } },
             [
               _c(
                 "svg",
@@ -54086,7 +54138,7 @@ var render = function() {
                     staticStyle: { display: "none" },
                     attrs: {
                       id: "logout-form",
-                      action: "/fashion/logout",
+                      action: "/logout",
                       method: "POST"
                     }
                   },
@@ -54105,10 +54157,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "a",
-      {
-        staticClass: "header-icon  pl-1 pr-2",
-        attrs: { href: "/fashion/wishlist" }
-      },
+      { staticClass: "header-icon  pl-1 pr-2", attrs: { href: "/wishlist" } },
       [
         _c(
           "svg",
@@ -54189,11 +54238,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c(
-        "a",
-        { staticClass: "color--primary", attrs: { href: "/fashion/account" } },
-        [_c("i", { staticClass: "fas fa-user left mr-2" }), _vm._v("Account")]
-      )
+      _c("a", { staticClass: "color--primary", attrs: { href: "/account" } }, [
+        _c("i", { staticClass: "fas fa-user left mr-2" }),
+        _vm._v("Account")
+      ])
     ])
   },
   function() {
@@ -54201,14 +54249,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c(
-        "a",
-        { staticClass: "color--primary", attrs: { href: "/fashion/orders" } },
-        [
-          _c("i", { staticClass: "fas fa-sign-out-alt left mr-1" }),
-          _vm._v(" Orders")
-        ]
-      )
+      _c("a", { staticClass: "color--primary", attrs: { href: "/orders" } }, [
+        _c("i", { staticClass: "fas fa-sign-out-alt left mr-1" }),
+        _vm._v("\n                        Orders")
+      ])
     ])
   },
   function() {
@@ -54220,16 +54264,14 @@ var staticRenderFns = [
       {
         staticClass: "color--primary",
         attrs: {
-          href: "/fashion/logout",
+          href: "/logout",
           onclick:
             "event.preventDefault();\n                                                    document.getElementById('logout-form').submit();"
         }
       },
       [
         _c("i", { staticClass: "fas fa-sign-out-alt left mr-1" }),
-        _vm._v(
-          "\n                                        \n                                        Logout\n                                    "
-        )
+        _vm._v("\n\n                        Logout\n                    ")
       ]
     )
   }

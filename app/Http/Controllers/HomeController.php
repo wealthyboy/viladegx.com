@@ -59,7 +59,7 @@ class HomeController extends Controller
         $sliders = Banner::where('type','slider')->orderBy('sort_order','asc')->get();
         $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
     
-        return view('fashion.index',compact('products','posts','banners','sliders')); 
+        return view('index',compact('products','posts','banners','sliders')); 
     }
 
 

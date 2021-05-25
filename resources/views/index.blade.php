@@ -1,125 +1,144 @@
-@include('fashion._partials.header_styles')
+@extends('layouts.app')
+
+@section('content')
+
+@include('_partials.top_banner')
+
+<div class="container-fliud mt-3">
+    <div  class="row align-items-start ">
+        @foreach( $banners as $banner )
+            <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : 'pr-1 pl-1' }}  mb-1 {{ $banner->title }} p-0 text-center">
+                <div class="banner-box">
+                    <a class="portfolio-thumb" href="{{ $banner->link }}">
+                        <img src="{{ $banner->image }}" alt="" />
+                    </a>
+                </div>
+            </div> 
+        @endforeach
+    </div>
+</div>
+
+@if ( $products->count() )
 
 
+<div class="container-fluid mt-5 mb-5">
+    
 
-<body class="">
-   <div id="app" class="page-wrapper">
-      <header class="header  fixed-top">
-         <div class="header-middle ">
-            <div class="container">
-               <div class="header-left w-lg-max ml-auto ml-lg-0">
-                  <div class="header-icon header-search header-search-inline header-search-category">
-                     <a href="#" class="search-toggle mr-1" role="button"><i class="icon-search-3 "></i></a>
-                     <form action="/search" method="get">
-                        <div class="header-search-wrapper">
+    <div class="products-section pt-0">
+        <h2 class="section-title bold text-center">Most Sorted</h2>
+
+        <div class="products-slider owl-carousel owl-theme dots-top">
+            @foreach( $products as $feautered_product)
+
+            <div class="product-default inner-quickview inner-icon">
+                <figure>
+                    <a href="{{ $feautered_product->link }}">
+                        <img src="{{ $feautered_product->image_to_show_m }}">
+                    </a>
+                    
+                    
+                </figure>
+                <div class="product-details text-center">
+                    <div class="mx-auto">
+                        
+                        @if($feautered_product->colours->count()  && $feautered_product->colours->count() > 1)
+                            <div  class="justify-content-center d-flex mb-1">
+                                @foreach($feautered_product->colours as $color)
+                                <div   style="border:1px solid #222; height: 15px; width: 15px; border-radius: 50%; background-color: {{ $color->color_code }};" class="mr-1"></div>
+                                @endforeach
+                            </div>
+                        @endif
+                        @if($feautered_product->brand_name)
+                            <div  class="product-brand bold">
+                                {{ $feautered_product->brand_name }} 
+                            </div>
+                        @endif
+
+                        <div class="color--primary">
+                            <a href="{{ $feautered_product->link }}">{{ $feautered_product->product_name }}</a>
                         </div>
-                        <!-- End .header-search-wrapper -->
-                     </form>
-                  </div>
-                  <!-- End .header-search -->
-               </div>
-               <!-- End .header-left -->
-               <div class="header-center order-first order-lg-0 ml-0 ml-lg-auto">
-                  <button class="mobile-menu-toggler" type="button">
-                  <i class="icon-menu"></i>
-                  </button>
-                  <a href="/" class="logo">
-                  <img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
-                  </a>
-               </div>
-               <!-- End .header-center -->
-               <div class="header-right w-lg-max ml-0 ml-lg-auto"></div>
+                    </div>
+                    <div class="price-box mx-auto mt-1">
+                        @if( $feautered_product->default_discounted_price)
+                            <span class="old-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price)   }}</span>
+                            <span class="product-price  ml-1">
+                                |
+                                @if( $feautered_product->default_percentage_off )
+                                    {{ $feautered_product->default_percentage_off }}% OFF
+                                @endif
+                                <span class="text-danger">
+                                   {{ $feautered_product->currency }}{{ number_format($feautered_product->default_discounted_price)  }}
+                                </span>
+                            </span>
+                        @else
+                            <span class="product-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price) }}</span>
+                        @endif
+                    </div><!-- End .price-box -->
+                </div><!-- End .product-details -->
             </div>
-            <!-- End .container -->
-         </div>
-         <!-- End .header-middle -->
-         <div class="header-bottom sticky-header d-none d-lg-block">
-            <div class="container">
-               <nav class="main-nav d-flex w-lg-max mt-2 justify-content-center">
-                  <ul class="menu">
-                     <li>
-                        <a href="">Fashion</a>
-                     </li>
-                     <li>
-                        <a href="">Apartments</a>
-                     </li>
-                  </ul>
-               </nav>
+
+
+            @endforeach
+           
+        </div><!-- End .products-slider -->
+    </div><!-- End .products-section -->
+
+</div><!-- End .container -->
+@endif
+
+
+
+
+<!--End Portfolio-->
+    <!--End Categories-->
+    @if ($posts->count()) 
+
+    <!--Blog-->
+    <section class="pb-4 pt-4 bg--primary mb-1">
+        <div class="container">
+            <div class="page-head">
+                <span class="page-sub-title"></span>
+                <h2 class="page-title  heading-hr-margin-white">BLOG</h2>
             </div>
-            <!-- End .container -->
-         </div>
-         <!-- End .header-bottom -->
-      </header>
-      <!-- End .header -->
-      <main class="main main-page">
-        <div class="container-fliud mt-3">
-          <div  class="row align-items-start ">
-              <div class="col-md-6 col-12    p-0 pr-1 pl-1  mb-1  p-0 text-center">
-                  <div class="banner-box">
-                      <a class="portfolio-thumb" href="/fashion">
-                          <img src="https://avenuemontaigne.ng/uploads/LbTofMzhmOJE9MkpDGTba2uCmB7Y2yYtGew0uZPJ.jpg" alt="" />
-                      </a>
-                  </div>
-              </div> 
-              <div class="col-md-6 col-12   p-0 pr-1 pl-1  mb-1  p-0 text-center">
-                  <div class="banner-box">
-                      <a class="portfolio-thumb" href="/services">
-                          <img src="https://avenuemontaigne.ng/uploads/3ljHDEzjFhTKex6vIwz7B404M0Xxu1SvW024cDEt.jpg" alt="" />
-                      </a>
-                  </div>
-              </div>
-          </div>
         </div>
-      </main>
-      <footer class="footer">
-         <div class="footer-bottom text-center">
-            <div class="container d-flex justify-content-center align-items-center flex-wrap">
-               <p class="footer-copyright py-3 pr-4 mb-0">©.AvenueMontaigne {{ date('Y') }}. All Rights Reserved</p>
+       <div class="container">
+            <div class="blog-slider owl-carousel owl-theme text-center">
+                 @foreach($posts as $post)
+                    <!--Item-->
+                    <div class="item raised animated fadeIn  bg--light mb-4">
+                        <div class="blog-item">
+                            <div class="blog-item-image">
+                                <a title="{{  $post->title }}" href="{{ route('blog.show',['blog'=> $post->slug]) }}" class="blog-img-link">
+                                    <img  title="{{  $post->title }}" src="{{ $post->image }}" alt="{{  $post->title }}" />
+                                </a>
+                            </div>
+                            <div class="blog-item-content">
+                                <p class="info mb-2">
+                                    <i class="fa fa-clock-o"></i><span>{{ $post->created_at->diffForHumans() }}</span>
+                                </p>
+                                <div class="tag bold">
+                                    @foreach($post->attributes as $tag)
+                                    <a href="/blog/tag/{{ $tag->id }}"><i class="fa fa-tags"></i> {{ $tag->name }}</a>
+                                    @endforeach
+                                </div>
+                                <h6 class="blog-title text-uppercase"> 
+                                    <a title="{{  $post->title }}" href="{{ route('blog.show',['blog'=> $post->slug]) }}" class="">
+                                        {{ $post->title }}
+                                    </a> 
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+               
             </div>
-            <!-- End .container -->
-         </div>
-         <!-- End .footer-bottom -->
-      </footer>
-   </div>
-   <!-- End .page-wrapper -->
-   <div class="mobile-menu-overlay"></div>
-   <!-- End .mobil-menu-overlay -->
-   <div class="mobile-menu-container">
-      <div class="mobile-menu-wrapper">
-         <span class="mobile-menu-close"><i class="icon-cancel"></i></span>
-         <nav class="mobile-nav">
-            <ul class="mobile-menu">
-               <li>
-                  <a href="">Fashion</a>
-               </li>
-               <li>
-                  <a href="">Apartments</a>
-               </li>
-            </ul>
-         </nav>
-         <!-- End .mobile-nav -->
-      </div>
-      <!-- End .mobile-menu-wrapper -->
-   </div>
-   <!-- End .mobile-menu-container -->
+        </div>
+    </section>
+    <!--End Blog-->
+    @endif
 
-
-
-	
-
-
-
-	<!-- Plugins JS File -->
-	<script src="/f/js/app.js?version={{ str_random(6) }}" type="text/javascript"></script>
-</body>
-</html>
-
-
-
-
-
-
-
-
+@endsection
+@section('page-scripts')
+@stop
 
 

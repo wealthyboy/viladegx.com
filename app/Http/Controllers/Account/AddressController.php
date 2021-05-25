@@ -39,25 +39,25 @@ class AddressController extends Controller
 			$addresses = User::find($id)->addresses;
 			$states = State::all();
 			//check to see if the address IS EMPTY			
-			return view('fashion.account.address.index', compact('states','addresses','page_title') ); 	 
+			return view('account.address.index', compact('states','addresses','page_title') ); 	 
 		}
 
 		public function create(){
 			$page_title = 'Address';
 			$states = State::all();
-			return view('fashion.account.address.create',compact('states','page_title'));	 
+			return view('account.address.create',compact('states','page_title'));	 
 		}
 
 
 		public function getStates(Request $request,$id){
 			$country =  Location::findOrFail($id);
-			return view('fashion.account.address.includes.states',compact('country'));	 
+			return view('account.address.includes.states',compact('country'));	 
 		}
 
 
 		public function getShipping(Request $request,$id){
 			$location =  Location::findOrFail($id);
-			return view('fashion.account.address.includes.shipping',compact('location'));	 
+			return view('account.address.includes.shipping',compact('location'));	 
 		}
 		  
 		public function store(Request $request){
@@ -103,7 +103,7 @@ class AddressController extends Controller
 					]);
 				}
 					
-				return redirect('/fashion/address');
+				return redirect('/address');
 					
 			}
   
@@ -112,7 +112,7 @@ class AddressController extends Controller
 	    public function getAddress(Request $request){
 		   //Get The Current LoggedIn user Id
 		    $address =  $request->user()->address()->orderBy('created_at','desc')->get();
-		    return view('fashion.partials.address',compact('address'));
+		    return view('partials.address',compact('address'));
 		} 
 		
 		
@@ -145,7 +145,7 @@ class AddressController extends Controller
 
 					}
 
-		        	return view('fashion.partials.address',compact('address'));
+		        	return view('partials.address',compact('address'));
 		        }
 		        return redirect()->back()->with('status', ' Successfully Deleted ');//reject if we have ; 
 		    }  
@@ -189,13 +189,13 @@ class AddressController extends Controller
 						  return view('account.art.includes.address',compact('address')); 
 
 					    }
-			        	return view('fashion.partials.address',compact('address'));
+			        	return view('partials.address',compact('address'));
 			        }
 					
 				   return redirect()->action('Account\AddressController@index');
 			  } else  {
 			  
-			       return view('fashion.account.address.edit',compact('states','page_title','address')); 
+			       return view('account.address.edit',compact('states','page_title','address')); 
 			 
 			    }
 				

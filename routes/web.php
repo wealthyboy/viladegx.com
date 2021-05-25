@@ -127,7 +127,7 @@ Route::post('delete/image','Admin\Image\ImagesController@undo');
 
 Route::get('/', 'HomeController@index');
 
-Route::group(['middleware' => 'currencyByIp','prefix' => '/fashion'], function(){
+Route::group(['middleware' => 'currencyByIp'], function(){
     Route::get('/', 'HomeController@home');
     Route::get('/home', 'HomeController@index');
     Route::post('password/reset/link',           'Auth\ForgotPasswordController@sendResetLinkEmail');

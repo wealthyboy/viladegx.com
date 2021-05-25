@@ -33,7 +33,7 @@ class OrdersController extends Controller{
 		$orders     =  User::find($id)->orders()->orderBy('id','DESC')->get();
 		$page_title = 'Order Information';
 		$currency =  Helper::getCurrency();
-        return view('fashion.account.orders.index',compact('currency','page_title','orders'));
+        return view('account.orders.index',compact('currency','page_title','orders'));
 	}
 	
 	
@@ -78,7 +78,7 @@ class OrdersController extends Controller{
 		$currency = $this->settings->currency->symbol;
 		$total = $order->ordered_products[0]->sum_items($order->id)->items_total;
 		$currency =  Helper::getCurrency();
-		return view('fashion.account.orders.show',compact('currency','order','order','page_title','total'));
+		return view('account.orders.show',compact('currency','order','order','page_title','total'));
 	}
 
 

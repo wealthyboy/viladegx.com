@@ -56,7 +56,7 @@ class ProductsController extends Controller
         $parent_category =  explode('-',$category->slug);
         $parent_category =  $parent_category[0];
 
-        return  view('fashion.products.index',compact(
+        return  view('products.index',compact(
             'category',
             'page_title',
             'category_attributes',
@@ -97,7 +97,7 @@ class ProductsController extends Controller
         $attributes = $attributes->count() && $product->product_type == 'variable' ? $attributes : '{}';
         $related_products = RelatedProduct::where(['product_id' => $product->id])->get();
         $product->load(["variants","variants.images","default_variation","default_variation.images"]);
-    	return view('fashion.products.show',compact('category','related_products','attributes','product','page_title'));
+    	return view('products.show',compact('category','related_products','attributes','product','page_title'));
     }
 
     
@@ -128,7 +128,7 @@ class ProductsController extends Controller
                 'products' => $products->toArray(),
             ]); 
         }
-        return view('fashion.products.index',compact('products','breadcrumb'));  
+        return view('products.index',compact('products','breadcrumb'));  
     }
 
 
