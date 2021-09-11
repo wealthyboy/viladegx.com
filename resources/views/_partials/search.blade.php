@@ -19,7 +19,7 @@
                         <label  id="box50" class="checkbox-label">
                         <input for="box50" name="prices[]" value="2500" class="filter-product" type="checkbox">
                             <span class="checkbox-custom rectangular"></span>
-                            <span class="checkbox-label-text">Less Than  2500</span> 
+                            <span class="checkbox-label-text">Less Than  250k</span> 
                         </label>
                     </div>
                 </li>
@@ -28,7 +28,7 @@
                         <label  id="box50" class="checkbox-label">
                         <input for="box50" name="prices[]" value="5000" class="filter-product" type="checkbox">
                             <span class="checkbox-custom rectangular"></span>
-                            <span class="checkbox-label-text">Less Than  5000</span> 
+                            <span class="checkbox-label-text">Less Than  500k</span> 
                         </label>
                     </div>
                 </li>
@@ -38,7 +38,7 @@
                         <label  id="box50" class="checkbox-label">
                         <input for="box50" name="prices[]" value="10000" class="filter-product" type="checkbox">
                             <span class="checkbox-custom rectangular"></span>
-                            <span class="checkbox-label-text">Less Than  10000</span> 
+                            <span class="checkbox-label-text">Less Than  1M</span> 
                         </label>
                     </div>
                 </li>
@@ -48,7 +48,7 @@
                         <label  id="box50" class="checkbox-label">
                         <input for="box50" name="hprices[]" value="10000" class="filter-product" type="checkbox">
                             <span class="checkbox-custom rectangular"></span>
-                            <span class="checkbox-label-text">More than 10,000</span> 
+                            <span class="checkbox-label-text">More than 10M</span> 
                         </label>
                     </div>
                 </li>

@@ -118,7 +118,7 @@
                                     <div :id="'productV-' +key" class="d-flex mb-1 justify-content-center">
                                         <div  @click="getAttribute($event,key)" :data-name="key" @mouseenter="showColor(children)" @mouseleave="removeColor" :class="[ index== 0 ? 'active-attribute  ' : '', activeObject]" v-if="key == 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children" :style="{ 'background-color': children }" style="height: 30px; width: 30px; border-radius: 50%; cursor: pointer;" class="mr-1 first-attribute"></div>
                                         <template v-if="attributesData.length">
-                                            <div  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"  style="height: 35px; width: auto; border-radius: 5%; cursor: pointer;" class="mr-1 border pr-3  pl-3 o-a pt-1 other-attribute">{{ children }} </div>
+                                            <div style="pointer-events: none; text-decoration: line-through; background-color: rgb(153, 153, 153); color: rgb(255, 255, 255); background-image: url("/img/outofstock.svg"); background-position: center center; background-repeat: no-repeat;"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"  style="height: 35px; width: auto; border-radius: 5%; cursor: pointer;" class="mr-1 border pr-3  pl-3 o-a pt-1 other-attribute">{{ children }} </div>
                                         </template>
                                         <template v-else>
                                             <div  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"  style="height: 35px; width: auto; border-radius: 5%; cursor: pointer;" class="mr-1  pr-3 pl-3 pt-1  border other-attribute">{{ children }} </div>
@@ -160,7 +160,6 @@
                                      <span>Wishlist</span> 
                                     <span  v-if="wishlistText"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
                                     <span class="float-right ">
-                                        
                                         <svg  class="wishlist-icon mr-4 ">
                                             <use xlink:href="#iconStar">
                                             <symbol data-icon-id="star" data-icon-set="farfetch-2020" id="iconStar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"></path></svg></symbol>
@@ -168,10 +167,6 @@
                                         </svg>
                                     </span>
                                 </button>
-
-
-
-
                             </div>
                             
                         </div>
@@ -199,7 +194,6 @@
                             <div class="col-6">
                                 <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
                                     <i class="icon-action-undo"></i>
-
                                     <div class="feature-box-content">
                                         <h3 class="mb-0 pb-1">Money Back Guarantee</h3>
                                         <h5 class="m-b-3">Get your money back. Read return policy</h5>
@@ -222,8 +216,8 @@
                     <li class="nav-item">
                         <a class="nav-link" id="Warranty_Return" data-toggle="tab" href="#Warranty-Return" role="tab" aria-controls="Warranty-Return" aria-selected="false"> Warranty & Return</a>
                     </li>
-
                 </ul>
+
                 <div class="tab-content ">
                     <div class="tab-pane fade show active pl-2" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
                         <div class="row">
@@ -488,6 +482,7 @@ export default {
                 this.product_variation_id = vTs.id;
                 this.canNotAddToCart = false;
                 this.cText = this.quantity >= 1 ? "Add To Cart" : "Item is sold out";
+                console.log('test')
             } catch (error) {
                 console.log(error);
                 this.canNotAddToCart = true;

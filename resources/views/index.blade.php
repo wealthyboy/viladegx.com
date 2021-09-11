@@ -4,7 +4,18 @@
 
 @include('_partials.top_banner')
 
-<div class="container-fliud mt-3">
+
+@if ($sliders->count())
+<div class="owl-carousel main-banner-slider owl-theme">
+    @foreach($sliders as $slider)
+        <div class="item">
+            <a href="{{ $slider->link }}"><img src="{{ $slider->image }}" /></a>
+        </div>
+    @endforeach
+</div>
+@endif
+
+<div class="container-fliud mt-1">
     <div  class="row align-items-start ">
         @foreach( $banners as $banner )
             <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : 'pr-1 pl-1' }}  mb-1 {{ $banner->title }} p-0 text-center">
