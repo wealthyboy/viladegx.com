@@ -7,7 +7,7 @@
                     <images  :image="image" :images="images" />
                     
                 </div><!-- End .product-single-gallery -->
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <images  :image="image" :images="images" />
                 </div><!-- End .col-md-8 -->
                 
@@ -78,13 +78,13 @@
                
 
 
-                <div class="col-md-5 product-single-details mt-3 mt-sm-5  mt-xs-5">
+                <div class="col-md-4 product-single-details mt-3 mt-sm-5  mt-xs-5">
                     <div class="p text-center ">
-                        <div v-if="product.brand" class="tag mb-1 brand-name bold color--gray">{{ product.brand_name }}</div>
+                        <div v-if="product.brand" class="tag  brand-name bold ">{{ product.brand_name }}</div>
 
                         <p class="product-title  border-bottom pb-2">{{ product.product_name }}</p>
 
-                        <div class="product-item-prices d-flex justify-content-center mt-2"  v-if="discounted_price">
+                        <div class="product-item-prices d-flex justify-content-center mt-1"  v-if="discounted_price">
                             <div class="product--price--amount ">
                                 <span class="retail--title text-gold">SALE PRICE</span>
                                 <span class="product--price text-danger">{{ product.currency }}{{ discounted_price | priceFormat }}</span>
@@ -97,7 +97,7 @@
                             </div>
                         </div>
 
-                        <div class="product-item-prices  d-flex justify-content-center  mt-2" v-else>
+                        <div class="product-item-prices  d-flex justify-content-center  mt-1" v-else>
                             <div class="product--price--amount">
                                 <span class="retail--title text-gold">PRICE</span>
                                 <span class="product--price">{{ product.currency }}{{ price | priceFormat }}</span>
@@ -112,16 +112,16 @@
                             <!--Product Variations Form-->
                         <div class="row">
                             <!--Select Size-->
-                            <div v-if="Object.keys(attributes).length !== 0"  class="col-12 mt-2 text-center">
+                            <div v-if="Object.keys(attributes).length !== 0"  class="col-12 variations mt-2 text-center">
                                 <div   v-for="map, key in attributes" :key="key" class="">
                                     <label class="d-block">{{ key }}:  <span v-if="key == 'Colors' ">{{ color }}</span></label>
                                     <div :id="'productV-' +key" class="d-flex mb-1 justify-content-center">
                                         <div  @click="getAttribute($event,key)" :data-name="key" @mouseenter="showColor(children)" @mouseleave="removeColor" :class="[ index== 0 ? 'active-attribute  ' : '', activeObject]" v-if="key == 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children" :style="{ 'background-color': children }" style="height: 30px; width: 30px; border-radius: 50%; cursor: pointer;" class="mr-1 first-attribute"></div>
                                         <template v-if="attributesData.length">
-                                            <div style="pointer-events: none; text-decoration: line-through; background-color: rgb(153, 153, 153); color: rgb(255, 255, 255); background-image: url("/img/outofstock.svg"); background-position: center center; background-repeat: no-repeat;"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"  style="height: 35px; width: auto; border-radius: 5%; cursor: pointer;" class="mr-1 border pr-3  pl-3 o-a pt-1 other-attribute">{{ children }} </div>
+                                            <div  :id="children"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border pr-3  pl-3 o-a pt-1 product-variation-box  other-attribute">{{ children }} </div>
                                         </template>
                                         <template v-else>
-                                            <div  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"  style="height: 35px; width: auto; border-radius: 5%; cursor: pointer;" class="mr-1  pr-3 pl-3 pt-1  border other-attribute">{{ children }} </div>
+                                            <div  :id="children"  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1  pr-3 pl-3 pt-1  product-variation-box  border other-attribute">{{ children }} </div>
                                         </template>
                                     </div>
                                 </div>
@@ -129,43 +129,24 @@
 
                            
                         </div>
-                        <div class="row ml-1 mb-2 mt-2 no-gutters">
+                        <div class="row ml-1 mb-2 mt-2">
 
-                            <div class="col-8 pr-1">
-                                <button @click.prevent="addToCart"    type="button"  class="pt-4 pb-4  btn btn--primary  btn-lg btn-block">
-                                    {{ cartText }}
+                            <div class="col-8 ">
+                                <button @click.prevent="addToCart"    type="button"  class="btn btn--primary  btn-lg btn-block">
+                                    {{ cartText }} 
                                     <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
                                 </button>
                             </div>
                             <div class="col-4">
-                                <button v-if="$root.loggedIn"  @click.prevent="addToWishList"    type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block">
-                                    <span>Wishlist</span> 
-                                    <span  v-if="wishlistText"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
-                                    <span class="float-right ">
-                                        <svg v-if="is_wishlist" class="wishlist-icon-fillled mr-4">
-                                            <use xlink:href="#iconStarFill">
-                                               <symbol data-icon-id="starFill" id="iconStarFill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922z"></path></svg></symbol>
-                                            </use>
-                                        </svg>
-                                        <svg v-if="!is_wishlist" class="wishlist-icon mr-4 ">
-                                            <use xlink:href="#iconStar">
-                                            <symbol data-icon-id="star" data-icon-set="farfetch-2020" id="iconStar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"></path></svg></symbol>
-                                            </use>
-                                        </svg>
-                                    </span>
+                                <button v-if="$root.loggedIn"  @click.prevent="addToWishList"    type="button"  class="l-f1  btn btn-outline  add-to-wishlist btn-lg btn-block">
+                                    Wishlist
+                                    
                                 </button>
 
 
-                                <button v-else data-toggle="modal" data-target="#login-modal"  type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn-outline  add-to-wishlist btn-lg btn-block">
-                                     <span>Wishlist</span> 
-                                    <span  v-if="wishlistText"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
-                                    <span class="float-right ">
-                                        <svg  class="wishlist-icon mr-4 ">
-                                            <use xlink:href="#iconStar">
-                                            <symbol data-icon-id="star" data-icon-set="farfetch-2020" id="iconStar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2l2.868 6.922L22 9.844l-5.11 4.804L18.225 22 12 18.322 5.776 22l1.333-7.352L2 9.844l7.132-.922L12 2zm-1.49 8.816l-3.976.513 2.733 2.57-.745 4.11L12 15.955l3.478 2.056-.745-4.111 2.733-2.57-3.975-.514L12 7.219l-1.49 3.598z"></path></svg></symbol>
-                                            </use>
-                                        </svg>
-                                    </span>
+                                <button v-else data-toggle="modal" data-target="#login-modal"  type="button"  class="l-f1 btn btn-outline  add-to-wishlist btn-lg btn-block">
+                                    Wishlist
+                                    
                                 </button>
                             </div>
                             
@@ -173,37 +154,10 @@
                     </div><!-- End .product-filters-container -->   
 
                     <div class="col-12 mt-3 text-center">
-                        <span class="bold color--gray">Estimated Delivery Time</span><br/>
+                        <span class="bold">Estimated Delivery Time</span><br/>
                         <span>3 to 4 working days</span>
                     </div>
-                    <div class="mt-2">
-                        <div class="feature-boxes-container row no-gutters">
-                        
-                            <div class=" col-6">
-                                <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
-                                   <i class="fas fa-2x fa-phone"></i> 
-
-                                    <div class="feature-box-content">
-                                        <h3 class="mb-0 pb-1">Order by phone</h3>
-                                        <h5 class="m-b-3">Add us on +234 </h5>
-                                        <p></p>
-                                    </div><!-- End .feature-box-content -->
-                                </div><!-- End .feature-box -->
-                            </div><!-- End .col-md-4 -->
-
-                            <div class="col-6">
-                                <div class="feature-box px-sm-5 px-md-4 mx-sm-5 mx-md-3 feature-box-simple text-center">
-                                    <i class="icon-action-undo"></i>
-                                    <div class="feature-box-content">
-                                        <h3 class="mb-0 pb-1">Money Back Guarantee</h3>
-                                        <h5 class="m-b-3">Get your money back. Read return policy</h5>
-                                        <p></p>
-                                    </div><!-- End .feature-box-content -->
-                                </div><!-- End .feature-box -->
-                            </div><!-- End .col-md-4 -->
-                        </div>
-
-                    </div>
+                    
                 </div><!-- End .product-single-details -->
             </div><!-- End .row -->
 
@@ -283,7 +237,7 @@ export default {
             isActive: false,
             canNotAddToCart: false,
             image:'',
-            cText:   "Add To Cart",
+            cText:   "Add To Bag",
             images:[],
             variant_images: [],
             noRating: false,
@@ -354,7 +308,7 @@ export default {
         this.product_variation_id = this.product.default_variation_id
         this.percentage_off = this.product.default_percentage_off
         this.quantity = this.product.qty
-        this.cText= this.product.qty  < 1 ? 'Out of Stock' :" Add To Cart"
+        this.cText= this.product.qty  < 1 ? 'Out of Stock' :" Add To Bag"
         this.price =  this.product.converted_price
         this.discounted_price =  this.product.default_discounted_price
         this.is_wishlist =  this.product.is_wishlist

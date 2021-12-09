@@ -44,3 +44,5 @@
 		}
 	</script>
 </head>
+
+@include('_partials.svg')

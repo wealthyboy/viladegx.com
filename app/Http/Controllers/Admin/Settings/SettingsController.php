@@ -25,8 +25,8 @@ class SettingsController extends Controller
     }
 
 	public function index(){
-		$settings = SystemSetting::all();
-		return view('admin.settings.index',compact('settings'));
+		$setting = SystemSetting::first();
+		return view('admin.settings.index',compact('setting'));
     }
 
 

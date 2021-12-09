@@ -31,8 +31,16 @@
 }
 
 @font-face {
-    font-family: "Am Basis 2";
+    font-family: "AM Basis";
     src: url(../fonts/AmBasis-Regular.woff2) format("woff2"),
+        url(../fonts/AmBasis-Regular.woff) format("woff");
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "AM Basis";
+    src: url(../fonts/AmBasis-Bold.woff2) format("woff2"),
         url(../fonts/AmBasis-Bold.woff) format("woff");
     font-display: swap;
     font-weight: 700;
@@ -134,11 +142,12 @@ input {
 }
 
 .bold {
-    font-family: "Ams Extended D", sans-serif;
+    font-family: "AM Basis", sans-serif;
+    font-weight: 700;
 }
 
 .l-f1 {
-    font-family: "Am Basis", sans-serif !important;
+    font-family: "AM Basis", sans-serif !important;
     font-weight: 700 !important;
 }
 
@@ -189,7 +198,7 @@ input {
 }
 
 .main-nav > ul > li > a {
-    font-family: "Am Basis", sans-serif !important;
+    font-family: "AM Basis", sans-serif !important;
     letter-spacing: normal;
     font-weight: 400 !important;
     font-style: normal;
@@ -200,13 +209,13 @@ input {
 }
 
 .main-nav .menu .megamenu.megamenu-fixed-width a.category-heading {
-    font-family: "Am Basis", sans-serif !important;
+    font-family: "AM Basis", sans-serif !important;
     color: #222;
     font-weight: 700 !important;
 }
 
 .menu .megamenu .submenu a {
-    font-family: "Am Basis", sans-serif !important;
+    font-family: "AM Basis", sans-serif !important;
     color: black;
     font-weight: 400 !important;
 }
@@ -231,7 +240,7 @@ input {
 }
 
 .mobile-menu-container {
-    background-color: var(--primary-color) !important;
+    background-color: #fff !important;
 }
 
 .header-bottom .input-group-append button svg {
@@ -253,6 +262,20 @@ input {
     border-bottom: 1px solid #ccc;
     background-color: #fff;
     border-radius: 0.4rem;
+}
+
+.wishlist-count {
+    position: absolute;
+    bottom: 25px;
+    right: 81px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: "AM Basis", sans-serif;
+}
+
+svg.close-icon {
+    height: 25px;
+    width: 25px;
 }
 
 .search-bar {
@@ -602,7 +625,7 @@ background: white;
 }
 
 .product-default {
-    color: #777;
+    color: #000;
     margin-bottom: 2rem;
     padding: 10% 8.5%;
 }
@@ -682,12 +705,12 @@ background: white;
 
 .product-single-details .product-title {
     font-family: "Am Basis", sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
 }
 
 .product-single-details .brand-name {
     font-size: 1.9rem;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .product-item-prices .product--price--amount {
@@ -1001,7 +1024,7 @@ footer a:focus {
     }
 
     .logo {
-        max-width: 130px;
+        max-width: 210px;
     }
 
     .portfolio-interior {
@@ -1021,5 +1044,10 @@ footer a:focus {
     .header-icon svg,
     .dropdown-arrow svg {
         width: 21px;
+    }
+
+    .wishlist-count {
+        bottom: 1px;
+        right: 67px;
     }
 }

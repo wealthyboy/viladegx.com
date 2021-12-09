@@ -131,19 +131,7 @@
                                 <span class="sidebar-normal"> Categories </span>
                             </a>
                         </li>
-                        <li class="{{ $helper->active_link(['facilities']) }} ">
-                           <a href="{{ route('facilities.index') }}">
-                                <span class="sidebar-mini"> P </span>
-                                <span class="sidebar-normal"> Facilities </span>
-                            </a>
-                        </li>
-
-                        <li class="{{ $helper->active_link(['reservations']) }} ">
-                           <a href="{{ route('admin.reservations.index') }}">
-                                <span class="sidebar-mini"> R </span>
-                                <span class="sidebar-normal"> Reservation </span>
-                            </a>
-                        </li>
+                        
                         
                         <li class="{{ $helper->active_link(['products']) }} ">
                            <a href="{{ route('admin.products.index') }}">
@@ -152,12 +140,7 @@
                             </a>
                         </li>
                     
-                        <li class="{{ $helper->active_link(['requirements']) }} ">
-                           <a href="{{ route('requirements.index') }}">
-                                <span class="sidebar-mini"> R</span>
-                                <span class="sidebar-normal"> Rules </span>
-                            </a>
-                        </li>
+                        
 
                     
                         <li class="{{ $helper->active_link(['vouchers']) }} ">
@@ -192,12 +175,7 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="{{ route('admin.orders.index',['type'=> 'reservation']) }}">
-                                <span class="sidebar-mini"> C </span>
-                                <span class="sidebar-normal"> Orders  Reservation</span>
-                            </a>
-                        </li>
+                        
                         
                         <li>
                             <a href="/admin/reviews">

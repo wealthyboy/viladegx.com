@@ -6,13 +6,13 @@
 
 
 @if ($sliders->count())
-<div class="owl-carousel main-banner-slider owl-theme">
-    @foreach($sliders as $slider)
-        <div class="item">
-            <a href="{{ $slider->link }}"><img src="{{ $slider->image }}" /></a>
-        </div>
-    @endforeach
-</div>
+    <div class="owl-carousel main-banner-slider owl-theme">
+        @foreach($sliders as $slider)
+            <div class="item">
+                <a href="{{ $slider->link }}"><img src="{{ $slider->image }}" /></a>
+            </div>
+        @endforeach
+    </div>
 @endif
 
 <div class="container-fliud mt-1">

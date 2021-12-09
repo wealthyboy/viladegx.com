@@ -5,7 +5,11 @@
         ></div>
         <!-- End .header-contact -->
 
-        <a v-if="!$root.loggedIn" href="/login" class="header-icon  pl-1">
+        <a
+            v-if="!$root.loggedIn"
+            href="/login"
+            class="header-icon   d-none d-lg-block  pl-1"
+        >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
                     fill-rule="evenodd"
@@ -13,7 +17,10 @@
                 ></path>
             </svg>
         </a>
-        <div v-if="$root.loggedIn" class="header-dropdown ml-4">
+        <div
+            v-if="$root.loggedIn"
+            class="header-dropdown  d-none d-lg-block  ml-4"
+        >
             <a href="/account" class="header-icon  pl-1">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path

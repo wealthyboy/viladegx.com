@@ -27,7 +27,7 @@ class OrdersController extends Controller{
 
     public function index (Request $request) { 
 	
-		$orders = Order::has('ordered_products')->where('type', $request->type)->orderBy('created_at','desc')->get();
+		$orders = Order::has('ordered_products')->orderBy('created_at','desc')->get();
         return view('admin.orders.index',compact('orders'));
     }
     
@@ -39,6 +39,7 @@ class OrdersController extends Controller{
         return view('admin.orders.invoice',compact('sub_total','order','system_settings'));
     }
 
+
     public static function order_status() { 
 		return [
 			"Processing",
@@ -47,7 +48,6 @@ class OrdersController extends Controller{
 			"Delivered"
 		];
 	}
-
 
 	public function show($id) { 
 		$order       =  Order::find($id);

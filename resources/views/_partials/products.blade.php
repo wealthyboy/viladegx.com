@@ -41,16 +41,8 @@
                   <a href="" class="btn-quickview" title="Quick View">Extra {{ $product->extra_percent }}% OFF</a>
                 @endif
             </figure>
-            <div class="product-details text-center">
-                <div class="mx-auto">
-                    
-                    @if($product->colours->count()  && $product->colours->count() > 1)
-                        <div  class="justify-content-center d-flex mb-1">
-                            @foreach($product->colours as $color)
-                               <div   style="border:1px solid #222; height: 15px; width: 15px; border-radius: 50%; background-color: {{ $color->color_code }};" class="mr-1"></div>
-                            @endforeach
-                        </div>
-                    @endif
+            <div class="product-details text-left">
+                <div class="">
                     @if($product->brand_name)
                         <div  class="product-brand bold">
                             {{ $product->brand_name }} 
@@ -61,7 +53,7 @@
                         <a href="{{ $product->link }}">{{ $product->product_name }}</a>
                     </div>
                 </div>
-                <div class="price-box mx-auto mt-1">
+                <div class="price-box text-left mt-1">
                     @if( $product->default_discounted_price)
                         <span class="old-price">{{ $product->currency }}{{ number_format($product->converted_price)   }}</span>
                         <span class="product-price">{{ $product->currency }}{{ number_format($product->default_discounted_price)  }}</span>

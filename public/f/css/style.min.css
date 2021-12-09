@@ -1436,7 +1436,6 @@ aside .banner {
     border-radius: 0;
     font-size: 1.4rem;
     font-weight: 700;
-    font-family: "PolarisBook", sans-serif;
     line-height: 1.429;
 }
 .btn:focus {
@@ -5859,7 +5858,7 @@ header a {
     color: #222529;
     padding: 1rem 0.5rem;
     margin-right: 0.5rem;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 0;
     cursor: pointer;
 }
@@ -5874,7 +5873,6 @@ header a {
     font-weight: 600;
     font-size: 1.1rem;
     line-height: 1.6rem;
-    font-family: "PolarisBook", sans-serif;
     text-align: center;
 }
 header .social-icon {
@@ -5899,7 +5897,6 @@ header .separator {
     position: relative;
     padding: 1rem 2rem;
     font-size: 1.3rem;
-    font-family: "PolarisBook", sans-serif;
     line-height: 2;
     letter-spacing: 0.025em;
 }
@@ -6050,12 +6047,7 @@ header .separator {
 .header-dropdown > a {
     padding: 0 5px;
 }
-.header-dropdown > a:after {
-    content: "\e81c";
-    font-family: "porto";
-    font-weight: 400;
-    margin-left: 0.5rem;
-}
+
 .header-dropdown img {
     display: inline-block;
     max-width: none;
@@ -6213,7 +6205,6 @@ header .separator {
     color: #fff;
     font-size: 1.2rem;
     font-weight: 400;
-    font-family: "PolarisBook", sans-serif;
     letter-spacing: 0.025em;
 }
 .compare-dropdown .dropdown-toggle {
@@ -6622,7 +6613,7 @@ header .separator {
 }
 .main-nav .menu {
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 15px;
 }
 .main-nav .menu > li {
     margin-right: 34px;
@@ -6661,7 +6652,6 @@ header .separator {
     padding: 3px 4px;
     border-radius: 2px;
     color: #fff;
-    font-family: "PolarisBook", sans-serif;
     font-size: 1rem;
     line-height: 1;
     text-transform: uppercase;
@@ -6714,11 +6704,11 @@ header .separator {
     bottom: 0;
     left: 0;
     width: 100%;
-    max-width: 250px;
+    max-width: 368px;
     transform: translateX(-100%);
     transition: all 0.25s;
     background-color: #1d1e20;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     line-height: 1.5;
     box-shadow: 0.1rem 0 0.6rem 0 rgba(50, 50, 50, 0.65);
     visibility: hidden;
@@ -6757,9 +6747,9 @@ header .separator {
 .mobile-menu-close {
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    right: 0.3rem;
     padding: 0.4rem;
-    color: #fff;
+    color: #000;
     font-size: 1.3rem;
     line-height: 1;
     cursor: pointer;
@@ -6800,14 +6790,14 @@ header .separator {
 .mobile-menu li {
     display: block;
     position: relative;
-    border-bottom: 1px solid #242527;
+    border-bottom: 1px solid #eee;
 }
 .mobile-menu li a {
     display: block;
     position: relative;
     margin-right: 4.5rem;
     padding: 1.1rem 0 1.1rem 1.5rem;
-    color: #fff;
+    color: #000;
 }
 .mobile-menu li a:hover,
 .mobile-menu li a:focus {
@@ -6851,7 +6841,10 @@ header .separator {
     margin-top: -2px;
     font-family: "porto";
     content: "\e81c";
+    font-size: 2.4rem;
+    color: #000;
 }
+
 .open > a > .mmenu-btn:after {
     content: "\e81b";
 }
@@ -7076,7 +7069,6 @@ footer .contact-info-label {
     padding: 1.2rem 2.475rem;
     border-radius: 5rem;
     font-size: inherit;
-    font-family: "PolarisBook", sans-serif;
 }
 .footer-copyright {
     color: #777;
@@ -7109,7 +7101,6 @@ footer .contact-info-label {
     margin-bottom: 2rem;
 }
 .about-section .lead {
-    font-family: "PolarisBook", sans-serif;
     color: #21293c;
     font-size: 1.8rem;
     line-height: 1.5;
@@ -7118,9 +7109,7 @@ footer .contact-info-label {
 .features-section {
     padding: 5rem 0 2.4rem;
 }
-.features-section h3 {
-    font-family: "PolarisBook", sans-serif;
-}
+
 .features-section .feature-box {
     padding: 3rem 4rem;
 }
@@ -7213,7 +7202,6 @@ footer .contact-info-label {
     color: #313131;
     font-size: 1.5rem;
     font-weight: 600;
-    font-family: "PolarisBook", sans-serif;
     line-height: 1.4;
     text-transform: uppercase;
 }
@@ -7351,7 +7339,6 @@ footer .contact-info-label {
     color: #7a7d82;
     font-size: 1.4rem;
     font-weight: 600;
-    font-family: "PolarisBook", sans-serif;
 }
 .widget-block p {
     color: #21293c;
@@ -7363,7 +7350,6 @@ footer .contact-info-label {
     background-color: #f4f4f4;
 }
 .horizontal-filter .filter-price-form {
-    font-family: "PolarisBook", sans-serif;
     font-size: 1.36rem;
 }
 .horizontal-filter .filter-price-form .btn {
@@ -7454,7 +7440,6 @@ footer .contact-info-label {
     padding: 1.3rem 3rem;
     border: 1px solid #e7e7e7;
     font-size: 1.2rem;
-    font-family: "PolarisBook", sans-serif;
     color: #555;
 }
 .btn-loadmore:hover {
@@ -7572,7 +7557,6 @@ footer .contact-info-label {
     color: #222529;
     font-size: 1.2rem;
     font-weight: 700;
-    font-family: "PolarisBook", sans-serif;
     letter-spacing: -0.015em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -7610,7 +7594,6 @@ footer .contact-info-label {
     margin-bottom: 2.4rem;
     color: #222;
     font-weight: 700;
-    font-family: "PolarisBook", sans-serif;
 }
 .product-single-details .product-price {
     font-size: 2.4rem;
@@ -7735,7 +7718,6 @@ main .sticky-header .product-title {
 main .sticky-header .price-box {
     margin: 0;
     color: #2b2b2d;
-    font-family: "Oswald", "" PolarisBook "";
     font-weight: 400;
 }
 main .sticky-header .old-price {
@@ -7783,7 +7765,6 @@ main .sticky-header .product-ratings:before {
     margin-bottom: 0;
     color: #777;
     font-weight: 400;
-    font-family: "PolarisBook", sans-serif;
     letter-spacing: 0.005em;
     text-transform: uppercase;
 }

@@ -93,9 +93,7 @@
 									@endif
                                 </li>
                             @endforeach
-
-
-
+ 
                             @foreach( $global_categories->slice(1)   as  $category)
 							   @foreach( $category->children   as  $category)
 
@@ -242,7 +240,9 @@
 
 	<div class="mobile-menu-container">
 		<div class="mobile-menu-wrapper">
-			<span class="mobile-menu-close"><i class="icon-cancel"></i></span>
+			<span class="mobile-menu-close">
+			   <svg  class="close-icon"><use xlink:href="#close-icon"></use></svg>
+            </span>
 			<nav class="mobile-nav">
 				<ul class="mobile-menu">
 				@foreach( $global_categories   as  $category)
@@ -282,22 +282,6 @@
 	</div><!-- End .mobile-menu-container -->
 
 
-
-	<!-- Add Cart Modal -->
-	<div class="modal fade" id="addCartModal" tabindex="-1" role="dialog" aria-labelledby="addCartModal" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-		<div class="modal-content">
-		  <div class="modal-body add-cart-box text-center">
-			<p>Product Added<br></p>
-			<h4 id="productTitle"></h4>
-			<img src="" id="productImage" width="100" height="100" alt="adding cart image">
-			<div class="btn-actions">
-				<a href=""><button class="btn-primary" data-dismiss="modal">Continue</button></a>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
 
 	<a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
 	<!-- Plugins JS File -->

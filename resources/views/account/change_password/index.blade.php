@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                @include('fashion.account.nav')
+                @include('account.nav')
             </div>
             <div class="col-md-7">
                 <h2 class="">Change Password</h2>

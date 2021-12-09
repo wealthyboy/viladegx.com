@@ -10,7 +10,7 @@
 			<div class="header-middle">
 				<div class="container">
 					<div class="header-center order-first order-lg-0 ml-0">
-						<a href="/fashion" class="logo">
+						<a href="/" class="logo">
 							<img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
 						</a>
 					</div><!-- End .header-center -->
