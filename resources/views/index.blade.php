@@ -30,24 +30,16 @@
 </div>
 
 @if ( $products->count() )
-
-
 <div class="container-fluid mt-5 mb-5">
-    
-
     <div class="products-section pt-0">
         <h2 class="section-title bold text-center">Most Sorted</h2>
-
         <div class="products-slider owl-carousel owl-theme dots-top">
             @foreach( $products as $feautered_product)
-
             <div class="product-default inner-quickview inner-icon">
                 <figure>
                     <a href="{{ $feautered_product->link }}">
                         <img src="{{ $feautered_product->image_to_show_m }}">
                     </a>
-                    
-                    
                 </figure>
                 <div class="product-details text-center">
                     <div class="mx-auto">
@@ -149,7 +141,5 @@
     @endif
 
 @endsection
-@section('page-scripts')
-@stop
 
 
