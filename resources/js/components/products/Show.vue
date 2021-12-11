@@ -4,20 +4,45 @@
         <div class="product-single-container product-single-default">
             <div class="row">
                 <div class="col-md-6 d-sm-block d-md-none product-single-gallery">
-                    <images  :image="image" :images="images" />
-                    
+                    <div class="product-slider-container">
+                        <div class="product-single-carousel owl-carousel owl-theme">
+                            <div class="product-item">
+                                <img class="product-single-image"    :data-zoom-image="image" :src="image" />
+                            </div>
+                            <div v-for="image in images" :key="image.id" class="product-item">
+                                <img  class="product-single-image"   :data-zoom-image="image.image" :src="image.image"  v-if="image.image !== ''"  :alt="image.image_tn">
+                            </div>
+                        </div>
+                        <!-- End .product-single-carousel -->
+                    </div>
                 </div><!-- End .product-single-gallery -->
                 <div class="col-md-8">
-                    <images  :image="image" :images="images" />
+                    <div class="product-single-gallery popup-gallery">
+                        <div class="row no-gutters">
+                            <div class="col-6 d-none d-lg-block d-xl-block  d-md-block  product-item">
+                                <div class="inner">
+                                    <img  :data-zoom-image="image" :src="image"   alt="product name">
+                                </div>
+                            </div><!-- End .col-6 -->
+                            <div  v-for="image in images" :key="image.id"  class="col-6 d-none d-xl-block  d-md-block  product-item">
+                                <div class="inner">
+                                    <img  :src="image.image"   :data-zoom-image="image.image" alt="product name">
+                                    <span   class="prod-full-screen">
+                                        <i class="fas fa-search-plus fa-3x"></i>
+                                    </span>
+                                </div>
+                            </div><!-- End .col-6 -->
+                           
+                        </div><!-- End .row -->
+                    </div><!-- End .product-single-gallery -->
                 </div><!-- End .col-md-8 -->
                 
-                <div v-for="(img,index)  in variant_images" :key="img.id"  :id="index" class="border   d-none col-md-7">
+                <div v-for="(img,index)  in variant_images" :key="img.id"  :id="index" class="border   d-none col-md-8">
                     <div class="product-single-gallery popup-gallery">
                         <div class="row no-gutters">
                             <div class="col-6 d-none d-lg-block d-xl-block  d-md-block  product-item">
                                 <div class="inner">
                                     <img  :data-zoom-image="img.image_to_show" :src="img.image_to_show"   alt="product name">
-                                    
                                 </div>
                             </div><!-- End .col-6 -->
                             <div  v-for="image in img.images" :key="image.id"  class="col-6 d-none d-xl-block  d-md-block  product-item">
@@ -112,16 +137,16 @@
                             <!--Product Variations Form-->
                         <div class="row">
                             <!--Select Size-->
-                            <div v-if="Object.keys(attributes).length !== 0"  class="col-12 variations mt-2 text-center">
+                            <div v-if="Object.keys(attributes).length !== 0"  class="col-12 variations mt-1 text-center">
                                 <div   v-for="map, key in attributes" :key="key" class="">
                                     <label class="d-block">{{ key }}:  <span v-if="key == 'Colors' ">{{ color }}</span></label>
                                     <div :id="'productV-' +key" class="d-flex mb-1 justify-content-center">
                                         <div  @click="getAttribute($event,key)" :data-name="key" @mouseenter="showColor(children)" @mouseleave="removeColor" :class="[ index== 0 ? 'active-attribute  ' : '', activeObject]" v-if="key == 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children" :style="{ 'background-color': children }" style="height: 30px; width: 30px; border-radius: 50%; cursor: pointer;" class="mr-1 first-attribute"></div>
                                         <template v-if="attributesData.length">
-                                            <div  :id="children"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border pr-3  pl-3 o-a pt-1 product-variation-box  other-attribute">{{ children }} </div>
+                                            <div  :id="children"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border pl-3 o-a  product-variation-box  other-attribute">{{ children }} </div>
                                         </template>
                                         <template v-else>
-                                            <div  :id="children"  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1  pr-3 pl-3 pt-1  product-variation-box  border other-attribute">{{ children }} </div>
+                                            <div  :id="children"  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1   product-variation-box  border other-attribute">{{ children }} </div>
                                         </template>
                                     </div>
                                 </div>
@@ -129,25 +154,17 @@
 
                            
                         </div>
-                        <div class="row ml-1 mb-2 mt-2">
+                        <div class="row  mb-2 mt-2">
 
-                            <div class="col-8 ">
-                                <button @click.prevent="addToCart"    type="button"  class="btn btn--primary  btn-lg btn-block">
+                            <div class="col-12 mb-1">
+                                <button @click.prevent="addToCart"    type="button"  class="btn btn--primary   btn-lg btn-block">
                                     {{ cartText }} 
                                     <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <div class="col-4">
-                                <button v-if="$root.loggedIn"  @click.prevent="addToWishList"    type="button"  class="l-f1  btn btn-outline  add-to-wishlist btn-lg btn-block">
-                                    Wishlist
-                                    
-                                </button>
-
-
-                                <button v-else data-toggle="modal" data-target="#login-modal"  type="button"  class="l-f1 btn btn-outline  add-to-wishlist btn-lg btn-block">
-                                    Wishlist
-                                    
-                                </button>
+                            <div class="col-12">
+                                <button v-if="$root.loggedIn"  @click.prevent="addToWishList"    type="button"  class="l-f1 mt-3 btn btn-outline   add-to-wishlist btn-block">Wishlist</button>
+                                <button v-else data-toggle="modal" data-target="#login-modal"  type="button"  class="l-f1 btn btn-outline  add-to-wishlist btn-block">Wishlist</button>
                             </div>
                             
                         </div>
