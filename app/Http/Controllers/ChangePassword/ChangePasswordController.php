@@ -16,11 +16,12 @@ class ChangePasswordController extends Controller
         $this->middleware('auth');
     }
     
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         
         $page_title = 'Change Password';
         $user = $request->user();
         $active = true;
-        return view('fashion.account.change_password.index',compact('active','page_title','user'));
+        return view('account.change_password.index',compact('active','page_title','user'));
     }
 }

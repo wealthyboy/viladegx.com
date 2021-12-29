@@ -1,11 +1,11 @@
-@extends('fashion.layouts.app')
+@extends('layouts.app')
  
 @section('content')
 <section class="sec-padding--account bg--gray">
     <div class="container">
         <div class="row ">
             <div class="col-md-3">
-                @include('fashion.account.nav')
+                @include('account.nav')
             </div>
             <div class="col-md-9  pb-3">
                 <h2 class="">Your Order</h2>

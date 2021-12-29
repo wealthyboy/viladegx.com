@@ -20,8 +20,6 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
     Route::get('orders/invoice/{id}','Admin\Orders\OrdersController@invoice')->name('order.invoice');
     Route::post('update/ordered_product/status','Admin\Orders\OrdersController@updateStatus');
 
-  
-
     Route::post('upload','Admin\Uploads\UploadsController@store');
     Route::get('delete/upload','Admin\Uploads\UploadsController@destroy');
 
@@ -34,15 +32,12 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
     Route::resource('reviews',  'Admin\Reviews\ReviewsController',['names' => 'reviews']);
     Route::resource('posts',  'Admin\Blog\BlogController',['names' => 'posts']);
 
-
     Route::get('post/{post_id}/comments',  'Admin\Comments\CommentsController@comments');
     Route::delete('comments/{comment}',  'Admin\Comments\CommentsController@destroy');
 
     Route::resource('settings','Admin\Settings\SettingsController',['names' => 'settings']);
     Route::get('account','Admin\Account\AccountsController@index')->name('admin_account');
     Route::get('account/filter','Admin\Account\AccountsController@index')->name('filter_sales');
-
-
     Route::resource('category','Admin\Category\CategoryController',['names'=>'category']);
     Route::post('category/delete/image','Admin\Category\CategoryController@undo');
 

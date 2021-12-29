@@ -16,7 +16,6 @@ class AlterBannersTableAddSmColWidth extends Migration
         Schema::table('banners', function (Blueprint $table) {
             $table->string('sm_col_width')->nullable();
             $table->string('md_col_width')->nullable();
-
         });
     }
 

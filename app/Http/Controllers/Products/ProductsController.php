@@ -36,6 +36,8 @@ class ProductsController extends Controller
      */
 
     public function  index(Request $request,Category $category,Builder $builder)  {
+        $f_products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
+
         $page_title = implode(" ",explode('-',$category->slug));
         $category_attributes = $category->parent_attributes()->has('attribute_children')->get();
         $products = Product::whereHas('categories',function(Builder  $builder) use ($category){
@@ -62,7 +64,8 @@ class ProductsController extends Controller
             'category_attributes',
             'breadcrumb',
             'products',
-            'parent_category'
+            'parent_category',
+            'f_products'
         ));     
     }
 

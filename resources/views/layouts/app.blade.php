@@ -1,6 +1,17 @@
 @include('_partials.header_styles')
 <body class="">
 	<div id="app" class="page-wrapper">
+     	<div class="top-notice bg--primary text-white">
+            <div class="container text-center">
+                <h5 class="d-inline-block">Get Up to <b>40% OFF</b> New-Season Styles</h5>
+                <a href="category.html" class="category">MEN</a>
+                <a href="category.html" class="category ml-2 mr-3">WOMEN</a>
+                <small>* Limited time only.</small>
+                <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+            </div>
+            <!-- End .container -->
+        </div>
+
 		<header class="header fixed-top">
 			<div class="header-middle">
 				<div class="container">
@@ -251,7 +262,6 @@
 						@if ($category->isCategoryHaveMultipleChildren())
 							<ul>
 							    @foreach (  $category->children as $children)
-
 								<li>
 								<a href="/products/{{ $children->slug }}" class="category-heading">{{ $children->name }} </a>
 								   @if ($children->children->count())
@@ -274,6 +284,21 @@
 					</li>
 					
 				@endforeach
+				<li class="text-capitalize">
+				   <a>
+					Account
+                   </a>
+				</li>
+
+				@if ( auth()->check() )
+					<li class="pr-4 pl-4">
+						<a  href="/account" type="button"  class="btn btn--primary l-f1 mb-1   btn-lg btn-block"> Account</a>
+					</li>
+				@else
+					<li class="pr-4 pl-4">
+						<a  href="/login" type="button"  class="btn btn--primary l-f1 mb-1   btn-lg btn-block"> Login/Register</a>
+					</li>
+				@endif
 				</ul>
 			</nav><!-- End .mobile-nav -->
 

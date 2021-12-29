@@ -566,9 +566,14 @@ class ProductController extends Controller
             }
         }
 
+       // dd($request->sort_order);
+
 
         if(!empty($request->related_products)){
             foreach ($request->related_products as $related_product_id => $product_ids) {
+                if ($request->sort_order  == null){
+                   continue;
+                }
                 $product->related_products()->updateOrCreate(
                     [
                         'id' =>  $related_product_id

@@ -21,15 +21,13 @@
                         <div class="row no-gutters">
                             <div class="col-6 d-none d-lg-block d-xl-block  d-md-block  product-item">
                                 <div class="inner">
-                                    <img  :data-zoom-image="image" :src="image"   alt="product name">
+                                    <img  class="img-1" :data-zoom-image="image" :src="image"   alt="product name">
                                 </div>
                             </div><!-- End .col-6 -->
                             <div  v-for="image in images" :key="image.id"  class="col-6 d-none d-xl-block  d-md-block  product-item">
                                 <div class="inner">
-                                    <img  :src="image.image"   :data-zoom-image="image.image" alt="product name">
-                                    <span   class="prod-full-screen">
-                                        <i class="fas fa-search-plus fa-3x"></i>
-                                    </span>
+                                    <img class="img2"  :src="image.image"   :data-zoom-image="image.image" alt="product name">
+                                    
                                 </div>
                             </div><!-- End .col-6 -->
                            
@@ -48,9 +46,7 @@
                             <div  v-for="image in img.images" :key="image.id"  class="col-6 d-none d-xl-block  d-md-block  product-item">
                                 <div class="inner">
                                     <img  :src="image.image"   :data-zoom-image="image.image" alt="product name">
-                                    <span   class="prod-full-screen">
-                                        <i class="fas fa-search-plus fa-3x"></i>
-                                    </span>
+                                    
                                 </div>
                             </div><!-- End .col-6 -->
                            
@@ -58,125 +54,119 @@
                     </div><!-- End .product-single-gallery -->
                 </div><!-- End .col-md-8 -->
 
-                <div id="imageModal" class="image-modal">
-                    <span class="image-modal-close close">&times;</span>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-1 product-single-gallery d-none d-lg-block">
-                                <div class="prod-thumbnail owl-dots" id='carousel-custom-dots'>
-                                    <div  class="owl-dot">
-                                        <img  class="animated"    @click.prevent="currentSlide(product.image_to_show)"  :src="image_tn" />
-                                    </div>
-                                    <div   v-for="image in images" :key="image.id"  class="owl-dot">
-                                        <img :src="image.image_tn"   @click.prevent="currentSlide(image.image)"  :alt="image.image_tn">
-                                    </div> 
+                <div class="col-md-4 product-single-details mt-3 mt-sm-5  mt-xs-5">
+                    <div class="product-sidebar">
+                        <div class="p text-center ">
+                            <div v-if="product.brand" class="tag  brand-name bold ">{{ product.brand_name }}</div>
+                            <p class="product-title  border-bottom pb-2">{{ product.product_name }}</p>
+
+                            <div class="product-item-prices d-flex justify-content-center mt-1"  v-if="discounted_price">
+                                <div class="product--price--amount ">
+                                    <span class="retail--title text-gold">SALE PRICE</span>
+                                    <span class="product--price text-danger">{{ product.currency }}{{ discounted_price | priceFormat }}</span>
+                                    <span class="retail--title">{{ percentage_off }}% off</span>
+                                </div>
+                                <div class="product--price--amount retail">
+                                    <span class="retail--title text-gold">PRICE</span>
+                                    <span class="product--price retail--price text-gold">{{ product.currency }}{{ price | priceFormat }}</span>
+                                    <span class="retail--title"></span>
                                 </div>
                             </div>
-                            <div class="col-md-10 product-single-gallery">
-                                <div class="product-slider-container">
-                                    <div class="product-single-carousel owl-carousel owl-theme">
-                                        <div class="product-item">
-                                            <img class="product-single-image"    :data-zoom-image="image" :src="image" />
-                                        </div>
-                                        <div v-for="image in  images" :key="image.id" class="product-item">
-                                            <img  class="product-single-image"   :data-zoom-image="image.image" :src="image.image"  v-if="image.image !== ''"  :alt="image.image_tn">
+
+                            <div class="product-item-prices  d-flex justify-content-center  mt-1" v-else>
+                                <div class="product--price--amount">
+                                    <span class="retail--title text-gold">PRICE</span>
+                                    <span class="product--price">{{ product.currency }}{{ price | priceFormat }}</span>
+                                    <span class="retail--title"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    
+                        <div class="">
+                                <!--Product Variations Form-->
+                            <div class="row">
+                                <!--Select Size-->
+                                <div v-if="Object.keys(attributes).length !== 0"  class="col-12 variations mt-1 text-center">
+                                    <div   v-for="map, key in attributes" :key="key" class="">
+                                        <label class="d-block">{{ key }}:  <span v-if="key == 'Colors' ">{{ color }}</span></label>
+                                        <div :id="'productV-' +key" class="d-flex mb-1 justify-content-center">
+                                            <div  @click="getAttribute($event,key)" :data-name="key" @mouseenter="showColor(children)" @mouseleave="removeColor" :class="[ index== 0 ? 'active-attribute  ' : '', activeObject]" v-if="key == 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children" :style="{ 'background-color': children }" style="height: 30px; width: 30px; border-radius: 50%; cursor: pointer;" class="mr-1 first-attribute"></div>
+                                            <template v-if="attributesData.length">
+                                                <div  :id="children"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border pl-3 o-a  product-variation-box  other-attribute">{{ children }} </div>
+                                            </template>
+                                            <template v-else>
+                                                <div  :id="children"  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1   product-variation-box  border other-attribute">{{ children }} </div>
+                                            </template>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-none d-sm-block d-md-none">
-                                    <div class="prod-thumbnail-under owl-dots tn" id='carousel-custom-dots'>
-                                        <div  class="owl-dot">
-                                            <img  class="animated"    @click.prevent="currentSlide(product.image_to_show)"  :src="image_tn" />
-                                        </div>
-                                        <div   v-for="image in images" :key="image.id"  class="owl-dot">
-                                            <img :src="image.image_tn"   @click.prevent="currentSlide(image.image)"  :alt="image.image_tn">
-                                        </div> 
-                                    </div>
+
+                            
+                            </div>
+                            <div class="row   mb-2 mt-2">
+                                <div class="col-md-8 pr-0 col-7">
+                                    <button @click.prevent="addToCart"    type="button"  class="btn btn--primary  add-to-cart  btn-lg btn-block">
+                                        {{ cartText }} 
+                                        <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                                <div class="col-md-4 col-5">
+                                    <button v-if="$root.loggedIn"  @click.prevent="addToWishList"    type="button"  class="l-f1 pl-3  pb-3 pr-3 align-content-center justify-content-between position-relative btn btn-outline d-flex add-to-wishlist btn-block">
+                                        <span>
+                                            Wishlist
+                                        </span>
+                                        <span  class="float-right" role="wishlist" aria-hidden="true">
+                                            <svg
+                                                class=""
+                                                v-if="!is_wishlist"
+                                                >
+                                                <use xlink:href="#wishlist-empty-icon"></use>
+                                            </svg>
+                                            <svg
+                                                v-if="is_wishlist"
+                                                >
+                                                <use xlink:href="#wishlist-filled-icon"></use>
+                                            </svg> 
+                                        </span>
+                                    </button>
+                                    <button v-else data-toggle="modal" data-target="#login-modal"  type="button"  class="l-f1 pl-4 pr-4 align-content-center justify-content-between position-relative btn btn-outline d-flex add-to-wishlist btn-block">
+                                        <span >
+                                            Wishlist
+                                        </span>
+                                        <span  class="float-right" role="wishlist" aria-hidden="true">
+                                            <svg
+                                                class=""
+                                                >
+                                                <use xlink:href="#wishlist-empty-icon"></use>
+                                            </svg>
+                                        
+                                        </span>
+                                    </button>
                                 </div>
                                 
-                            </div><!-- End .product-single-gallery -->
+                            </div>
+                        </div><!-- End .product-filters-container -->   
+
+                        <div class="col-12 mt-1 text-center">
+                            <span class="bold">Estimated Delivery Time</span><br/>
+                            <span>3 to 4 working days</span>
                         </div>
                     </div>
-                </div>
-
-
-               
-
-
-                <div class="col-md-4 product-single-details mt-3 mt-sm-5  mt-xs-5">
-                    <div class="p text-center ">
-                        <div v-if="product.brand" class="tag  brand-name bold ">{{ product.brand_name }}</div>
-
-                        <p class="product-title  border-bottom pb-2">{{ product.product_name }}</p>
-
-                        <div class="product-item-prices d-flex justify-content-center mt-1"  v-if="discounted_price">
-                            <div class="product--price--amount ">
-                                <span class="retail--title text-gold">SALE PRICE</span>
-                                <span class="product--price text-danger">{{ product.currency }}{{ discounted_price | priceFormat }}</span>
-                                <span class="retail--title">{{ percentage_off }}% off</span>
-                            </div>
-                            <div class="product--price--amount retail">
-                                <span class="retail--title text-gold">PRICE</span>
-                                <span class="product--price retail--price text-gold">{{ product.currency }}{{ price | priceFormat }}</span>
-                                <span class="retail--title"></span>
-                            </div>
-                        </div>
-
-                        <div class="product-item-prices  d-flex justify-content-center  mt-1" v-else>
-                            <div class="product--price--amount">
-                                <span class="retail--title text-gold">PRICE</span>
-                                <span class="product--price">{{ product.currency }}{{ price | priceFormat }}</span>
-                                <span class="retail--title"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="clearfix"></div>
-                   
-                    <div class="">
-                            <!--Product Variations Form-->
-                        <div class="row">
-                            <!--Select Size-->
-                            <div v-if="Object.keys(attributes).length !== 0"  class="col-12 variations mt-1 text-center">
-                                <div   v-for="map, key in attributes" :key="key" class="">
-                                    <label class="d-block">{{ key }}:  <span v-if="key == 'Colors' ">{{ color }}</span></label>
-                                    <div :id="'productV-' +key" class="d-flex mb-1 justify-content-center">
-                                        <div  @click="getAttribute($event,key)" :data-name="key" @mouseenter="showColor(children)" @mouseleave="removeColor" :class="[ index== 0 ? 'active-attribute  ' : '', activeObject]" v-if="key == 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children" :style="{ 'background-color': children }" style="height: 30px; width: 30px; border-radius: 50%; cursor: pointer;" class="mr-1 first-attribute"></div>
-                                        <template v-if="attributesData.length">
-                                            <div  :id="children"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border pl-3 o-a  product-variation-box  other-attribute">{{ children }} </div>
-                                        </template>
-                                        <template v-else>
-                                            <div  :id="children"  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1   product-variation-box  border other-attribute">{{ children }} </div>
-                                        </template>
-                                    </div>
-                                </div>
-                            </div>
-
-                           
-                        </div>
-                        <div class="row  mb-2 mt-2">
-
-                            <div class="col-12 mb-1">
-                                <button @click.prevent="addToCart"    type="button"  class="btn btn--primary   btn-lg btn-block">
-                                    {{ cartText }} 
-                                    <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <div class="col-12">
-                                <button v-if="$root.loggedIn"  @click.prevent="addToWishList"    type="button"  class="l-f1 mt-3 btn btn-outline   add-to-wishlist btn-block">Wishlist</button>
-                                <button v-else data-toggle="modal" data-target="#login-modal"  type="button"  class="l-f1 btn btn-outline  add-to-wishlist btn-block">Wishlist</button>
-                            </div>
-                            
-                        </div>
-                    </div><!-- End .product-filters-container -->   
-
-                    <div class="col-12 mt-3 text-center">
-                        <span class="bold">Estimated Delivery Time</span><br/>
-                        <span>3 to 4 working days</span>
-                    </div>
-                    
                 </div><!-- End .product-single-details -->
             </div><!-- End .row -->
+
+            <div class="breadcrums">
+                <nav aria-label="breadcrumb" class="breadcrumb-nav breadcrumb-link">
+                        <div class="ml-1 d-flex justify-content-start">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">3333</li>
+                            </ol>
+                        </div>
+                    </nav>
+            </div>
 
             <div class="product-single-tabs">
                 <ul class="nav nav-tabs" role="tablist">
@@ -193,6 +183,11 @@
                     <div class="tab-pane fade show active pl-2" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
                         <div class="row">
                             <div class="col">
+                                <div>
+                                    <div v-if="product.brand" class="tag  brand-name bold ">{{ product.brand_name }}</div>
+                                    <p class="product-title  border-bottom pb-2">{{ product.product_name }}</p>
+                                </div>
+
                                 <div v-html="product.description" class="product-desc-content  pl-2 pb-2 color--primary"></div><!-- End .product-desc-content -->
                             </div>
                             <div class="col">
@@ -220,8 +215,8 @@
             </div><!-- End .product-single-tabs -->
 
         </div><!-- End .product-single-container -->
-        <login-modal :url="same" />
-        <register-modal :url="same" />
+        <login-modal  />
+        <register-modal  />
     </div>
 </template>
 <script>
@@ -329,7 +324,7 @@ export default {
         this.price =  this.product.converted_price
         this.discounted_price =  this.product.default_discounted_price
         this.is_wishlist =  this.product.is_wishlist
-        this.variant_images = this.product.variants    
+        this.variant_images = this.product.variants   
     },
     methods: {
         getStarRating(e,rating){
@@ -415,9 +410,7 @@ export default {
                 }
                 }
                 active_attribute = document.querySelector(".active-attribute");
-                active_other_attribute = document.querySelector(
-                ".active-other-attribute"
-                );
+                active_other_attribute = document.querySelector( ".active-other-attribute");
                 if (active_attribute && this.attributesData.length != 0) {
                 variation =
                     active_attribute.dataset.value + "_" + this.attributesData[0];
@@ -504,7 +497,6 @@ export default {
             if (this.cText == 'Out of Stock') return;
             this.cText = "Adding...."
             this.loading = true;
-            console.log(this.product_variation_id)
             this.addProductToCart({
                 product_variation_id:this.product_variation_id,
                 quantity: 1
@@ -543,3 +535,4 @@ export default {
     }
 }
 </script>
+

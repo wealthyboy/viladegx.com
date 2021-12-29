@@ -15,79 +15,105 @@
     </div>
 @endif
 
+<div class="container-fluid d-none d-lg-block">
+    <div class="row p-3 text--gray">
+        <div class="col-md-4  border-right col-4 text-center">
+         <span>
+            <svg
+                width="24"
+                height="24"
+                >
+                <use xlink:href="#icon-boxReturn"></use>
+            </svg> 
+         </span>  
+         <span class="color--gray">
+            Hassel free returns
+         </span>
+        </div>
+        <div class="col-md-4 col-12  border-right color--gray text-center">
+            <span>
+                <svg
+                    width="24"
+                    height="24"
+                    >
+                    <use xlink:href="#icon-van"></use>
+                </svg> 
+            </span> 
+            Fast Shipping
+        </div>
+        <div class="col-md-4  col-4  color--gray  text-center">
+           <span>
+                <svg
+                    width="24"
+                    height="24"
+                    >
+                    <use xlink:href="#icon-van"></use>
+                </svg> 
+           </span>
+           International Shipping
+        </div>
+    </div>
+</div>
+
 <div class="container-fliud mt-1">
-    <div  class="row align-items-start ">
+    <div  class="row align-items-start">
         @foreach( $banners as $banner )
             <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : 'pr-1 pl-1' }}  mb-1 {{ $banner->title }} p-0 text-center">
                 <div class="banner-box">
                     <a class="portfolio-thumb" href="{{ $banner->link }}">
-                        <img src="{{ $banner->image }}" alt="" />
+                        <img src="{{ $banner->image }}" alt="shop {{ $banner->title }}" />
                     </a>
+                </div>
+                <div class="shop-title text-center  position-absolute">
+                    <h1 class="title color--light">{{ $banner->title }}</h1>
+                    <a href="{{ $banner->link }}" class="btn btn-block btn-sm btn-primary text--light bold">Shop Now</a>
                 </div>
             </div> 
         @endforeach
     </div>
 </div>
 
-@if ( $products->count() )
-<div class="container-fluid mt-5 mb-5">
-    <div class="products-section pt-0">
-        <h2 class="section-title bold text-center">Most Sorted</h2>
-        <div class="products-slider owl-carousel owl-theme dots-top">
-            @foreach( $products as $feautered_product)
-            <div class="product-default inner-quickview inner-icon">
-                <figure>
-                    <a href="{{ $feautered_product->link }}">
-                        <img src="{{ $feautered_product->image_to_show_m }}">
-                    </a>
-                </figure>
-                <div class="product-details text-center">
-                    <div class="mx-auto">
-                        
-                        @if($feautered_product->colours->count()  && $feautered_product->colours->count() > 1)
-                            <div  class="justify-content-center d-flex mb-1">
-                                @foreach($feautered_product->colours as $color)
-                                <div   style="border:1px solid #222; height: 15px; width: 15px; border-radius: 50%; background-color: {{ $color->color_code }};" class="mr-1"></div>
-                                @endforeach
-                            </div>
-                        @endif
-                        @if($feautered_product->brand_name)
-                            <div  class="product-brand bold">
-                                {{ $feautered_product->brand_name }} 
-                            </div>
-                        @endif
-
-                        <div class="color--primary">
-                            <a href="{{ $feautered_product->link }}">{{ $feautered_product->product_name }}</a>
-                        </div>
-                    </div>
-                    <div class="price-box mx-auto mt-1">
-                        @if( $feautered_product->default_discounted_price)
-                            <span class="old-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price)   }}</span>
-                            <span class="product-price  ml-1">
-                                |
-                                @if( $feautered_product->default_percentage_off )
-                                    {{ $feautered_product->default_percentage_off }}% OFF
-                                @endif
-                                <span class="text-danger">
-                                   {{ $feautered_product->currency }}{{ number_format($feautered_product->default_discounted_price)  }}
-                                </span>
-                            </span>
-                        @else
-                            <span class="product-price">{{ $feautered_product->currency }}{{ number_format($feautered_product->converted_price) }}</span>
-                        @endif
-                    </div><!-- End .price-box -->
-                </div><!-- End .product-details -->
-            </div>
+<div class="container-fluid d-block d-sm-none">
+    <div class="row p-3 text--gray">
+        <div class="col-md-4 p-4 border-bottom col-12 text-left">
+         <span>
+            <svg
+                width="24"
+                height="24"
+                >
+                <use xlink:href="#icon-boxReturn"></use>
+            </svg> 
+         </span>  
+         <span class="color--gray">
+            Hassel free returns
+         </span>
+        </div>
+        <div class="col-md-4 col-12 p-4 border-bottom  color--gray text-left">
+            <span>
+                <svg
+                    width="24"
+                    height="24"
+                    >
+                    <use xlink:href="#icon-van"></use>
+                </svg> 
+            </span> 
+            Fast Shipping
+        </div>
+        <div class="col-md-4  col-12  p-4 color--gray  text-left">
+           <span>
+                <svg
+                    width="24"
+                    height="24"
+                    >
+                    <use xlink:href="#icon-van"></use>
+                </svg> 
+           </span>
+           International Shipping
+        </div>
+    </div>
+</div>
 
 
-            @endforeach
-           
-        </div><!-- End .products-slider -->
-    </div><!-- End .products-section -->
-
-</div><!-- End .container -->
-@endif
 
 
 

@@ -1,7 +1,7 @@
-@extends('fashion.layouts.app')
+@extends('layouts.app')
  
 @section('content')
-<section class="sec-padding--account bg--gray">
+<div class="sec-padding--account bg--gray">
     <div class="container">
         <div class="row">
                 <div class="col-md-3">
@@ -37,17 +37,18 @@
                         </table>
                     </div> 
                     @else
-                        <div class="text-center">
+                        <div class="text-center d-flex justify-content-center">
                             <img  width="200" height="200" src="/images/utilities/empty_product.svg" /> 
-                            <p>No orders yet</p>
                         </div>
+                        <p class="text-center">No orders yet</p>
+
                     @endif  
                     </div>  
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 <!--End & Info-->
 
 @endsection

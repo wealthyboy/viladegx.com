@@ -1,7 +1,7 @@
 @extends('layouts.app')
  
 @section('content')
-<section class="sec-padding--account bg--gray">
+<div class="sec-padding--account bg--gray">
     <div class="container">
         <div class="row">
                 <div class="col-md-3">
@@ -27,6 +27,6 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 <!--End Contact Form & Info-->
 @endsection
