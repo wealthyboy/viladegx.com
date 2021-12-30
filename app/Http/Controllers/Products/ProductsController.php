@@ -36,7 +36,19 @@ class ProductsController extends Controller
      */
 
     public function  index(Request $request,Category $category,Builder $builder)  {
+        $use_sub_categories = false;
+        $gender = null;
         $f_products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
+        if ($request->path() == 'products/men'){
+            $gender = 'men';
+            $use_sub_categories = true;
+        }
+
+        if ($request->path() == 'products/women') {
+            $gender =  'women';
+            $use_sub_categories = true;
+        }
+
 
         $page_title = implode(" ",explode('-',$category->slug));
         $category_attributes = $category->parent_attributes()->has('attribute_children')->get();
@@ -65,7 +77,9 @@ class ProductsController extends Controller
             'breadcrumb',
             'products',
             'parent_category',
-            'f_products'
+            'f_products',
+            'gender',
+            'use_sub_categories'
         ));     
     }
 

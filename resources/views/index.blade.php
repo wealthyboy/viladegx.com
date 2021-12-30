@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-@include('_partials.top_banner')
-
-
 @if ($sliders->count())
     <div class="owl-carousel main-banner-slider owl-theme">
         @foreach($sliders as $slider)
@@ -66,7 +62,7 @@
                 </div>
                 <div class="shop-title text-center  position-absolute">
                     <h1 class="title color--light">{{ $banner->title }}</h1>
-                    <a href="{{ $banner->link }}" class="btn btn-block btn-sm btn-primary text--light bold">Shop Now</a>
+                    <a href="{{ $banner->link }}" class="btn  btn-sm btn-primary text--light bold">Shop Now</a>
                 </div>
             </div> 
         @endforeach

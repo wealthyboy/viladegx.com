@@ -3365,7 +3365,7 @@ span.page-link,
 }
 .product-price {
     color: #222529;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     line-height: 0.8;
 }
 .price-box {
@@ -8154,7 +8154,6 @@ main .sticky-header .product-ratings:before {
 }
 .products-section {
     padding-top: 3.8rem;
-    padding-bottom: 3rem;
 }
 .products-section h2 {
     padding-bottom: 1rem;
@@ -8177,7 +8176,6 @@ main .sticky-header .product-ratings:before {
 @media (min-width: 768px) {
     .products-section {
         padding-top: 4.8rem;
-        padding-bottom: 4rem;
     }
     .product-both-info .product-single-share {
         -ms-flex-pack: end;

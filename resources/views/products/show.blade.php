@@ -1,11 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
-@include('_partials.top_banner')
-
-
-
-
 <div class="container-fluid mt-1">
     <div>
         <product-show :attributes="{{ $attributes }}"  :product="{{ $product}}" />

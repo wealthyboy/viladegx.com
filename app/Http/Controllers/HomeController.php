@@ -28,6 +28,7 @@ class HomeController extends Controller
         $site_status =Live::first();
 
 
+
         $products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
         $banners = Banner::where('type','banner')->orderBy('sort_order','asc')->get();
 

@@ -4,15 +4,14 @@
      	<div class="top-notice bg--primary text-white">
             <div class="container text-center">
                 <h5 class="d-inline-block">Get Up to <b>40% OFF</b> New-Season Styles</h5>
-                <a href="category.html" class="category">MEN</a>
-                <a href="category.html" class="category ml-2 mr-3">WOMEN</a>
+                <a href="/" class="category">MEN</a>
+                <a href="/" class="category ml-2 mr-3">WOMEN</a>
                 <small>* Limited time only.</small>
-                <button title="Close (Esc)" type="button" class="mfp-close">×</button>
             </div>
             <!-- End .container -->
         </div>
 
-		<header class="header fixed-top">
+		<header class="header">
 			<div class="header-middle">
 				<div class="container">
 						<div class="header-left w-lg-max ml-auto ml-lg-0">
@@ -96,9 +95,6 @@
 													<a href="{{ $category->image_custom_link }}"><img src="{{ $category->image }}" alt="{{ $category->image }}" class="product-promo" ></a>
 													</div><!-- End .col-lg-4 -->
 												</div>
-
-											
-
 											</div><!-- End .row -->
 										</div><!-- End .megamenu -->
 									@endif

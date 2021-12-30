@@ -236,7 +236,7 @@ input {
 }
 
 .main.main-page {
-    margin-top: 137px;
+    margin-top: 0px;
 }
 
 .mobile-menu-container {
@@ -696,11 +696,17 @@ background: white;
     width: 100%;
 }
 
-.shop-title.position-absolute {
+.shop-title-center {
+    position: absolute;
+}
+
+.shop-title.position-absolute,
+.shop-title-center {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
+    width: 100%;
 }
 
 .active-attribute {

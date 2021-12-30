@@ -3,7 +3,7 @@
 @if ($products->count())
 
 @foreach($products as $product)
-<div  class="col-6  {{ $no_attr ? 'col-md-3' : 'col-md-4' }}">
+    <div  class="col-6  {{ $no_attr ? 'col-md-3' : 'col-md-4' }}">
         <div class="product-default inner-quickview inner-icon">
             <figure>
                 <a href="{{ $product->link }}">
