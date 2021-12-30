@@ -21,7 +21,6 @@
                                 </div>-->
                                 <a href="/" class="btn btn--primary space-t--2">Continue</a>
                                 <a href="/orders" class="btn btn--primary space-t--2">View order history</a>
-
                             </div>
                         </div>
 
