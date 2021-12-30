@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
                             <div class="error-page text-center">
-                                <h1>Thank you for shopping with us</h1>
+                                <h2>Thank you for shopping with us</h2>
                                 <p class="large">Your order has been received .</p>
                                 <p class="large"></p>
                                 <!--<div class="widget">
