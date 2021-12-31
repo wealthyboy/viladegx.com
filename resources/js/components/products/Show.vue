@@ -107,13 +107,13 @@
                             </div>
                             <div class="row   mb-2 mt-2">
                                 <div class="col-md-8 pr-0 col-7">
-                                    <button @click.prevent="addToCart"    type="button"  class="btn btn--primary  add-to-cart  btn-lg btn-block">
+                                    <button @click.prevent="addToCart"    type="button"  class="btn btn--primary text-capitalize add-to-cart  btn-lg btn-block">
                                         {{ cartText }} 
                                         <span  v-if="loading"  class="spinner-border spinner-border-sm float-right ml-3" role="status" aria-hidden="true"></span>
                                     </button>
                                 </div>
                                 <div class="col-md-4 col-5">
-                                    <button v-if="$root.loggedIn"  @click.prevent="addToWishList"    type="button"  class="l-f1 pl-3  pb-3 pr-3 align-content-center justify-content-between position-relative btn btn-outline d-flex add-to-wishlist btn-block">
+                                    <button v-if="$root.loggedIn"  @click.prevent="addToWishList"    type="button"  class="text-capitalize l-f1 pl-3  pb-3 pr-3 align-content-center justify-content-between position-relative btn btn-outline d-flex add-to-wishlist btn-block">
                                         <span>
                                             Wishlist
                                         </span>
@@ -131,7 +131,7 @@
                                             </svg> 
                                         </span>
                                     </button>
-                                    <button v-else data-toggle="modal" data-target="#login-modal"  type="button"  class="l-f1 pl-4 pr-4 align-content-center justify-content-between position-relative btn btn-outline d-flex add-to-wishlist btn-block">
+                                    <button v-else data-toggle="modal" data-target="#login-modal"  type="button"  class=" text-capitalize l-f1 pl-4 pr-4 align-content-center justify-content-between position-relative btn btn-outline d-flex add-to-wishlist btn-block">
                                         <span >
                                             Wishlist
                                         </span>
@@ -309,8 +309,7 @@ export default {
         loggedIn: function(){
             return [this.user ? true: false]
         },
-       
-        
+    
     },
     mounted(){
         this.productReviews()
@@ -445,7 +444,7 @@ export default {
                 vTs.discounted_price || vTs.default_discounted_price;
                 this.product_variation_id = vTs.id;
                 this.canNotAddToCart = false;
-                this.cText = this.quantity >= 1 ? "Add To Cart" : "Item is sold out";
+                this.cText = this.quantity >= 1 ? "Add To Bag" : "Item is sold out";
                 console.log('test')
             } catch (error) {
                 console.log(error);
@@ -501,10 +500,10 @@ export default {
                 product_variation_id:this.product_variation_id,
                 quantity: 1
             }).then(() =>{
-                this.cText = "Add To Cart"
+                this.cText = "Add To Bag"
                 this.loading = false;
             }).catch((error) =>{
-                this.cText = "Add To Cart"
+                this.cText = "Add To Bag"
                 this.loading = false
             })
         },

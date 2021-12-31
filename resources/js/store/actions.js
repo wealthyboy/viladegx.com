@@ -126,8 +126,8 @@ export const getWislist = ({ commit }) => {
 };
 
 export const deleteWishlist = ({ commit }, { id }) => {
-    return axios.delete("/api/wishlist/delete/" + id + "").then(response => {
-        commit("appendToWishlist", response.data.data);
+    return axios.delete("/api/wishlist/delete/" + id).then(response => {
+        commit("setWishlist", response.data.data);
         return Promise.resolve();
     });
 };

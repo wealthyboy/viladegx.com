@@ -20,6 +20,9 @@
                                 <span class="cart-product-amount">{{ "" }}</span
                                 >{{ cart.price | priceFormat }}
                             </span>
+                            <p v-if="cart.variations.length">
+                                {{ cart.variations.toString() }}
+                            </p>
                             <p
                                 class="text-danger bold"
                                 v-if="cart.quantity < 1"
@@ -53,9 +56,8 @@
                 <div class="dropdown-cart-total">
                     <span>Total</span>
                     <span class="cart-total-price float-right"
-                        >{{ meta.currency
-                        }}{{ meta.sub_total | priceFormat }}</span
-                    >
+                        >{{ meta.currency }}{{ meta.sub_total | priceFormat }}
+                    </span>
                 </div>
                 <!-- End .dropdown-cart-total -->
                 <div class="dropdown-cart-action">
