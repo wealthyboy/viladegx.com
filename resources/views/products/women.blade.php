@@ -1,5 +1,5 @@
 <div  class="row">
-        <div data-title="" class="col-lg-6 col-12 pr-1 pl-1 mt-3  mb-1  p-0 text-center">
+        <div data-title="" class="col-lg-6 col-12 pr-1 pl-1  mb-1  p-0 text-center">
             <div class="banner-box">
                 <a class="portfolio-thumb" href="">
                     <img src="/images/banners/dffcd12193c823e232d3c4eeea29586a.png" alt="shop " />
@@ -41,8 +41,9 @@
                                 </div>
                             @endif
                             @if($featered_product->brand_name)
-                                <div  class="product-brand bold">
-                                    {{ $featered_product->brand_name }} 
+                            <div  class="product-brand text-capitalize  bold">
+                                    {{ strtolower($featered_product->brand_name) }} 
+
                                 </div>
                             @endif
 

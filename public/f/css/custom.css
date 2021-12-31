@@ -1042,9 +1042,6 @@ footer a:focus {
     .footer .widget-newsletter .btn {
         right: 10px;
     }
-    .main.main-page {
-        margin-top: 50px;
-    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1069,10 +1066,6 @@ footer a:focus {
     .tls-loading-text {
         left: 44%;
         top: 46%;
-    }
-
-    .main.main-page {
-        margin-top: 60px;
     }
 
     .header-icon svg,
