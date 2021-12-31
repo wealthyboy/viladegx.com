@@ -12,6 +12,11 @@ class Category extends Model
 	
 	protected $fillable = ['category_name','description','slug','parent_id','sort_order','allow'];
 	
+    public function brands()
+    {
+        return $this->belongsToMany(Brand::class)->orderBy('brand_name','asc');
+    }
+
 
     public function children()
     {
@@ -33,6 +38,8 @@ class Category extends Model
     {
         return "/products";
     }
+
+
 
 
     public function product_variations()
