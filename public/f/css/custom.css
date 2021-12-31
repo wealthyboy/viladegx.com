@@ -390,6 +390,11 @@ button.add-to-wishlist svg {
     margin-top: -30px !important;
 }
 
+.owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: -5rem;
+    margin-bottom: 5rem;
+}
+
 .chat-on-watsapp {
     display: block;
     width: 40px;
