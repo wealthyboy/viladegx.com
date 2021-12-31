@@ -47,7 +47,7 @@
             <div class="product-details text-left">
                 <div class="">
                     @if($product->brand_name)
-                        <div  class="product-brand bold">
+                        <div  class="product-brand text-capitalize bold">
                             {{ $product->brand_name }} 
                         </div>
                     @endif
