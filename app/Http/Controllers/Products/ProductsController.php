@@ -35,7 +35,10 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function  index(Request $request,Category $category,Builder $builder)  {
+    public function  index(Request $request,Category $category,Builder $builder)  
+    {
+
+       // dd($category->load('products'));
         $use_sub_categories = false;
         $gender = null;
         $f_products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
@@ -53,7 +56,7 @@ class ProductsController extends Controller
         $page_title = implode(" ",explode('-',$category->slug));
         $category_attributes = $category->parent_attributes()->has('attribute_children')->get();
         $products = Product::whereHas('categories',function(Builder  $builder) use ($category){
-            $builder->where('categories.name',$category->name);
+            $builder->where('categories.slug',$category->slug);
         })->filter($request,$this->getFilters($category_attributes))->latest()->paginate($this->settings->products_items_per_page);
         $products->appends(request()->all());
         if($request->ajax()) {
