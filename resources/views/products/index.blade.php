@@ -31,7 +31,9 @@
                     <h2 class="breadcrumb-title"> DESIGNER {{ $breadcrumb }} FOR  {{ $parent_category }}</h2>
                     <div class="category-description-section d-flex">
                         <p class="text-left category-description"> {{ isset($category) ? $category->description : '' }} </p>
+                        @if($category->description != '')
                         <a  class="read-more" href="#">Read More</a>
+                        @endif
                     </div>
                 </div>
             </div>
