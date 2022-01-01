@@ -162,13 +162,41 @@
                         <div class="ml-1 d-flex justify-content-start">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">3333</li>
+                                <li class="breadcrumb-item active" aria-current="page"></li>
                             </ol>
                         </div>
                     </nav>
             </div>
 
-            <div class="product-single-tabs">
+            <div  class="widget d-block d-sm-none border-top border-bottom">
+                <h3 class="widget-title pt-3">
+                    <a class="collapsed "   data-toggle="collapse" href="#widget-body-4" role="button" aria-expanded="true" aria-controls="widget-body-4">DETAILS</a>
+                </h3>
+                <div class="collapse"  id="widget-body-4">
+                    <div v-html="product.description" class="widget-body"></div><!-- End .widget-body -->
+                </div><!-- End .collapse -->
+            </div><!-- End .widget -->
+
+
+            <div  class="widget d-block d-sm-none  border-bottom">
+                <h3 class="widget-title pt-3">
+                    <a class="collapsed "   data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true" aria-controls="widget-body-4">WARRANTY & RETURN</a>
+                </h3>
+                <div class="collapse"  id="widget-body-5">
+                    <div  class="widget-body">
+                        <h4>WARRANTY</h4> 
+                        We offer a lifetime 100% authenticity guarantee for all of our items.</br>
+                        In the improbable scenario of a sale of an inauthentic item, you will receive a 100% refund, including the cost of return.</br>
+                        <h4 class="mt-2 pt-2 border-top">RETURNS</h4>
+                        You can return a purchased item within 3 days of receipt.</br> 
+                        No return fee is charged for returns within the Nigeria.</br>  
+                        However, based on the destination country a shipping fees is charged for returns made outside of Nigeria.</br>
+                        Customs duties and taxes are applicable and borne by the customer.</br>
+                    </div><!-- End .widget-body -->
+                </div><!-- End .collapse -->
+            </div><!-- End .widget -->
+
+            <div class="product-single-tabs d-none d-lg-block">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item pl-2">
                         <a class="nav-link active" id="product-tab-desc" data-toggle="tab" href="#product-desc-content" role="tab" aria-controls="product-desc-content" aria-selected="true">Description</a>
