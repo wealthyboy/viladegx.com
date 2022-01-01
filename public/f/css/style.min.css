@@ -1411,7 +1411,7 @@ aside .banner {
     font-size: 15.2px;
     letter-spacing: 0.09em;
     line-height: 24px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: #000;
 }
 

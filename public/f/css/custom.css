@@ -654,7 +654,8 @@ background: white;
 }
 
 .sidebar-shop .widget {
-    border: none !important;
+    border-right: none !important;
+    border-left: none !important;
 }
 
 .product-overlay {

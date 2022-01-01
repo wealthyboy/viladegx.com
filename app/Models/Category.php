@@ -36,7 +36,7 @@ class Category extends Model
 
     public function link()
     {
-        return "/products";
+        return '/products/'.$this->slug;
     }
 
 

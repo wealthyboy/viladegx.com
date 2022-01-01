@@ -7,7 +7,7 @@
     @if ( optional($product)->related_products->count() )
 
     <div class="products-section pt-0">
-        <h3 class="bold">Related Products</h3>
+        <div class="bold">Related Products</div>
 
         <div class="products-slider owl-carousel owl-theme dots-top">
             @foreach( $related_products as $related_product)
