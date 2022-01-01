@@ -245,13 +245,18 @@
 
 	<div class="mobile-menu-container">
 		<div class="mobile-menu-wrapper">
+		    <div class="mobile-menu-parent border-bottom mb-3 mt-3">
+			   @foreach( $global_categories   as $k =>   $category)
+					<a id="{{ strtolower($category->name) }}" class="mr-5 mobile-menu-parent-a {{  $category->name }} {{ $k == 0 ? 'mobile-menu-parent-active': '' }}" href="#">{{ $category->name }}</a>
+			    @endforeach
+			</div>
 			<span class="mobile-menu-close">
 			   <svg  class="close-icon"><use xlink:href="#close-icon"></use></svg>
             </span>
 			<nav class="mobile-nav">
 				<ul class="mobile-menu">
-				@foreach( $global_categories   as  $category)
-				    <li>
+				@foreach( $global_categories[0]->children   as  $category)
+				    <li class="{{ strtolower($category->parent->name) }} m-d-show"> 
 						<a href="/products/{{ $category->slug }}">{{ $category->name }}</a>
 						@if ($category->isCategoryHaveMultipleChildren())
 							<ul>
@@ -278,23 +283,56 @@
 					</li>
 					
 				@endforeach
-				<li class="text-capitalize">
-				   <a>
-					Account
-                   </a>
-				</li>
 
-				@if ( auth()->check() )
-					<li class="pr-4 pl-4">
-						<a  href="/account" type="button"  class="btn btn--primary l-f1 mb-1   btn-lg btn-block"> Account</a>
+
+				@foreach( $global_categories->slice(1)   as  $category)
+					@foreach( $category->children   as  $category)				    
+					<li class="d-none   {{ strtolower($category->parent->name)  }} m-d-show">
+						<a href="/products/{{ $category->slug }}">{{ $category->name }}</a>
+						@if ($category->isCategoryHaveMultipleChildren())
+							<ul>
+							    @foreach (  $category->children as $children)
+								<li>
+								<a href="/products/{{ $children->slug }}" class="category-heading">{{ $children->name }} </a>
+								   @if ($children->children->count())
+										<ul>
+										    @foreach (  $children->children as $children)
+                                                <li><a href="/products/{{ $children->slug }}">{{ $children->name }}</a></li>
+                                            @endforeach
+										</ul>
+									@endif
+								</li>
+								@endforeach
+							</ul>
+						@elseif ( !$category->isCategoryHaveMultipleChildren() && $category->children->count() )
+							<ul>
+								@foreach (  $category->children as $children)
+									<li><a class="category-heading" href="/products/{{ $children->slug }}">{{ $children->name }}</a></li>
+								@endforeach 
+							</ul>
+						@endif
 					</li>
-				@else
-					<li class="pr-4 pl-4">
-						<a  href="/login" type="button"  class="btn btn--primary l-f1 mb-1   btn-lg btn-block"> Login/Register</a>
-					</li>
-				@endif
+					
+				@endforeach
+				@endforeach
+
+				
+
+				
 				</ul>
 			</nav><!-- End .mobile-nav -->
+
+			<div class="mt-1">
+		    	@if ( auth()->check() )
+					<div class="pr-4 pl-4">
+						<a  href="/account" type="button"  class="btn btn--primary l-f1 mb-1   btn-lg btn-block"> Account</a>
+					</div>
+				@else
+					<div class="pr-4 pl-4">
+						<a  href="/login" type="button"  class="btn btn--primary l-f1 mb-1   btn-lg btn-block"> Login/Register</a>
+					</div>
+				@endif
+			</div>
 
 			
 		</div><!-- End .mobile-menu-wrapper -->
@@ -308,6 +346,17 @@
     @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')
+
+		$('.mobile-menu-parent-a').on('click', function(e){
+            e.preventDefault()
+			let self = $(this);
+			$('.mobile-menu-parent-a').css('border', "none");
+			let id = self.attr('id')
+			$('.m-d-show').addClass('d-none')
+			$('.' + id).removeClass('d-none')
+			$('#' + id).css('border-bottom', "2px solid #ccc");
+
+		})
 
 		//this is for the navigation
 		var n = 0;
@@ -328,11 +377,13 @@
 						if (el.classList.contains(cl)){
                             el.classList.remove('d-none')
 							el.classList.remove('dont-show')
-
 						}
 					})
 				})
             })
+
+
+			//Mobile nav
     </script>
 </body>
 </html>

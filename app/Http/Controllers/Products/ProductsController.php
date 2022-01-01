@@ -38,8 +38,13 @@ class ProductsController extends Controller
     public function  index(Request $request,Category $category,Builder $builder)  
     {
 
-       // dd($category->load('products'));
         $use_sub_categories = false;
+        $gen = explode('-',basename($request->path()));
+
+        if(!empty($gen)){
+           $gen = $gen[0];
+        }
+
         $gender = null;
         $f_products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
         if ($request->path() == 'products/men'){
@@ -73,6 +78,8 @@ class ProductsController extends Controller
         $parent_category =  explode('-',$category->slug);
         $parent_category =  $parent_category[0];
 
+       // dd(  $products->load('categories')  );
+
         return  view('products.index',compact(
             'category',
             'page_title',
@@ -82,7 +89,8 @@ class ProductsController extends Controller
             'parent_category',
             'f_products',
             'gender',
-            'use_sub_categories'
+            'use_sub_categories',
+            'gen'
         ));     
     }
 

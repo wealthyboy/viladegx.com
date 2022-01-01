@@ -49,7 +49,8 @@ class CheckoutController extends Controller
 	}
 
 		
-	public function  index()  { 
+	public function  index()  
+	{ 
 		$carts =  Cart::all_items_in_cart();
 		if (!$carts->count()){
             return redirect()->to('/cart');
@@ -129,7 +130,8 @@ class CheckoutController extends Controller
 	}
 
 	
-	protected function coupon (Request $request) { 
+	protected function coupon (Request $request) 
+	{ 
 
 		$cart_total  = Cart::sum_items_in_cart();
 		if ( !$cart_total ){
