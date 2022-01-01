@@ -146,7 +146,7 @@ export const login = ({ commit }, { email, password, context }) => {
             context.loading = false;
             if (typeof error.response.data.errors === "undefined") {
                 commit("setFormErrors", {
-                    general: "We could register you.Please try again later"
+                    general: "Your login credentials was not found."
                 });
                 return;
             }
@@ -165,7 +165,7 @@ export const register = ({ commit }, { context }) => {
             console.log(error.response.data.errors);
             if (typeof error.response.data.errors === "undefined") {
                 commit("setFormErrors", {
-                    general: "We could register you.Please try again later"
+                    general: "We could register you.  Please try again"
                 });
                 return;
             }

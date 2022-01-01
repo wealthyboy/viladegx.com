@@ -1,11 +1,10 @@
 <template>
     
-    <section class="sec-padding bg--gray">
+    <div class=" bg--gray">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="ml-1 col-md-6  bg--light mr-1">
                     <div class=" mt-4 mb-4">
-                                
                         <div class="product-single-tabs">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
@@ -74,7 +73,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
 </template>
 
@@ -98,13 +97,14 @@ export default {
             errors: 'errors'
         }),
     },
-    formatError(error){
-        return Array.isArray(error) ? error[0] : error
-    },
+    
     methods:{
         ...mapActions({
             login:'login',
         }),
+        formatError(error){
+           return Array.isArray(error) ? error[0] : error
+        },
         
         authenticate: function(){
             this.loading = true

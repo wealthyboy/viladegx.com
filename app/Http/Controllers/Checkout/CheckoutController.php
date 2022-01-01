@@ -59,7 +59,8 @@ class CheckoutController extends Controller
 	}
 
 	
-	public function confirm(Request $request,OrderedProduct $ordered_product,Order $order) { 
+	public function confirm(Request $request,OrderedProduct $ordered_product,Order $order) 
+	{ 
 		
 		$rate = Helper::rate();
 		$user  =  \Auth::user();

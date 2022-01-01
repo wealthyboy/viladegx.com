@@ -7,7 +7,7 @@
 		<main class="main bg--gray">
 		   <div class="header-middle d-flex ">
 				<div class="container">
-					<div class="header-center justify-content-center order-first order-lg-0 ml-0 mt-3">
+					<div class="header-center justify-content-center order-first order-lg-0 ml-0 mt-0">
 						<a href="/" class="logo">
 							<img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
 						</a>
