@@ -10,8 +10,6 @@
             <small class="text-danger">{{ formatError(errors.general) }}</small>
         </span>
 
-        {{ errors }}
-
         <div class="row ">
             <p class="form-group p-1 col-6">
                 <label for="first_name">First Name</label>
