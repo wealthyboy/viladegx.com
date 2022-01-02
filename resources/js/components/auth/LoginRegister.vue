@@ -25,7 +25,7 @@
                                         <form method="POST" @submit.prevent="authenticate" class="login_form pl-4 pr-4 mt-3" action="/login">
                                             <!--<p class="large">Great to have you back!</p>-->
                                             <p class="form-group">
-                                                <label for="username">Email address</label>
+                                                <label for="email">Email address</label>
                                                 <input  v-model="email" id="email" type="email" class="form-control" name="email" value="" required >
                                                 <small class="text-danger bold" v-if="errors.length"> Email/Password not found</small>
                                             </p>

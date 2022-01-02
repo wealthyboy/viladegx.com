@@ -49960,7 +49960,7 @@ var render = function() {
                         },
                         [
                           _c("p", { staticClass: "form-group" }, [
-                            _c("label", { attrs: { for: "username" } }, [
+                            _c("label", { attrs: { for: "email" } }, [
                               _vm._v("Email address")
                             ]),
                             _vm._v(" "),
