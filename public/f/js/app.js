@@ -2598,6 +2598,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -50206,7 +50207,7 @@ var render = function() {
     "form",
     {
       staticClass: "pl-4 pr-4 mt-3",
-      attrs: { method: "POST", action: "/register" },
+      attrs: { method: "POST", action: "/register", autocomplete: "off" },
       on: {
         submit: function($event) {
           $event.preventDefault()

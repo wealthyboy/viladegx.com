@@ -4,6 +4,7 @@
         @submit.prevent="submit"
         class="pl-4 pr-4 mt-3"
         action="/register"
+        autocomplete="off"
     >
         <span v-if="errors.general">
             <small class="text-danger">{{ formatError(errors.general) }}</small>
