@@ -2593,12 +2593,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -50239,12 +50233,7 @@ var render = function() {
             ],
             staticClass: "form-control  required",
             class: { "has-danger": _vm.errors.first_name },
-            attrs: {
-              id: "first_name",
-              type: "text",
-              name: "first_name",
-              value: ""
-            },
+            attrs: { id: "first_name", type: "text", name: "first_name" },
             domProps: { value: _vm.form.first_name },
             on: {
               input: [
@@ -50287,12 +50276,7 @@ var render = function() {
             ],
             staticClass: "form-control required",
             class: { "has-danger": _vm.errors.last_name },
-            attrs: {
-              id: "last_name",
-              type: "text",
-              name: "last_name",
-              value: ""
-            },
+            attrs: { id: "last_name", type: "text", name: "last_name" },
             domProps: { value: _vm.form.last_name },
             on: {
               input: [
@@ -50342,8 +50326,7 @@ var render = function() {
             attrs: {
               id: "email_register",
               type: "email",
-              name: "email_register",
-              value: ""
+              name: "email_register"
             },
             domProps: { value: _vm.form.email },
             on: {
@@ -50389,12 +50372,7 @@ var render = function() {
             ],
             staticClass: "form-control required",
             class: { "has-danger": _vm.errors.phone_number },
-            attrs: {
-              id: "phone_number",
-              type: "text",
-              name: "phone_number",
-              value: ""
-            },
+            attrs: { id: "phone_number", type: "text", name: "phone_number" },
             domProps: { value: _vm.form.phone_number },
             on: {
               input: [
@@ -50441,7 +50419,7 @@ var render = function() {
             ],
             staticClass: "form-control required",
             class: { "has-danger": _vm.errors.password },
-            attrs: { id: "password_register", type: "password", value: "" },
+            attrs: { id: "password_register", type: "password" },
             domProps: { value: _vm.form.password },
             on: {
               input: [
@@ -50489,8 +50467,7 @@ var render = function() {
             attrs: {
               id: "password_confirmation",
               type: "password",
-              name: "password_confirmation",
-              value: ""
+              name: "password_confirmation"
             },
             domProps: { value: _vm.form.password_confirmation },
             on: {

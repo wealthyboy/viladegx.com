@@ -22,7 +22,6 @@
                     @input="removeError($event)"
                     @blur="vInput($event)"
                     :class="{ 'has-danger': errors.first_name }"
-                    value=""
                 />
                 <span v-if="errors.first_name">
                     <small class="text-danger">{{
@@ -41,7 +40,6 @@
                     @input="removeError($event)"
                     @blur="vInput($event)"
                     :class="{ 'has-danger': errors.last_name }"
-                    value=""
                 />
                 <span v-if="errors.last_name">
                     <small class="text-danger">{{
@@ -62,7 +60,6 @@
                     @input="removeError($event)"
                     @blur="vInput($event)"
                     :class="{ 'has-danger': errors.email }"
-                    value=""
                 />
                 <span v-if="errors.email">
                     <small class="text-danger">{{
@@ -81,7 +78,6 @@
                     @input="removeError($event)"
                     @blur="vInput($event)"
                     :class="{ 'has-danger': errors.phone_number }"
-                    value=""
                 />
                 <span v-if="errors.phone_number">
                     <small class="text-danger">{{
@@ -101,7 +97,6 @@
                     @input="removeError($event)"
                     @blur="vInput($event)"
                     :class="{ 'has-danger': errors.password }"
-                    value=""
                 />
                 <span v-if="errors.password">
                     <small class="text-danger">{{
@@ -121,7 +116,6 @@
                     @input="removeError($event)"
                     @blur="vInput($event)"
                     :class="{ 'has-danger': errors.password_confirmation }"
-                    value=""
                 />
                 <span v-if="errors.password_confirmation">
                     <small class="text-danger">{{
