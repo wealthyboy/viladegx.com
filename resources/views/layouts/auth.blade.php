@@ -1,6 +1,5 @@
 @include('_partials.header_styles')
-
-<body>
+ <body>
 	<div id="app" class="page-wrapper">
 		
 
@@ -36,10 +35,10 @@
 	<a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
 
 	<!-- Plugins JS File -->
-    <script src="/f/js/app.js?version={{ str_random(6) }}" type="text/javascript"></script>
+    <script src="/f/js/app.js?version={{ str_random(6) }}" ></script>
 	<!-- Main JS File -->
     @yield('page-scripts')
-    <script type="text/javascript">
+    <script>
         @yield('inline-scripts')
     </script>
 </body>
