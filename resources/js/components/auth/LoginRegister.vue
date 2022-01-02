@@ -17,7 +17,7 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-user">
-                                    <div class="">
+                                    <div class="product-desc-content">
                                         <span  v-if="errors.general">
                                             <small  class="text-danger">{{ formatError(errors.general) }}</small>
                                         </span>
@@ -26,12 +26,12 @@
                                             <!--<p class="large">Great to have you back!</p>-->
                                             <p class="form-group">
                                                 <label for="username">Email address</label>
-                                                <input  v-model="email_r" id="email" type="email" class="form-control" name="-eemail" value="" required autofocus>
+                                                <input  v-model="email" id="email" type="email" class="form-control" name="email" value="" required autofocus>
                                                 <small class="text-danger bold" v-if="errors.length"> Email/Password not found</small>
                                             </p>
                                             <p class="form-group">
                                                 <label for="password">Password</label>
-                                                <input  v-model="password_r" id="password" type="password" class="form-control" name="-epassword" required>
+                                                <input  v-model="password" id="password" type="password" class="form-control" name="password" required>
                                             </p>
                                             <div class="d-flex justify-content-between">
                                                 <p class="form-group">

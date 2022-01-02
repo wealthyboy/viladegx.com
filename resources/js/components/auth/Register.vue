@@ -70,7 +70,7 @@
                 </span>
             </p>
             <p class="form-field-wrapper  p-2  col-6">
-                <label for="username">Phone number</label>
+                <label for="phone_number">Phone number</label>
                 <input
                     v-model="form.phone_number"
                     id="phone_number"
@@ -150,13 +150,13 @@
             By registering your details, you agree with our
             <a
                 class="color--primary bold"
-                href="https://avenuemontaigne.ng/fashion/pages/terms-conditions"
+                href="https://avenuemontaigne.ng/pages/terms-conditions"
                 >Terms & Conditions</a
             >
             , and
             <a
                 class="color--primary bold"
-                href="https://avenuemontaigne.ng/fashion/pages/privacy-policy"
+                href="https://avenuemontaigne.ng/pages/privacy-policy"
                 >Privacy and Cookie Policy.</a
             >
         </p>
