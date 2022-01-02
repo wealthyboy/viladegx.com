@@ -22,11 +22,11 @@
                                             <small  class="text-danger">{{ formatError(errors.general) }}</small>
                                         </span>
 
-                                        <form method="POST" @submit.prevent="authenticate" class="login_form pl-4 pr-4 mt-3" action="/fashion/login">
+                                        <form method="POST" @submit.prevent="authenticate" class="login_form pl-4 pr-4 mt-3" action="/login">
                                             <!--<p class="large">Great to have you back!</p>-->
                                             <p class="form-group">
                                                 <label for="username">Email address</label>
-                                                <input  v-model="email" id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                                                <input  v-model="email" id="email" type="email" class="form-control" name="email" value="" required >
                                                 <small class="text-danger bold" v-if="errors.length"> Email/Password not found</small>
                                             </p>
                                             <p class="form-group">
@@ -61,7 +61,7 @@
                                 </div><!-- End .tab-pane -->
 
                                 <div class="tab-pane fade fade" id="register" role="tabpanel" aria-labelledby="register-user">
-                                    <div class="product-desc-content">
+                                    <div class="">
                                        <register />
                                     </div><!-- End .product-desc-content -->
                                 </div><!-- End .tab-pane -->
