@@ -354,7 +354,7 @@ input[type="number"]:focus,
 }
 
 select.form-control:not([size]):not([multiple]) {
-    height: 5.3rem;
+    height: 5.1rem;
     padding: 1rem;
     padding-right: 4rem;
 }

@@ -9,16 +9,7 @@
                         <div class="col-md-8 offset-md-2">
                             <div class="error-page text-center">
                                 <h2>Thank you for shopping with us</h2>
-                                <p class="large">Your order has been received .</p>
-                                <p class="large"></p>
-                                <!--<div class="widget">
-                                    <form class="search-form">
-                                        <input class="search-field input--lg" placeholder="Search.." value="" name="s" type="search">
-                                        <button type="submit" class="search-button btn btn--primary btn--lg">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </form>
-                                </div>-->
+                                <p class="large">Your order has been received .</p>                        
                                 <a href="/" class="btn btn--primary space-t--2">Continue</a>
                                 <a href="/orders" class="btn btn--primary space-t--2">View order history</a>
                             </div>
@@ -43,14 +34,14 @@
             <div  class="row   align-items-start">
                 <div class="col-12 col-md-7">
                     <div class="col-md-12 m7 bg--light border border-gray mb-2">
-                        <div class="head  border-bottom  pt-3 mb-3">
+                        <div class="head  border-bottom  pt-4 mb-3">
                             <h3>1. SHIPPING ADDRESS</h3>
                         </div>
                         <ship-address   />
                     </div>
 
                     <div class="col-md-12 bg--light ">
-                    <div class="pt-3 pb-2 ">
+                    <div class="pt-4 pb-2 ">
                         <span class="float-right">
                             <div class="payment-icons mt-1 d-flex">
                                  <div class="payment-image ms mr-3">
@@ -66,17 +57,17 @@
                             </div>
                            
                         </span>
-                        <h3 class="breadcrumb-title">2. PAYMENT</h3>
+                        <h3 class="breadcrumb-title ">2. PAYMENT</h3>
                     </div>
                     <div class="row" v-if="addresses.length" id="add-new-address-form" >
                         <div class="form-field-wrapper  col-sm-12 ">
                             <div v-for="cart in carts"  :key="cart.id" class="row cart-rows  mb-2 pt-4 pb-2 border-top border-gray">
-                                <div class="col-md-3 col-6">
+                                <div class="col-md-2 col-4">
                                     <div class="cart-image">
                                         <img :src="cart.product_variation.image_tn" alt="">
                                     </div>
                                 </div>
-                                <div class="col-md-8 col-6">
+                                <div class="col-md-9 col-8">
                                     <div class="tag brand-name bold ">{{ cart.brand }}</div>
 
                                     <div class="mb-1"><a href="#">{{ cart.product_name }}</a></div>
@@ -120,7 +111,7 @@
                                     </span>
                                 </div>
 
-                                <div class="cart-discount  mt-3 col-sm-12">
+                                <div class="cart-discount  mt-3 col-sm-12 p-0">
                                     <label>Apply Discount Code</label>
                                     <div class="input-group">
                                         <input type="text" v-model="coupon"  class="form-control" placeholder="Enter discount code" required="">
@@ -197,9 +188,6 @@
                                         {{ order_text }}
                                     </button>
                                 </template >
-
-                                
-                                
                             </p>
                         </div>
                     </div>
@@ -208,7 +196,7 @@
                 </div>
                 <div class="col-5">
                    <div class="col-md-12 d-none d-lg-block  mb-3">
-                    <div class="cart-collateralse bg--light  border pb-3 pt-3 pl-3 pt-3 pr-3">
+                    <div class="cart-collateralse bg--light  border pb-4 pt-4 pl-3 pt-3 pr-3">
                         <div class="cart_totalse">
                             <div class="head  border-bottom">
                                 <h3>SUMMARY</h3>

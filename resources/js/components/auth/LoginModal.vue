@@ -14,8 +14,10 @@
                             <p class="">Please login to perform that operation!</p>
                         </div> 
                         <form method="POST" @submit.prevent="authenticate" class="" action="#">
-                            
-                            <!--<p class="large">Great to have you back!</p>-->
+
+                            <span  v-if="errors.general">
+                                <small  class="text-danger">{{ formatError(errors.general) }}</small>
+                            </span>
                             <p class="">
                                 <label for="username">Email address</label>
                                 <input v-model="email"  id="email" type="email" class="form-control" name="email" value="" required autofocus>
@@ -45,14 +47,12 @@
                                     Log In
                                 </button>
                             </p>
-                            
                         </form>
-
                     </div> 
                 </div>
-                <div class="modal-footer text-cenetr">
+                <!-- <div class="modal-footer text-cenetr">
                     <p class="">Don't have an account? <a data-toggle="modal" class="color--primary bold" @click="closeLogin" data-target="#register-modal"  href="#"> Create One </a></p>        
-                </div>      
+                </div>       -->
             </div>
         </div><!--modal-content-->
 
@@ -94,6 +94,9 @@ export default {
         ...mapActions({
             login:'login',
         }),
+        formatError(error){
+           return Array.isArray(error) ? error[0] : error
+        },
         
         closeLogin(){
            document.getElementById('login_modal').click()

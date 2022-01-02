@@ -159,13 +159,13 @@
 
             <div class="breadcrums">
                 <nav aria-label="breadcrumb" class="breadcrumb-nav breadcrumb-link">
-                        <div class="ml-1 d-flex justify-content-start">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"></li>
-                            </ol>
-                        </div>
-                    </nav>
+                    <div class="ml-1 d-flex justify-content-start">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"></li>
+                        </ol>
+                    </div>
+                </nav>
             </div>
 
 

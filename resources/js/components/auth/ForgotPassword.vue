@@ -16,7 +16,8 @@
                         @input="removeError($event)"  
                         @blur="vInput($event)"  
                         :class="{'has-danger': errors.email}"   
-                        type="email" class="input--lg form-full required" 
+                        type="email" 
+                         class="form-control required"
                         name="email" 
                     >
                     <span  class="text-danger" role="" v-if="errors.email">
@@ -36,7 +37,7 @@
                 </button>
             </template>
         </form>
-        <error-message  :error="error" />
+        <!-- <error-message  :error="error" /> -->
     </div>    
        
 </template>
@@ -75,13 +76,22 @@ import ErrorMessage from '../messages/components/Error'
             formatError(error){
                 return Array.isArray(error) ? error[0] : error
             },
-            removeError(e){
-                let context = this
-                let input = document.querySelectorAll('.required');
-                this.clearErrors({ context:context, input:input })
+            removeError(e) {
+            let input = document.querySelectorAll(".required");
+            if (typeof input !== "undefined") {
+                this.clearErrors({ context: this, input: input, e });
+            }
             },
-            vInput(e){
-                this.checkInput({ context: this, email: this.form.email, input:e })
+            vInput(e) {
+                let input = document.querySelectorAll(".required");
+                if (typeof input !== "undefined") {
+                    this.checkInput({
+                        context: this,
+                        email: this.form.email,
+                        input: input,
+                        e
+                    });
+                }
             },
             submit(){
                 let context = this

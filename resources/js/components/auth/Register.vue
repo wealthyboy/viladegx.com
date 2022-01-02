@@ -202,7 +202,7 @@ export default {
         removeError(e) {
             let input = document.querySelectorAll(".required");
             if (typeof input !== "undefined") {
-                this.clearErrors({ context: this, input: input });
+                this.clearErrors({ context: this, input: input, e });
             }
         },
         vInput(e) {
@@ -211,7 +211,8 @@ export default {
                 this.checkInput({
                     context: this,
                     email: this.form.email,
-                    input: e
+                    input: input,
+                    e
                 });
             }
         },

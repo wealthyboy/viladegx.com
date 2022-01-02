@@ -148,17 +148,15 @@
                     <li class="mb-3" v-for="(location, index) in addresses" :key="location.id">
                         <div class="shipping-info border border-gray pr-3 pt-3 pl-3">
                             <div class="shipping-address-info">
-                                <p  id="">{{ location.first_name }} {{ location.last_name }}  </p>
-                                <p v-if="meta.isAdmin"> {{ location.email }} {{ location.phone_number }} </p>
-
-                                <p> {{ location.address }} {{ location.address2}} </p>
-                                <p> {{ location.city }} ,{{ location.state}}  {{ location.zip }}</p>
-                                <p> {{ location.country }} </p>
-                                <p class="">
+                                <p  class="border-bottom pb-3" id="">{{ location.first_name }} {{ location.last_name }}  </p>
+                                <p  class="" v-if="meta.isAdmin"> {{ location.email }} {{ location.phone_number }} </p>
+                                <p  class="border-bottom  pb-3" > {{ location.address }} {{ location.address2}} </p>
+                                <p  class="border-bottom pb-3" > {{ location.city }} ,{{ location.state}}  {{ location.zip }}, {{ location.country }}</p>
+                                <p>
                                     <a  @click.prevent="editAddress(index)" data-placement="left"  href="#" class="ml-0 mr-4 color--primary bold"> 
                                         <i class="fa fa-edit"></i> Edit
                                     </a>
-                                    <a  @click.prevent="makeDefault($event,location.id)"  :id="location.id"  data-placement="left"  href="#" class="mr-4  color--primary ml-4 bold make-default"> 
+                                    <a  @click.prevent="makeDefault($event,location.id)"  :id="location.id"  data-placement="left"  href="#" class="mr-4   color--primary ml-4 bold make-default"> 
                                         <i  class="fa fa-plus"></i> 
                                         <span  v-if="location.is_active >= 1"> 
                                         Default 
