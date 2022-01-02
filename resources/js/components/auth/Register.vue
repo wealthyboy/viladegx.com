@@ -51,13 +51,13 @@
             <div class="clearfix"></div>
 
             <p class="form-group p-1 col-6">
-                <label for="email">Email address</label>
+                <label for="email_register">Email address</label>
                 <input
                     v-model="form.email"
-                    id="email"
+                    id="email_register"
                     type="email"
                     class="form-control required"
-                    name="email"
+                    name="email_register"
                     @input="removeError($event)"
                     @blur="vInput($event)"
                     :class="{ 'has-danger': errors.email }"
@@ -91,10 +91,10 @@
             <div class="clearfix"></div>
 
             <p class="form-field-wrapper p-2 col-6">
-                <label for="password">Password</label>
+                <label for="password_register">Password</label>
                 <input
                     v-model="form.password"
-                    id="password"
+                    id="password_register"
                     type="password"
                     class="form-control required"
                     @input="removeError($event)"
