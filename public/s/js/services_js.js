@@ -1844,18 +1844,18 @@ module.exports = {
   $.fn.loadProducts = function (opt) {
     var settings;
     settings = $.extend({
-      'html': 'jquery-html',
-      'target': 'jquery-target',
-      'form': 'jQuery-form',
-      'filter_url': 'jquery_filter_url',
-      'form_data': 'jquery-form-data',
-      'load_more': 'jquery_load_more',
-      'load_more_url': 'jquery_load_more_url',
-      'loggedInStatus': 'jquery_loggedinstatus',
-      'no_of_products': 'jquery-no-of-products',
-      'total_no_of_products': 'jquery_no_of_products',
-      'form_sort_by': 'jquery-sort-by-form-data',
-      'overlay': 'jquery-overlay'
+      html: "jquery-html",
+      target: "jquery-target",
+      form: "jQuery-form",
+      filter_url: "jquery_filter_url",
+      form_data: "jquery-form-data",
+      load_more: "jquery_load_more",
+      load_more_url: "jquery_load_more_url",
+      loggedInStatus: "jquery_loggedinstatus",
+      no_of_products: "jquery-no-of-products",
+      total_no_of_products: "jquery_no_of_products",
+      form_sort_by: "jquery-sort-by-form-data",
+      overlay: "jquery-overlay"
     }, opt);
 
     contents = function contents(obj, clear_html) {
@@ -1865,7 +1865,7 @@ module.exports = {
 
       if (obj.empty) {
         $(this.container.selector).append('<img class="no_product_found" src="/images/empty_product.svg">', '<p class="text-center">No Result Found!!!</p>');
-        $('span.show-items-count').text('');
+        $("span.show-items-count").text("");
       }
 
       try {
@@ -1885,9 +1885,9 @@ module.exports = {
       }
 
       if (obj.next_page_url) {
-        $('.load_more').removeClass('d-none').attr('href', obj.next_page_url);
+        $(".load_more").removeClass("d-none").attr("href", obj.next_page_url);
       } else {
-        $('.load_more').addClass('d-none');
+        $(".load_more").addClass("d-none");
       }
 
       displayHtml(data, clear_html);
@@ -1896,20 +1896,20 @@ module.exports = {
 
     showNoOfProducts = function showNoOfProducts(data, obj) {
       if (data != undefined) {
-        $('.show-items-count').text('Showing items 1 to ' + obj.to + ' of ' + obj.total + ' total');
+        $(".show-items-count").text("Showing items 1 to " + obj.to + " of " + obj.total + " total");
       }
     };
 
     displayHtml = function displayHtml(data) {
       var clear_html = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var col = null;
-      var html = '';
+      var html = "";
 
       if (data.length == 0) {
         html = '<div class="col-12 d-flex justify-content-center"><div class="text-center pb-3"><img  width="200" height="200" src="/images/utilities/empty_product.svg" /><p class="bold">No products found</p></div></div>';
       } else {
         for (var i in data) {
-          col = data[i].category_attributes >= 1 ? 'col-md-3 col-6' : 'col-md-4 col-6';
+          col = data[i].category_attributes >= 1 ? "col-md-3 col-6" : "col-md-4 col-6";
           name = typeof data[i].name != null ? data[i].name : data[i].product_name;
 
           if (name == null) {
@@ -1918,12 +1918,12 @@ module.exports = {
 
           html += '<div  class="col-6   ' + col + '">';
           html += '<div class="product-default inner-quickview inner-icon">';
-          html += '<figure>';
+          html += "<figure>";
           html += '<a href="' + data[i].link + '">';
           html += '<img src="' + data[i].image_to_show_m + '" alt="' + data[i].name + '" /></a>';
           html += '<div class="btn-icon-group">';
-          html += '</div>';
-          html += '</figure>';
+          html += "</div>";
+          html += "</figure>";
           html += '<div class="product-details">';
           html += '<div class="">';
 
@@ -1938,33 +1938,33 @@ module.exports = {
               }
             }
 
-            html += '</div>';
+            html += "</div>";
           }
 
           if (data[i].brand_name) {
-            html += '<div  class="product-brand bold">' + data[i].brand_name + '</div>';
+            html += '<div  class="product-brand bold">' + data[i].brand_name + "</div>";
           }
 
           html += '<div class="d-lg-flex d-xl-flex color--primary">';
-          html += '<div class="text-left  mr-5"><a href="' + data[i].link + '">' + name + '</a></div>';
+          html += '<div class="text-left  mr-5"><a href="' + data[i].link + '">' + name + "</a></div>";
           html += '<div class="text-right">';
 
           if (data[i].default_discounted_price) {
-            html += '<span class="old-price bold text-danger"> ' + data[i].currency + '' + data[i].converted_price + ' </span>';
-            html += '<span class="product-price bold ">' + data[i].currency + '' + data[i].default_discounted_price + ' </span>';
+            html += '<span class="old-price bold text-danger"> ' + data[i].currency + "" + data[i].converted_price + " </span>";
+            html += '<span class="product-price bold ">' + data[i].currency + "" + data[i].default_discounted_price + " </span>";
           } else {
-            html += '<span class="product-price bold ">' + data[i].currency + '' + data[i].converted_price + ' </span>';
+            html += '<span class="product-price bold ">' + data[i].currency + "" + data[i].converted_price + " </span>";
           }
 
-          html += '</div></div></div></div></div> </div> </div>';
+          html += "</div></div></div></div></div> </div> </div>";
         }
       }
 
       if (clear_html) {
-        $("#" + settings.target).html('').append(html);
+        $("#" + settings.target).html("").append(html);
         return;
       } else {
-        $('#load-products .col-6:last').after(html);
+        $("#load-products .col-6:last").after(html);
         return;
       }
     };
@@ -1973,11 +1973,12 @@ module.exports = {
       $(settings.overlay).removeClass("d-none");
       $.ajax({
         url: url,
-        type: 'get'
+        type: "get",
+        cache: false
       }).done(function (json) {
         contents(json.products, true);
       }).fail(function () {
-        alert('Posts could not be loaded.');
+        alert("Posts could not be loaded.");
       });
     }
 
@@ -1986,13 +1987,14 @@ module.exports = {
       $.ajax({
         url: url,
         data: data,
-        type: 'get',
+        type: "get",
+        cache: false,
         beforeSend: function beforeSend(xhr) {}
       }).done(function (json) {
         contents(json.products, false);
-        $(".spinner-grow-md").addClass('d-none');
+        $(".spinner-grow-md").addClass("d-none");
       }).fail(function () {
-        alert('Something went wrong.');
+        alert("Something went wrong.");
       });
     };
 
@@ -2000,14 +2002,14 @@ module.exports = {
       var sort_by = settings.form_sort_by.serializeArray().shift();
       var qs = [];
 
-      if (sort_by.value !== '') {
-        qs.push(sort_by.name + '=' + sort_by.value);
+      if (sort_by.value !== "") {
+        qs.push(sort_by.name + "=" + sort_by.value);
       }
 
       settings.form.serializeArray().forEach(function (element) {
-        qs.push(element.name + '=' + element.value);
+        qs.push(element.name + "=" + element.value);
       });
-      window.history.pushState({}, '', '?' + qs.join('&'));
+      window.history.pushState({}, "", "?" + qs.join("&"));
     };
 
     $(document).ready(function () {
@@ -2015,18 +2017,18 @@ module.exports = {
         buildUrl();
         filter(settings.form_data, window.location);
       });
-      $(document).on('click', ".load_more", function (e) {
+      $(document).on("click", ".load_more", function (e) {
         e.preventDefault();
-        $(document).find(".spinner-grow-md").removeClass('d-none');
-        var href = $(this).attr('href');
-        window.history.pushState({}, '', href);
+        $(document).find(".spinner-grow-md").removeClass("d-none");
+        var href = $(this).attr("href");
+        window.history.pushState({}, "", href);
         loadMore(href, data = null);
       });
       settings.form_sort_by.change(function () {
         var url = new URL(window.location);
         var arr = settings.form_sort_by.serializeArray().shift();
         url.searchParams.set(arr.name, arr.value);
-        window.history.pushState({}, '', url);
+        window.history.pushState({}, "", url);
         filter(settings.form_sort_by, window.location);
       }); //})
     });

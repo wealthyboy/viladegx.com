@@ -24,11 +24,13 @@
                         <div class="container d-flex justify-content-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/"><i class="icon-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ $breadcrumb }}</li>
+                                @foreach($breadcrumb as $k => $link)
+                                   <li class="breadcrumb-item  active" aria-current="page">{{ $link }}</li>
+                                @endforeach
                             </ol>
                         </div>
                     </nav>
-                    <h2 class="breadcrumb-title"> DESIGNER {{ $breadcrumb }} FOR  {{ $parent_category }}</h2>
+                    <h2 class="breadcrumb-title"> DESIGNER {{ $breadcrumb[0] }} FOR  {{ $parent_category }}</h2>
                     <div class="category-description-section d-flex">
                         <p class="text-left category-description"> {{ isset($category) ? $category->description : '' }} </p>
                         @if($category->description != '')

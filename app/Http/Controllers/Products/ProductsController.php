@@ -39,10 +39,10 @@ class ProductsController extends Controller
     {
 
         $use_sub_categories = false;
-        $gen = explode('-',basename($request->path()));
-
-        if(!empty($gen)){
-           $gen = $gen[0];
+        $breadcrumb = explode('-',basename($request->path()));
+        $gen =null;
+        if(!empty($breadcrumb)){
+           $gen = $breadcrumb[0];
         }
 
         $gender = null;
@@ -74,7 +74,6 @@ class ProductsController extends Controller
 
 
 
-        $breadcrumb = $category->name; 
         $parent_category =  explode('-',$category->slug);
         $parent_category =  $parent_category[0];
 
@@ -113,7 +112,6 @@ class ProductsController extends Controller
     public function show(Request $request,Category $category,Product $product)  { 
         $page_title = "{$product->product_name}";
         $favorites ='';
-       
         $data= [];
         foreach ($product->parent_attributes as  $parent_attribute) {
             if ($parent_attribute->p_attribute_children()){
