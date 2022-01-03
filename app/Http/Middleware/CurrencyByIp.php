@@ -34,8 +34,7 @@ class CurrencyByIp
         if ($path !== '/') {
             $path = explode('/',$path);
             if ( isset($path[1]) ){
-                $first_path = array_shift($path[1]);
-                $path = explode('-', $first_path);
+                $path = explode('-', $path[1]);
                 $first_path = array_shift($path);
                 $request->session()->put('gender',  strtolower($first_path));
             }
@@ -43,6 +42,7 @@ class CurrencyByIp
             $category = Category::has('children')->first();
             $request->session()->put('gender',  strtolower($category->name));
         }
+
         
         if ($settings->allow_multi_currency){
             if ($request->session()->has('switch')) { 

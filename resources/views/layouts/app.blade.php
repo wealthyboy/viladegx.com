@@ -33,7 +33,7 @@
 										<li id="{{ $category->name }}" class="p-d-down    {{ $category->name }}">
 											<a class="{{ $category->name }}   
 											{{ session('gender') == strtolower($category->name)  ? 'active-nav-parent' : '' }}
-											 " style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }} {{ session('gender') }}</a>
+											 " style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }} </a>
 										</li>
 									@endforeach
 								</ul>
@@ -59,7 +59,7 @@
 						<ul class="menu">
 							
                             @foreach( $global_categories[0]->children   as  $category)
-                                <li  class="d-down {{ $category->parent->name }}">
+                                <li  class="d-down {{ $category->parent->name }}  {{ strtolower($category->parent->name) == session('gender') ? '' : 'd-none' }}">
                                    <a style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }}</a>
 								   @if ($category->children->count())
 										<div class="megamenu megamenu-fixed-width">
@@ -104,7 +104,7 @@
                             @foreach( $global_categories->slice(1)   as  $category)
 							   @foreach( $category->children   as  $category)
 
-                                <li class="d-down d-none show-d  {{ $category->parent->name  }}">
+                                <li class="d-down {{ strtolower($category->parent->name) == session('gender') ? '' : 'd-none' }} show-d  {{ $category->parent->name  }}">
                                    <a style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }}</a>
 
                                     <div class="megamenu megamenu-fixed-width">
