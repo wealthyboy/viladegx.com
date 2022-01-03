@@ -30,7 +30,9 @@
                             </ol>
                         </div>
                     </nav>
-                    <h2 class="breadcrumb-title"> DESIGNER {{ $breadcrumb[0] }} FOR  {{ $parent_category }}</h2>
+                    @if(isset($category))
+                    <h2 class="breadcrumb-title"> DESIGNER {{ optional($category)->name }} FOR  {{ $breadcrumb[0] }}</h2>
+                    @endif
                     <div class="category-description-section d-flex">
                         <p class="text-left category-description"> {{ isset($category) ? $category->description : '' }} </p>
                         @if($category->description != '')
