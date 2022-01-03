@@ -162,7 +162,7 @@
                     <div class="ml-1 d-flex justify-content-start">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"></li>
+                            <li v-for="breadcrumb in breadcrumbs" :key="breadcrumb" class="breadcrumb-item active" aria-current="page"><a href="/">{{ breadcrumb }}</a></li>
                         </ol>
                     </div>
                 </nav>
@@ -270,7 +270,7 @@ export default {
     props:{
         product:Object,
         attributes:Object,
-
+        breadcrumbs:Object,
     },
     components:{
        Images,

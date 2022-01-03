@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid mt-1">
     <div>
-        <product-show :attributes="{{ $attributes }}"  :product="{{ $product}}" />
+        <product-show :attributes="{{ $attributes }}"  :breadcrumbs="{{ collect($breadcrumbs) }}" :product="{{ $product}}" />
     </div>
     @if ( optional($product)->related_products->count() )
 

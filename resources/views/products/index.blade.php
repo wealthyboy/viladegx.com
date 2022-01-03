@@ -25,7 +25,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/"><i class="icon-home"></i></a></li>
                                 @foreach($breadcrumb as $k => $link)
-                                   <li class="breadcrumb-item  active" aria-current="page">{{ $link }}</li>
+                                   <li class="breadcrumb-item  active" aria-current="page"><a href="/">{{ $link }}</a></li>
                                 @endforeach
                             </ol>
                         </div>

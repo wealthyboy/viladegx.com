@@ -5606,7 +5606,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   name: "Show",
   props: {
     product: Object,
-    attributes: Object
+    attributes: Object,
+    breadcrumbs: Object
   },
   components: {
     Images: _Images_vue__WEBPACK_IMPORTED_MODULE_0__.default,
@@ -55266,7 +55267,47 @@ var render = function() {
             2
           ),
           _vm._v(" "),
-          _vm._m(1),
+          _c("div", { staticClass: "breadcrums" }, [
+            _c(
+              "nav",
+              {
+                staticClass: "breadcrumb-nav breadcrumb-link",
+                attrs: { "aria-label": "breadcrumb" }
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "ml-1 d-flex justify-content-start" },
+                  [
+                    _c(
+                      "ol",
+                      { staticClass: "breadcrumb" },
+                      [
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _vm._l(_vm.breadcrumbs, function(breadcrumb) {
+                          return _c(
+                            "li",
+                            {
+                              key: breadcrumb,
+                              staticClass: "breadcrumb-item active",
+                              attrs: { "aria-current": "page" }
+                            },
+                            [
+                              _c("a", { attrs: { href: "/" } }, [
+                                _vm._v(_vm._s(breadcrumb))
+                              ])
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ]
+                )
+              ]
+            )
+          ]),
           _vm._v(" "),
           _c("aside", { staticClass: "sidebar-shop" }, [
             _c("div", { staticClass: "pin-wrapper" }, [
@@ -55386,28 +55427,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "breadcrums" }, [
-      _c(
-        "nav",
-        {
-          staticClass: "breadcrumb-nav breadcrumb-link",
-          attrs: { "aria-label": "breadcrumb" }
-        },
-        [
-          _c("div", { staticClass: "ml-1 d-flex justify-content-start" }, [
-            _c("ol", { staticClass: "breadcrumb" }, [
-              _c("li", { staticClass: "breadcrumb-item" }, [
-                _c("a", { attrs: { href: "/" } }, [_vm._v("Home")])
-              ]),
-              _vm._v(" "),
-              _c("li", {
-                staticClass: "breadcrumb-item active",
-                attrs: { "aria-current": "page" }
-              })
-            ])
-          ])
-        ]
-      )
+    return _c("li", { staticClass: "breadcrumb-item" }, [
+      _c("a", { attrs: { href: "/" } }, [_vm._v("Home")])
     ])
   },
   function() {
