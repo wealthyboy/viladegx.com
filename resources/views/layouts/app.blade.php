@@ -29,9 +29,11 @@
 							</div>
 							<nav class="main-nav d-lg-flex d-xl-flex  d-md-flex w-lg-max d-none d-lg-block">
 								<ul class="menu mt-1 ml-5">
-									@foreach( $global_categories   as  $category)
+									@foreach( $global_categories   as $k =>  $category)
 										<li id="{{ $category->name }}" class="p-d-down    {{ $category->name }}">
-											<a class="{{ $category->name }}" style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }}</a>
+											<a class="{{ $category->name }}   
+											{{ session('gender') == strtolower($category->name)  ? 'active-nav-parent' : '' }}
+											 " style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }}</a>
 										</li>
 									@endforeach
 								</ul>

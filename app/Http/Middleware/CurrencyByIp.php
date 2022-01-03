@@ -25,9 +25,34 @@ class CurrencyByIp
     {   
 
         $rate = [];
+
         $position = '';
 
         $settings = SystemSetting::first();
+
+        $path = $request->path();
+
+        // if ($path !== '/'){
+        //     $path = explode('/',$path);
+
+        //     if (isset($path[1])){
+                
+        //         $first_path = array_shift($path[1]);
+
+        //         $path = explode('-', $first_path);
+
+        //         $first_path = array_shift($path);
+
+
+        //         dd($first_path);
+
+        //         $request->session()->put('gender',  strtolower($category->name));
+        //     }
+        // } else {
+        //     $category = Category::has('children')->first();
+        //     $request->session()->put('gender',  strtolower($category->name));
+        // }
+        
         if ($settings->allow_multi_currency){
             if ($request->session()->has('switch')) { 
                 return $next($request);

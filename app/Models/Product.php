@@ -192,7 +192,8 @@ class Product extends Model
 	public function link()
 	{
 		$link  = '/item/';
-		$link .=  optional(optional($this->categories)->first())->slug .'/';
+		//$link .=  optional(optional($this->categories)->first())->slug .'/';
+		$link .=  basename(request()->path()) .'/';
 		$link .= $this->slug;
 		return $link;
 	}

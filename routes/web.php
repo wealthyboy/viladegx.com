@@ -186,7 +186,7 @@ Route::group(['middleware' => 'currencyByIp'], function(){
     Route::get('wishlist',                        'Favorites\FavoritesController@index')->name('wishlist');
     Route::post('newsletter/signup',              'Api\NewsLetter\NewsLetterController@store');
     Route::get('items/{category}',                'Products\ProductsController@index');
-    Route::get('item/{category}/{product}',    'Products\ProductsController@show');
+    Route::get('item/{category}/{product}',       'Products\ProductsController@show');
     Route::get('pages/{information}',             'Information\InformationController@show');
     Route::get('newsletter/unsubscribe',          'NewsLetter\NewsLetterController@index');
     Route::post('newsletter/unsubscribe',         'NewsLetter\NewsLetterController@unsubscribe');
