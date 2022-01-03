@@ -33,7 +33,7 @@
 										<li id="{{ $category->name }}" class="p-d-down    {{ $category->name }}">
 											<a class="{{ $category->name }}   
 											{{ session('gender') == strtolower($category->name)  ? 'active-nav-parent' : '' }}
-											 " style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }}</a>
+											 " style="color: {{  $category->text_color }} !important" href="/products/{{ $category->slug }}">{{ $category->name }} {{ session('gender') }}</a>
 										</li>
 									@endforeach
 								</ul>
