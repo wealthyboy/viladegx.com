@@ -42,6 +42,8 @@ class CurrencyByIp
             }
         } else {
             $category = Category::has('children')->first();
+
+            //dd($category);
             $request->session()->put('gender',  strtolower($category->name));
         }
 

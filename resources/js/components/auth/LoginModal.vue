@@ -50,9 +50,9 @@
                         </form>
                     </div> 
                 </div>
-                <div class="modal-footer text-cenetr">
+                <!-- <div class="modal-footer text-cenetr">
                     <p class="">Don't have an account? <a data-toggle="modal" class="color--primary bold" @click="closeLogin" data-target="#register-modal"  href="#"> Create One </a></p>        
-                </div>      
+                </div>       -->
             </div>
         </div><!--modal-content-->
 
