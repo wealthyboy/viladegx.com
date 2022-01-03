@@ -33,7 +33,7 @@ class CurrencyByIp
         $settings = SystemSetting::first();
 
         $path = $request->path();
-        if ($path !== '/') {
+        if (str_contains($path, 'items') || str_contains($path, 'products')) {
             $path = explode('/',$path);
             if ( isset($path[1]) ){
                 $path = explode('-', $path[1]);
@@ -42,8 +42,6 @@ class CurrencyByIp
             }
         } else {
             $category = Category::has('children')->first();
-
-            //dd($category);
             $request->session()->put('gender',  strtolower($category->name));
         }
 
