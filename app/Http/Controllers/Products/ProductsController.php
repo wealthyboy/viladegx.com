@@ -18,10 +18,6 @@ use App\Filters\ProductsFilter\AttributesFilter;
 
 
 
-
-
-
-
 class ProductsController extends Controller
 {
 

@@ -6943,9 +6943,9 @@ footer .contact-info-label {
     opacity: 1;
     visibility: visible;
 }
-.header {
+/* .header {
     border-bottom: 1px solid #f4f4f4;
-}
+} */
 .header-top {
     border-bottom: 1px solid #e7e7e7;
     padding: 7.5px 0;

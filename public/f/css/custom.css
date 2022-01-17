@@ -403,6 +403,10 @@ button.add-to-wishlist svg {
     margin-top: -30px !important;
 }
 
+.banner-mb-1 {
+    margin-bottom: 0.3rem !important;
+}
+
 .owl-theme .owl-nav.disabled + .owl-dots {
     margin-top: -5rem;
     margin-bottom: 5rem;

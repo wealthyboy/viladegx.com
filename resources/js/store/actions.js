@@ -339,8 +339,6 @@ export const validateForm = ({ dispatch, commit }, { context, input }) => {
         errors = [];
     if (input.length) {
         input.forEach(function(element, v) {
-            console.log(element.value);
-
             if (element.value == "") {
                 k = element.name.split("_").join(" ");
                 errors = Object.assign({}, errors, {
