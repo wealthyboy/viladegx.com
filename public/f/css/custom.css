@@ -723,13 +723,21 @@ background: white;
     position: absolute;
 }
 
-.shop-title.position-absolute,
+.shop-title,
 .shop-title-center {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
     width: 100%;
+}
+
+.banner-shop-title {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    width: 100%;
+    bottom: 10px;
 }
 
 .active-attribute {

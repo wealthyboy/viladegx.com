@@ -26,7 +26,6 @@
                     </figure>
                     <div class="product-details text-left">
                         <div class="">
-                            
                             @if($featered_product->colours->count()  && $featered_product->colours->count() > 1)
                                 <div  class="justify-content-center d-flex mb-1">
                                     @foreach($featered_product->colours as $color)
@@ -35,12 +34,11 @@
                                 </div>
                             @endif
                             @if($featered_product->brand_name)
-                            <div  class="product-brand text-capitalize  bold">
-                                    {{ strtolower($featered_product->brand_name) }} 
-
+                                <div  class="product-brand text-capitalize  bold">
+                                    {{ strtolower($featered_product->brand_name) }}
                                 </div>
                             @endif
-
+                            
                             <div class="color--primary">
                                 <a href="{{ $featered_product->link }}">{{ $featered_product->product_name }}</a>
                             </div>
