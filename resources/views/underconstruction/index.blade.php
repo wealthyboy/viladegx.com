@@ -102,8 +102,9 @@
 
           <!-- Description -->
           <div class="p-t-b-15">
-            <p>We launch our new website soon.<br>
-              Please stay updated and follow.</p>
+            <p>AvenueMontaigne is comming soon.<br>
+
+             </p>
           </div>
           <!-- /End Description -->
 

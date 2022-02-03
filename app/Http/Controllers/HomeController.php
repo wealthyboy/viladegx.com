@@ -35,7 +35,7 @@ class HomeController extends Controller
         $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
     
         if (!$site_status->make_live ) {
-            return view('index',compact('products','posts','banners','sliders')); 
+            return view('underconstruction.index',compact('products','posts','banners','sliders')); 
         } else {
             //Show site if admin is logged in
             if ( auth()->check()  && auth()->user()->isAdmin()){
@@ -55,6 +55,15 @@ class HomeController extends Controller
         $banners     = Banner::where('type','banner')->orderBy('sort_order','asc')->get();
         $sliders     = Banner::where('type','slider')->orderBy('sort_order','asc')->get();
         $posts       = Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
+        if (!$site_status->make_live ) {
+            return view('index',compact('products','posts','banners','sliders')); 
+        } else {
+            //Show site if admin is logged in
+            if ( auth()->check()  && auth()->user()->isAdmin()){
+                return view('index',compact('products','posts','banners','sliders')); 
+            }
+            return view('underconstruction.index');
+        }
         return view('index',compact('products','posts','banners','sliders')); 
     }
 

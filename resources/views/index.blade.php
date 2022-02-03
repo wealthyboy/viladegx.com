@@ -10,13 +10,11 @@
                         <img src="{{ $slider->image }}" />
                     </a>
                 </div>
-
                 <div class="shop-title text-center  position-absolute">
                     <div class="col-12 fa-2x color--white text-center">
                         {{ $slider->title }}
                     </div>
                 </div>
-                
             </div>
         @endforeach
     </div>
