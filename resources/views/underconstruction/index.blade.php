@@ -206,7 +206,7 @@
 
             <div class="p-t-b-15">
               <!-- Headline & Description -->
-              <h2><span class="font-weight-200">We're launching our</span><br>new Website soon</h2>
+              <h2><span class="font-weight-200">AvenueMontaigne</span><br>is coming soon</h2>
 
               
               <!-- /End Headline & Description -->
