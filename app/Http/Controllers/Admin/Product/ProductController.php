@@ -88,15 +88,15 @@ class ProductController extends Controller
      * return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         User::canTakeAction(2);
+
         $brands = Brand::all();
         $categories = Category::parents()->get();
         $product_attributes = Attribute::parents()->where('type','both')->orderBy('sort_order','asc')->get();
-        $meta_attributes = Attribute::parents()
-                                  ->where('type','!=','both')
-                                  ->where('type','!=','reservation')
-                                  ->orderBy('sort_order','asc')->get();
+        $meta_attributes = Attribute::parents()->where('type','!=','both')->orderBy('sort_order','asc')->get();
+
+
         return view('admin.products.create',compact('product_attributes','meta_attributes','brands','categories'));
     }
 

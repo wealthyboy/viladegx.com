@@ -8,6 +8,5 @@
                 {{ $obj->name }}  
             </label>
         </div>  
-    @include('includes.product_categories_children',['obj'=>$obj])
     </div>
 @endforeach

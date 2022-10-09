@@ -75,6 +75,7 @@
                                 <i class="fa fa-pencil"></i> Edit</a> 
                             </label>
                         </div>   
+                        
                         @include('includes.product_categories',['obj'=>$category,'space'=>'&nbsp;&nbsp;','model' => 'category','url' => 'category'])
                     </div>
                 @endforeach

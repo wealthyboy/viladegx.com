@@ -1,15 +1,14 @@
-@extends('admin.layouts.app')
-@section('pagespecificstyles')
-@stop
-@section('content')
+<?php $__env->startSection('pagespecificstyles'); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
 <div class="row">
    <div class="col-sm-12">
-      @include('admin.errors.errors')
+      <?php echo $__env->make('admin.errors.errors', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
       <!--      Wizard container        -->
       <div class="wizard-container">
          <div class="card wizard-card" data-color="rose" id="wizardProfile">
-            <form enctype="multipart/form-data" id="product-form" action="{{ route('admin.products.store') }}" method="post">
-               @csrf
+            <form enctype="multipart/form-data" id="product-form" action="<?php echo e(route('admin.products.store')); ?>" method="post">
+               <?php echo csrf_field(); ?>
                <!--  You can switch " data-color="purple"   with one of the next bright colors: "green", "orange", "red", "blue"       -->
                <div class="wizard-header">
                   <h3 class="wizard-title">
@@ -25,11 +24,11 @@
                </div>
                <div class="tab-content">
                   <div class="tab-pane" id="ProductData">
-                     @include('admin.products.product_data')
+                     <?php echo $__env->make('admin.products.product_data', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                   </div>
 
                   <div class="tab-pane" id="RelatedProducts">
-                     @include('admin.products.product_related')
+                     <?php echo $__env->make('admin.products.product_related', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                   </div>
                   <div class="tab-pane" id="ProductVariations">
                      <h4 class="info-text">Product Variation</h4>
@@ -45,19 +44,19 @@
                         </div>
                      </div>
                      <div class="simple-product hide">
-                        @include('admin.products.product_images') 
+                        <?php echo $__env->make('admin.products.product_images', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
                         <div class="row">
                            <div class="col-md-1">
                               <div class="form-group label-floating is-empty">
                                  <label class="control-label">Qty</label>
-                                 <input name="quantity"  type="number" required="true"  value="{{ old('quantity') }}"  class="form-control">
+                                 <input name="quantity"  type="number" required="true"  value="<?php echo e(old('quantity')); ?>"  class="form-control">
                                  <span class="material-input"></span>
                               </div>
                            </div>
                            <div class="col-md-3">
                               <div class="form-group label-floating is-empty">
                                  <label class="control-label">Price</label>
-                                 <input name="price"  required="true" type="number" value="{{ old('price') }}" class="form-control">
+                                 <input name="price"  required="true" type="number" value="<?php echo e(old('price')); ?>" class="form-control">
                                  <span class="material-input"></span>
                               </div>
                            </div>
@@ -89,28 +88,28 @@
                            <div class="col-md-3">
                               <div class="form-group label-floating is-empty">
                                  <label class="control-label">Weight</label>
-                                 <input name="weight"   type="text" value="{{ old('weight') }}" class="form-control">
+                                 <input name="weight"   type="text" value="<?php echo e(old('weight')); ?>" class="form-control">
                                  <span class="material-input"></span>
                               </div>
                            </div>
                            <div class="col-md-3">
                               <div class="form-group label-floating is-empty">
                                  <label class="control-label">Length</label>
-                                 <input name="length"   type="text" value="{{ old('length') }}" class="form-control" >
+                                 <input name="length"   type="text" value="<?php echo e(old('length')); ?>" class="form-control" >
                                  <span class="material-input"></span>
                               </div>
                            </div>
                            <div class="col-md-3">
                               <div class="form-group label-floating is-empty">
                                  <label class="control-label">Width</label>
-                                 <input name="width"      value="{{ old('width') }}"  class="form-control" type="text">
+                                 <input name="width"      value="<?php echo e(old('width')); ?>"  class="form-control" type="text">
                                  <span class="material-input"></span>
                               </div>
                            </div>
                            <div class="col-md-3">
                               <div class="form-group label-floating is-empty">
                                  <label class="control-label">Height</label>
-                                 <input name="height"      value="{{ old('height') }}"  class="form-control" type="text">
+                                 <input name="height"      value="<?php echo e(old('height')); ?>"  class="form-control" type="text">
                                  <span class="material-input"></span>
                               </div>
                            </div>
@@ -120,20 +119,20 @@
                      <div class="clearfix"></div>
                      
                      <div class="row p-attr  variable-product hide">
-                        @if(null !== $product_attributes)
+                        <?php if(null !== $product_attributes): ?>
             
                         <div class="col-sm-9">
-                           @foreach($product_attributes as $product_attribute)
+                           <?php $__currentLoopData = $product_attributes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product_attribute): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                               <div class="col-md-3 col-sm-6 col-xs-6">
                                  <div class="form-group ">
-                                    <label class="control-label">{{ $product_attribute->name }}</label>
-                                    <select name="" class="form-control product-attributes"  title="Choose {{ $product_attribute->name }}" data-style="select-with-transition"  data-size="7">
-                                          <option  value="" selected>Select {{ $product_attribute->name }}</option>
-                                          <option   value="{{ $product_attribute->id }}">&nbsp;&nbsp;&nbsp;{{ $product_attribute->name }} </option>
+                                    <label class="control-label"><?php echo e($product_attribute->name); ?></label>
+                                    <select name="" class="form-control product-attributes"  title="Choose <?php echo e($product_attribute->name); ?>" data-style="select-with-transition"  data-size="7">
+                                          <option  value="" selected>Select <?php echo e($product_attribute->name); ?></option>
+                                          <option   value="<?php echo e($product_attribute->id); ?>">&nbsp;&nbsp;&nbsp;<?php echo e($product_attribute->name); ?> </option>
                                     </select>
                                  </div>
                               </div>
-                           @endforeach
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
                         <label class="col-md-3  col-xs-12 col-xs-12">
                            <button type="button"  id="product-attribute-add" class="btn btn-round btn-primary">
@@ -143,11 +142,11 @@
                               </span>
                            </button>
                         </label>
-                        @else
+                        <?php else: ?>
                            <div class="col-sm-7">
                               No attributes set. Go Products > attributes and set your attributes.
                            </div>
-                        @endif
+                        <?php endif; ?>
                      </div>
 
                   </div>
@@ -167,17 +166,19 @@
       <!-- wizard container -->
    </div>
 </div>
-@endsection
-@section('page-scripts')
-   <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-   <script src="{{ asset('backend/js/products.js') }}"></script>
-   <script src="{{ asset('backend/js/uploader.js') }}"></script>
-@stop
-@section('inline-scripts')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('page-scripts'); ?>
+   <script src="<?php echo e(asset('ckeditor/ckeditor.js')); ?>"></script>
+   <script src="<?php echo e(asset('backend/js/products.js')); ?>"></script>
+   <script src="<?php echo e(asset('backend/js/uploader.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('inline-scripts'); ?>
 $(document).ready(function() {
    CKEDITOR.replace('description',{
       height: '400px'
    })       
 });
-@stop
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/avenuemontaigne.ng/resources/views/admin/products/create.blade.php ENDPATH**/ ?>

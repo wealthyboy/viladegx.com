@@ -44,7 +44,7 @@ class CategoryController extends Controller
      */
     public function create()
     {   
-        User::canTakeAction(2);
+       // User::canTakeAction(2);
         return view('admin.category.create');
     }
 
