@@ -102,7 +102,7 @@
 
           <!-- Description -->
           <div class="p-t-b-15">
-            <p>AvenueMontaigne is comming soon.<br>
+            <p>Viladxe is comming soon.<br>
 
              </p>
           </div>
