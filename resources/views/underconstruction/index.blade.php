@@ -102,7 +102,7 @@
 
           <!-- Description -->
           <div class="p-t-b-15">
-            <p>Viladxe is comming soon.<br>
+            <p>viladegx is comming soon.<br>
 
              </p>
           </div>
